@@ -7,6 +7,14 @@
 p{
   color: darkred;
 }
+body {
+  width: 100%;   /* fills the screen */
+}
+img {
+  max-width: 100%;  /* scales down with screen */
+  height: auto;
+}
+
 
 
 /* Body styling */
