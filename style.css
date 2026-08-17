@@ -14,6 +14,24 @@ img {
   max-width: 100%;  /* scales down with screen */
   height: auto;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;   /* smaller text on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;   /* even smaller on phones */
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  flex: 1 1 300px; /* auto-resizes based on screen */
+}
 
 
 
