@@ -371,7 +371,7 @@
 <option value="1">Slow, irregular, or weak cry</option>
 <option value="2">Good breathing with strong cry</option>
 </select><br>
-<button onclick="apgar()">Calculate Apgar Score</button>
+<button onclick="apgar()">Submit</button>
 <div id="xTotal"></div>
 </details>
 <h2>2. Bishop Score</h2>
@@ -797,6 +797,20 @@
 <br><button onclick="talScore()">Submit</button>
 <div id="talT"></div>
 </details>
+<h2>5. Pediatric Malaria Dose Calculator:</h2>
+<h3>Select the appropriate options below:</h3>
+<form>
+<label for="uncomplicated">Uncomplicated Malaria</label>
+<input type="radio" name="malaria" id="uncomplicated">
+
+<label for="severe">Severe Malaria</label>
+<input type="radio" name="malaria" id="severe"><br>
+
+<label for="malariaWeight">Enter the Weight of Patient:</label>
+<input type="number" id="ptMalariaWeight" name="malariaWeight" placeholder="Enter Weight in Kg"><br><br>
+<button type="button" id="pediatricDoseCalculator">Submit</button>
+</form>
+<div id="malariaDoseCalculatedDisplay" style="font-weight: bold"></div>
 </details>
 </div>
 </div>
