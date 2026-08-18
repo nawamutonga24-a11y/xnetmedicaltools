@@ -291,28 +291,33 @@ function curb65() {
     document.getElementById("cTotal").innerHTML = result + " (Score: " + cTotal + ")";
 }
 //Apgar score
-function apgar()
-{
-    
+function apgar() {
     let appearance = parseInt(document.getElementById("appear").value) || 0;
     let aPulse = parseInt(document.getElementById("aPR").value) || 0;
     let grimace = parseInt(document.getElementById("grim").value) || 0;
     let aActivityx = parseInt(document.getElementById("aActivity").value) || 0;
     let arespiration = parseInt(document.getElementById("aResp").value) || 0;
+
     let aTotal = appearance + aPulse + grimace + aActivityx + arespiration;
-    if(aTotal>=7&&aTotal<=10)
-    {
-        document.getElementById("xTotal").innerHTML = "Normal adaptation; generally no immediate intervention required<br>" + "The Score is; " + aTotal;
+    let message = "";
+
+    if (aTotal >= 7 && aTotal <= 10) {
+        message = "Normal adaptation; generally no immediate intervention required.<br>" +
+                  "✅ Suggestion: Continue routine monitoring and provide warmth.<br>" +
+                  "The Score is: " + aTotal;
+    } else if (aTotal >= 4 && aTotal <= 6) {
+        message = "Moderately depressed; may require supportive measures such as airway management and oxygen.<br>" +
+                  "⚠️ Suggestion: Ensure airway patency, provide oxygen, and reassess frequently.<br>" +
+                  "The Score is: " + aTotal;
+    } else {
+        message = "Severely depressed; immediate resuscitation often required.<br>" +
+                  "🚨 Suggestion: Initiate full neonatal resuscitation (airway, breathing, circulation) and call for help.<br>" +
+                  "The Score is: " + aTotal;
     }
-    else if(aTotal>=4&&aTotal<=6)
-    {
-        document.getElementById("xTotal").innerHTML = "Moderately depressed; may require supportive measures such as airway management and oxygen<br>" + "The Score is; " + aTotal;
-    }
-    else 
-    {
-        document.getElementById("xTotal").innerHTML = "Severely depressed; immediate resuscitation often required<br>" + "The Score is; " + aTotal;
-    }
+
+    document.getElementById("xTotal").innerHTML = message;
 }
+
 //Hb check
 function hbClass()
 {
@@ -675,226 +680,280 @@ function hbClass()
                               }
 }
 //Bishop score
-function bishopScore()
-{
-    let ceDi = parseInt(document.getElementById("cd").value)||0;
-    let ceEf = parseInt(document.getElementById("ce").value)||0;
-    let ceCo = parseInt(document.getElementById("cc").value)||0;
-    let cePo = parseInt(document.getElementById("cp").value)||0;
-    let feSt = parseInt(document.getElementById("fs").value)||0;
+function bishopScore() {
+    let ceDi = parseInt(document.getElementById("cd").value) || 0;
+    let ceEf = parseInt(document.getElementById("ce").value) || 0;
+    let ceCo = parseInt(document.getElementById("cc").value) || 0;
+    let cePo = parseInt(document.getElementById("cp").value) || 0;
+    let feSt = parseInt(document.getElementById("fs").value) || 0;
+
     let bsTotal = ceDi + ceEf + ceCo + cePo + feSt;
-    if(bsTotal>=8)
-    {
-        document.getElementById("bTotal").innerHTML = "Cervix favorable, induction likely to succeed<br>" + "The Bishop Score is;  " + bsTotal;
+    let message = "";
+
+    if (bsTotal >= 8) {
+        message = "Cervix favorable, induction likely to succeed.<br>" +
+                  "✅ Suggestion: Proceed with induction of labor; monitor maternal and fetal status closely.<br>" +
+                  "The Bishop Score is: " + bsTotal;
+    } else if (bsTotal <= 5) {
+        message = "Cervix unfavorable, induction less likely to succeed.<br>" +
+                  "⚠️ Suggestion: Consider cervical ripening agents (e.g., prostaglandins) or mechanical methods before induction.<br>" +
+                  "The Bishop Score is: " + bsTotal;
+    } else {
+        message = "Intermediate, may require cervical ripening before induction.<br>" +
+                  "ℹ️ Suggestion: Assess maternal/fetal readiness and consider ripening interventions prior to induction attempt.<br>" +
+                  "The Bishop Score is: " + bsTotal;
     }
-    else if(bsTotal<=5)
-    {
-        document.getElementById("bTotal").innerHTML = "Cervix unfavorable, induction less likely to succeed<br>" + "The Bishop Score is;  " + bsTotal;
-    }
-    else
-    {
-        document.getElementById("bTotal").innerHTML = "Intermediate, may require cervical ripening before induction<br>" + "The Bishop Score is;  " + bsTotal;
-    }
+
+    document.getElementById("bTotal").innerHTML = message;
 }
+
 //Ferriman‑Gallwey Parameters
-function fgp()
-{
-    let ul = parseInt(document.getElementById("ulh").value)||0;
-    let chi = parseInt(document.getElementById("ch").value)||0;
-    let che = parseInt(document.getElementById("chbb").value)||0;
-    let uab = parseInt(document.getElementById("uabh").value)||0;
-    let la = parseInt(document.getElementById("lah").value)||0;
-    let ua = parseInt(document.getElementById("uah").value)||0;
-    let t = parseInt(document.getElementById("th").value)||0;
-    let ub = parseInt(document.getElementById("ubh").value)||0;
-    let lb = parseInt(document.getElementById("lbh").value)||0;
+function fgp() {
+    let ul = parseInt(document.getElementById("ulh").value) || 0;
+    let chi = parseInt(document.getElementById("ch").value) || 0;
+    let che = parseInt(document.getElementById("chbb").value) || 0;
+    let uab = parseInt(document.getElementById("uabh").value) || 0;
+    let la = parseInt(document.getElementById("lah").value) || 0;
+    let ua = parseInt(document.getElementById("uah").value) || 0;
+    let t = parseInt(document.getElementById("th").value) || 0;
+    let ub = parseInt(document.getElementById("ubh").value) || 0;
+    let lb = parseInt(document.getElementById("lbh").value) || 0;
+
     let fx = ul + chi + che + uab + la + ua + t + ub + lb;
-    if(fx<=7)
-    {
-        document.getElementById("fxx").innerHTML = "Normal<br>" + "The Score is; " + fx;
+    let message = "";
+
+    if (fx <= 7) {
+        message = "Normal.<br>" +
+                  "✅ Suggestion: No intervention required; reassure and monitor if patient is concerned.<br>" +
+                  "The Score is: " + fx;
+    } else if (fx >= 8 && fx <= 15) {
+        message = "Moderate hirsutism.<br>" +
+                  "⚠️ Suggestion: Consider endocrine evaluation (e.g., PCOS, adrenal causes) and discuss cosmetic or medical management options.<br>" +
+                  "The Score is: " + fx;
+    } else {
+        message = "Severe hirsutism.<br>" +
+                  "🚨 Suggestion: Full endocrine workup recommended; initiate treatment options (hormonal therapy, anti-androgens) and address psychosocial impact.<br>" +
+                  "The Score is: " + fx;
     }
-    else if(fx>=8&&fx<=15)
-    {
-        document.getElementById("fxx").innerHTML = "Moderate hirsutism<br>" + "The Score is; " + fx;
-    }
-    else
-    {
-        document.getElementById("fxx").innerHTML = "Severe hirsutism<br>" + "The Score is; " + fx;
-    }
+
+    document.getElementById("fxx").innerHTML = message;
 }
+
 //Biophysical profile
-function bpp()
-{
-    let fbrmo = parseInt(document.getElementById("fbrm").value)||0;
-    let fbomo = parseInt(document.getElementById("fbom").value)||0;
-    let fto = parseInt(document.getElementById("ft").value)||0;
-    let afvo = parseInt(document.getElementById("afv").value)||0;
-    let nste = parseInt(document.getElementById("nst").value)||0;
-    let gx = fbrmo + fbomo + fto + afvo + nste; 
-    if (gx>=8&&gx<=10)
-    {
-        document.getElementById("gxx").innerHTML = "Normal, reassuring<br>" + "The Biophysical Score is;" + gx;
+function bpp() {
+    let fbrmo = parseInt(document.getElementById("fbrm").value) || 0;
+    let fbomo = parseInt(document.getElementById("fbom").value) || 0;
+    let fto = parseInt(document.getElementById("ft").value) || 0;
+    let afvo = parseInt(document.getElementById("afv").value) || 0;
+    let nste = parseInt(document.getElementById("nst").value) || 0;
+
+    let gx = fbrmo + fbomo + fto + afvo + nste;
+    let message = "";
+
+    if (gx >= 8 && gx <= 10) {
+        message = "Normal, reassuring.<br>" +
+                  "✅ Suggestion: Continue routine antenatal care and monitoring.<br>" +
+                  "The Biophysical Score is: " + gx;
+    } else if (gx === 6) {
+        message = "Equivocal, repeat testing or consider delivery depending on gestational age.<br>" +
+                  "⚠️ Suggestion: Reassess within 24 hours; weigh risks vs. benefits of delivery if term.<br>" +
+                  "The Biophysical Score is: " + gx;
+    } else {
+        message = "Abnormal, possible fetal compromise, delivery often indicated.<br>" +
+                  "🚨 Suggestion: Initiate immediate obstetric evaluation; prepare for delivery and neonatal resuscitation.<br>" +
+                  "The Biophysical Score is: " + gx;
     }
-    else if(gx===6)
-    {
-        document.getElementById("gxx").innerHTML = "Equivocal, repeat testing or consider delivery depending on gestational age<br>" + "The Biophysical Score is;" + gx;
-    }
-    else
-    {
-        document.getElementById("gxx").innerHTML = "Abnormal, possible fetal compromise, delivery often indicated<br>" + "The Biophysical Score is;" + gx;
-    }
+
+    document.getElementById("gxx").innerHTML = message;
 }
-//PRISM (Pediatric Risk of Mortality) Score 
-function prism()
-{
-    let gcs = parseInt(document.getElementById("prGcs").value)||0;
-    let pr = parseInt(document.getElementById("prPr").value)||0;
-    let sbp = parseInt(document.getElementById("prsbp").value)||0;
-    let hr = parseInt(document.getElementById("prhr").value)||0;
-    let temp = parseInt(document.getElementById("prT").value)||0;
-    let ph = parseInt(document.getElementById("prph").value)||0;
-    let pco2 = parseInt(document.getElementById("ppoco2").value)||0;
-    let ppoo2 = parseInt(document.getElementById("ppoo").value)||0;
-    let glu = parseInt(document.getElementById("g").value)||0;
-    let potass = parseInt(document.getElementById("k").value)||0;
-    let Cr = parseInt(document.getElementById("cr").value)||0;
-    let Wcc = parseInt(document.getElementById("wcc").value)||0;
-    let Pc = parseInt(document.getElementById("pc").value)||0;
-    let Pt = parseInt(document.getElementById("pt").value)||0;
+
+// PRISM (Pediatric Risk of Mortality) Score
+function prism() {
+    let gcs = parseInt(document.getElementById("prGcs").value) || 0;
+    let pr = parseInt(document.getElementById("prPr").value) || 0;
+    let sbp = parseInt(document.getElementById("prsbp").value) || 0;
+    let hr = parseInt(document.getElementById("prhr").value) || 0;
+    let temp = parseInt(document.getElementById("prT").value) || 0;
+    let ph = parseInt(document.getElementById("prph").value) || 0;
+    let pco2 = parseInt(document.getElementById("ppoco2").value) || 0;
+    let ppoo2 = parseInt(document.getElementById("ppoo").value) || 0;
+    let glu = parseInt(document.getElementById("g").value) || 0;
+    let potass = parseInt(document.getElementById("k").value) || 0;
+    let Cr = parseInt(document.getElementById("cr").value) || 0;
+    let Wcc = parseInt(document.getElementById("wcc").value) || 0;
+    let Pc = parseInt(document.getElementById("pc").value) || 0;
+    let Pt = parseInt(document.getElementById("pt").value) || 0;
+
     let prt = gcs + pr + sbp + hr + temp + ph + pco2 + ppoo2 + glu + potass + Cr + Wcc + Pc + Pt;
-    if(prt>=0&&prt<=5)
-    {
-        document.getElementById("prTx").innerHTML = "Low risk <1% Approximate Mortality<br>" + "The Score is; " + prt;
+    let message = "";
+
+    if (prt >= 0 && prt <= 5) {
+        message = "Low risk (<1% Approximate Mortality).<br>" +
+                  "✅ Suggestion: Continue standard PICU monitoring and supportive care.<br>" +
+                  "The Score is: " + prt;
+    } else if (prt >= 6 && prt <= 10) {
+        message = "Moderate risk (5–10% Approximate Mortality).<br>" +
+                  "⚠️ Suggestion: Intensify monitoring, optimize supportive measures, and anticipate complications.<br>" +
+                  "The Score is: " + prt;
+    } else {
+        message = "High risk (15–25% Approximate Mortality).<br>" +
+                  "🚨 Suggestion: Initiate aggressive management, consider advanced interventions, and involve senior PICU staff early.<br>" +
+                  "The Score is: " + prt;
     }
-    else if(prt>=6&&prt<=10)
-    {
-        document.getElementById("prTx").innerHTML = "Moderate risk 5–10% Approximate Mortality<br>" + "The Score is; " + prt;
-    }
-    else
-    {
-        document.getElementById("prTx").innerHTML = "High risk 15–25% Approximate Mortality<br>" + "The Score is; " + prt;
-    }
+
+    document.getElementById("prTx").innerHTML = message;
 }
+
 //Silverman Score
-function silverman()
-{
-    let Ucm = parseInt(document.getElementById("ucm").value)||0;
-    let Lcr = parseInt(document.getElementById("lcr").value)||0;
-    let Xr = parseInt(document.getElementById("xr").value)||0;
-    let Nf = parseInt(document.getElementById("nf").value)||0;
-    let Grunt = parseInt(document.getElementById("grunt").value)||0;
+function silverman() {
+    let Ucm = parseInt(document.getElementById("ucm").value) || 0;
+    let Lcr = parseInt(document.getElementById("lcr").value) || 0;
+    let Xr = parseInt(document.getElementById("xr").value) || 0;
+    let Nf = parseInt(document.getElementById("nf").value) || 0;
+    let Grunt = parseInt(document.getElementById("grunt").value) || 0;
+
     let st = Ucm + Lcr + Xr + Nf + Grunt;
-    if(st===0)
-    {
-        document.getElementById("sT").innerHTML = "No respiratory distress<br>" + "The Score is; " + st;
+    let message = "";
+
+    if (st === 0) {
+        message = "No respiratory distress.<br>" +
+                  "✅ Suggestion: Continue routine newborn monitoring.<br>" +
+                  "The Score is: " + st;
+    } else if (st >= 1 && st <= 3) {
+        message = "Mild distress.<br>" +
+                  "⚠️ Suggestion: Provide supportive care (warmth, oxygen if needed) and observe closely.<br>" +
+                  "The Score is: " + st;
+    } else if (st >= 4 && st <= 6) {
+        message = "Moderate distress.<br>" +
+                  "⚠️ Suggestion: Initiate oxygen therapy, consider CPAP, and monitor for progression.<br>" +
+                  "The Score is: " + st;
+    } else {
+        message = "Severe distress.<br>" +
+                  "🚨 Suggestion: Immediate intervention required — initiate advanced airway support, mechanical ventilation, and call for neonatal intensive care.<br>" +
+                  "The Score is: " + st;
     }
-    else if(st>=1&&st<=3)
-    {
-        document.getElementById("sT").innerHTML = " Mild distress<br>" + "The Score is; " + st; 
-    }
-    else if(st>=4&&st<=6)
-    {
-        document.getElementById("sT").innerHTML = "Moderate distress<br>" + "The Score is; " + st; 
-    }
-    else
-    {
-        document.getElementById("sT").innerHTML = "Severe distress<br>" + "The Score is; " + st; 
-    }
+
+    document.getElementById("sT").innerHTML = message;
 }
+
 //WHO-Based Pediatric Pneumonia Score
-function pneumScore()
-{
-    let Fb = parseInt(document.getElementById("fb").value)||0;
-    let Cid = parseInt(document.getElementById("cid").value)||0;
-    let Osn = parseInt(document.getElementById("osn").value)||0;
-    let Rd = parseInt(document.getElementById("rd").value)||0;
-    let Iatd = parseInt(document.getElementById("iatd").value)||0;
-    let Leth = parseInt(document.getElementById("leth").value)||0;
+function pneumScore() {
+    let Fb = parseInt(document.getElementById("fb").value) || 0;
+    let Cid = parseInt(document.getElementById("cid").value) || 0;
+    let Osn = parseInt(document.getElementById("osn").value) || 0;
+    let Rd = parseInt(document.getElementById("rd").value) || 0;
+    let Iatd = parseInt(document.getElementById("iatd").value) || 0;
+    let Leth = parseInt(document.getElementById("leth").value) || 0;
+
     let tx = Fb + Cid + Osn + Rd + Iatd + Leth;
-    if(tx>=0&&tx<=2)
-    {
-        document.getElementById("xTx").innerHTML = "Non-severe pneumonia → Outpatient care, oral antibiotics<br>" + "The Score is; " + tx;
+    let message = "";
+
+    if (tx >= 0 && tx <= 2) {
+        message = "Non-severe pneumonia → Outpatient care, oral antibiotics.<br>" +
+                  "✅ Suggestion: Treat with oral antibiotics, ensure hydration, and follow up within 48 hours.<br>" +
+                  "The Score is: " + tx;
+    } else if (tx >= 3 && tx <= 4) {
+        message = "Severe pneumonia → Hospital admission, oxygen, IV antibiotics.<br>" +
+                  "⚠️ Suggestion: Admit for inpatient care, initiate IV antibiotics, provide oxygen therapy, and monitor closely.<br>" +
+                  "The Score is: " + tx;
+    } else {
+        message = "Very severe pneumonia → Urgent hospital care, full supportive therapy.<br>" +
+                  "🚨 Suggestion: Immediate hospital admission, initiate IV antibiotics, oxygen, fluid support, and prepare for intensive care if needed.<br>" +
+                  "The Score is: " + tx;
     }
-    else if(tx>=3&&tx<=4)
-    {
-         document.getElementById("xTx").innerHTML = "Severe pneumonia → Hospital admission, oxygen, IV antibiotics<br>" + "The Score is; " + tx;
-    }
-    else
-    {
-        document.getElementById("xTx").innerHTML = "Very severe pneumonia → Urgent hospital care, full supportive therapy<br>" + "The Score is; " + tx;
-    }
+
+    document.getElementById("xTx").innerHTML = message;
 }
+
 //Tal Score
-function talScore()
-{
-    let Trr = parseInt(document.getElementById("trr").value)||0;
-    let Tw = parseInt(document.getElementById("tw").value)||0;
-    let Tamu = parseInt(document.getElementById("tamu").value)||0;
-    let Tier = parseInt(document.getElementById("tier").value)||0;
-    let Tos = parseInt(document.getElementById("tos").value)||0;
-    let talt = Trr + Tw + Tamu + Tier + Tos; 
-    if(talt>=0&&talt<=3)
-    {
-        document.getElementById("talT").innerHTML = "Mild-Outpatient management, inhaled bronchodilators<br>" + "The Score is; " + talt;
+function talScore() {
+    let Trr = parseInt(document.getElementById("trr").value) || 0;
+    let Tw = parseInt(document.getElementById("tw").value) || 0;
+    let Tamu = parseInt(document.getElementById("tamu").value) || 0;
+    let Tier = parseInt(document.getElementById("tier").value) || 0;
+    let Tos = parseInt(document.getElementById("tos").value) || 0;
+
+    let talt = Trr + Tw + Tamu + Tier + Tos;
+    let message = "";
+
+    if (talt >= 0 && talt <= 3) {
+        message = "Mild asthma exacerbation → Outpatient management, inhaled bronchodilators.<br>" +
+                  "✅ Suggestion: Provide inhaled short-acting bronchodilators, monitor response, and arrange follow-up.<br>" +
+                  "The Score is: " + talt;
+    } else if (talt >= 4 && talt <= 7) {
+        message = "Moderate asthma exacerbation → Close monitoring, oxygen, possible hospitalization.<br>" +
+                  "⚠️ Suggestion: Administer oxygen, frequent bronchodilators, consider systemic steroids, and monitor closely.<br>" +
+                  "The Score is: " + talt;
+    } else {
+        message = "Severe asthma exacerbation → Emergency intervention, ICU consideration.<br>" +
+                  "🚨 Suggestion: Immediate emergency care, continuous nebulization, IV steroids, prepare for ICU admission.<br>" +
+                  "The Score is: " + talt;
     }
-    else if(talt>=4&&talt<=7)
-    {
-        document.getElementById("talT").innerHTML = "Moderate-Close monitoring, oxygen, possible hospitalization<br>" + "The Score is; " + talt;
-    }
-    else
-    {
-        document.getElementById("talT").innerHTML = "Severe	Emergency intervention, ICU consideration<br>" + "The Score is; " + talt;
-    }
+
+    document.getElementById("talT").innerHTML = message;
 }
+
 //National Early Warning Score 
-function news()
-{
-    let Nrr = parseInt(document.getElementById("nrr").value)||0;
-    let Nos = parseInt(document.getElementById("nos").value)||0;
-    let Ntemp = parseInt(document.getElementById("ntemp").value)||0;
-    let Nsbp = parseInt(document.getElementById("nsbp").value)||0;
-    let Nhr = parseInt(document.getElementById("nhr").value)||0;
-    let Ncons = parseInt(document.getElementById("ncons").value)||0;
-    let nt = Nrr + Nos + Ntemp + Nsbp + Nhr + Ncons; 
-    if(nt>=0&&nt<=4)
-    {
-        document.getElementById("nT").innerHTML = "Low risk → routine monitoring<br>" + "The Score is; " + nt;
+function news() {
+    let Nrr = parseInt(document.getElementById("nrr").value) || 0;
+    let Nos = parseInt(document.getElementById("nos").value) || 0;
+    let Ntemp = parseInt(document.getElementById("ntemp").value) || 0;
+    let Nsbp = parseInt(document.getElementById("nsbp").value) || 0;
+    let Nhr = parseInt(document.getElementById("nhr").value) || 0;
+    let Ncons = parseInt(document.getElementById("ncons").value) || 0;
+
+    let nt = Nrr + Nos + Ntemp + Nsbp + Nhr + Ncons;
+    let message = "";
+
+    if (nt >= 0 && nt <= 4) {
+        message = "Low risk → routine monitoring.<br>" +
+                  "✅ Suggestion: Continue standard ward observations and reassess regularly.<br>" +
+                  "The Score is: " + nt;
+    } else if (nt >= 5 && nt <= 6) {
+        message = "Medium risk → urgent clinical review.<br>" +
+                  "⚠️ Suggestion: Request prompt review by a senior clinician, increase monitoring frequency, and prepare for escalation if deterioration occurs.<br>" +
+                  "The Score is: " + nt;
+    } else {
+        message = "High risk → emergency response, likely ICU transfer.<br>" +
+                  "🚨 Suggestion: Activate rapid response team, initiate immediate interventions, and prepare for ICU transfer.<br>" +
+                  "The Score is: " + nt;
     }
-    else if(nt>=5&&nt<=6)
-    {
-        document.getElementById("nT").innerHTML = "Medium risk → urgent clinical review<br>" + "The Score is; " + nt;
-    }
-    else
-    {
-        document.getElementById("nT").innerHTML = "High risk → emergency response, likely ICU transfer<br>" + "The Score is; " + nt;
-    }
+
+    document.getElementById("nT").innerHTML = message;
 }
+
 //ACS NSQIP → Structured Score
-function acs()
-{
-    let Aage = parseInt(document.getElementById("aage").value)||0;
-    let Aasa = parseInt(document.getElementById("aasa").value)||0;
-    let Afs = parseInt(document.getElementById("afs").value)||0;
-    let Acom = parseInt(document.getElementById("acom").value)||0;
-    let Apr = parseInt(document.getElementById("apr").value)||0;
+function acs() {
+    let Aage = parseInt(document.getElementById("aage").value) || 0;
+    let Aasa = parseInt(document.getElementById("aasa").value) || 0;
+    let Afs = parseInt(document.getElementById("afs").value) || 0;
+    let Acom = parseInt(document.getElementById("acom").value) || 0;
+    let Apr = parseInt(document.getElementById("apr").value) || 0;
+
     let aaa = Aage + Aasa + Afs + Acom + Apr;
-    if(aaa>=0&&aaa<=4)
-    {
-        document.getElementById("AAA").innerHTML = "Low risk<br>" + "The Score is;" + aaa;
+    let message = "";
+
+    if (aaa >= 0 && aaa <= 4) {
+        message = "Low risk.<br>" +
+                  "✅ Suggestion: Proceed with surgery under routine perioperative monitoring.<br>" +
+                  "The Score is: " + aaa;
+    } else if (aaa >= 5 && aaa <= 9) {
+        message = "Moderate risk.<br>" +
+                  "⚠️ Suggestion: Optimize comorbidities preoperatively, ensure anesthetic precautions, and increase monitoring.<br>" +
+                  "The Score is: " + aaa;
+    } else if (aaa >= 10 && aaa <= 14) {
+        message = "High risk.<br>" +
+                  "⚠️ Suggestion: Detailed preoperative assessment, consider ICU availability post-op, and involve senior anesthesiologist.<br>" +
+                  "The Score is: " + aaa;
+    } else {
+        message = "Very High risk.<br>" +
+                  "🚨 Suggestion: Surgery only if life-saving; initiate full perioperative optimization, ICU planning, and multidisciplinary discussion.<br>" +
+                  "The Score is: " + aaa;
     }
-    else if(aaa>=5&&aaa<=9)
-    {
-        document.getElementById("AAA").innerHTML = "Moderate risk<br>" + "The Score is;" + aaa;
-    }
-    else if(aaa>=10&&aaa<=14)
-    {
-        document.getElementById("AAA").innerHTML = "High risk<br>" + "The Score is;" + aaa;
-    }
-    else
-    {
-        document.getElementById("AAA").innerHTML = "Very High risk<br>" + "The Score is;" + aaa;
-    }
+
+    document.getElementById("AAA").innerHTML = message;
 }
+
 //Prostate risk assessment
 function prostate()
 {
@@ -968,78 +1027,95 @@ function showCategory()
       }
 }
 //PIPASA SCORE 
-function ripasa()
-{
-    let ripage = parseFloat(document.getElementById("ripAge").value)||0;
-    let ripgender = parseFloat(document.getElementById("ripGender").value)||0;
-    let rippain = parseFloat(document.getElementById("ripPain").value)||0;
-    let ripmig = parseFloat(document.getElementById("ripMig").value)||0;
-    let ripanor = parseFloat(document.getElementById("ripAnor").value)||0;
-    let ripnv = parseFloat(document.getElementById("ripNv").value)||0;
-    let ripdura = parseFloat(document.getElementById("ripDura").value)||0;
-    let rip48h = parseFloat(document.getElementById("rip48").value)||0;
-    let riprif = parseFloat(document.getElementById("ripRif").value)||0;
-    let ripgua = parseFloat(document.getElementById("ripGua").value)||0;
-    let riprt = parseFloat(document.getElementById("ripRT").value)||0;
-    let riprs = parseFloat(document.getElementById("ripRS").value)||0;
-    let ripf = parseFloat(document.getElementById("ripF").value)||0;
-    let ripwbc = parseFloat(document.getElementById("ripWBC").value)||0;
-    let ripurin =parseFloat(document.getElementById("ripUrin").value)||0;
-    let ripat = ripage + ripgender + rippain + ripmig + ripanor + ripnv + ripdura + rip48h + riprif + ripgua + riprt + riprs + ripf + ripwbc +ripurin;
-    if(ripat >=7.5)
-    {
-        document.getElementById("ripaT").innerHTML = "High probability of appendicitis<br>" + "The Score is; " + ripat.toFixed(1);
+function ripasa() {
+    let ripage = parseFloat(document.getElementById("ripAge").value) || 0;
+    let ripgender = parseFloat(document.getElementById("ripGender").value) || 0;
+    let rippain = parseFloat(document.getElementById("ripPain").value) || 0;
+    let ripmig = parseFloat(document.getElementById("ripMig").value) || 0;
+    let ripanor = parseFloat(document.getElementById("ripAnor").value) || 0;
+    let ripnv = parseFloat(document.getElementById("ripNv").value) || 0;
+    let ripdura = parseFloat(document.getElementById("ripDura").value) || 0;
+    let rip48h = parseFloat(document.getElementById("rip48").value) || 0;
+    let riprif = parseFloat(document.getElementById("ripRif").value) || 0;
+    let ripgua = parseFloat(document.getElementById("ripGua").value) || 0;
+    let riprt = parseFloat(document.getElementById("ripRT").value) || 0;
+    let riprs = parseFloat(document.getElementById("ripRS").value) || 0;
+    let ripf = parseFloat(document.getElementById("ripF").value) || 0;
+    let ripwbc = parseFloat(document.getElementById("ripWBC").value) || 0;
+    let ripurin = parseFloat(document.getElementById("ripUrin").value) || 0;
+
+    let ripat = ripage + ripgender + rippain + ripmig + ripanor + ripnv + ripdura + rip48h + riprif + ripgua + riprt + riprs + ripf + ripwbc + ripurin;
+    let message = "";
+
+    if (ripat >= 7.5) {
+        message = "High probability of appendicitis.<br>" +
+                  "🚨 Suggestion: Surgical consultation strongly recommended; prepare for appendectomy.<br>" +
+                  "The Score is: " + ripat.toFixed(1);
+    } else {
+        message = "Lower probability of appendicitis.<br>" +
+                  "⚠️ Suggestion: Consider imaging (ultrasound/CT) and close clinical observation; repeat scoring if symptoms persist.<br>" +
+                  "The Score is: " + ripat.toFixed(1);
     }
-    else
-    {
-        document.getElementById("ripaT").innerHTML = "Lower probability, but clinical judgment and imaging are recommended<br>" + "The Score is; " + ripat.toFixed(1);
-    }
+
+    document.getElementById("ripaT").innerHTML = message;
 }
+
 //Alvarado Score
-function alvaradoScore()
-{
-   let Mop =  parseInt(document.getElementById("mop").value)||0;
-   let Anorexia =  parseInt(document.getElementById("anorexia").value)||0;
-   let Nausea =  parseInt(document.getElementById("nausea").value)||0;
-   let Rlqp =  parseInt(document.getElementById("rlqp").value)||0;
-   let  Rto =  parseInt(document.getElementById("rto").value)||0;
-   let Fever =  parseInt(document.getElementById("fever").value)||0;
-   let Leukocytosis =  parseInt(document.getElementById("leukocytosis").value)||0;
-   let Stl =  parseInt(document.getElementById("stl").value)||0;
-   let alvat = Mop + Anorexia + Nausea + Rlqp + Rto + Fever + Leukocytosis + Stl;
-   if(alvat>=0&&alvat<=4)
-   {
-        document.getElementById("alvaT").innerHTML = "Unlikely appendicitis<br>" + "The Score is; " + alvat + "/10";
-   }
-   else if(alvat>=5&&alvat<=6)
-   {
-        document.getElementById("alvaT").innerHTML = "Compatible with appendicitis (observation advised)<br>" + "The Score is; " + alvat + "/10";
-   }
-   else
-   {
-        ocument.getElementById("alvaT").innerHTML = "Probable appendicitis (surgical evaluation recommended)<br>" + "The Score is; " + alvat + "/10";
-   }
+function alvaradoScore() {
+    let Mop = parseInt(document.getElementById("mop").value) || 0;
+    let Anorexia = parseInt(document.getElementById("anorexia").value) || 0;
+    let Nausea = parseInt(document.getElementById("nausea").value) || 0;
+    let Rlqp = parseInt(document.getElementById("rlqp").value) || 0;
+    let Rto = parseInt(document.getElementById("rto").value) || 0;
+    let Fever = parseInt(document.getElementById("fever").value) || 0;
+    let Leukocytosis = parseInt(document.getElementById("leukocytosis").value) || 0;
+    let Stl = parseInt(document.getElementById("stl").value) || 0;
+
+    let alvat = Mop + Anorexia + Nausea + Rlqp + Rto + Fever + Leukocytosis + Stl;
+    let message = "";
+
+    if (alvat >= 0 && alvat <= 4) {
+        message = "Unlikely appendicitis.<br>" +
+                  "✅ Suggestion: Consider alternative diagnoses; outpatient observation may be appropriate.<br>" +
+                  "The Score is: " + alvat + "/10";
+    } else if (alvat >= 5 && alvat <= 6) {
+        message = "Compatible with appendicitis (observation advised).<br>" +
+                  "⚠️ Suggestion: Admit for observation, repeat clinical exam, and consider imaging (ultrasound/CT).<br>" +
+                  "The Score is: " + alvat + "/10";
+    } else {
+        message = "Probable appendicitis (surgical evaluation recommended).<br>" +
+                  "🚨 Suggestion: Urgent surgical consultation; prepare for appendectomy if confirmed.<br>" +
+                  "The Score is: " + alvat + "/10";
+    }
+
+    document.getElementById("alvaT").innerHTML = message;
 }
-//GCS
-function gcs()
-{
-    let Eoq = parseInt(document.getElementById("eoq").value)||0;
-    let Vrq = parseInt(document.getElementById("vrq").value)||0;
-    let Mrq = parseInt(document.getElementById("mrq").value)||0;
+
+function gcs() {
+    let Eoq = parseInt(document.getElementById("eoq").value) || 0;  // Eye opening
+    let Vrq = parseInt(document.getElementById("vrq").value) || 0;  // Verbal response
+    let Mrq = parseInt(document.getElementById("mrq").value) || 0;  // Motor response
+
     let gcst = Eoq + Vrq + Mrq;
-    if(gcst>=13&&gcst<=15)
-    {
-        document.getElementById("gcsT").innerHTML = "Mild injury<br>" + "The Score is; " + gcst + "/15";
+    let message = "";
+
+    if (gcst >= 13 && gcst <= 15) {
+        message = "Mild injury.<br>" +
+                  "✅ Suggestion: Continue observation, frequent neuro checks, and consider imaging if symptoms persist.<br>" +
+                  "The Score is: " + gcst + "/15";
+    } else if (gcst >= 9 && gcst <= 12) {
+        message = "Moderate injury.<br>" +
+                  "⚠️ Suggestion: Admit for close monitoring, initiate neuroimaging, and prepare for possible intervention.<br>" +
+                  "The Score is: " + gcst + "/15";
+    } else {
+        message = "Severe injury.<br>" +
+                  "🚨 Suggestion: Immediate airway protection, urgent neuroimaging, neurosurgical consultation, and ICU admission.<br>" +
+                  "The Score is: " + gcst + "/15";
     }
-    else if(gcst>=9&&gcst<=12)
-    {
-        document.getElementById("gcsT").innerHTML = "Moderate injury<br>" + "The Score is; " + gcst + "/15";
-    }
-    else
-    {
-        document.getElementById("gcsT").innerHTML = "Severe injury<br>" + "The Score is; " + gcst + "/15";
-    }
+
+    document.getElementById("gcsT").innerHTML = message;
 }
+
 //ASCVD Risk Assessment tool
 function ascVD()
 {
@@ -1071,30 +1147,35 @@ function ascVD()
     }
 }
 //Headache Assessment Score
-function headaches()
-    {
-        let a = parseInt(document.getElementById("hasO").value)||0;
-        let b = parseInt(document.getElementById("hasD").value)||0;
-        let c = parseInt(document.getElementById("hasL").value)||0;
-        let d = parseInt(document.getElementById("hasRF").value)||0;
-        let e = parseInt(document.getElementById("hasC").value)||0;
-        let f = parseInt(document.getElementById("hasAS").value)||0;
-        let g = parseInt(document.getElementById("hasT").value)||0;
-        let h = a+b+c+d+e+f+g;
-        if(h>=0&&h<=4)
-        {
-            document.getElementById("hasTotal").innerHTML = "Likely Tension-type headache<br>" + "The Score is; " + h;
-        }
-        else if(h>=5&&h<=8)
-        {
-            document.getElementById("hasTotal").innerHTML = "Likely Migraine<br>" + "The Score is; " + h;
-        }
-        else
-        {
-            document.getElementById("hasTotal").innerHTML = "Likely Cluster headache<br>" + "The Score is; " + h;
-        }
+function headaches() {
+    let a = parseInt(document.getElementById("hasO").value) || 0;   // Onset
+    let b = parseInt(document.getElementById("hasD").value) || 0;   // Duration
+    let c = parseInt(document.getElementById("hasL").value) || 0;   // Location
+    let d = parseInt(document.getElementById("hasRF").value) || 0;  // Risk factors
+    let e = parseInt(document.getElementById("hasC").value) || 0;   // Character
+    let f = parseInt(document.getElementById("hasAS").value) || 0;  // Associated symptoms
+    let g = parseInt(document.getElementById("hasT").value) || 0;   // Triggers
+
+    let h = a + b + c + d + e + f + g;
+    let message = "";
+
+    if (h >= 0 && h <= 4) {
+        message = "Likely Tension-type headache.<br>" +
+                  "✅ Suggestion: Reassure, advise stress reduction, hydration, and simple analgesics if needed.<br>" +
+                  "The Score is: " + h;
+    } else if (h >= 5 && h <= 8) {
+        message = "Likely Migraine.<br>" +
+                  "⚠️ Suggestion: Consider migraine-specific therapy (triptans), avoid triggers, and provide supportive care.<br>" +
+                  "The Score is: " + h;
+    } else {
+        message = "Likely Cluster headache.<br>" +
+                  "🚨 Suggestion: Urgent treatment with high-flow oxygen, consider specialist referral, and initiate preventive therapy.<br>" +
+                  "The Score is: " + h;
     }
-    
+
+    document.getElementById("hasTotal").innerHTML = message;
+}
+
     //Pediatric Malaria Dose Calculator:
     
      let pedMalariaButton = document.getElementById("pediatricDoseCalculator");
