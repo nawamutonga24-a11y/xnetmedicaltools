@@ -1094,4 +1094,35 @@ function headaches()
             document.getElementById("hasTotal").innerHTML = "Likely Cluster headache<br>" + "The Score is; " + h;
         }
     }
-
+    
+    //Pediatric Malaria Dose Calculator:
+    
+     let pedMalariaButton = document.getElementById("pediatricDoseCalculator");
+    pedMalariaButton.addEventListener("click", pediatricDoseCalculator);
+    
+    function pediatricDoseCalculator(){
+    let malariaType = document.querySelector('input[name="malaria"]:checked');
+    let patientWeightMalaria = Number(document.getElementById("ptMalariaWeight").value)||0;
+    
+    if(malariaType.id==="severe"&&patientWeightMalaria<20){
+    let doseOfPatient = patientWeightMalaria*3;
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = " Dose to be given of I.V Artesunate is: " + doseOfPatient.toFixed(1) + " mg " + " Given at 0, 12, 24 h, then daily ";
+    }
+    else if(malariaType.id==="severe"&&patientWeightMalaria>=20){
+    doseOfPatient = patientWeightMalaria*2.4;
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = " Dose to be given of I.V Artesunate is: " + doseOfPatient.toFixed(1) + " mg " + " Given at 0, 12, 24 h, then daily " ;
+    }
+    else if(malariaType.id==="uncomplicated"&&patientWeightMalaria<15){
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = "Dose to be given of Oral Artemether + lumefantrine per dose is; 20 mg + 120 mg BD × 3 days"
+    }
+    else if(malariaType.id==="uncomplicated"&&(patientWeightMalaria>=15&&patientWeightMalaria<25)){
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = "Dose to be given of Oral Artemether + lumefantrine per dose is; 40 mg + 240 mg BD × 3 days"
+    }
+      else if(malariaType.id==="uncomplicated"&&(patientWeightMalaria>=25&&patientWeightMalaria<35)){
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = "Dose to be given of Oral Artemether + lumefantrine per dose is; 60 mg + 360 mg BD × 3 days"
+    }
+    else if(malariaType.id==="uncomplicated"&&patientWeightMalaria>35){
+    document.getElementById("malariaDoseCalculatedDisplay").innerHTML = "Dose to be given of Oral Artemether + lumefantrine per dose is; 80 mg + 480 mg BD × 3 days"
+    }
+    }
+    
