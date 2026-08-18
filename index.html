@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>xNET Medical Tools</title>
-     <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>xNET Medical Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .section { display: none; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+      .container {
+        width: 95%;
+      }
+      button, select, input[type="number"] {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <style>
@@ -41,6 +62,7 @@
     <h1>A. INTERNAL MEDICINE</h1>
 <details>
 <h2>1.BMI (Adults)</h2>
+<p>"The BMI tool calculates weight‑for‑height ratio to classify underweight, normal, overweight, or obesity status. It provides a quick screening measure to guide nutritional assessment and health risk evaluation."</p>
 <details>
 
 <input type="number" id="wt" placeholder="Enter your weight in kg">
@@ -50,6 +72,7 @@
 
 </details>
 <h2>2.Vital Signs</h2>
+<p>"The Vital Signs tool captures core physiological parameters including temperature, pulse, respiration, and blood pressure. It provides a structured baseline for clinical assessment, monitoring, and early detection of patient deterioration."</p>
 <details>
 <input type="number" id="sbp" placeholder="Enter your Systolic BP">
 <input type="number" id="dbp" placeholder="Enter your Diastolic BP">
@@ -70,6 +93,7 @@
 <div id="rppResults"></div>
 </details>
 <h2>3. Hb Check</h2>
+<p>"The Hemoglobin Check tool provides quick estimation of Hb levels for anemia screening and monitoring. It supports timely clinical decisions by guiding diagnosis, treatment, and follow‑up in pediatric and adult patients."</p>
 <details>
 <h3>Enter Hb</h3>
 <input type="number" id="hbResults" placeholder="Hemoglobin results">
@@ -165,6 +189,7 @@
 <div id="fElderlyH"></div>
 </details>
 <h2>4.Curb 65</h2>
+<p>"The CURB‑65 Score is a clinical prediction rule used to assess the severity of community‑acquired pneumonia. It guides decisions on hospitalization and management by evaluating five key risk factors."</p>
 <details>
 <hh3>4.1 Confusion</h3>
 <select id="cconfusion">
@@ -268,6 +293,7 @@
 <div id="ascT"></div>
 </details>
 <h2>6.Headache Assessment Score</h2>
+<p>"The Headache Assessment tool structures evaluation of headache type, severity, and associated features. It supports accurate differentiation between primary and secondary headaches, guiding safe diagnostic and management decisions."</p>
 <details>
 <h3>Onset</h3>
 <select id="hasO">
@@ -332,9 +358,11 @@
 <div class="obGy">
 <!Begining of OBGY>
 <div id="obgyt" class="section">
-<h1>B.OBSTETRICS AND GYNECOLOGY<h1>
+<h1>B.OBSTETRICS AND GYNECOLOGY</h1>
 <details>
 <h2>1. APGAR Score</h2>
+<p>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</p>
+<p>
 <details>
 <h3>1.1 Appearance</h3>
 <select id="appear">
@@ -508,32 +536,33 @@
 <div id="fxx"></div>
 </details>
 <h2>4. Biophysical Profile</h2>
+<p>"The Biophysical Profile is an antenatal assessment combining ultrasound and non‑stress testing to evaluate fetal well‑being. It provides a structured score that guides timely obstetric decision‑making and perinatal care."</p>
 <details>
-<h3>Fetal Breathing Movements</h3>
+<h2>Fetal Breathing Movements</h2>
 <select id="fbrm">
 <option value="">select</option>
 <option value="2">&gt;1 episode of rhythmic breathing lasting greater or equals to 30 seconds within 30</option>
 <option value="0">Absent or insufficient breathing movements</option>
 </select>
-<h3>Fetal Body Movements</h3>
+<h2>Fetal Body Movements</h2>
 <select id="fbom">
 <option value="">select</option>
 <option value="2">&gt;=3 discrete body or limb movements within 30 minutes</option>
 <option value="0">&lt;3 movements</option>
 </select>
-<h3>Fetal Tone</h3>
+<h2>Fetal Tone</h2>
 <select id="ft">
 <option value="">select</option>
 <option value="2"> &gt;=1 episode of active extension with return to flexion (e.g., opening/closing hand)</option>
 <option value="0">Slow extension without return or absent movement</option>
 </select>
-<h3>Amniotic Fluid Volume</h3>
+<h2>Amniotic Fluid Volume</h2>
 <select id="afv">
 <option value="">select</option>
 <option value="2">At least one pocket of fluid &gt;=2 cm in vertical diameter</option>
 <option value="0">No adequate fluid pockets</option>
 </select>
-<h3>Non‑Stress Test (NST)</h3>
+<h2>Non‑Stress Test (NST)</h2>
 <select id="nst">
 <option value="">select</option>
 <option value="2">Reactive: &gt;=2 accelerations of fetal heart rate in 20 minutes</option>
@@ -798,7 +827,8 @@
 <div id="talT"></div>
 </details>
 <h2>5. Pediatric Malaria Dose Calculator:</h2>
-<h3>Select the appropriate options below:</h3>
+<p>"The Pediatric Malaria Dose Calculator provides weight‑based dosing guidance for children with uncomplicated or severe malaria. It ensures accurate, evidence‑aligned treatment decisions to improve safety and clinical outcomes."</p>
+<h2>Select the appropriate options below:</h2>
 <form>
 <label for="uncomplicated">Uncomplicated Malaria</label>
 <input type="radio" name="malaria" id="uncomplicated">
@@ -1044,7 +1074,7 @@
 <br><button onclick="news()">Submit</button>
 <div id="nT"></div>
 </details>
-<h3>3. ACS NSQIP</h3>
+<h2>3. ACS NSQIP</h2>
 <p class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</p>
 <details>
 <h3>Age</h3>
@@ -1087,6 +1117,7 @@
 <div id="AAA"></div>
 </details>
 <h2>4. Prostate Risk Assessment</h2>
+<p>"This tool helps identify individual risk factors for prostate conditions, guiding timely screening and preventive care. It empowers clinicians and clients with structured, evidence‑based insights for informed decision‑making."</p>
 <details>
 <h3>Incomplete emptying</h3>
 <select id="pinco">
@@ -1162,6 +1193,7 @@
 <div id="Pros"></div>
 </details>
 <h2>5.Wells Criteria(DVT Risk Assessment)</h2>
+<p>"The Wells Criteria tool estimates the probability of deep vein thrombosis or pulmonary embolism based on clinical features. It supports safer, evidence‑based decisions about diagnostic testing and patient management."</p>
 <details>
 <h3>Active cancer (treatment ongoing, within 6 months, or palliative)?</h3>
 <select id="cancer">
@@ -1227,6 +1259,7 @@
 <div id=Wels></div>
 </details>
 <h2>6. RIPASA Score(Assessment for appendicitis)</h2>
+<p>"The RIPASA Score is a clinical scoring system designed to improve diagnostic accuracy for acute appendicitis, especially in Asian and Middle Eastern populations. It streamlines patient assessment by combining symptoms, signs, and lab findings into a structured risk evaluation."</p>
 <details>
 <h2>Demographics</h2>
 <h3>Age</h3>
@@ -1327,6 +1360,7 @@
 <div id="ripaT"></div>
 
 <h2>7. Alvarado Score</h2>
+<p>"The Alvarado Score is a clinical scoring system used to assess the likelihood of acute appendicitis. It combines symptoms, signs, and lab findings to guide diagnostic decisions and surgical referral."</p>
 <details>
 <h3>Migration of pain</h3>
 <select id="mop">
@@ -1380,6 +1414,7 @@
 <div id="alvaT"></div>
 </details>
 <h2>8. Glasgow Coma Scale</h2>
+<p>"The Glasgow Coma Scale is a standardized system for assessing a patient’s level of consciousness after head injury. It evaluates eye, verbal, and motor responses to provide an objective score guiding clinical decisions."</p>
 <details>
 <h3>Eye Opening</h3>
 <select id="eoq">
