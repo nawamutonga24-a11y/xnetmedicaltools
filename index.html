@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Page</title>
+    <title>xNET Medical Tools</title>
      <link rel="stylesheet" href="style.css">
 </head>
 
@@ -38,9 +38,9 @@
 
 
 <div class="internalMedicine">
-    <h3>A. INTERNAL MEDICINE</h3>
+    <h1>A. INTERNAL MEDICINE</h1>
 <details>
-<h4>1.BMI (Adults)</h4>
+<h2>1.BMI (Adults)</h2>
 <details>
 
 <input type="number" id="wt" placeholder="Enter your weight in kg">
@@ -49,7 +49,7 @@
 <div id="bmi"></div>
 
 </details>
-<h4>2.Vital Signs</h4>
+<h2>2.Vital Signs</h2>
 <details>
 <input type="number" id="sbp" placeholder="Enter your Systolic BP">
 <input type="number" id="dbp" placeholder="Enter your Diastolic BP">
@@ -69,15 +69,15 @@
 <div id="ppResults"></div>
 <div id="rppResults"></div>
 </details>
-<h4>3. Hb Check</h4>
+<h2>3. Hb Check</h2>
 <details>
-<h5>Enter Hb</h5>
+<h3>Enter Hb</h3>
 <input type="number" id="hbResults" placeholder="Hemoglobin results">
-<h5>Enter age</h5>
+<h3>Enter age</h3>
 <input type="number" id="age" placeholder="Enter your age in years">
-<p>Select Gender:</p>
-<input type="radio" id="male" name="gender" value="M">
-<label for="male">Male</label>
+<h3>Select Gender:</h3>
+<input type="radio" id="male" name="gender" value="M"><br>
+<label for="male">Male</label><br><br>
 <button onclick="hbClass()">Submit</button>
 
 
@@ -164,33 +164,33 @@
 <div id="fElderlyS"></div>
 <div id="fElderlyH"></div>
 </details>
-<h4>4.Curb 65</h4>
+<h2>4.Curb 65</h2>
 <details>
-<h5>4.1 Confusion</h5>
+<hh3>4.1 Confusion</h3>
 <select id="cconfusion">
 <option value="">Select</option>
   <option value="0">No confusion</option>
   <option value="1">Confusion present</option>
 </select>
-<h5>4.2 Urea</h5>
+<h3>4.2 Urea</h3>
 <select id="curea">
 <option value="">Select</option>
   <option value="0">Urea normal</option>
   <option value="1">Urea > 7 mmol/L</option>
 </select>
-<h5>4.3 Respiration</h5>
+<h3>4.3 Respiration</h3>
 <select id="crr">
 <option value="">Select</option>
   <option value="0">RR < 30/min</option>
   <option value="1">RR ≥ 30/min</option>
 </select>
-<h5>4.4 Cardiac</h5>
+<h3>4.4 Cardiac</h3>
 <select id="cbp">
 <option value="">Select</option>
   <option value="0">BP normal</option>
   <option value="1">SBP < 90 or DBP ≤ 60</option>
 </select>
-<h5>4.5 Age</h5>
+<h3>4.5 Age</h3>
 <select id="cage">
 <option value="">Select</option>
   <option value="0">Age < 65</option>
@@ -201,10 +201,10 @@
 
 <div id="cTotal"></div>
 </details>
-<h4>5. Simplified ASCVD</h4>
-<h5>The ASCVD score is a clinical tool used to estimate a person’s 10‑year risk of major cardiovascular events (like heart attack or stroke), guiding whether preventive measures such as statin therapy or lifestyle changes should be started. It helps doctors personalize treatment intensity based on risk categories rather than using a one‑size‑fits‑all approach</h5>
+<h2>5. Simplified ASCVD</h2>
+<p>The ASCVD score is a clinical tool used to estimate a person’s 10‑year risk of major cardiovascular events (like heart attack or stroke), guiding whether preventive measures such as statin therapy or lifestyle changes should be started. It helps doctors personalize treatment intensity based on risk categories rather than using a one‑size‑fits‑all approach</p>
 <details>
-<h5>Age</h5>
+<h3>Age</h3>
 <select id="ascAge">
 <option value="">Select</option>
 <option value="0">40–49 yrs</option>
@@ -212,33 +212,33 @@
 <option value="4">60–69 yrs</option>
 <option value="6">&gt;=70 yrs</option>
 </select>
-<h5>Sex</h5>
+<h3>Sex</h3>
 <select id="ascSex">
 <option value="">Select</option>
 <option value="0">Female</option>
 <option value="2">Male</option>
 </select>
-<h5>Race</h5>
+<h3>Race</h3>
 <select id="ascRace">
 <option value="">Select</option>
 <option value="0">White</option>
 <option value="1">Black</option>
 </select>
-<h5>Total Cholesterol</h5>
+<h3>Total Cholesterol</h5>
 <select id="ascTC">
 <option value="">Select</option>
 <option value="0">&lt;200 mg/dL</option>
 <option value="1">200–239 mg/dL</option>
 <option value="2">&gt;=240 mg/dL</option>
 </select>
-<h5>HDL</h5>
+<h3>HDL</h3>
 <select id="ascHDL">
 <option value="">Select</option>
 <option value="-1">&gt;=60 mg/dL</option>
 <option value="0">40–59 mg/dL</option>
 <option value="2">&lt;40 mg/dL</option>
 </select>
-<h5>SBP(Untreated)</h5>
+<h3>SBP(Untreated)</h3>
 <select id="ascSBP">
 <option value="">Select</option>
 <option value="0">&lt;120</option>
@@ -246,19 +246,19 @@
 <option value="2">140-159</option>
 <option value="3">&gt;=160</option>
 </select>
-<h5>SBP(Treated)</h5>
+<h3>SBP(Treated)</h3>
 <select id="ascSBPt">
 <option>Select</option>
 <option value="1">Yes</option>
 <option value="0">Not necessary</option>
 </select>
-<h5>Diabetis</h5>
+<h3>Diabetis</h3>
 <select id="ascDM">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="2">Yes</option>
 </select>
-<h5>Smoking</h5>
+<h3>Smoking</h3>
 <select id="ascSmoking">
 <option value="">Select</option>
 <option value="0">No</option>
@@ -267,51 +267,51 @@
 <br><button onclick="ascVD()">Submit</button>
 <div id="ascT"></div>
 </details>
-<h4>6.Headache Assessment Score</h4>
+<h2>6.Headache Assessment Score</h2>
 <details>
-<h5>Onset</h5>
+<h3>Onset</h3>
 <select id="hasO">
 <option value="">Select</option>
 <option value="3">Sudden thunderclap</option>
 <option value="1">Gradual recurrent</option>
 <option value="2">Chronic progressive</option>
 </select>
-<h5>Duration</h5>
+<h3>Duration</h3>
 <select id="hasD">
 <option value="">Select</option>
 <option value="2">Seconds–minutes</option>
 <option value="1">Hours–days</option>
 <option value="2">Daily persistent (&gt;15 days/month)</option>
 </select>
-<h5>Location</h5>
+<h3>Location</h3>
 <select id="hasL">
 <option value="">Select</option>
 <option value="2">Unilateral</option>
 <option value="1">Bilateral</option>
 <option value="3">Occipital/posterior</option>
 </select>
-<h5>Character</h5>
+<h3>Character</h3>
 <select id="hasC">
 <option value="">Select</option>
 <option value="2">Throbbing/pulsating</option>
 <option value="1">Pressure/tight band</option>
 <option value="2">Stabbing/burning</option>
 </select>
-<h5>Associated Symptoms</h5>
+<h3>Associated Symptoms</h3>
 <select id="hasAS">
 <option value="">Select</option>
 <option value="2">Nausea/vomiting, photophobia, phonophobia</option>
 <option value="3">Autonomic features (lacrimation, nasal congestion, ptosis)</option>
 <option value="3">Neurological deficits</option>
 </select>
-<h5>Triggers</h5>
+<h3>Triggers</h3>
 <select id="hasT">
 <option value="">Select</option>
 <option value="1">Stress, sleep deprivation, food, alcohol</option>
 <option value="2">Hormonal changes</option>
 <option value="3">Exertion/cough/posture</option>
 </select>
-<h5>Red Flags</h5>
+<h3>Red Flags</h3>
 <select id="hasRF">
 <option value="">Select</option>
 <option value="3">Age &gt;50 with new headache</option>
@@ -332,39 +332,39 @@
 <div class="obGy">
 <!Begining of OBGY>
 <div id="obgyt" class="section">
-<h3>B.OBSTETRICS AND GYNECOLOGY<h3>
+<h1>B.OBSTETRICS AND GYNECOLOGY<h1>
 <details>
-<h4>1. APGAR Score</h4>
+<h2>1. APGAR Score</h2>
 <details>
-<h5>1.1 Appearance</h5>
+<h3>1.1 Appearance</h3>
 <select id="appear">
 <option value="">Select</option>
 <option value="0">Blue or pale all over</option>
 <option value="1">Body pink, hands and feet blue (acrocyanosis)</option>
 <option value="2">Completely pink</option>
 </select>
-<h5>1.2 Pulse (Heart Rate)</h5>
+<h3>1.2 Pulse (Heart Rate)</h3>
 <select id="aPR">
 <option value="">Select</option>
 <option value="0">Absent</option>
 <option value="1">Less than 100 beats/min</option>
 <option value="2">100 beats/min or greater</option>
 </select>
-<h5>1.3 Grimace</h5>
+<h3>1.3 Grimace</h3>
 <select id="grim">
 <option value="">Select</option>
 <option value="0">No response to stimulation</option>
 <option value="1">Grimace or weak response to stimulation</option>
 <option value="2">Cries, coughs, sneezes, or actively withdraws</option>
 </select>
-<h5>1.4 Activity</h5>
+<h3>1.4 Activity</h3>
 <select id=aActivity>
 <option value="">Select</option>
 <option value="0">Limp, flaccid</option>
 <option value="1">Some flexion of extremities</option>
 <option value="2">Active movement, well-flexed limbs</option>
 </select>
-<h5>1.5 Respiration</h5>
+<h3>1.5 Respiration</h3>
 <select id="aResp">
 <option value="">Select</option>
 <option value="0">Absent</option>
@@ -374,9 +374,9 @@
 <button onclick="apgar()">Calculate Apgar Score</button>
 <div id="xTotal"></div>
 </details>
-<h4>2. Bishop Score</h4>
+<h2>2. Bishop Score</h2>
 <details>
-<h5>Cervical Dilatation</h5>
+<h3>Cervical Dilatation</h3>
 <select id="cd">
 <option value="">Select</option>
 <option value="0">Closed</option>
@@ -384,7 +384,7 @@
 <option value="2">3 to 4cm</option>
 <option value="3">Greater than 5 cm</option>
 </select>
-<h5>Cervical Effacement</h5>
+<h3>Cervical Effacement</h3>
 <select id="ce">
 <option value="">Select</option>
 <option value="0">0 to 30%</option>
@@ -392,7 +392,7 @@
 <option value="2">60–70%</option>
 <option value="3">≥80% (very thin cervix)</option>
 </select>
-<h5>Cervical Consistency</h5>
+<h3>Cervical Consistency</h3>
 <select id="cc">
 <option value="">Select</option>
 <option value="0">Firm</option>
@@ -400,7 +400,7 @@
 <option value="2">Soft</option>
 </select>
 
-<h5>Cervical Position</h5>
+<h3>Cervical Position</h3>
 <select id="cp">
 <option value="">Select</option>
 <option value="0">Posterior</option>
@@ -408,7 +408,7 @@
 <option value="2">Anterior</option>
 </select>
 
-<h5>Fetal Station</h5>
+<h3>Fetal Station</h3>
 <select id="fs">
 <option value="">Select</option>
 <option value="0">–3</option>
@@ -420,10 +420,10 @@
 <div id="bTotal"></div>
 
 </details>
-<h4>3. Ferriman‑Gallwey Parameters</h4>
-<h5>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</h5>
+<h2>3. Ferriman‑Gallwey Parameters</h2>
+<p>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</p>
 <details>
-<h5>Upper Lip Hair growth above the lip</h5>
+<h3>Upper Lip Hair growth above the lip</h3>
 <select id="ulh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -432,7 +432,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Chin Hair growth on the chin area</h5>
+<h3>Chin Hair growth on the chin area</h3>
 <select id="ch">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -441,7 +441,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Chest Hair between the breasts</h5>
+<h3>Chest Hair between the breasts</h3>
 <select id="chbb">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -450,7 +450,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Upper Abdomen Hair between the umbilicus and breasts</h5>
+<h3>Upper Abdomen Hair between the umbilicus and breasts</h3>
 <select id="uabh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -459,7 +459,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Lower Abdomen Hair between the umbilicus and pubic region</h5>
+<h3>Lower Abdomen Hair between the umbilicus and pubic region</h3>
 <select id="lah">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -468,7 +468,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Upper Arm Hair on the upper arms</h5>
+<h3>Upper Arm Hair on the upper arms</h3>
 <select id="uah">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -477,7 +477,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Thigh Hair on the thighs</h5>
+<h3>Thigh Hair on the thighs</h3>
 <select id="th">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -486,7 +486,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Upper Back Hair on the upper back</h5>
+<h3>Upper Back Hair on the upper back</h3>
 <select id="ubh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -495,7 +495,7 @@
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h5>Lower Back Hair on the lower back</h5>
+<h3>Lower Back Hair on the lower back</h3>
 <select id="lbh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -507,33 +507,33 @@
 <br><button onclick="fgp()">Submit</button>
 <div id="fxx"></div>
 </details>
-<h4>4. Biophysical Profile</h4>
+<h2>4. Biophysical Profile</h2>
 <details>
-<h5>Fetal Breathing Movements</h5>
+<h3>Fetal Breathing Movements</h3>
 <select id="fbrm">
 <option value="">select</option>
 <option value="2">&gt;1 episode of rhythmic breathing lasting greater or equals to 30 seconds within 30</option>
 <option value="0">Absent or insufficient breathing movements</option>
 </select>
-<h5>Fetal Body Movements</h5>
+<h3>Fetal Body Movements</h3>
 <select id="fbom">
 <option value="">select</option>
 <option value="2">&gt;=3 discrete body or limb movements within 30 minutes</option>
 <option value="0">&lt;3 movements</option>
 </select>
-<h5>Fetal Tone</h5>
+<h3>Fetal Tone</h3>
 <select id="ft">
 <option value="">select</option>
 <option value="2"> &gt;=1 episode of active extension with return to flexion (e.g., opening/closing hand)</option>
 <option value="0">Slow extension without return or absent movement</option>
 </select>
-<h5>Amniotic Fluid Volume</h5>
+<h3>Amniotic Fluid Volume</h3>
 <select id="afv">
 <option value="">select</option>
 <option value="2">At least one pocket of fluid &gt;=2 cm in vertical diameter</option>
 <option value="0">No adequate fluid pockets</option>
 </select>
-<h5>Non‑Stress Test (NST)</h5>
+<h3>Non‑Stress Test (NST)</h3>
 <select id="nst">
 <option value="">select</option>
 <option value="2">Reactive: &gt;=2 accelerations of fetal heart rate in 20 minutes</option>
@@ -551,101 +551,101 @@
 
 <div class="pediatrics">
 <div id="pedst" class="section">
-<h3>C. PEDIATRICS</h3>
+<h1>C. PEDIATRICS</h1>
 <details>
-<h4>1.PRISM (Pediatric Risk of Mortality) Score</h4>
-<h5>The PRISM score — Pediatric Risk of Mortality — is a critical care scoring system used in pediatric intensive care units (PICUs) to predict the risk of death in seriously ill children. It’s one of the most validated pediatric severity scores worldwide.</h5>
+<h2>1.PRISM (Pediatric Risk of Mortality) Score</h2>
+<p>The PRISM score — Pediatric Risk of Mortality — is a critical care scoring system used in pediatric intensive care units (PICUs) to predict the risk of death in seriously ill children. It’s one of the most validated pediatric severity scores worldwide.</p>
 <details>
-<h5>Neurologic</h5>
-<h5>Glasgow Coma Scale</h5>
+<h2>Neurologic</h2>
+<h3>Glasgow Coma Scale</h3>
 <select id="prGcs">
 <option value="">select</option>
 <option value="0">Normal (13–15)</option>
 <option value="2">Moderate impairment (8–12)</option>
 <option value="4">Severe impairment (&lt;=7)</option>
 </select>
-<h5>Pupillary Reflexes</h5>
+<h3>Pupillary Reflexes</h3>
 <select id="prPr">
 <option value="">select</option>
 <option value="0">Both reactive</option>
 <option value="2">One fixed</option>
 <option value="4">Both fixed</option>
 </select>
-<h5>Cardiovascular</h5>
-<h5>Systolic Blood Pressure</h5>
+<h2>Cardiovascular</h2>
+<h3>Systolic Blood Pressure</h3>
 <select id="prsbp">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild hypotension</option>
 <option value="4">Severe hypotension</option>
 </select>
-<h5>Heart Rate</h5>
+<h3>Heart Rate</h3>
 <select id="prhr">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild tachy/bradycardia</option>
 <option value="4">Severe derangement</option>
 </select>
-<h5>Respiratory & Acid-Base</h5>
-<h5>Temperature</h5>
+<h2>Respiratory & Acid-Base</h2>
+<h3>Temperature</h3>
 <select id="prT">
 <option value="">select</option>
 <option value="0">36–38°C</option>
 <option value="1">35–36 or 38–39°C</option>
 <option value="3">&lt;35 or &gt;39°C</option>
 </select>
-<h5>pH</h5>
+<h3>pH</h3>
 <select id="prph">
 <option value="">select</option>
 <option value="0">7.35–7.45</option>
 <option value="2">7.25–7.34 or 7.46–7.55</option>
 <option value="4">&lt;7.25 or &gt;7.55</option>
 </select>
-<h5>PCO2</h5>
+<h3>PCO2</h3>
 <select id="ppoco2">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Moderate elevation</option>
 <option value="4">Severe elevation</option>
 </select>
-<h5>PaO₂</h5>
+<h3>PaO₂</h3>
 <select id="ppoo">
 <option value="">select</option>
 <option value="0">80 mmHg</option>
 <option value="2">60–80 mmHg</option>
 <option value="4">&lt;60 mmHg</option>
 </select>
-<h5>Metabolic & Renal</h5>
-<h5>Glucose</h5>
+<h2>Metabolic & Renal</h2>
+<h3>Glucose</h3>
 <select id="g">
 <option value="">select</option>
 <option value="0">3.9–8.3 mmol/L</option>
 <option value="2">2.8–3.8 mmol/L or 8.4–13.9 mmol/L</option>
 <option value="4">&lt;2.8 mmol/L or &gt;13.9 mmol/L</option>
 </select>
-<h5>Potassium</h5>
+<h3>Potassium</h3>
 <select id="k">
 <option value="">Select</option>
 <option value="0">3.5–5.5 mmol/L</option>
 <option value="2">3.0–3.4 or 5.6–6.0</option>
 <option value="4">&lt;3.0 or &gt;6.0</option>
 </select>
-<h5>Creatine</h5>
+<h3>Creatine</h3>
 <select id="cr">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild elevation</option>
 <option value="4">Severe elevation</option>
 </select>
-<h5>Hematologic & Coagulation</h5>
-<h5>White Cell Count</h5>
+<h2>Hematologic & Coagulation</h2>
+<h3>White Cell Count</h3>
 <select id="wcc">
 <option value="">select</option>
 <option value="0">5–15 ×10⁹/L</option>
 <option value="2">3–4.9 or 15.1–25</option>
 <option value="4">&lt;3 or &gt;25 </option>
 </select>
-<h5>Platelet Count</h5>
+<h3>Platelet Count</h3>
 <select id="pc">
 <option value="">select</option>
 <option value="0">200k</option>
@@ -653,7 +653,7 @@
 <option value="3">50–99k</option>
 <option value="4">&lt;50k</option>
 </select>
-<h5>PT/PTT</h5>
+<h3>PT/PTT</h3>
 <select id="pt">
 <option value="">select</option>
 <option value="0">Normal</option>
@@ -663,38 +663,38 @@
 <br><button onclick="prism()">Submit</button>
 <div id="prTx"></div>
 </details>
-<h4>2. Silverman Score</h4>
-<h5>The Silverman Score is a neonatal clinical scoring system used to assess the severity of respiratory distress in newborns. It’s simple, bedside‑based, and helps clinicians decide whether a baby needs oxygen, CPAP, or mechanical ventilation.</h5>
+<h2>2. Silverman Score</h2>
+<p>The Silverman Score is a neonatal clinical scoring system used to assess the severity of respiratory distress in newborns. It’s simple, bedside‑based, and helps clinicians decide whether a baby needs oxygen, CPAP, or mechanical ventilation.</p>
 <details>
-<h5>Upper chest movement</h5>
+<h3>Upper chest movement</h3>
 <select id="ucm">
 <option value="">select</option>
 <option value="0">Synchronous with abdomen</option>
 <option value="1">Lag on inspiration</option>
 <option value="2">See-saw respiration</option>
 </select>
-<h5>Lower chest retractions</h5>
+<h3>Lower chest retractions</h3>
 <select id="lcr">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Just visible</option>
 <option value="2">Marked</option>
 </select>
-<h5>Xiphoid retractions</h5>
+<h3>Xiphoid retractions</h3>
 <select id="xr">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Just visible</option>
 <option value="2">Marked</option>
 </select>
-<h5>Nasal flaring</h5>
+<h3>Nasal flaring</h3>
 <select id="nf">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Minimal</option>
 <option value="2">Marked</option>
 </select>
-<h5>Grunting</h5>
+<h3>Grunting</h3>
 <select id="grunt">
 <option value="">select</option>
 <option value="0">None</option>
@@ -704,45 +704,45 @@
 <br><button onclick="silverman()">Submit</button>
 <div id="sT"></div>
 </details>
-<h4>3. Pneumonia Score</h4>
+<h2>3. Pneumonia Score</h2>
 <details>
-<h5>Is there fast breathing?</h5>
+<h3>Is there fast breathing?</h3>
 <select id="fb">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Is there chest indrawing?</h5>
+<h3>Is there chest indrawing?</h3>
 <select id="cid">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>How are the oxygen saturation?</h5>
+<h3>How are the oxygen saturation?</h3>
 <select id="osn">
 <option value="">select</option>
 <option value="3">Oxygen saturation &lt;90% or central cyanosis</option>
 <option value="0">Not As Above</option>
 </select>
-<h5>Respiratory distress;</h5>
+<h3>Respiratory distress;</h3>
 <select id="rd">
 <option value="">select</option>
 <option value="3">grunting or nasal flaring</option>
 <option value="">Not As Above</option>
 </select>
-<h5>Inability to drink or breastfeed?</h5>
+<h3>Inability to drink or breastfeed?</h3>
 <select id="iatd">
 <option value="">select</option>
 <option value="3">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Lethargy or unconsciousness?</h5>
+<h3>Lethargy or unconsciousness?</h3>
 <select id="leth">
 <option value="">select</option>
 <option value="3">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Convulsions?</h5>
+<h3>Convulsions?</h3>
 <select id="conv">
 <option value="">select</option>
 <option value="3">Yes</option>
@@ -751,10 +751,10 @@
 <br><button onclick="pneumScore()">Submit</button>
 <div id="xTx"></div>
 </details>
-<h4>4. Tal Score</h4>
-<h5>The Tal Score is a pediatric asthma severity score used in emergency and clinical settings to assess how severe an asthma exacerbation is in children. It’s less commonly digitized than tools like APGAR or Silverman, but it’s clinically valuable for guiding treatment decisions</h5>
+<h2>4. Tal Score</h2>
+<p>The Tal Score is a pediatric asthma severity score used in emergency and clinical settings to assess how severe an asthma exacerbation is in children. It’s less commonly digitized than tools like APGAR or Silverman, but it’s clinically valuable for guiding treatment decisions</p>
 <details>
-<h5>Respiratory Rate</h5>
+<h3>Respiratory Rate</h3>
 <select id="trr">
 <option value="">select</option>
 <option value="0">Normal for age</option>
@@ -762,7 +762,7 @@
 <option value="2">Moderate tachypnea</option>
 <option value="3">Severe tachypnea</option>
 </select>
-<h5>Wheezing</h5>
+<h3>Wheezing</h3>
 <select id="tw">
 <option value="">select</option>
 <option value="0">None</option>
@@ -770,7 +770,7 @@
 <option value="2">Throughout expiration</option>
 <option value="3">Inspiratory + expiratory</option>
 </select>
-<h5>Accessory Muscle Use</h5>
+<h3>Accessory Muscle Use</h3>
 <select id="tamu">
 <option value="">select</option>
 <option value="0">None</option>
@@ -778,7 +778,7 @@
 <option value="2">Moderate (sternal retractions)</option>
 <option value="3">Severe, generalized retractions</option>
 </select>
-<h5>Inspiratory/Expiratory Ratio</h5>
+<h3>Inspiratory/Expiratory Ratio</h3>
 <select id="tier">
 <option value="">select</option>
 <option value="0">Normal</option>
@@ -786,7 +786,7 @@
 <option value="2">Moderately prolonged</option>
 <option value="3">Severely prolonged</option>
 </select>
-<h5>Oxygen Saturation</h5>
+<h3>Oxygen Saturation</h3>
 <select id="tos">
 <option value="">select</option>
 <option value="0">&gt;95%</option>
@@ -803,15 +803,15 @@
 
 
 <div class="surgery">
-<div id="surgt" class="section"
-<h3>D. SURGERY</h3>
+<div id="surgt" class="section">
+<h1>D. SURGERY</h1>
 <details>
-<h4>D.1. POSSUM Score</h4>
-<h5>The POSSUM score is a surgical risk prediction tool. It was designed to estimate postoperative morbidity and mortality by combining a patient’s physiological state with the severity of the operation</h5>
+<h2>D.1. POSSUM Score</h2>
+<p>The POSSUM score is a surgical risk prediction tool. It was designed to estimate postoperative morbidity and mortality by combining a patient’s physiological state with the severity of the operation</p>
 <details>
-<h5>A. Physiological Parameters</h5>
+<h2>A. Physiological Parameters</h2>
 
-<label for="ageRange">i. Age Range:</label>
+<label for="ageRange">i. Age Range:</label><br>
 <select id="ageRange">
   <option value="">Select</option>
   <option value="1">≤60 years</option>
@@ -820,7 +820,7 @@
   <option value="8">≥81 years</option>
 </select>
 
-<label for="cardiacSigns">ii. Cardiac Signs:</label>
+<label for="cardiacSigns">ii. Cardiac Signs:</label><br>
 <select id="cardiacSigns">
   <option value="">Select</option>
   <option value="1">No failure</option>
@@ -829,7 +829,7 @@
   <option value="8">Raised JVP/cardiomegaly</option>
 </select>
 
-<label for="rSigns">iii. Respiratory Signs:</label>
+<label for="rSigns">iii. Respiratory Signs:</label><br>
 <select id="rSigns">
   <option value="">Select</option>
   <option value="1">No dyspnea</option>
@@ -838,7 +838,7 @@
   <option value="8">Dyspnea at rest</option>
 </select>
 
-<label for="sbpScore">iv. Systolic BP:</label>
+<label for="sbpScore">iv. Systolic BP:</label><br>
 <select id="sbpScore">
   <option value="">Select</option>
   <option value="1">110–130 mmHg</option>
@@ -847,7 +847,7 @@
   <option value="8">&lt;=89</option>
 </select>
 
-<label for="pRate">v. Pulse Rate:</label>
+<label for="pRate">v. Pulse Rate:</label><br>
 <select id="pRate">
   <option value="">Select</option>
   <option value="1">50–80 bpm</option>
@@ -856,7 +856,7 @@
   <option value="8">&lt;40 or ≥121</option>
 </select>
 
-<label for="gcs">vi. GCS:</label>
+<label for="gcs">vi. GCS:</label><br>
 <select id="gcs">
   <option value="">Select</option>
   <option value="1">15</option>
@@ -865,7 +865,7 @@
   <option value="8">&lt;=8</option>
 </select>
 
-<label for="hemR">vii. Hemoglobin:</label>
+<label for="hemR">vii. Hemoglobin:</label><br>
 <select id="hemR">
   <option value="">Select</option>
   <option value="1">13–16 g/dL</option>
@@ -874,7 +874,7 @@
   <option value="8">&lt;=9.9 or ≥18.1</option>
 </select>
 
-<label for="wccx">viii. WCC:</label>
+<label for="wccx">viii. WCC:</label><br>
 <select id="wccx">
   <option value="">Select</option>
   <option value="1">4–10 ×10⁹/L</option>
@@ -882,7 +882,7 @@
   <option value="4">&gt;20</option>
 </select>
 
-<label for="ur">ix. Urea:</label>
+<label for="ur">ix. Urea:</label><br>
 <select id="ur">
   <option value="">Select</option>
   <option value="1">&lt;=7.5 mmol/L</option>
@@ -891,7 +891,7 @@
   <option value="8">&gt;15.1</option>
 </select>
 
-<label for="na">x. Sodium:</label>
+<label for="na">x. Sodium:</label><br>
 <select id="na">
   <option value="">Select</option>
   <option value="1">≥136</option>
@@ -900,7 +900,7 @@
   <option value="8">&lt;=125</option>
 </select>
 
-<label for="kxy">xi. Potassium:</label>
+<label for="kxy">xi. Potassium:</label><br>
 <select id="kxy">
   <option value="">Select</option>
   <option value="1">3.5–5</option>
@@ -909,7 +909,7 @@
   <option value="8">&lt;=2.8 or ≥6</option>
 </select>
 
-<label for="ecg">xii. ECG Findings:</label>
+<label for="ecg">xii. ECG Findings:</label><br>
 <select id="ecg">
   <option value="">Select</option>
   <option value="1">Normal</option>
@@ -918,9 +918,9 @@
   <option value="8">Other abnormal rhythm</option>
 </select>
 
-<h5>B. Operative Parameters</h5>
+<h2>B. Operative Parameters</h2>
 
-<label for="opS">i. Operative Severity:</label>
+<label for="opS">i. Operative Severity:</label><br>
 <select id="opS">
 <option value="">Select</option>
   <option value="1">Minor</option>
@@ -929,7 +929,7 @@
   <option value="8">Major Plus/Complex</option>
 </select>
 
-<label for="nop">ii. Number of Procedures:</label>
+<label for="nop">ii. Number of Procedures:</label><br>
 <select id="nop">
   <option value="">Select</option>
   <option value="1">1</option>
@@ -938,7 +938,7 @@
   <option value="8">≥4</option>
 </select>
 
-<label for="ebl">iii. Estimated Blood Loss:</label>
+<label for="ebl">iii. Estimated Blood Loss:</label><br>
 <select id="ebl">
   <option value="">Select</option>
   <option value="1">&lt;100 mL</option>
@@ -947,7 +947,7 @@
   <option value="8">≥1000 mL</option>
 </select>
 
-<label for="ps">iv. Peritoneal Soiling:</label>
+<label for="ps">iv. Peritoneal Soiling:</label><br>
 <select id="ps">
   <option value="">Select</option>
   <option value="1">None</option>
@@ -956,7 +956,7 @@
   <option value="8">Generalized fecal contamination</option>
 </select>
 
-<label for="pom">v. Malignancy:</label>
+<label for="pom">v. Malignancy:</label><br>
 <select id="pom">
   <option value="">Select</option>
   <option value="1">None</option>
@@ -965,7 +965,7 @@
   <option value="8">Distant metastases</option>
 </select>
 
-<label for="too">vi. Timing of Operation:</label>
+<label for="too">vi. Timing of Operation:</label><br>
 <select id="too">
   <option value="">Select</option>
   <option value="1">Elective</option>
@@ -980,17 +980,17 @@
 <div id="morbx"></div>
 <div id="mortx"></div>
 </details>
-<h4>2. National Early Warning Score</h4>
-<h5>Identifies patients at risk of sudden deterioration before critical events occur</h5>
+<h2>2. National Early Warning Score</h2>
+<p>Identifies patients at risk of sudden deterioration before critical events occur</p>
 <details>
-<h5>Respiratory rate</h5>
+<h3>Respiratory rate</h3>
 <select id="nrr">
 <option value="">select</option>
 <option value="0">Normal (12–20 breaths/min)</option>
 <option value="1">Mild abnormal (9–11 or 21–24)</option>
 <option value="2">Severe abnormal (≤8 or ≥25)</option>
 </select>
-<h5>Oxygen saturation</h5>
+<h3>Oxygen saturation</h3>
 <select id="nos">
 <option value="">select</option>
 <option value="0">&gt;=96%</option>
@@ -998,14 +998,14 @@
 <option value="2">92–93%</option>
 <option value="3">&lt;=91%</option>
 </select>
-<h5>Temperature</h5>
+<h3>Temperature</h3>
 <select id="ntemp">
 <option value="">select</option>
 <option value="0">36.1–38.0 °C</option>
 <option value="1">35.1–36.0 or 38.1–39.0 °C</option>
 <option value="2">&lt;=35.0 or &gt;=39.1 °C</option>
 </select>
-<h5>Systolic blood pressure</h5>
+<h3>Systolic blood pressure</h3>
 <select id="nsbp">
 <option value="">select</option>
 <option value="0">111–219 mmHg</option>
@@ -1013,7 +1013,7 @@
 <option value="2">91–100 mmHg</option>
 <option value="3">&lt;=90 or &gt;=220 mmHg</option>
 </select>
-<h5>Heart rate</h5>
+<h3>Heart rate</h3>
 <select id="nhr">
 <option value="">select</option>
 <option value="0">51–90 bpm</option>
@@ -1021,7 +1021,7 @@
 <option value="2">111–130 bpm</option>
 <option value="3">&lt;=40 or &gt;=131 bpm</option>
 </select>
-<h5>Consciousness</h5>
+<h3>Consciousness</h3>
 <select id="ncons">
 <option value="">Select</option>
 <option value="0">Alert</option>
@@ -1030,10 +1030,10 @@
 <br><button onclick="news()">Submit</button>
 <div id="nT"></div>
 </details>
-<h4>3. ACS NSQIP</h4>
-<h5 class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</h5>
+<h3>3. ACS NSQIP</h3>
+<p class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</p>
 <details>
-<h5>Age</h5>
+<h3>Age</h3>
 <select id="aage">
 <option value="">Select</option>
 <option value="0">&lt;50</option>
@@ -1041,28 +1041,28 @@
 <option value="2">70–79</option>
 <option value="3">&gt;=80</option>
 </select>
-<h5>ASA class</h5>
+<h3>ASA class</h3>
 <select id="aasa">
 <option value="">Select</option>
 <option value="0">I–II</option>
 <option value="2">III</option>
 <option value="4">IV–V</option>
 </select>
-<h5>Functional status</h5>
+<h3>Functional status</h3>
 <select id="afs">
 <option value="">Select</option>
 <option value="0">Independent</option>
 <option value="2">Partially dependent</option>
 <option value="4">Fully dependent</option>
 </select>
-<h5>Comorbidities</h5>
+<h3>Comorbidities</h3>
 <select id="acom">
 <option value="">Select</option>
 <option value="0">None</option>
 <option value="2">1–2</option>
 <option value="4">&gt;=3</option>
 </select>
-<h5>Procedure risk</h5>
+<h3>Procedure risk</h3>
 <select id="apr">
 <option value="">Select</option>
 <option value="0">Minor</option>
@@ -1072,9 +1072,9 @@
 <br><button onclick="acs()">Submit</button>
 <div id="AAA"></div>
 </details>
-<h4>4. Prostate Risk Assessment</h4>
+<h2>4. Prostate Risk Assessment</h2>
 <details>
-<h5>Incomplete emptying</h5>
+<h3>Incomplete emptying</h3>
 <select id="pinco">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1084,7 +1084,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Frequency</h5>
+<h3>Frequency</h3>
 <select id="pfre">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1094,7 +1094,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Intermittency</h5>
+<h3>Intermittency</h3>
 <select id="pinter">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1104,7 +1104,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Urgency</h5>
+<h3>Urgency</h3>
 <select id="purg">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1114,7 +1114,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Weak stream</h5>
+<h3>Weak stream</h3>
 <select id="pweak">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1124,7 +1124,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Straining</h5>
+<h3>Straining</h3>
 <select id="pstrain">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1134,7 +1134,7 @@
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h5>Nocturia</h5>
+<h3>Nocturia</h3>
 <select id="pnoc">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1147,63 +1147,63 @@
 <br><button onclick="prostate()">Submit</button>
 <div id="Pros"></div>
 </details>
-<h4>5.Wells Criteria(DVT Risk Assessment)</h4>
+<h2>5.Wells Criteria(DVT Risk Assessment)</h2>
 <details>
-<h5>Active cancer (treatment ongoing, within 6 months, or palliative)?</h5>
+<h3>Active cancer (treatment ongoing, within 6 months, or palliative)?</h3>
 <select id="cancer">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Paralysis, paresis, or recent plaster immobilization of lower extremities?</h5>
+<h3>Paralysis, paresis, or recent plaster immobilization of lower extremities?</h3>
 <select id="paresis">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Recently bedridden &gt;=3 days or major surgery within 12 weeks?</h5>
+<h3>Recently bedridden &gt;=3 days or major surgery within 12 weeks?</h3>
 <select id="bedridden">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Localized tenderness along deep venous system?</h5>
+<h3>Localized tenderness along deep venous system?</h3>
 <select id="tender">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Entire leg swollen?</h5>
+<h3>Entire leg swollen?</h3>
 <select id="swollen">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Calf swelling &gt;3 cm compared to asymptomatic leg?</h5>
+<h3>Calf swelling &gt;3 cm compared to asymptomatic leg?</h3>
 <select id="calf">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Pitting edema confined to symptomatic leg?</h5>
+<h3>Pitting edema confined to symptomatic leg?</h3>
 <select id="edema">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Collateral superficial veins (non‑varicose)?</h5>
+<h3>Collateral superficial veins (non‑varicose)?</h3>
 <select id="veins">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Previous DVT?</h5>
+<h3>Previous DVT?</h3>
 <select id="dvt">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h5>Alternative diagnosis at least as likely?</h5>
+<h3>Alternative diagnosis at least as likely?</h3>
 <select id="diagnosis">
 <option value="">Select</option>
 <option value="0">No</option>
@@ -1212,97 +1212,97 @@
 <br><button onclick="wells()">Submit</button>
 <div id=Wels></div>
 </details>
-<h4>6. RIPASA Score(Assessment for appendicitis)</h4>
+<h2>6. RIPASA Score(Assessment for appendicitis)</h2>
 <details>
-<h5>Demographics</h5>
-<h5>Age</h5>
+<h2>Demographics</h2>
+<h3>Age</h3>
 <select id="ripAge">
 <option value="">select</option>
 <option value="1">&lt;40</option>
 <option value="0.5">&gt;=40</option>
 </select>
-<h5>Gender</h5>
+<h3>Gender</h3>
 <select id="ripGender">
 <option value="">select</option>
 <option value="1">Male</option>
 <option value="0.5  ">Female</option>
 </select>
-<h5>Symptoms</h5>
-<h5>Right iliac fossa pain</h5>
+<h3>Symptoms</h3>
+<h3>Right iliac fossa pain</h3>
 <select id="ripPain">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Migration of pain </h5>
+<h3>Migration of pain</h3>
 <select id="ripMig">
 <option value="">select</option>
 <option value="0.5">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Anorexia</h5>
+<h3>Anorexia</h3>
 <select id="ripAnor">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Nausea and vomiting</h5>
+<h3>Nausea and vomiting</h3>
 <select id="ripNv">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Duration of symptoms &lt;48 hours</h5>
+<h3>Duration of symptoms &lt;48 hours</h3>
 <select id="ripDura">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Duration &gt;=48 hours </h5>
+<h3>Duration &gt;=48 hours </h3>
 <select id="rip48">
 <option value="">select</option>
 <option value="0.5">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Signs</h5>
-<h5>Right iliac fossa tenderness</h5>
+<h2>Signs</h2>
+<h3>Right iliac fossa tenderness</h3>
 <select id="ripRif">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Guarding</h5>
+<h3>Guarding</h3>
 <select id="ripGua">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Rebound tenderness</h5>
+<h3>Rebound tenderness</h3>
 <select id="ripRT">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Rovsing’s sign</h5>
+<h3>Rovsing’s sign</h3>
 <select id="ripRS">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Fever</h5>
+<h3>Fever</h3>
 <select id="ripF">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Laboratory</h5>
-<h5>Raised WBC count</h5>
+<h3>Laboratory</h3>
+<h3>Raised WBC count</h3>
 <select id="ripWBC">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Negative urinalysis</h5>
+<h3>Negative urinalysis</h3>
 <select id="ripUrin">
 <option value="">select</option>
 <option value="1">Yes</option>
@@ -1312,51 +1312,51 @@
 </details>
 <div id="ripaT"></div>
 
-<h4>7. Alvarado Score</h4>
+<h2>7. Alvarado Score</h2>
 <details>
-<h5>Migration of pain</h5>
+<h3>Migration of pain</h3>
 <select id="mop">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Anorexia</h5>
+<h3>Anorexia</h3>
 <select id="anorexia">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Nausea/vomiting</h5>
+<h3>Nausea/vomiting</h3>
 <select id="nausea">
 <option value="">select</option>
 <option value="">Yes</option>
 <option value="">No</option>
 </select>
-<h5>Right lower quadrant tenderness</h5>
+<h3>Right lower quadrant tenderness</h3>
 <select id="rlqp">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Rebound tenderness</h5>
+<h3>Rebound tenderness</h3>
 <select id="rto">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Fever</h5>
+<h3>Fever</h3>
 <select id="fever">
 <option value="">select</option>
 <option value="1">Temperature &gt;= 37.3 °C</option>
 <option value="0">No</option>
 </select>
-<h5>Leukocytosis</h5>
+<h3>Leukocytosis</h3>
 <select id="leukocytosis">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h5>Shift to left</h5>
+<h3>Shift to left</h3>
 <select id="stl">
 <option value="">select</option>
 <option value="1">Yes</option>
@@ -1365,9 +1365,9 @@
 <br><button onclick="alvaradoScore()">Submit</button>
 <div id="alvaT"></div>
 </details>
-<h4>8. Glasgow Coma Scale</h4>
+<h2>8. Glasgow Coma Scale</h2>
 <details>
-<h5>Eye Opening</h5>
+<h3>Eye Opening</h3>
 <select id="eoq">
 <option>select</option>
 <option value="4">Opens eyes without stimulus</option>
@@ -1375,7 +1375,7 @@
 <option value="2">Opens eyes only to painful stimulus</option>
 <option value="1">No eye opening</option>
 </select>
-<h5>Verbal Response</h5>
+<h3>Verbal Response</h3>
 <select id="vrq">
 <option>select</option>
 <option value="5">Normal conversation, aware of surroundings</option>
@@ -1385,7 +1385,7 @@
 <option value="1">No verbal response</option>
 <option></option>
 </select>
-<h5>Motor Response</h5>
+<h3>Motor Response</h3>
 <select id="mrq">
 <option>select</option>
 <option value="6">Follows instructions</option>
