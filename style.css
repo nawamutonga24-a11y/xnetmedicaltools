@@ -1,74 +1,51 @@
-/* Reset some default browser styles */
+/* Reset */
 * {
-  margin: 10px;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-p{
-  color: darkred;
-}
-body {
-  width: 100%;   /* fills the screen */
-}
-img {
-  max-width: 100%;  /* scales down with screen */
-  height: auto;
-}
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;   /* smaller text on tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 12px;   /* even smaller on phones */
-  }
-}
-.container {
-  display: flex;
-  flex-wrap: wrap;
-}
-.item {
-  flex: 1 1 300px; /* auto-resizes based on screen */
-}
-
-
 
 /* Body styling */
 body {
-  font-family: nimbus mono ps;
+  font-family: "Nimbus Mono PS", monospace;
   font-size: 16px;
   line-height: 1.5;
-  background-color: #f4f4f4;
+  background-color: lightblue;
   color: #333;
-  margin: left: 100px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   align-items: center;
-  width: 800px;
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* Paragraphs */
+p {
+  color: darkred;
 }
 
 /* Headings */
 h1, h2, h3 {
   margin-bottom: 10px;
-  color: #222;
   color: black;
 }
+h3 { color: blue; }
+h4 { font-size: 20px; color: black; }
+h5 { font-size: 15px; color: black; }
 
 /* Links */
 a {
   color: #0066cc;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
+  color: darkblue;
+  cursor: pointer;
 }
 
-/* Container for layout */
+/* Container */
 .container {
   width: 80%;
   margin: auto;
@@ -81,10 +58,13 @@ nav {
   color: #fff;
   padding: 10px;
 }
-
 nav a {
   color: #fff;
   margin-right: 15px;
+}
+nav a:hover {
+  color: #ffcc00;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -96,7 +76,7 @@ footer {
   margin-top: 20px;
 }
 
-}
+/* Buttons */
 button {
   width: 150px;
   height: 50px;
@@ -104,67 +84,63 @@ button {
   background-color: #0066cc;
   color: white;
   border: none;
-  border-radius: 15px; /* makes corners rounded */
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+button:hover {
+  background-color: darkblue;
+  transform: scale(1.05);
 }
 
+/* Select dropdown */
 select {
-  width: 250px;       /* sets the width */
-  height: 35px;       /* sets the height */
-  padding: 5px;       /* space inside */
-  font-size: 15px;    /* text size */
-}
-h3
-{
-  color: blue;
-}
-h4 {
-  font-size: 20px;   /* sets the size of h4 text */
-  color: black;
-}
-h5 {
-  color: black;
+  width: 250px;
+  height: 35px;
+  padding: 5px;
   font-size: 15px;
+  cursor: pointer;
 }
-body {
-  background-color: lightblue; /* sets a solid background color */
+select:hover {
+  border: 2px solid #0066cc;
 }
 
-button {
-  width: 150px;
-  height: 50px;
-  font-size: 16px;
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  border-radius: 15px; /* makes corners rounded */
-select {
-  width: 250px;       /* sets the width */
-  height: 35px;       /* sets the height */
-  padding: 5px;       /* space inside */
-  font-size: 15px;    /* text size */
-  
-  img {
-    width: 300px;
-    height: 200px;
-    
-    * {
-  margin: 10px;
-  padding: 0;
-  box-sizing: border-box;
-  }
-  
+/* Inputs */
 input[type="number"] {
-  width: 100px;     /* horizontal size */
-  height: 35px;     /* vertical size */
-  padding: 6px;     /* inner spacing */
-  font-size: 16px;  /* text size */
+  width: 100px;
+  height: 35px;
+  padding: 6px;
+  font-size: 16px;
 }
 
- 
+/* Images */
+img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
 
- 
- 
+/* Divs */
+div {
+  font-weight: bold;
+}
 
-
-
-
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+    padding: 5px;
+  }
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+  button, select, input[type="number"] {
+    width: 100%;
+    max-width: 100%;
+  }
+  img {
+    max-width: 100%;
+  }
+}
