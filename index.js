@@ -471,48 +471,45 @@ function hbClass()
         {
              document.getElementById("mYoungAdultH").innerHTML =  "High Hemoglobin: >17.5 g/dL Causes: Dehydration, smoking, polycythemia vera, high altitude, chronic lung disease, congenital heart disease, erythropoietin excess<br>"  + hbv.toFixed(3);
         }
-        //7. Middle-Aged Male (40–64 Years)
-        if((agex>40&&agex<=64)&&(select.value==="M")&&(hbv>=13.0&&hbv<=17.0))
-        {
-            document.getElementById("mMiddleAgedN").innerHTML =  "Normal Hb: 13.0–17.0 g/dL<br>"  + hbv.toFixed(3);
-        }
-         else if((agex>40&&agex<=64)&&(select.value==="M")&&(hbv>=11.0&&hbv<=11.9))
-         {
-            document.getElementById("mMiddleAgedMi").innerHTML =  "Mild Anemia: 11.0–12.9 g/dL Causes: Iron deficiency, CKD, chronic inflammation, GI bleeding, cancer, nutritional deficiency, liver disease<br>"  + hbv.toFixed(3);
-         }
-          else if((agex>40&&agex<=64)&&(select.value==="M")&&(hbv>=8.0&&hbv<=10.9))
-          {
-                document.getElementById("mMiddleAgedMo").innerHTML =  "Moderate Anemia: 8.0–10.9 g/dL Causes: Severe iron deficiency, CKD, malignancy, GI bleeding, HIV, marrow disorders, chronic inflammatory disease<br>"  + hbv.toFixed(3);
-          }
-            else if((agex>40&&agex<=64)&&(select.value==="M")&&(hbv<8.0))
-            {
-                document.getElementById("mMiddleAgedS").innerHTML =  "Severe Anemia: <8.0 g/dL Causes: Hemorrhage, leukemia, aplastic anemia, advanced cancer, marrow failure, severe kidney disease, severe GI bleeding<br>"  + hbv.toFixed(3);
-            }
-             else if((agex>40&&agex<=64)&&(select.value==="M")&&(hbv>17.0))
-             {
-                document.getElementById("mMiddleAgedH").innerHTML =  "High Hemoglobin: >17.0 g/dL Causes: Dehydration, smoking, polycythemia vera, chronic lung disease, high altitude, congenital heart disease, renal tumors<br>"  + hbv.toFixed(3);
-             }
-             //8. Elderly Male (≥65 Years)
-              if((agex>=65)&&(select.value==="M")&&(hbv>=12.5&&hbv<=16.5))
-              {
-                    document.getElementById("mElderlyN").innerHTML =  "Normal Hb: 12.5–16.5 g/dL<br>"  + hbv.toFixed(3);
-              }
-              else if((agex>65)&&(select.value==="M")&&(hbv>=10.0&&hbv<=12.4))
-              {
-                 document.getElementById("mElderlyMi").innerHTML =  "Mild Anemia: 10.0–12.4 g/dL Causes: Iron deficiency, B12 deficiency, folate deficiency, CKD, chronic inflammation, GI bleeding, myelodysplastic syndrome<br>"  + hbv.toFixed(3);
-              }
-              else if((agex>65)&&(select.value==="M")&&(hbv>=8.0&&hbv<=9.9))
-              {
-                document.getElementById("mElderlyMo").innerHTML =  "Moderate Anemia: 8.0–9.9 g/dL Causes: CKD, cancer, severe iron deficiency, marrow disorders, chronic GI bleeding, myelodysplastic syndrome, chronic inflammation<br>"  + hbv.toFixed(3);
-              }
-              else if((agex>65)&&(select.value==="M")&&(hbv<8.0))
-              {
-                document.getElementById("mElderlyS").innerHTML =  "Severe Anemia: <8.0 g/dL Causes: Advanced cancer, marrow failure, leukemia, severe GI bleeding, end-stage kidney disease, aplastic anemia, severe nutritional deficiency<br>"  + hbv.toFixed(3);
-              }
-               else if((agex>65)&&(select.value==="M")&&(hbv>16.5))
-               {
-                    document.getElementById("mElderlyH").innerHTML =  "High Hemoglobin: >16.5 g/dL Causes: Dehydration, smoking, COPD, polycythemia vera, high altitude, chronic hypoxia, renal tumors<br>"  + hbv.toFixed(3);
-               }
+       // Middle-aged Male (41–64 Years)
+if (agex > 40 && agex <= 64 && select.value === "M") {
+    if (hbv >= 13.0 && hbv <= 17.0) {
+        document.getElementById("mMiddleAgedN").innerHTML =
+            "Normal Hb: 13.0–17.0 g/dL<br>" + hbv.toFixed(3);
+    } else if (hbv >= 11.0 && hbv <= 12.9) {
+        document.getElementById("mMiddleAgedMi").innerHTML =
+            "Mild Anemia: 11.0–12.9 g/dL Causes: Iron deficiency, CKD, chronic inflammation, GI bleeding, cancer, nutritional deficiency, liver disease<br>" + hbv.toFixed(3);
+    } else if (hbv >= 8.0 && hbv <= 10.9) {
+        document.getElementById("mMiddleAgedMo").innerHTML =
+            "Moderate Anemia: 8.0–10.9 g/dL Causes: Severe iron deficiency, CKD, malignancy, GI bleeding, HIV, marrow disorders, chronic inflammatory disease<br>" + hbv.toFixed(3);
+    } else if (hbv < 8.0) {
+        document.getElementById("mMiddleAgedS").innerHTML =
+            "Severe Anemia: <8.0 g/dL Causes: Hemorrhage, leukemia, aplastic anemia, advanced cancer, marrow failure, severe kidney disease, severe GI bleeding<br>" + hbv.toFixed(3);
+    } else if (hbv > 17.0) {
+        document.getElementById("mMiddleAgedH").innerHTML =
+            "High Hemoglobin: >17.0 g/dL Causes: Dehydration, smoking, polycythemia vera, chronic lung disease, high altitude, congenital heart disease, renal tumors<br>" + hbv.toFixed(3);
+    }
+}
+            // Elderly Male (≥65 Years)
+if (agex >= 65 && select.value === "M") {
+    if (hbv >= 12.5 && hbv <= 16.5) {
+        document.getElementById("mElderlyN").innerHTML =
+            "Normal Hb: 12.5–16.5 g/dL<br>" + hbv.toFixed(3);
+    } else if (hbv >= 10.0 && hbv <= 12.4) {
+        document.getElementById("mElderlyMi").innerHTML =
+            "Mild Anemia: 10.0–12.4 g/dL Causes: Iron deficiency, B12 deficiency, folate deficiency, CKD, chronic inflammation, GI bleeding, myelodysplastic syndrome<br>" + hbv.toFixed(3);
+    } else if (hbv >= 8.0 && hbv <= 9.9) {
+        document.getElementById("mElderlyMo").innerHTML =
+            "Moderate Anemia: 8.0–9.9 g/dL Causes: CKD, cancer, severe iron deficiency, marrow disorders, chronic GI bleeding, myelodysplastic syndrome, chronic inflammation<br>" + hbv.toFixed(3);
+    } else if (hbv < 8.0) {
+        document.getElementById("mElderlyS").innerHTML =
+            "Severe Anemia: <8.0 g/dL Causes: Advanced cancer, marrow failure, leukemia, severe GI bleeding, end-stage kidney disease, aplastic anemia, severe nutritional deficiency<br>" + hbv.toFixed(3);
+    } else if (hbv > 16.5) {
+        document.getElementById("mElderlyH").innerHTML =
+            "High Hemoglobin: >16.5 g/dL Causes: Dehydration, smoking, COPD, polycythemia vera, high altitude, chronic hypoxia, renal tumors<br>" + hbv.toFixed(3);
+    }
+}
+
                //FEMALE HEMOGLOBIN (Hb) 
                //1. Neonate Female (0–28 Days)
             if((agex>0&&agex<=0.0767)&&(select.value==="F")&&(hbv>=14.0&&hbv<=24.0))
