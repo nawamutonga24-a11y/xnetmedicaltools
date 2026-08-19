@@ -1206,4 +1206,26 @@ function headaches() {
     document.getElementById("malariaDoseCalculatedDisplay").innerHTML = "Dose to be given of Oral Artemether + lumefantrine per dose is; 80 mg + 480 mg BD × 3 days"
     }
     }
-    
+    //Yale Observation Scale:
+    document.getElementById("yosButton").addEventListener("click", function() {
+    let qoc = parseInt(document.getElementById("qoc").nextElementSibling.value) || 0;
+    let rtp = parseInt(document.getElementById("rtp").nextElementSibling.value) || 0;
+    let sv = parseInt(document.getElementById("sv").nextElementSibling.value) || 0;
+    let color = parseInt(document.getElementById("color").nextElementSibling.value) || 0;
+    let hydration = parseInt(document.getElementById("hydration").nextElementSibling.value) || 0;
+    let rtso = parseInt(document.getElementById("rtso").value) || 0;
+
+    let total = qoc + rtp + sv + color + hydration + rtso;
+
+    let result = "";
+    if (total <= 10) {
+        result = "Low risk → Likely benign viral illness.";
+    } else if (total <= 15) {
+        result = "Intermediate risk → Monitor closely, consider further evaluation.";
+    } else {
+        result = "High risk → Possible serious bacterial infection, urgent assessment needed.";
+    }
+
+    document.getElementById("yosDisplay").innerHTML = 
+        "Total Score: " + total + "<br>" + result;
+});
