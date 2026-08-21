@@ -452,7 +452,62 @@ The medical tools and resources provided on this website are intended solely for
 </audio>
 <hr>
 </details>
+<hr>
+<h2>9. CHA₂DS₂‑VASc Scores</h2>
+<p>The CHA₂DS₂‑VASc Score is a clinical tool used in atrial fibrillation to estimate stroke risk. It assigns points for factors like heart failure, hypertension, age, diabetes, prior stroke, vascular disease, and female sex. The total score (0–9) guides whether anticoagulation therapy is recommended, with higher scores indicating greater risk.</p>
+<details>
+<h3>a. Congestive heart failure/LV dysfunction</h3>
+<select id="chflv">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>b. Hypertension</h3>
+<select id="chahtn">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>c. Age &gt;=75 years</h3>
+<select id="chaage">
+<option value="">Select</option>
+<option value="2">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>d. Diabetes mellitus </h3>
+<select id="chadm">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option></select>
+<h3>e. Stroke/TIA/thromboembolism history</h3>
+<select id="chatia">
+<option value="">Select</option>
+<option value="2">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>f. Vascular disease (MI, PAD, aortic plaque)</h3>
+<select id="chavd">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>g. Age 65–74 years</h3>
+<select id="chaAge">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select>
+<h3>h. Sex category (female)</h3>
+<select id="chascf">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select><br><br>
+<button id="chaBtn">Submit</button>
+<div id="chaT"></div>
 </details>
+</details>
+<hr>
 </div>
 
 <!End of Internal Medicine>
@@ -467,7 +522,6 @@ The medical tools and resources provided on this website are intended solely for
 <hr>
 <h2>1. APGAR Score</h2>
 <p>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</p>
-<p>
 <details>
 <h3>1.1 Appearance</h3>
 <select id="appear">
