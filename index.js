@@ -1226,3 +1226,31 @@ function headaches() {
     document.getElementById("yosDisplay").innerHTML = 
         "Total Score: " + total + "<br>" + result;
 });
+//Maintenance fluids:
+
+let mfBtn = document.getElementById("mfButton");
+mfBtn.addEventListener("click", mfCalculation);
+
+function mfCalculation(){
+let mfW = Number(document.querySelector('input[name="mweight"]').value)||0;
+if(mfW<=0){
+document.getElementById("rmfD").innerHTML = "Kindly enter a valid weight"
+}
+else if(mfW<=10){
+let totalFluids = mfW*100;
+document.getElementById("rmfD").innerHTML = "Total fluid requirement is: " + totalFluids.toFixed(1) + " ml/kg/day";
+}
+else if(mfW>10&&mfW<20){
+let totalFluids = (10*100) + (mfW-10)*50;
+document.getElementById("rmfD").innerHTML = "Total fluid requirement is: " + totalFluids.toFixed(1) + " ml/kg/day";
+}
+else if(mfW===20){
+let totalFluids = (10*100) + (10*50);
+document.getElementById("rmfD").innerHTML = "Total fluid requirement is: " + totalFluids.toFixed(1) + " ml/kg/day";
+}
+else if(mfW>20){
+let totalFluids = (10*100)+(10*50)+(mfW-20)*20;
+document.getElementById("rmfD").innerHTML = "Total fluid requirement is: " + totalFluids.toFixed(1) + " ml/kg/day";
+}
+
+}
