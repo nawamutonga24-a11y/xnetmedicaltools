@@ -78,9 +78,11 @@ The medical tools and resources provided on this website are intended solely for
 <h2>1.BMI (Adults)</h2>
 <p>"The BMI tool calculates weight‑for‑height ratio to classify underweight, normal, overweight, or obesity status. It provides a quick screening measure to guide nutritional assessment and health risk evaluation."</p>
 <details>
+<label for="wt">Enter weight in kg: </label>
+<input type="number" id="wt" placeholder="Enter your weight in kg"><br>
 
-<input type="number" id="wt" placeholder="Enter your weight in kg">
-<input type="number" id="ht" placeholder="Enter your height in meters">
+<label for="ht">Enter height in meters: </label>
+<input type="number" id="ht" placeholder="Enter your height in meters"><br><br>
 <button onclick="bmi()">submit</button>
 <div id="bmi"></div>
 
