@@ -91,12 +91,21 @@ The medical tools and resources provided on this website are intended solely for
 <h2>2.Vital Signs</h2>
 <p>"The Vital Signs tool captures core physiological parameters including temperature, pulse, respiration, and blood pressure. It provides a structured baseline for clinical assessment, monitoring, and early detection of patient deterioration."</p>
 <details>
-<input type="number" id="sbp" placeholder="Enter your Systolic BP">
-<input type="number" id="dbp" placeholder="Enter your Diastolic BP">
-<input type="number" id="hrx" placeholder="Enter your Heart Rate">
-<input type="number" id="os" placeholder="Enter your O2 Saturations">
-<input type="number" id="temp" placeholder="Enter your B-temperature">
-<button onclick="vitalSigns()">submit</button>
+<label for="sbp">Enter the Systolic Pressure: </label>
+<input type="number" id="sbp" placeholder="Enter your Systolic BP"><br><br>
+
+<label for="dbp">Enter the Diastolic Pressure: </label>
+<input type="number" id="dbp" placeholder="Enter your Diastolic BP"><br><br>
+
+<label for="hrx">Enter the Heart Rate: </label>
+<input type="number" id="hrx" placeholder="Enter your Heart Rate"><br><br>
+
+<label for="os">Enter the Oxygen Saturations: </label>
+<input type="number" id="os" placeholder="Enter your O2 Saturations"><br><br>
+
+<label for="temp">Enter the body temperature in °C</label>
+<input type="number" id="temp" placeholder="Enter your B-temperature"><br><br>
+<button onclick="vitalSigns()">submit</button><br><br>
 <div id="bpResults"></div>
 <div id="hrResults"></div>
 <div id="osResults"></div>
