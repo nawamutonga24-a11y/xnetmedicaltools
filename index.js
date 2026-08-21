@@ -9,31 +9,31 @@ function bmi()
 	document.getElementById('bmi').innerHTML = "BMI is:" + bmi.toFixed(3);
 	if(bmi<16.0)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Severe Thinness<br>Health Risks: Severe malnutrition, weakened immunity,osteoporosis,anemia,increased risk of illness and death<br>Recommendations: Seek medical evaluation immediately, inrease nutrient dense food intake, ivestigate underlying causes<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Severe Thinness<br>Health Risks: Severe malnutrition, weakened immunity,osteoporosis,anemia,increased risk of illness and death<br>Recommendations: Seek medical evaluation immediately, inrease nutrient dense food intake, ivestigate underlying causes<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=16.0&&bmi<=16.9)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Moderate Thinness<br>Health Risks: Malnutrition, fatigue, reduced muscle mass, weakened immune system<br>Recommendations: Increase calorie and protein intake, consult a healthcare professional, monitor weight gain<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Moderate Thinness<br>Health Risks: Malnutrition, fatigue, reduced muscle mass, weakened immune system<br>Recommendations: Increase calorie and protein intake, consult a healthcare professional, monitor weight gain<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=17.0&&bmi<=18.4)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Mild Thinness<br>Health Risks: Nutritional deficiencies, lower energy levels, increased susceptibility to infections<br> Recommendations: Maintain balanced diet, regular exercise, adequate sleep, routine health checks<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Mild Thinness<br>Health Risks: Nutritional deficiencies, lower energy levels, increased susceptibility to infections<br> Recommendations: Maintain balanced diet, regular exercise, adequate sleep, routine health checks<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=18.5&&bmi<=24.9)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Normal weight<br>Health Risks: Lowest risk of weight-related diseases<br>Recommendations: Maintain balanced diet, regular exercise, adequate sleep, routine health checks<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Normal weight<br>Health Risks: Lowest risk of weight-related diseases<br>Recommendations: Maintain balanced diet, regular exercise, adequate sleep, routine health checks<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=25.0&&bmi<=29.9)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Overweight<br>Health Risks: Increased risk of hypertension, cardiovascular disease, Type 2 diabetes, joint problems<br>Recommendations: Increase physical activity, reduce excess calories, improve dietary habits, monitor weight regularly<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Overweight<br>Health Risks: Increased risk of hypertension, cardiovascular disease, Type 2 diabetes, joint problems<br>Recommendations: Increase physical activity, reduce excess calories, improve dietary habits, monitor weight regularly<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=30.0&&bmi<=34.9)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Obesity Class I<br>Health Risks: High risk of heart disease, diabetes, stroke, sleep apnea<br>Recommendations: Structured weight-loss program, regular exercise, medical consultation, dietary modification<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Obesity Class I<br>Health Risks: High risk of heart disease, diabetes, stroke, sleep apnea<br>Recommendations: Structured weight-loss program, regular exercise, medical consultation, dietary modification<br>BMI is:" + bmi.toFixed(1) + " kg/m2 ";
 	}
 	else if(bmi>=35.0&&bmi<=39.9)
 	{
-		document.getElementById("bmi").innerHTML = "Category: Obesity Class II<br>Health Risks: Very high risk of cardiovascular disease, diabetes, mobility problems, some cancers<br>Recommendations: Intensive weight management, professional medical supervision, lifestyle intervention<br>BMI is:" + bmi.toFixed(3);
+		document.getElementById("bmi").innerHTML = "Category: Obesity Class II<br>Health Risks: Very high risk of cardiovascular disease, diabetes, mobility problems, some cancers<br>Recommendations: Intensive weight management, professional medical supervision, lifestyle intervention<br>BMI is:" + bmi.toFixed(1);
 	}
 	else 
 	{
@@ -41,7 +41,7 @@ function bmi()
         "Category: Obesity Class III (Severe/Morbid Obesity)<br>" +
         "Health Risks: Extremely high risk of serious health complications and premature death<br>" +
         "Recommendations: Comprehensive medical evaluation, specialist referral, intensive weight-loss treatment, possible bariatric surgery consideration<br>" +
-        "BMI is: " + bmi.toFixed(3);
+        "BMI is: " + bmi.toFixed(1) + " kg/m2 ";
 	}
 
 }
