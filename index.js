@@ -1252,5 +1252,32 @@ else if(mfW>20){
 let totalFluids = (10*100)+(10*50)+(mfW-20)*20;
 document.getElementById("rmfD").innerHTML = "Total fluid requirement is: " + totalFluids.toFixed(1) + " ml/kg/day";
 }
+}
+//CHA₂DS₂‑VASc Score
+let chaBTN = document.getElementById("chaBtn");
+chaBTN.addEventListener("click", chaScore);
 
+function chaScore() {
+    let a = parseInt(document.getElementById("chflv").value) || 0;   // Heart failure / LV dysfunction
+    let b = parseInt(document.getElementById("chahtn").value) || 0; // Hypertension
+    let c = parseInt(document.getElementById("chaage").value) || 0; // Age ≥75
+    let d = parseInt(document.getElementById("chadm").value) || 0;  // Diabetes mellitus
+    let e = parseInt(document.getElementById("chatia").value) || 0; // Stroke / TIA / Thromboembolism
+    let f = parseInt(document.getElementById("chavd").value) || 0;  // Vascular disease
+    let g = parseInt(document.getElementById("chaAge").value) || 0; // Age 65–74
+    let h = parseInt(document.getElementById("chascf").value) || 0; // Female sex
+
+    let chaTotal = a + b + c + d + e + f + g + h;
+
+    let recommendation = "";
+    if (chaTotal === 0) {
+        recommendation = "Low risk (no anticoagulation needed)";
+    } else if (chaTotal === 1) {
+        recommendation = "Intermediate risk (consider anticoagulation)";
+    } else {
+        recommendation = "High risk (anticoagulation recommended)";
+    }
+
+    document.getElementById("chaT").innerHTML =
+        recommendation + "<br>The CHA₂DS₂‑VASc Score is: " + chaTotal;
 }
