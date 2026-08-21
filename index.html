@@ -83,7 +83,7 @@ The medical tools and resources provided on this website are intended solely for
 
 <label for="ht">Enter height in meters: </label>
 <input type="number" id="ht" placeholder="Enter your height in meters"><br><br>
-<button onclick="bmi()">submit</button>
+<button onclick="bmi()">submit</button><br><br>
 <div id="bmi"></div>
 
 </details>
@@ -113,18 +113,20 @@ The medical tools and resources provided on this website are intended solely for
 <h2>3. Hb Check</h2>
 <p>"The Hemoglobin Check tool provides quick estimation of Hb levels for anemia screening and monitoring. It supports timely clinical decisions by guiding diagnosis, treatment, and follow‑up in pediatric and adult patients."</p>
 <details>
-<h3>Enter Hb</h3>
-<input type="number" id="hbResults" placeholder="Hemoglobin results">
-<h3>Enter age</h3>
-<input type="number" id="age" placeholder="Enter your age in years">
-<h3>Select Gender:</h3>
-<input type="radio" id="male" name="gender" value="M"><br>
-<label for="male">Male</label><br><br>
-<button onclick="hbClass()">Submit</button>
+<label for="hbResults">Enter Hb results: </label>
+<input type="number" id="hbResults" placeholder="Hemoglobin results"><br><br>
 
+<label for="age">Enter age in years: </label>
+<input type="number" id="age" placeholder="Enter your age in years"><br><br>
 
-<input type="radio" id="female" name="gender" value="F">
+<label for="male">Male: </label>
+<input type="radio" id="male" name="gender" value="M"><br><br>
+
 <label for="female">Female</label>
+<input type="radio" id="female" name="gender" value="F"><br><br>
+
+<button onclick="hbClass()">Submit</button><br><br>
+
 <div id="mNeonateN"></div>
 <div id="mNeonateMi"></div>
 <div id="mNeonateMo"></div>
@@ -241,7 +243,7 @@ The medical tools and resources provided on this website are intended solely for
   <option value="1">Age ≥ 65</option>
 </select><br>
 
-<br><button onclick="curb65()">Submit</button>
+<br><button onclick="curb65()">Submit</button><br><br>
 
 <div id="cTotal"></div>
 </details>
@@ -309,7 +311,7 @@ The medical tools and resources provided on this website are intended solely for
 <option value="0">No</option>
 <option value="2">Yes</option>
 </select><br>
-<br><button onclick="ascVD()">Submit</button>
+<br><button onclick="ascVD()">Submit</button><br><br>
 <div id="ascT"></div>
 </details>
 <hr>
@@ -366,7 +368,7 @@ The medical tools and resources provided on this website are intended solely for
 <option value="3">Systemic symptoms (fever, weight loss)</option>
 </select>
 <br><br>
-<button onclick="headaches()">Submit</button>
+<button onclick="headaches()">Submit</button><br><br>
 <div id="hasTotal"></div>
 </details>
 <hr>
@@ -505,7 +507,7 @@ The medical tools and resources provided on this website are intended solely for
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br><br>
-<button id="chaBtn">Submit</button>
+<button id="chaBtn">Submit</button><br><br>
 <div id="chaT"></div>
 </details>
 </details>
@@ -560,7 +562,7 @@ The medical tools and resources provided on this website are intended solely for
 <option value="1">Slow, irregular, or weak cry</option>
 <option value="2">Good breathing with strong cry</option>
 </select><br>
-<button onclick="apgar()">Submit</button>
+<button onclick="apgar()">Submit</button><br><br>
 <div id="xTotal"></div>
 </details>
 <hr>
@@ -608,7 +610,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">-1 or 0</option>
 <option value="3">+1 or +2</option>
 </select><br>
-<br><button onclick="bishopScore()">Submit</button>
+<br><button onclick="bishopScore()">Submit</button><br><br>
 <div id="bTotal"></div>
 
 </details>
@@ -697,7 +699,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select><br>
-<br><button onclick="fgp()">Submit</button>
+<br><button onclick="fgp()">Submit</button><br><br>
 <div id="fxx"></div>
 </details>
 <hr>
@@ -734,7 +736,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Reactive: &gt;=2 accelerations of fetal heart rate in 20 minutes</option>
 <option value="0">Non‑reactive</option>
 </select><br>
-<br><button onclick="bpp()">Submit</button>
+<br><button onclick="bpp()">Submit</button><br><br>
 <div id="gxx"></div>
 </details>
 </details>
@@ -856,7 +858,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Mild prolongation</option>
 <option value="4">Severe prolongation</option>
 </select><br>
-<br><button onclick="prism()">Submit</button>
+<br><button onclick="prism()">Submit</button><br><br>
 <div id="prTx"></div>
 </details>
 <hr>
@@ -898,7 +900,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="1">Audible with stethoscope</option>
 <option value="2">Audible without stethoscope</option>
 </select><br>
-<br><button onclick="silverman()">Submit</button>
+<br><button onclick="silverman()">Submit</button><br><br>
 <div id="sT"></div>
 </details>
 <hr>
@@ -947,7 +949,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Yes</option>
 <option value="0">No</option>
 </select><br>
-<br><button onclick="pneumScore()">Submit</button>
+<br><button onclick="pneumScore()">Submit</button><br><br>
 <div id="xTx"></div>
 </details>
 <hr>
@@ -994,7 +996,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">86–90%</option>
 <option value="3">&lt;85%</option>
 </select><br>
-<br><button onclick="talScore()">Submit</button>
+<br><button onclick="talScore()">Submit</button><br><br>
 <div id="talT"></div>
 </details>
 <hr>
@@ -1011,7 +1013,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 
 <label for="malariaWeight">Enter the Weight of Patient:</label><br>
 <input type="number" id="ptMalariaWeight" name="malariaWeight" placeholder="Enter Weight in Kg"><br><br>
-<button type="button" id="pediatricDoseCalculator">Submit</button>
+<button type="button" id="pediatricDoseCalculator">Submit</button><br><br>
 </form>
 <div id="malariaDoseCalculatedDisplay" style="font-weight: bold"></div>
 </details>
@@ -1062,7 +1064,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">none</option>
 </select><br><br>
 
-<button id="yosButton">Submit</button>
+<button id="yosButton">Submit</button><br><br>
 <div id="yosDisplay"></div>
 </details>
 <hr>
@@ -1074,7 +1076,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <form>
 <label for="mweight">Enter the weight in Kg: </label>
 <input type="number" id="mweight" name="mweight" placeholder="Enter the weight in Kg"><br><br>
-<button type="button" id="mfButton">Submit</button>
+<button type="button" id="mfButton">Submit</button><br><br>
 </form>
 <div id="rmfD"></div>
 </details>
@@ -1254,7 +1256,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Immediate life‑saving</option>
 </select><br>
 
-<br><button onclick="possumScore()">Submit</button><br>
+<br><button onclick="possumScore()">Submit</button><br><br>
 
 <div id="physTotal"></div>
 <div id="opTotal"></div>
@@ -1309,7 +1311,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="0">Alert</option>
 <option value="3">Responds to Voice, Pain, or Unresponsive (AVPU scale)</option>
 </select><br>
-<br><button onclick="news()">Submit</button>
+<br><button onclick="news()">Submit</button><br><br>
 <div id="nT"></div>
 </details>
 <hr>
@@ -1352,7 +1354,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">Intermediate</option>
 <option value="4">Major</option>
 </select><br>
-<br><button onclick="acs()">Submit</button>
+<br><button onclick="acs()">Submit</button><br><br>
 <div id="AAA"></div>
 </details>
 <hr>
@@ -1429,7 +1431,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select><br>
-<br><button onclick="prostate()">Submit</button>
+<br><button onclick="prostate()">Submit</button><br><br>
 <div id="Pros"></div>
 </details>
 <hr>
@@ -1496,7 +1498,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="0">No</option>
 <option value="-2">Yes</option>
 </select><br>
-<br><button onclick="wells()">Submit</button>
+<br><button onclick="wells()">Submit</button><br><br>
 <div id=Wels></div>
 </details>
 <hr>
@@ -1597,7 +1599,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<br><button onclick="ripasa()">Submit</button>
+<br><button onclick="ripasa()">Submit</button><br><br>
 </details>
 <div id="ripaT"></div>
 <hr>
@@ -1652,7 +1654,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<br><button onclick="alvaradoScore()">Submit</button>
+<br><button onclick="alvaradoScore()">Submit</button><br><br>
 <div id="alvaT"></div>
 </details>
 <hr>
@@ -1687,7 +1689,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">Extension posture to pain</option>
 <option value="1">No motor response</option>
 </select><br>
-<br><button onclick="gcs()">Submit</button>
+<br><button onclick="gcs()">Submit</button><br><br>
 <div id="gcsT"></div>
 </details>
 
