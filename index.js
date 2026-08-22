@@ -1338,3 +1338,42 @@ function peraTool() {
         "<b>Lifestyle Modifications:</b> " + lifestyle + "<br>" +
         "<b>Total Score:</b> " + overall;
 }
+//Jones Criteria
+// Jones Criteria
+let jonesBtn = document.getElementById("jonesBtn");
+jonesBtn.addEventListener("click", jonesCriteria);
+
+function jonesCriteria() {
+    // Major criteria inputs
+    let a = parseInt(document.getElementById("ccosoe").value) || 0;   // Carditis
+    let b = parseInt(document.getElementById("pamlj").value) || 0;   // Polyarthritis
+    let c = parseInt(document.getElementById("csim").value) || 0;    // Chorea
+    let d = parseInt(document.getElementById("emrbs").value) || 0;   // Erythema marginatum
+    let e = parseInt(document.getElementById("scnfpnobp").value) || 0; // Subcutaneous nodules
+
+    // Minor criteria inputs
+    let f = parseInt(document.getElementById("fdorg").value) || 0;   // Fever
+    let g = parseInt(document.getElementById("ajpws").value) || 0;   // Arthralgia
+    let h = parseInt(document.getElementById("eeoc").value) || 0;    // Elevated ESR/CRP
+    let i = parseInt(document.getElementById("ppioe").value) || 0;   // Prolonged PR interval
+
+    // Totals
+    let major = a + b + c + d + e;
+    let minor = f + g + h + i;
+
+    // Diagnostic logic
+    let result = "";
+    if (major >= 2) {
+        result = "Diagnosis supported: 2 majors criteria present .";
+    } else if (major === 1 && minor >= 2) {
+        result = "Diagnosis supported: 1 major + 2 minor criteria.";
+    } else {
+        result = "Criteria not sufficient for diagnosis of acute rheumatic fever.";
+    }
+
+    // Display result
+    document.getElementById("jonesDisplay").innerHTML =
+        "Major: " + major + "<br>" +
+        "Minor: " + minor + "<br>" +
+        result;
+}
