@@ -1290,3 +1290,51 @@ function chaScore() {
     document.getElementById("chaT").innerHTML =
         recommendation + "<br>The CHA₂DS₂‑VASc Score is: " + chaTotal;
 }
+//Pre-Eclampsia Risk Assessment; 
+let preeBtn = document.getElementById("peratBtn");
+preeBtn.addEventListener("click", peraTool);
+
+function peraTool() {
+    // Collect values (checkboxes or radio buttons should return 1 if selected, else 0)
+    let htn   = parseInt(document.getElementById("hdipp").value) || 0;
+    let ckd   = parseInt(document.getElementById("peckd").value) || 0;
+    let aid   = parseInt(document.getElementById("peaid").value) || 0;
+    let dm    = parseInt(document.getElementById("pedm").value) || 0;
+    let chtn  = parseInt(document.getElementById("chtn").value) || 0;
+
+    let pefp  = parseInt(document.getElementById("pefp").value) || 0;
+    let peage = parseInt(document.getElementById("peage").value) || 0;
+    let pepi  = parseInt(document.getElementById("pepi").value) || 0;
+    let pebmi = parseInt(document.getElementById("pebmi").value) || 0;
+    let fhope = parseInt(document.getElementById("fhope").value) || 0;
+    let pemp  = parseInt(document.getElementById("pemp").value) || 0;
+
+    // Calculate risk categories
+    let highRisk     = htn + ckd + aid + dm + chtn;
+    let moderateRisk = pefp + peage + pepi + pebmi + fhope + pemp;
+    let overall      = highRisk + moderateRisk;
+
+    let category = "";
+    let recommendation = "";
+    let lifestyle = "";
+
+    if (highRisk >= 2) {
+        category = "High Risk";
+        recommendation = "Aspirin prophylaxis (75–150 mg daily) from 12 weeks until birth.";
+        lifestyle = "Close antenatal monitoring, blood pressure checks, urine protein testing, fetal growth scans.";
+    } else if (moderateRisk >= 2) {
+        category = "Moderate Risk";
+        recommendation = "Aspirin prophylaxis (75–150 mg daily) from 12 weeks until birth.";
+        lifestyle = "Maintain healthy weight, balanced diet, regular antenatal visits, monitor blood pressure.";
+    } else {
+        category = "Low Risk";
+        recommendation = "Routine antenatal care — aspirin not indicated.";
+        lifestyle = "General pregnancy wellness: exercise as tolerated, avoid smoking/alcohol, attend scheduled antenatal visits.";
+    }
+
+    document.getElementById("peratDisplay").innerHTML =
+        "<b>Risk Category:</b> " + category + "<br>" +
+        "<b>Recommendation:</b> " + recommendation + "<br>" +
+        "<b>Lifestyle Modifications:</b> " + lifestyle + "<br>" +
+        "<b>Total Score:</b> " + overall;
+}
