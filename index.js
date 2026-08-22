@@ -1377,3 +1377,38 @@ function jonesCriteria() {
         "Minor: " + minor + "<br>" +
         result;
 }
+//TBSA
+let tbsaBtn = document.getElementById("tbsaBtn");
+tbsaBtn.addEventListener("click", tbsa);
+
+function tbsa() {
+    let tbsaWt = Number(document.getElementById("tbsaWt").value || 0);
+    let tbsaHt = Number(document.getElementById("tbsaHt").value || 0);
+
+    // Mosteller formula: BSA = sqrt((Height(cm) * Weight(kg)) / 3600)
+    let bsa = Math.sqrt((tbsaHt * tbsaWt) / 3600);
+
+    let category = "";
+    let risks = "";
+    let recommendations = "";
+
+    if (bsa < 1.5) {
+        category = "Low BSA (<1.5 m²)";
+        risks = "Risk: Underdosing of medications, limited metabolic reserve.";
+        recommendations = "Recommendation: Adjust drug dosing carefully, monitor nutrition.";
+    } else if (bsa >= 1.5 && bsa <= 2.0) {
+        category = "Normal BSA (1.5–2.0 m²)";
+        risks = "Risk: Lowest risk, standard dosing applies.";
+        recommendations = "Recommendation: Maintain balanced nutrition and hydration.";
+    } else {
+        category = "High BSA (>2.0 m²)";
+        risks = "Risk: Higher metabolic demand, risk of overdosing if not adjusted.";
+        recommendations = "Recommendation: Tailor chemotherapy/critical care dosing, monitor closely.";
+    }
+
+    document.getElementById("tbsaDisplay").innerHTML =
+        "Total Body Surface Area (BSA): " + bsa.toFixed(2) + " m²<br>" +
+        "Category: " + category + "<br>" +
+        risks + "<br>" +
+        recommendations;
+}
