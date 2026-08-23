@@ -1453,3 +1453,53 @@ function rbsReading() {
 
   document.getElementById("rbsDisplay").textContent = output;
 }
+
+
+document.getElementById("mgBtn").addEventListener("click", function() {
+  const percent = parseFloat(document.getElementById("percent").value);
+  const wtv = parseFloat(document.getElementById("wtv").value);
+  const tpercent = parseFloat(document.getElementById("tpercent").value);
+  let output = "";
+
+  if (isNaN(percent) || isNaN(wtv) || isNaN(tpercent) || percent <= 0 || wtv <= 0 || tpercent <= 0) {
+    document.getElementById("mgDisplay").innerHTML = "⚠️ Please enter valid values.";
+    return;
+  }
+
+  // Convert % to mg/mL (1% = 10 mg/mL)
+  const sourceConc = percent * 10; 
+  const targetConc = tpercent * 10;
+
+  // --- 4 g IV at 20% ---
+  // 4 g = 4000 mg
+  const volStock4g = 4000 / sourceConc; // mL of stock needed
+  const finalConc20 = 200; // mg/mL for 20%
+  const finalVol4g = 4000 / finalConc20; // total volume needed
+  const diluent4g = finalVol4g - volStock4g;
+
+  // --- 10 g IM at 50% ---
+  // 10 g = 10000 mg
+  const volStock10g = 10000 / sourceConc; // mL of stock needed
+  // Since target is 50%, no dilution required if stock is already 50%
+
+  output += `<h3>💉 Pre‑eclampsia Regimen Preparation</h3>`;
+
+  output += `<strong>4 g IV (20% solution):</strong><br>
+    - Draw <b>${volStock4g.toFixed(2)} mL</b> of ${percent}% stock (${sourceConc} mg/mL)<br>
+    - Dilute with <b>${diluent4g.toFixed(2)} mL</b> of NS/D5W<br>
+    - Final volume: <b>${finalVol4g.toFixed(2)} mL</b> at 20% concentration<br>
+    - Infuse over 20–30 minutes<br><br>`;
+
+  output += `<strong>10 g IM (50% solution):</strong><br>
+    - Draw <b>${volStock10g.toFixed(2)} mL</b> of ${percent}% stock (${sourceConc} mg/mL)<br>
+    - Divide into two syringes: 5 g (≈${(volStock10g/2).toFixed(2)} mL) per buttock<br>
+    - No dilution required if stock is already 50%<br><br>`;
+
+  output += `<h3>⚠️ Safety Monitoring</h3>
+    - Check patellar reflexes before each dose<br>
+    - Ensure respiratory rate > 16/min<br>
+    - Maintain urine output > 25 mL/hr<br>
+    - Keep calcium gluconate antidote available<br>`;
+
+  document.getElementById("mgDisplay").innerHTML = output;
+});
