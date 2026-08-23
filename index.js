@@ -1412,3 +1412,44 @@ function tbsa() {
         risks + "<br>" +
         recommendations;
 }
+let rbsBtn = document.getElementById("rbsBtn");
+rbsBtn.addEventListener("click", rbsReading);
+
+function rbsReading() {
+  let rbsInput = Number(document.getElementById("rbs").value);
+  let output = "";
+
+  if (rbsInput < 3.9) {
+    output =
+      "🩸 Hypoglycemia\n" +
+      "Interpretation: Low blood sugar.\n" +
+      "Possible causes: Missed meals, insulin/sulfonylurea overdose, prolonged exercise, alcohol use.\n" +
+      "Next step at hospital: Immediate glucose administration (oral or IV), monitor vitals, investigate underlying cause.\n" +
+      "Consequences if untreated: Seizures, coma, brain injury, death.";
+  } else if (rbsInput >= 3.9 && rbsInput <= 7.7) {
+    output =
+      "✅ Normal\n" +
+      "Interpretation: Acceptable glucose range for most adults regardless of meals.\n" +
+      "Possible causes: Balanced diet, normal insulin function.\n" +
+      "Next step at hospital: Routine follow‑up only if risk factors present.\n" +
+      "Consequences if untreated: None — this is a healthy range.";
+  } else if (rbsInput >= 7.8 && rbsInput <= 11.0) {
+    output =
+      "⚠️ Prediabetes / Impaired Glucose Tolerance\n" +
+      "Interpretation: Borderline range; requires confirmatory testing.\n" +
+      "Possible causes: Early insulin resistance, obesity, sedentary lifestyle, family history.\n" +
+      "Next step at hospital: Order fasting glucose or HbA1c, lifestyle counseling, weight management.\n" +
+      "Consequences if untreated: Progression to type 2 diabetes, cardiovascular disease risk.";
+  } else if (rbsInput >= 11.1) {
+    output =
+      "🚨 Diabetes (if symptoms present)\n" +
+      "Interpretation: Diagnostic threshold for diabetes when classic symptoms are present.\n" +
+      "Possible causes: Type 2 diabetes, type 1 diabetes, steroid use, pancreatic disease.\n" +
+      "Next step at hospital: Confirm with repeat test or HbA1c, initiate diabetes management plan (diet, medication, insulin if needed).\n" +
+      "Consequences if untreated: Persistent hyperglycemia leading to neuropathy, nephropathy, retinopathy, cardiovascular complications.";
+  } else {
+    output = "❓ Invalid input. Please enter a valid RBS value in mmol/L.";
+  }
+
+  document.getElementById("rbsDisplay").textContent = output;
+}
