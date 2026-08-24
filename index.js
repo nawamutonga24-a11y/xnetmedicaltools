@@ -81,16 +81,17 @@ if (sbp < 120 && dbp < 80) {
     bpText += "High Normal<br>Recommendation: Lifestyle modification, monitor BP closely.";
 } else if ((sbp >= 140 && sbp <= 159) || (dbp >= 90 && dbp <= 99)) {
     bpText += "Grade 1 Hypertension (Mild)<br>Next Step: Confirm with repeat readings, consider lifestyle changes ± medication.";
-} else if ((sbp >= 160 && sbp <= 179) || (dbp >= 100 && dbp <= 109)) {
-    bpText += "Grade 2 Hypertension (Moderate)<br>Next Step: Medical evaluation, likely medication required.";
-} else if ((sbp >= 180 || dbp >= 110) && (sbp < 200 && dbp < 120)) {
-    bpText += "Grade 3 Hypertension (Severe)<br>Next Step: Urgent medical review, medication initiation.";
 } else if (sbp >= 200 || dbp >= 120) {
     bpText += "Hypertensive Crisis<br>Recommendation: Emergency care required — risk of stroke, heart attack, organ damage.";
+} else if ((sbp >= 160 && sbp <= 179) || (dbp >= 100 && dbp <= 109)) {
+    bpText += "Grade 2 Hypertension (Moderate)<br>Next Step: Medical evaluation, likely medication required.";
+} else if ((sbp >= 180 && sbp <= 199) || (dbp >= 110 && dbp <= 119)) {
+    bpText += "Grade 3 Hypertension (Severe)<br>Next Step: Urgent medical review, medication initiation.";
 } else {
     bpText += "Unclassified — check input values.";
 }
 
+// ✅ These lines must be OUTSIDE the if/else chain
 bpText += `<br>Systolic: ${sbp} mmHg<br>Diastolic: ${dbp} mmHg`;
 document.getElementById("bpResults").innerHTML = bpText;
 
