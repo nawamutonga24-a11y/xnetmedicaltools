@@ -1508,3 +1508,45 @@ document.getElementById("mgBtn").addEventListener("click", function() {
 
   document.getElementById("mgDisplay").innerHTML = output;
 });
+
+//Duke's criteria;
+let dcBtn = document.getElementById("dcBtn");
+dcBtn.addEventListener("click", dukeScore);
+
+function dukeScore() {
+    // Major criteria
+    let a = parseInt(document.getElementById("hacek").value) || 0;
+    let b = parseInt(document.getElementById("bacteremia").value) || 0;
+    let c = parseInt(document.getElementById("coxiella").value) || 0;
+    let d = parseInt(document.getElementById("eoei").value) || 0;
+    let e = parseInt(document.getElementById("Ecfs").value) || 0;
+    let f = parseInt(document.getElementById("nvr").value) || 0;
+    let g = parseInt(document.getElementById("aipet").value) || 0;
+
+    // Minor criteria
+    let h = parseInt(document.getElementById("pdhc").value) || 0;
+    let i = parseInt(document.getElementById("iecf").value) || 0;
+    let j = parseInt(document.getElementById("ievpS").value) || 0;
+    let k = parseInt(document.getElementById("ipgorrf").value) || 0;
+    let l = parseInt(document.getElementById("ieme").value) || 0;
+
+    // Count totals
+    let majorCount = a + b + c + d + e + f + g;
+    let minorCount = h + i + j + k + l;
+
+    // Apply Duke’s diagnostic categories
+    let result = "";
+    if (majorCount >= 2 || (majorCount === 1 && minorCount >= 3) || minorCount >= 5) {
+        result = "Definite Infective Endocarditis";
+    } else if ((majorCount === 1 && minorCount >= 1) || minorCount >= 3) {
+        result = "Possible Infective Endocarditis";
+    } else {
+        result = "Rejected (criteria not met)";
+    }
+
+    // Display result
+    document.getElementById("dcDisplay").innerHTML =
+        "Major criteria: " + majorCount + "<br>" +
+        "Minor criteria: " + minorCount + "<br>" +
+        "→ " + result;
+}
