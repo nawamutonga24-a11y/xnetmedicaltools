@@ -61,7 +61,7 @@
 <body>
 
 
-    <h1 style="color: blue">xNET Medical Tools</h1>
+    <h1 style="color: blue"><span style="color: red;">x</span>NET Medical Tools</h1>
     
     <p>I am continually striving to refine and perfect this platform, and your insights are invaluable in that journey. If you come across any result that seems inaccurate or incomplete, I warmly invite you to share your observations. Please reach out to me at <span style="color: black; font-weight: bold">admin@nawamutonga.org</span>, so together we can ensure this site remains a reliable and trustworthy resource.</p>
      <div>
@@ -1354,6 +1354,61 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br><br>
 <button id="dcBtn">Submit</button><br><br>
 <div id="dcDisplay"></div>
+</details>
+<hr>
+<h2>10. PECARN Head Injury Rule (less than 2 year)</h2>
+<p>The PECARN Head Injury Rule is the most validated decision aid for children with minor blunt head trauma (GCS 14–15), helping clinicians decide between CT imaging and observation while minimizing radiation exposure. It stratifies risk by age (<2 years vs ≥2 years) and has near‑perfect sensitivity for clinically important traumatic brain injury (ciTBI)</p>
+<details>
+<label>a. GCS <15</label><br><br>
+<select id="pecGcs">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>b. Altered mental status</label><br><br>
+<select id="pecAms">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>c. Palpable skull fracture</label><br><br>
+<select id="pecPsf">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>d. Non‑frontal scalp hematoma</label><br><br>
+<select id="pecNfsh">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>e. Loss of consciousness &gt;=5 sec</label><br><br>
+<select id="pecLoc">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>f. Severe mechanism of injury</label><br><br>
+<select id="pecSmoi">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>g. Abnormal behavior per parent</label><br><br>
+<select id="pecAbpp">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<label>h. None of the above present → &lt;0.02% ciTBI risk </label><br><br>
+<select id="pecNota">
+<option value="">Select</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
+</select></label><br><br>
+<button id="pecarnBtn">Submit</button><br><br><br>
+<div id="pecResult"></div>
 </details>
 </details>
 </div>
