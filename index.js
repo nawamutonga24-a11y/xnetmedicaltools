@@ -1548,3 +1548,37 @@ function dukeScore() {
         "Minor criteria: " + minorCount + "<br>" +
         "→ " + result;
 }
+//pecarn
+let pecarnBtn = document.getElementById("pecarnBtn");
+pecarnBtn.addEventListener("click", pecarn);
+
+function pecarn() {
+    // Parse inputs as integers (default 0 if empty)
+    let gcs = parseInt(document.getElementById("pecGcs").value) || 0;
+    let ams = parseInt(document.getElementById("pecAms").value) || 0;
+    let psf = parseInt(document.getElementById("pecPsf").value) || 0;   // palpable skull fracture
+    let nfsh = parseInt(document.getElementById("pecNfsh").value) || 0; // non-frontal scalp hematoma
+    let loc = parseInt(document.getElementById("pecLoc").value) || 0;   // loss of consciousness
+    let smoi = parseInt(document.getElementById("pecSmoi").value) || 0; // severe mechanism of injury
+    let abpp = parseInt(document.getElementById("pecAbpp").value) || 0; // abnormal behavior per parent
+    let nota = parseInt(document.getElementById("pecNota").value) || 0; // optional extra field
+
+    // High-risk predictors
+    let highRisk = (gcs || ams || psf);
+
+    // Intermediate-risk predictors
+    let intermediateRisk = (nfsh || loc || smoi || abpp);
+
+    // Decision logic
+    let result;
+    if (highRisk) {
+        result = "High Risk – CT recommended";
+    } else if (intermediateRisk) {
+        result = "Intermediate Risk – CT vs Observation";
+    } else {
+        result = "Very Low Risk – No CT needed";
+    }
+
+    document.getElementById("pecResult").innerHTML = result;
+}
+
