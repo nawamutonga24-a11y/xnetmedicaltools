@@ -68,24 +68,36 @@
     Contact;
     <a href="mailto:admin@nawamutonga.org">admin@nawamutonga.org</a>
   </div>
-    <h2>Instructions</h2>
-    <h4>After selecting a category, press “Details” to view the tool. Each time you press “Details,” more information will be displayed.</h4><br><br>
-<hr>    
+    
     <p><span style="color: black; font-weight: bold">Disclaimer:</span>
 The medical tools and resources provided on this website are intended solely for educational and informational purposes. They are not a substitute for professional medical advice, diagnosis, or treatment. Users should always seek the guidance of qualified healthcare providers regarding any medical condition or decision. By accessing and using these tools, you acknowledge that the website owner assumes no responsibility for any outcomes, misuse, or reliance on the information provided. Use of this site should be for educational purposes only and compliance with local laws, regulations, and professional standards remains the responsibility of the user.</p><br><br>
 
-<div>Our mission is to empower healthcare students, professionals, and communities with accessible, exam‑friendly, and clinically reliable medical tools that enhance learning, sharpen decision‑making, and promote better patient outcomes. By combining high‑yield educational resources with digital innovation, we aim to advance medical education, support healthcare providers in practice, and promote community health through prevention and early‑seeking behavior, ultimately bridging gaps in knowledge and strengthening healthcare delivery across diverse settings.</div>
 
 <div id="imedt" class="section">
 
 
 <div class="internalMedicine">
     <h1>A. INTERNAL MEDICINE</h1>
-<details>
-<hr>
+    <h2>Choose the Tool:</h2>
+    <select id="imedChoice">
+    <option value="">Choose</option>
+    <option value="bmix">BMI</option>
+     <option value="vitalsx">Vital Signs</option>
+      <option value="hbx">HB Check</option>
+      <option value="curbx">Curb 65</option>
+     <option value="ascvdx">Simplified ASCVD</option>
+      <option value="headachex">Headache Assessment Tool</option>
+      <option value="lungx">Lung Sounds</option>
+     <option value="heartx">Heart Sounds</option>
+      <option value="chadx">CHA₂DS₂‑VASc Scores</option>
+      <option value="tbsax">Total Body Surface Area</option>
+            <option value="rbsx">Random Blood Sugar</option>
+    </select><br><br><br><br>
+ 
+<section class="tool" id="bmix">   
 <h2>1.BMI (Adults)</h2>
 <p>"The BMI tool calculates weight‑for‑height ratio to classify underweight, normal, overweight, or obesity status. It provides a quick screening measure to guide nutritional assessment and health risk evaluation."</p>
-<details>
+
 <label for="wt">Enter weight in kg: </label>
 <input type="number" id="wt" placeholder="Enter your weight in kg"><br><br>
 
@@ -93,12 +105,12 @@ The medical tools and resources provided on this website are intended solely for
 <input type="number" id="ht" placeholder="Enter your height in meters"><br><br>
 <button onclick="bmi()">submit</button><br><br>
 <div id="bmi"></div>
+</section>
 
-</details>
-<hr>
+<section class="tool" id="vitalsx">
 <h2>2.Vital Signs</h2>
 <p>"The Vital Signs tool captures core physiological parameters including temperature, pulse, respiration, and blood pressure. It provides a structured baseline for clinical assessment, monitoring, and early detection of patient deterioration."</p>
-<details>
+
 <label for="sbp">Enter the Systolic Pressure: </label>
 <input type="number" id="sbp" placeholder="Enter your Systolic BP"><br><br>
 
@@ -125,11 +137,12 @@ The medical tools and resources provided on this website are intended solely for
 <div id="siResults"></div>
 <div id="ppResults"></div>
 <div id="rppResults"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="hbx">
 <h2>3. Hb Check</h2>
 <p>"The Hemoglobin Check tool provides quick estimation of Hb levels for anemia screening and monitoring. It supports timely clinical decisions by guiding diagnosis, treatment, and follow‑up in pediatric and adult patients."</p>
-<details>
+
 <label for="hbResults">Enter Hb results: </label>
 <input type="number" id="hbResults" placeholder="Hemoglobin results"><br><br>
 
@@ -224,11 +237,12 @@ The medical tools and resources provided on this website are intended solely for
 <div id="fElderlyMo"></div>
 <div id="fElderlyS"></div>
 <div id="fElderlyH"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="curbx">
 <h2>4.Curb 65</h2>
 <p>"The CURB‑65 Score is a clinical prediction rule used to assess the severity of community‑acquired pneumonia. It guides decisions on hospitalization and management by evaluating five key risk factors."</p>
-<details>
+
 <h3>4.1 Confusion</h3>
 <select id="cconfusion">
 <option value="">Select</option>
@@ -263,11 +277,14 @@ The medical tools and resources provided on this website are intended solely for
 <br><button onclick="curb65()">Submit</button><br><br>
 
 <div id="cTotal"></div>
-</details>
-<hr>
+</section>
+
+
+
+<section class="tool" id="ascvdx">
 <h2>5. Simplified ASCVD</h2>
 <p>The ASCVD score is a clinical tool used to estimate a person’s 10‑year risk of major cardiovascular events (like heart attack or stroke), guiding whether preventive measures such as statin therapy or lifestyle changes should be started. It helps doctors personalize treatment intensity based on risk categories rather than using a one‑size‑fits‑all approach</p>
-<details>
+
 <h3>Age</h3>
 <select id="ascAge">
 <option value="">Select</option>
@@ -330,11 +347,13 @@ The medical tools and resources provided on this website are intended solely for
 </select><br>
 <br><button onclick="ascVD()">Submit</button><br><br>
 <div id="ascT"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="headachex">
+
 <h2>6.Headache Assessment Score</h2>
 <p>"The Headache Assessment tool structures evaluation of headache type, severity, and associated features. It supports accurate differentiation between primary and secondary headaches, guiding safe diagnostic and management decisions."</p>
-<details>
+
 <h3>Onset</h3>
 <select id="hasO">
 <option value="">Select</option>
@@ -387,26 +406,29 @@ The medical tools and resources provided on this website are intended solely for
 <br><br>
 <button onclick="headaches()">Submit</button><br><br>
 <div id="hasTotal"></div>
-</details>
-<hr>
+
+</section>
+
+<section class="tool" id="lungx">
+
 <h2>7.Learn Lung Sounds With Ease:</h2>
 <p>Lung sounds are the audible vibrations produced by air moving through the respiratory tract, and they are a cornerstone of clinical examination. Listening to them with a stethoscope helps clinicians assess the patency of airways, detect fluid or obstruction, and identify pathological changes in the lungs and pleura.</p>
-<details>
-<hr>
+
+
 <h3>Wheeze</h3>
 <p>A wheeze is caused by airflow through narrowed or obstructed airways, leading to vibration of the airway walls. Common causes include asthma, COPD, bronchitis, or localized obstruction such as a tumor or foreign body.</p>
 <audio controls>
   <source src="wheezing.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-<hr>
+
 <h3>Rhonchi</h3>
 <p>Rhonchi are caused by airflow through larger airways that are partially obstructed by secretions, mucus, or swelling. The turbulent movement of air over these obstructions produces a low-pitched, snoring-like sound that often clears after coughing.Common causes include chronic bronchitis, COPD, and acute airway infections with excess mucus.Think of rhonchi as “secretions rattling in the pipes.”</p>
 <audio controls>
   <source src="rhonchi.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-<hr>
+
 <h3>Fine Crackles</h3>
 <p>Fine crackles are caused by the sudden opening of small airways and alveoli during inspiration, producing soft, high‑pitched, brief popping sounds. They are typically associated with conditions like pulmonary fibrosis or early congestive heart failure.</p>
 <audio controls>
@@ -434,55 +456,61 @@ The medical tools and resources provided on this website are intended solely for
   <source src="stridor.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
-<hr>
-</details>
-<hr>
+
+
+</section>
+
+<section class="tool" id="heartx">
+
 <h2>8. Learn Heart Sounds With Ease:</h2>
 <p>Heart sounds are the audible vibrations produced by the closing of heart valves and blood flow within the chambers and vessels. They are a cornerstone of cardiovascular examination, giving clinicians real‑time clues about cardiac function and pathology.</p>
-<details>
-<hr>
+
+
 <h3>Third Heart Sound</h3>
 <p>The third heart sound (S3) is caused by rapid passive filling of the ventricles during early diastole, when blood strikes a compliant or dilated ventricular wall. It is often associated with volume overload states such as congestive heart failure, dilated cardiomyopathy, and significant mitral or aortic regurgitation. In younger individuals and athletes, an S3 can be physiological due to highly compliant ventricles, but in adults over 40 it usually indicates pathology.</p>
 <audio controls>
   <source src="s3.mp3" type="audio/ogg">
 </audio>
-<hr>
+
 <h3>Fourth heart sound</h3>
 <p>The fourth heart sound (S4) is a low‑pitched, late diastolic sound produced when the atria contract forcefully against a stiff, non‑compliant ventricle. It occurs just before S1 and is often described as an “atrial gallop.” Pathologically, it is linked to conditions that cause ventricular hypertrophy or reduced compliance, such as long‑standing hypertension, aortic stenosis, hypertrophic cardiomyopathy, and ischemic heart disease. Unlike S3, which reflects volume overload, S4 signals pressure overload and decreased ventricular compliance, and it is almost always abnormal in adults.</p>
 <audio controls>
   <source src="s4.mp3" type="audio/ogg">
 </audio>
-<hr>
+
 <h3>Tumor Plop</h3>
 <p>The tumor plop is a distinctive abnormal heart sound produced by an atrial myxoma (the most common primary cardiac tumor). It occurs in early diastole, when the mobile tumor mass moves through the atrioventricular valve and abruptly strikes the ventricular wall or valve leaflets. Clinically, it can mimic the opening snap of mitral stenosis, but the presence of constitutional symptoms (fever, weight loss), embolic phenomena, or positional changes in the murmur often point toward a myxoma.</p>
 <audio controls>
   <source src="tumor plop.mp3" type="audio/ogg">
 </audio>
-<hr>
+
 <h3>Pericardial Knoch</h3>
 <p>A pericardial knock is a sharp, loud, early diastolic heart sound caused by the abrupt cessation of ventricular filling due to a rigid, thickened pericardium. It is most classically associated with constrictive pericarditis. Unlike the normal S3, which reflects rapid ventricular filling into a compliant chamber, the knock occurs when blood suddenly hits the stiff pericardial barrier, producing a distinct “thud.” Clinically, it is an important clue pointing toward constrictive physiology and can help differentiate constrictive pericarditis from restrictive cardiomyopathy.</p>
 <audio controls>
   <source src="pericardial knock.mp3" type="audio/ogg">
 </audio>
-<hr>
+
 <h3>Opening Snap</h3>
 <p>The opening snap is a sharp, high‑pitched, extra heart sound that occurs just after the second heart sound (S2) during early diastole. It is produced by the sudden tensing of stenotic valve leaflets — most classically the mitral valve in mitral stenosis, but it can also be heard in tricuspid stenosis. The snap follows the closure of the semilunar valves (S2) and precedes the low‑pitched diastolic rumble of stenosis. Clinically, the presence of an opening snap is a hallmark of rheumatic mitral stenosis, and the shorter the interval between S2 and the snap, the more severe the stenosis.</p>
 <audio controls>
   <source src="opening snap.mp3" type="audio/ogg">
 </audio>
-<hr>
+
 <h3>Ejection Click</h3>
 <p>An ejection click is a sharp, high‑frequency sound heard shortly after the first heart sound (S1), during early systole. It is produced by the sudden opening of a stenotic or abnormal semilunar valve (aortic or pulmonary) as ventricular pressure rises. Clinically, it is most often associated with aortic stenosis (especially bicuspid aortic valve) and pulmonary stenosis. The timing of the click helps distinguish between the two:
 </p>
 <audio controls>
   <source src="ejection click.mp3" type="audio/ogg">
 </audio>
-<hr>
-</details>
-<hr>
+
+
+</section>
+
+<section class="tool" id="chadx">
+
 <h2>9. CHA₂DS₂‑VASc Scores</h2>
 <p>The CHA₂DS₂‑VASc Score is a clinical tool used in atrial fibrillation to estimate stroke risk. It assigns points for factors like heart failure, hypertension, age, diabetes, prior stroke, vascular disease, and female sex. The total score (0–9) guides whether anticoagulation therapy is recommended, with higher scores indicating greater risk.</p>
-<details>
+
 <h3>a. Congestive heart failure/LV dysfunction</h3>
 <select id="chflv">
 <option value="">Select</option>
@@ -532,11 +560,14 @@ The medical tools and resources provided on this website are intended solely for
 </select><br><br>
 <button id="chaBtn">Submit</button><br><br>
 <div id="chaT"></div>
-</details>
-<hr>
+
+</section>
+
+<section class="tool" id="tbsax">
+
 <h2>10. Calculating Total Body Surface Area: </h2>
 <p>The total body surface area (TBSA) is a fundamental measurement in medicine because it provides a universal reference for scaling physiological processes across individuals of different sizes. Unlike weight alone, TBSA reflects the metabolic activity and distribution of tissues, making it essential for drug dosing in chemotherapy and other treatments where precision is critical. It also underpins calculations such as cardiac index and glomerular filtration rate normalization, ensuring that values are standardized and comparable across patients. By knowing the whole body’s surface area, clinicians can tailor therapies, monitor organ function, and predict metabolic demands more accurately, ultimately improving patient safety and treatment outcomes.</p>
-<details>
+
 <form>
 <label for="tbsaWt">Enter Weight in Kg:</label><br><br>
 <input type="number" id="tbsaWt" placeholder="Enter Weight in Kg"><br><br>
@@ -545,19 +576,23 @@ The medical tools and resources provided on this website are intended solely for
 <button type="button" id="tbsaBtn">Submit</button><br><br>
 </form>
 <div id="tbsaDisplay"></div>
-</details>
-<hr>
+
+</section>
+
+<section class="tool" id="rbsx">
+
 <h2>11. Random Blood Sugar:</h2>
 <p>Random blood sugar (RBS) is a simple test that measures glucose levels at any time of day without fasting. Normal values are usually between 3.9–7.8 mmol/L, while readings from 7.8–11.0 mmol/L may indicate impaired glucose tolerance. A result of ≥11.1 mmol/L, especially if accompanied by symptoms like excessive thirst or frequent urination, strongly suggests diabetes and should be confirmed with further testing.</p>
-<details>
+
 <form>
 <label>Enter the random Blood Sugar reading:</label><br><br>
 <input type="number" id="rbs" name="rbs" placeholder="Enter RBS in mmol/L"><br><br>
 <button type="button" id="rbsBtn">Submit</button><br><br>
 </form>
 <div id="rbsDisplay"></div>
-</details>
-</details>
+
+</section>
+
 </div>
 </div>
 
@@ -566,11 +601,21 @@ The medical tools and resources provided on this website are intended solely for
 <!Begining of OBGY>
 <div id="obgyt" class="section">
 <h1>B.OBSTETRICS AND GYNECOLOGY</h1>
-<details>
-<hr>
+<h2>Choose the tool:</h2>
+<select id="obGy">
+<option value="">Choose</option>
+<option value="apgar">APGAR Score</option>
+<option value="bishop">Bishop Score</option>
+<option value="ferriman">Ferriman‑Gallwey Parameters</option>
+<option value="biophysical">Biophysical Profile</option>
+<option value="pera">Pre-Eclampsia Risk Assessment Tool</option>
+<option value="mgso">Magnesium Sulphate Dilution</option>
+</select><br><br><br>
+
+<section class="tool" id="apgar">
 <h2>1. APGAR Score</h2>
 <p>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</p>
-<details>
+
 <h3>1.1 Appearance</h3>
 <select id="appear">
 <option value="">Select</option>
@@ -608,12 +653,13 @@ The medical tools and resources provided on this website are intended solely for
 </select><br>
 <button onclick="apgar()">Submit</button><br><br>
 <div id="xTotal"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="bishop">
 <h2>2. Bishop Score</h2>
 <p>The Bishop Score is a system used to assess cervical readiness for labor induction.
 It evaluates dilation, effacement, consistency, position, and fetal station to predict induction success.</p>
-<details>
+
 <h3>Cervical Dilatation</h3>
 <select id="cd">
 <option value="">Select</option>
@@ -656,12 +702,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="bishopScore()">Submit</button><br><br>
 <div id="bTotal"></div>
+</section>
 
-</details>
-<hr>
+<section class="tool" id="ferriman">
 <h2>3. Ferriman‑Gallwey Parameters</h2>
 <p>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</p>
-<details>
+
 <h3>Upper Lip Hair growth above the lip</h3>
 <select id="ulh">
 <option value="">select</option>
@@ -745,11 +791,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="fgp()">Submit</button><br><br>
 <div id="fxx"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="biophysical">
 <h2>4. Biophysical Profile</h2>
 <p>"The Biophysical Profile is an antenatal assessment combining ultrasound and non‑stress testing to evaluate fetal well‑being. It provides a structured score that guides timely obstetric decision‑making and perinatal care."</p>
-<details>
+
 <h3>Fetal Breathing Movements</h3>
 <select id="fbrm">
 <option value="">select</option>
@@ -782,11 +829,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="bpp()">Submit</button><br><br>
 <div id="gxx"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="pera">
 <h2>5. Pre-Eclampsia Risk Assessment Tool:</h2>
 <p>“The Pre‑eclampsia Risk Assessment tool helps identify pregnant women at increased risk of developing pre‑eclampsia. By systematically evaluating high‑ and moderate‑risk factors, it guides clinicians on whether to initiate aspirin prophylaxis from 12 weeks, supporting safer pregnancies and improved maternal‑fetal outcomes.”</p>
-<details>
+
 <h3>a. Hypertensive disease in previous pregnancy</h3>
 <select id="hdipp">
 <option value="">Select</option>
@@ -855,11 +903,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br><br>
 <button id="peratBtn">Submit</button><br><br>
 <div id="peratDisplay"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="mgso">
 <h2>6. Magnesium Sulphate Dilution: </h2>
 <p>Magnesium sulphate (MgSO₄) is the cornerstone drug for seizure prophylaxis and treatment in preeclampsia and eclampsia. Because it has a narrow therapeutic window, accurate dilution and dosing calculations are essential to balance efficacy with safety.</p>
-<details>
+
 <form>
 <label>Enter the strength in Percentage of the bottle you are using: </label><br><br>
 <input type="number" id="percent" name="percent" placeholder="% strength"><br><br>
@@ -870,22 +919,33 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <button type="button" id="mgBtn">Submit</button><br>
 </form>
 <div id="mgDisplay"></div>
-</details>
-</details>
+</section>
 </div>
-
-<!End of OBGY>
 </div>
 
 
 <div class="pediatrics">
 <div id="pedst" class="section">
 <h1>C. PEDIATRICS</h1>
-<details>
-<hr>
+<h2>Choose the tool:</h2>
+<select id="pedChoice">
+<option value="">Choose</option>
+<option value="prism">PRISM Score</option>
+<option value="silverman">Silverman Score</option>
+<option value="pneumonia">Pneumonia Score</option>
+<option value="tal">Tal Score</option>
+<option value="pmdc">Pediatric Malaria Dose Calculator</option>
+<option value="yos">Yale Observation Scale</option>
+<option value="mfic">Maintenance fluids in children</option>
+<option value="jones">Jones Criteria</option>
+<option value="duke">Duke's Criteria</option>
+<option value="pecarn">PECARN Head Injury Rule (less than 2 year)</option>
+</select><br><br><br>
+
+<section class="tool" id="prism">
 <h2>1.PRISM (Pediatric Risk of Mortality) Score</h2>
 <p>The PRISM score — Pediatric Risk of Mortality — is a critical care scoring system used in pediatric intensive care units (PICUs) to predict the risk of death in seriously ill children. It’s one of the most validated pediatric severity scores worldwide.</p>
-<details>
+
 <h2>Neurologic</h2>
 <h3>Glasgow Coma Scale</h3>
 <select id="prGcs">
@@ -992,8 +1052,9 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="prism()">Submit</button><br><br>
 <div id="prTx"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="silverman">
 <h2>2. Silverman Score</h2>
 <p>The Silverman Score is a neonatal clinical scoring system used to assess the severity of respiratory distress in newborns. It’s simple, bedside‑based, and helps clinicians decide whether a baby needs oxygen, CPAP, or mechanical ventilation.</p>
 <details>
@@ -1034,11 +1095,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="silverman()">Submit</button><br><br>
 <div id="sT"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="pneumonia">
 <h2>3. Pneumonia Score</h2>
 <p>The Pneumonia Score is a clinical tool that grades severity based on signs like fever, chest indrawing, oxygen saturation, respiratory distress, intake difficulty, and lethargy. It guides management decisions by categorizing cases into non‑severe (outpatient care), severe (hospital admission), or very severe (urgent intensive support).</p>
-<details>
+
 <h3>Is there fast breathing?</h3>
 <select id="fb">
 <option value="">select</option>
@@ -1083,11 +1145,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="pneumScore()">Submit</button><br><br>
 <div id="xTx"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="tal">
 <h2>4. Tal Score</h2>
 <p>The Tal Score is a pediatric asthma severity score used in emergency and clinical settings to assess how severe an asthma exacerbation is in children. It’s less commonly digitized than tools like APGAR or Silverman, but it’s clinically valuable for guiding treatment decisions</p>
-<details>
+
 <h3>Respiratory Rate</h3>
 <select id="trr">
 <option value="">select</option>
@@ -1130,11 +1193,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select><br>
 <br><button onclick="talScore()">Submit</button><br><br>
 <div id="talT"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="pmdc">
 <h2>5. Pediatric Malaria Dose Calculator:</h2>
 <p>"The Pediatric Malaria Dose Calculator provides weight‑based dosing guidance for children with uncomplicated or severe malaria. It ensures accurate, evidence‑aligned treatment decisions to improve safety and clinical outcomes."</p>
-<details>
+
 <h2>Select the appropriate options below:</h2>
 <form>
 <label for="uncomplicated">Uncomplicated Malaria</label><br><br>
@@ -1148,11 +1212,12 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <button type="button" id="pediatricDoseCalculator">Submit</button><br><br>
 </form>
 <div id="malariaDoseCalculatedDisplay" style="font-weight: bold"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="yos">
 <h2>6. Yale Observation Scale: </h2>
 <p>The Yale Observation Scale is a clinical tool used to assess febrile children aged 3–36 months, focusing on behavior, appearance, and interaction. It helps distinguish between benign viral illness and serious bacterial infection by scoring six observable criteria.</p>
-<details>
+
 <h3 id="qoc">Quality of cry</h3>
 <select>
 <option value="">select</option>
@@ -1198,25 +1263,27 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 
 <button id="yosButton">Submit</button><br><br>
 <div id="yosDisplay"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="mfic">
 <h2>7. Maintenance fluids in children:</h2>
 <p>Maintenance fluids in children are the amount of fluid needed to meet normal daily physiological requirements for water and electrolytes.
 They replace ongoing losses from urine, respiration, skin, and stool under normal conditions.
 The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenance fluid requirements based on body weight.</p>
-<details>
+
 <form>
 <label for="mweight">Enter the weight in Kg: </label>
 <input type="number" id="mweight" name="mweight" placeholder="Enter the weight in Kg"><br><br>
 <button type="button" id="mfButton">Submit</button><br><br>
 </form>
 <div id="rmfD"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="jones">
 <h2>8. Jones Criteria</h2>
 <p>The Jones Criteria is a standardized clinical tool used to diagnose acute rheumatic fever (ARF), a serious complication of untreated streptococcal throat infections. It combines major manifestations (such as carditis, arthritis, chorea, erythema marginatum, and subcutaneous nodules) with minor criteria (like fever, arthralgia, and elevated inflammatory markers), alongside evidence of a preceding streptococcal infection.</p>
 <div>🔑 Core Requirements: Evidence of preceding streptococcal infection. Positive throat culture or rapid antigen test.Elevated/rising ASO or anti-DNase B titers. Recent scarlet fever</div>
-<details>
+
 <label>a. Carditis (clinical or subclinical on echocardiography)</label><br>
 <select id="ccosoe">
 <option value="">Select</option>
@@ -1273,11 +1340,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br><br>
 <button id="jonesBtn">Submit</button><br><br>
 <div id="jonesDisplay"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="duke">
 <h2>9. Duke's Criteria</h2>
 <p>The Duke’s Criteria are a standardized diagnostic framework developed at Duke University to identify infective endocarditis (IE), combining microbiological, imaging, and clinical findings into major and minor categories to classify cases as definite, possible, or rejected.</p>
-<details>
+
 <h3>Positive blood cultures</h3>
 <label>a. Typical organisms: Viridans streptococci, Staphylococcus aureus, HACEK group:</label><br><br>
 <select id="hacek">
@@ -1354,11 +1422,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br><br>
 <button id="dcBtn">Submit</button><br><br>
 <div id="dcDisplay"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="pecarn">
 <h2>10. PECARN Head Injury Rule (less than 2 year)</h2>
 <p>The PECARN Head Injury Rule is the most validated decision aid for children with minor blunt head trauma (GCS 14–15), helping clinicians decide between CT imaging and observation while minimizing radiation exposure. It stratifies risk by age (<2 years vs ≥2 years) and has near‑perfect sensitivity for clinically important traumatic brain injury (ciTBI)</p>
-<details>
+
 <label>a. GCS <15</label><br><br>
 <select id="pecGcs">
 <option value="">Select</option>
@@ -1409,19 +1478,31 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select></label><br><br>
 <button id="pecarnBtn">Submit</button><br><br><br>
 <div id="pecResult"></div>
-</details>
-</details>
+</section>
 </div>
 </div>
 
 <div class="surgery">
 <div id="surgt" class="section">
+
+
 <h1>D. SURGERY</h1>
-<details>
-<hr>
+<select id="surgPick">
+<option value="">Choose</option>
+<option value="possum">POSSUM Score</option>
+<option value="news">National Early Warning Score</option>
+<option value="acs">ACS NSQIP</option>
+<option value="pra">Prostate Risk Assessment</option>
+<option value="wells">Wells Criteria(DVT Risk Assessment)</option>
+<option value="ripasa">RIPASA Score(Assessment for appendicitis)</option>
+<option value="alvarado">Alvarado Score</option>
+<option value="glasgow">Glasgow Coma Scale</option>
+</select><br><br><br>
+
+<section class="tool" id="possum">
 <h2>D.1. POSSUM Score</h2>
 <p>The POSSUM score is a surgical risk prediction tool. It was designed to estimate postoperative morbidity and mortality by combining a patient’s physiological state with the severity of the operation</p>
-<details>
+
 <h2>A. Physiological Parameters</h2>
 
 <label for="ageRange">i. Age Range:</label><br>
@@ -1592,11 +1673,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <div id="opTotal"></div>
 <div id="morbx"></div>
 <div id="mortx"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="news">
 <h2>2. National Early Warning Score</h2>
 <p>Identifies patients at risk of sudden deterioration before critical events occur</p>
-<details>
+
 <h3>Respiratory rate</h3>
 <select id="nrr">
 <option value="">select</option>
@@ -1643,11 +1725,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="news()">Submit</button><br><br>
 <div id="nT"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="acs">
 <h2>3. ACS NSQIP</h2>
 <p class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</p>
-<details>
+
 <h3>Age</h3>
 <select id="aage">
 <option value="">Select</option>
@@ -1686,11 +1769,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="acs()">Submit</button><br><br>
 <div id="AAA"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="pra">
 <h2>4. Prostate Risk Assessment</h2>
 <p>"This tool helps identify individual risk factors for prostate conditions, guiding timely screening and preventive care. It empowers clinicians and clients with structured, evidence‑based insights for informed decision‑making."</p>
-<details>
+
 <h3>Incomplete emptying</h3>
 <select id="pinco">
 <option value="">Select</option>
@@ -1763,11 +1847,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="prostate()">Submit</button><br><br>
 <div id="Pros"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="wells">
 <h2>5.Wells Criteria(DVT Risk Assessment)</h2>
 <p>"The Wells Criteria tool estimates the probability of deep vein thrombosis or pulmonary embolism based on clinical features. It supports safer, evidence‑based decisions about diagnostic testing and patient management."</p>
-<details>
+
 <h3>Active cancer (treatment ongoing, within 6 months, or palliative)?</h3>
 <select id="cancer">
 <option value="">Select</option>
@@ -1830,11 +1915,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="wells()">Submit</button><br><br>
 <div id=Wels></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="ripasa">
 <h2>6. RIPASA Score(Assessment for appendicitis)</h2>
 <p>"The RIPASA Score is a clinical scoring system designed to improve diagnostic accuracy for acute appendicitis, especially in Asian and Middle Eastern populations. It streamlines patient assessment by combining symptoms, signs, and lab findings into a structured risk evaluation."</p>
-<details>
+
 <h2>Demographics</h2>
 <h3>Age</h3>
 <select id="ripAge">
@@ -1930,12 +2016,13 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="0">No</option>
 </select><br>
 <br><button onclick="ripasa()">Submit</button><br><br>
-</details>
 <div id="ripaT"></div>
-<hr>
+</section>
+
+<section class="tool" id="alvarado">
 <h2>7. Alvarado Score</h2>
 <p>"The Alvarado Score is a clinical scoring system used to assess the likelihood of acute appendicitis. It combines symptoms, signs, and lab findings to guide diagnostic decisions and surgical referral."</p>
-<details>
+
 <h3>Migration of pain</h3>
 <select id="mop">
 <option value="">select</option>
@@ -1986,11 +2073,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="alvaradoScore()">Submit</button><br><br>
 <div id="alvaT"></div>
-</details>
-<hr>
+</section>
+
+<section class="tool" id="glasgow">
 <h2>8. Glasgow Coma Scale</h2>
 <p>"The Glasgow Coma Scale is a standardized system for assessing a patient’s level of consciousness after head injury. It evaluates eye, verbal, and motor responses to provide an objective score guiding clinical decisions."</p>
-<details>
+
 <h3>Eye Opening</h3>
 <select id="eoq">
 <option>select</option>
@@ -2021,8 +2109,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select><br>
 <br><button onclick="gcs()">Submit</button><br><br>
 <div id="gcsT"></div>
-</details>
-
+</section>
 </div>
 </div>
 
