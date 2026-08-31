@@ -1598,6 +1598,7 @@ function internalMedicine() {
     document.getElementById("chadx").style.display = "none";
     document.getElementById("tbsax").style.display = "none";
     document.getElementById("rbsx").style.display = "none";
+    document.getElementById("home").style.display = "none"
 
     // Show chosen one
     let picked = imedChoice.value;
@@ -1622,6 +1623,7 @@ function pediatrics() {
     document.getElementById("jones").style.display = "none";
     document.getElementById("duke").style.display = "none";
     document.getElementById("pecarn").style.display = "none";
+    document.getElementById("home").style.display = "none"
 
     // Show chosen one
     let pointed = pedChoice.value;
@@ -1644,6 +1646,7 @@ function surgery() {
     document.getElementById("ripasa").style.display = "none";
     document.getElementById("alvarado").style.display = "none";
     document.getElementById("glasgow").style.display = "none";
+    document.getElementById("home").style.display = "none"
 
     // Show chosen one
     let sun = surgPick.value;
@@ -1664,6 +1667,7 @@ function obgy() {
     document.getElementById("biophysical").style.display = "none";
     document.getElementById("pera").style.display = "none";
     document.getElementById("mgso").style.display = "none";
+    document.getElementById("home").style.display = "none"
    
 
     // Show chosen one
