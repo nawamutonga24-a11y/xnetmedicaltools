@@ -144,3 +144,6 @@ div {
     max-width: 100%;
   }
 }
+.tool{
+display: none;
+}
