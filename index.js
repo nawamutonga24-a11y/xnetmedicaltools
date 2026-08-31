@@ -1582,3 +1582,93 @@ function pecarn() {
     document.getElementById("pecResult").innerHTML = result;
 }
 
+let imedChoice = document.getElementById("imedChoice");
+imedChoice.addEventListener("change", internalMedicine);
+
+function internalMedicine() {
+    // Hide all sections
+    document.getElementById("bmix").style.display = "none";
+    document.getElementById("vitalsx").style.display = "none";
+    document.getElementById("hbx").style.display = "none";
+    document.getElementById("curbx").style.display = "none";
+    document.getElementById("ascvdx").style.display = "none";
+    document.getElementById("headachex").style.display = "none";
+    document.getElementById("lungx").style.display = "none";
+    document.getElementById("heartx").style.display = "none";
+    document.getElementById("chadx").style.display = "none";
+    document.getElementById("tbsax").style.display = "none";
+    document.getElementById("rbsx").style.display = "none";
+
+    // Show chosen one
+    let picked = imedChoice.value;
+    if (picked) {
+        document.getElementById(picked).style.display = "block";
+    }
+}
+
+
+let pedChoice = document.getElementById("pedChoice");
+pedChoice.addEventListener("change", pediatrics);
+
+function pediatrics() {
+    // Hide all sections
+    document.getElementById("prism").style.display = "none";
+    document.getElementById("silverman").style.display = "none";
+    document.getElementById("pneumonia").style.display = "none";
+    document.getElementById("tal").style.display = "none";
+    document.getElementById("pmdc").style.display = "none";
+    document.getElementById("yos").style.display = "none";
+    document.getElementById("mfic").style.display = "none";
+    document.getElementById("jones").style.display = "none";
+    document.getElementById("duke").style.display = "none";
+    document.getElementById("pecarn").style.display = "none";
+
+    // Show chosen one
+    let pointed = pedChoice.value;
+    if (pointed) {
+        document.getElementById(pointed).style.display = "block";
+    }
+}
+
+
+let surgPick = document.getElementById("surgPick");
+surgPick.addEventListener("change", surgery);
+
+function surgery() {
+    // Hide all sections
+    document.getElementById("possum").style.display = "none";
+    document.getElementById("news").style.display = "none";
+    document.getElementById("acs").style.display = "none";
+    document.getElementById("pra").style.display = "none";
+    document.getElementById("wells").style.display = "none";
+    document.getElementById("ripasa").style.display = "none";
+    document.getElementById("alvarado").style.display = "none";
+    document.getElementById("glasgow").style.display = "none";
+
+    // Show chosen one
+    let sun = surgPick.value;
+    if (sun) {
+        document.getElementById(sun).style.display = "block";
+    }
+}
+
+
+let obGy = document.getElementById("obGy");
+obGy.addEventListener("change", obgy);
+
+function obgy() {
+    // Hide all sections
+    document.getElementById("apgar").style.display = "none";
+    document.getElementById("bishop").style.display = "none";
+    document.getElementById("ferriman").style.display = "none";
+    document.getElementById("biophysical").style.display = "none";
+    document.getElementById("pera").style.display = "none";
+    document.getElementById("mgso").style.display = "none";
+   
+
+    // Show chosen one
+    let moon = obGy.value;
+    if (moon) {
+        document.getElementById(moon).style.display = "block";
+    }
+}
