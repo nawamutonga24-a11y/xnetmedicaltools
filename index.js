@@ -1026,6 +1026,7 @@ function showCategory()
       document.getElementById("obgyt").style.display = "none";
       document.getElementById("imedt").style.display = "none";
       document.getElementById("surgt").style.display = "none";
+      document.getElementById("nursingSection").style.display = "none";
 
       // Get selected value
       var selected = document.getElementById("categorySelect").value;
@@ -1647,6 +1648,7 @@ function surgery() {
     document.getElementById("alvarado").style.display = "none";
     document.getElementById("glasgow").style.display = "none";
     document.getElementById("home").style.display = "none";
+    document.getElementById("gleason").style.display = "none";
 
     // Show chosen one
     let sun = surgPick.value;
@@ -1680,4 +1682,16 @@ function obgy() {
     if (moon) {
         document.getElementById(moon).style.display = "block";
     }
+}
+
+let nursingSelect = document.getElementById("nursingSelect");
+nursingSelect.addEventListener("change", nursingDepartment);
+
+function nursingDepartment(){
+document.getElementById("ncp").style.display = "none";
+
+let nursingPick = nursingSelect.value;
+if(nursingPick){
+document.getElementById(nursingPick).style.display = "block";
+}
 }
