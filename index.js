@@ -1690,6 +1690,7 @@ nursingSelect.addEventListener("change", nursingDepartment);
 function nursingDepartment(){
 document.getElementById("ncp").style.display = "none";
 document.getElementById("sixRights").style.display = "none";
+document.getElementById("nurse-apgar").style.display = "none";
 
 let nursingPick = nursingSelect.value;
 if(nursingPick){
