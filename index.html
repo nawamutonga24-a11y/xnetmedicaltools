@@ -107,6 +107,7 @@ The medical tools and resources provided on this website are intended solely for
       <option value="chadx">CHA₂DS₂‑VASc Scores</option>
       <option value="tbsax">Total Body Surface Area</option>
             <option value="rbsx">Random Blood Sugar</option>
+              <option value="casx">Cough Assessment</option>
     </select><br><br><br><br>
  
 <section class="tool" id="bmix">   
@@ -605,9 +606,48 @@ The medical tools and resources provided on this website are intended solely for
 <button type="button" id="rbsBtn">Submit</button><br><br>
 </form>
 <div id="rbsDisplay"></div>
-
 </section>
 
+<section class="tool" id="casx">
+<h2>Cough Assessment:</h2>
+<h3>Dration:</h3>
+<select id="cough-duration">
+<option value="">Select</option>
+<option value="0">&lt;1 Week</option>
+<option value="1">1 to 3 Weeks</option>
+<option value="2">&gt;3 Weeks</option>
+</select>
+<h3>Character:</h3>
+<select id="cough-character">
+<option value="">Select</option>
+<option value="0">Dry</option>
+<option value="1">Productive(Clear Sputum)</option>
+<option value="2">Productive (purulent/blood-stained)</option>
+</select>
+<h3>Severity:</h3>
+<select id="cough-severity">
+<option value="">Select</option>
+<option value="0">Mild, occasional</option>
+<option value="1">Frequent, disturbing sleep</option>
+<option value="2">Persistent, disabling</option>
+</select>
+<h3>Associated Symptoms:</h3>
+<select id="cough-symptoms">
+<option value="">Select</option>
+<option value="0">None</option>
+<option value="1">Wheeze, fever, sore throat</option>
+<option value="2">Hemoptysis, weight loss, night sweats</option>
+</select>
+<h3>Impact:</h3>
+<select id="cough-impact">
+<option value="">Select</option>
+<option value="0">Minimal impact on daily life</option>
+<option value="1">Moderate impact (school/work disruption)</option>
+<option value="2">Severe impact (unable to function normally)</option>
+</select><br><br>
+<button id="cough-button">Submit</button>
+<div id="cough-display"></div>
+</section>
 </div>
 </div>
 
