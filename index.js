@@ -1600,6 +1600,7 @@ function internalMedicine() {
     document.getElementById("tbsax").style.display = "none";
     document.getElementById("rbsx").style.display = "none";
     document.getElementById("home").style.display = "none";
+    document.getElementById("casx").style.display = "none";
 
     // Show chosen one
     let picked = imedChoice.value;
@@ -1697,3 +1698,29 @@ if(nursingPick){
 document.getElementById(nursingPick).style.display = "block";
 }
 }
+
+// Cough assessment
+let coughBtn = document.getElementById("cough-button");
+coughBtn.addEventListener("click", () => {
+    let a = parseInt(document.getElementById("cough-duration").value) || 0;
+    let b = parseInt(document.getElementById("cough-character").value) || 0;
+    let c = parseInt(document.getElementById("cough-severity").value) || 0;
+    let d = parseInt(document.getElementById("cough-symptoms").value) || 0;
+    let e = parseInt(document.getElementById("cough-impact").value) || 0;
+
+    let z = a + b + c + d + e;
+
+    if (z >= 0 && z <= 3) {
+        document.getElementById("cough-display").innerHTML =
+            "Mild cough — The Score is: " + z +
+            " | Likely viral or irritant; symptomatic care only";
+    } else if (z >= 4 && z <= 6) {
+        document.getElementById("cough-display").innerHTML =
+            "Moderate cough — The Score is: " + z +
+            " | Possible bacterial bronchitis, asthma, or post-viral; consider medical review.";
+    } else {
+        document.getElementById("cough-display").innerHTML =
+            "Severe cough — The Score is: " + z +
+            " | Concerning for pneumonia, TB, malignancy, or chronic lung disease; urgent evaluation needed.";
+    }
+});
