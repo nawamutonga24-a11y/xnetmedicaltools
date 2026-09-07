@@ -153,10 +153,24 @@ img {
 /* =========================
    UTILITY CLASSES
 ========================= */
-.tool {
-  display: none;
-}
-
 .section {
   display: none; /* Hide all sections by default */
+}
+
+/* =========================
+   TOOL STYLING
+========================= */
+.tool {
+  display: none; /* hidden by default */
+}
+
+.tool.active {
+  display: flex;              /* flexbox for centering */
+  justify-content: center;    /* horizontal center */
+  align-items: center;        /* vertical center */
+  gap: 15px;                  /* spacing between items */
+  margin: 20px auto;          /* center block itself */
+  padding: 10px;
+  background: #eef6ff;        /* light background for clarity */
+  border-radius: 8px;
 }
