@@ -1582,22 +1582,26 @@ function pecarn() {
 
     document.getElementById("pecResult").innerHTML = result;
 }
-//Internal medicine;
+
+// Internal medicine dropdown
 let imedChoice = document.getElementById("imedChoice");
 imedChoice.addEventListener("change", internalMedicine);
 
 function internalMedicine() {
-    // Hide all internal medicine sections
-    document.querySelectorAll(".imed-section").forEach(sec => {
-        sec.style.display = "none";
+    // Hide all internal medicine tools
+    document.querySelectorAll(".tool").forEach(sec => {
+        sec.classList.remove("active");
     });
 
     // Show the chosen one
     let picked = imedChoice.value;
     if (picked) {
-        document.getElementById(picked).style.display = "block";
+        document.getElementById(picked).classList.add("active");
     }
 }
+
+
+
 //Pediatrics;
 let pedChoice = document.getElementById("pedChoice");
 pedChoice.addEventListener("change", pediatrics);
@@ -1615,24 +1619,23 @@ function pediatrics() {
     }
 }
 
-
-
-//Surgery;
+// Surgery dropdown
 let surgPick = document.getElementById("surgPick");
-surgPick.addEventListener("change", surgery);
+surgPick.addEventListener("change", surgeryTools);
 
-function surgery() {
-    // Hide all surgery sections
-    document.querySelectorAll(".surg-section").forEach(sec => {
-        sec.style.display = "none";
+function surgeryTools() {
+    // Hide all surgery tools
+    document.querySelectorAll(".surgery .tool").forEach(sec => {
+        sec.classList.remove("active");
     });
 
-    // Show chosen one
-    let sun = surgPick.value;
-    if (sun) {
-        document.getElementById(sun).style.display = "block";
+    // Show the chosen one
+    let picked = surgPick.value;
+    if (picked) {
+        document.getElementById(picked).classList.add("active");
     }
 }
+
 //Obgy;
 let obGy = document.getElementById("obGy");
 obGy.addEventListener("change", obgy);
