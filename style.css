@@ -1,16 +1,17 @@
-/* Reset */
+/* =========================
+   RESET & BASE STYLES
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-  font-family: "Nimbus Mono PS", monospace;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  background-color: lightblue;
+  background-color: #f0f8ff; /* soft medical blue */
   color: #333;
   display: flex;
   flex-direction: column;
@@ -20,21 +21,22 @@ body {
   padding: 10px;
 }
 
-/* Paragraphs */
+/* =========================
+   TYPOGRAPHY
+========================= */
 p {
   color: darkred;
 }
 
-/* Headings */
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   margin-bottom: 10px;
-  color: black;
+  color: #004080; /* clinical deep blue */
 }
-h3 { color: blue; }
-h4 { font-size: 20px; color: black; }
-h5 { font-size: 15px; color: black; }
 
-/* Links */
+h3 { color: #0066cc; }
+h4 { font-size: 20px; }
+h5 { font-size: 15px; }
+
 a {
   color: #0066cc;
   text-decoration: none;
@@ -45,14 +47,15 @@ a:hover {
   cursor: pointer;
 }
 
-/* Container */
+/* =========================
+   LAYOUT & CONTAINERS
+========================= */
 .container {
   width: 80%;
   margin: auto;
   padding: 20px;
 }
 
-/* Navigation bar */
 nav {
   background: #333;
   color: #fff;
@@ -64,10 +67,8 @@ nav a {
 }
 nav a:hover {
   color: #ffcc00;
-  cursor: pointer;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 15px;
@@ -76,44 +77,41 @@ footer {
   margin-top: 20px;
 }
 
-/* Buttons */
+/* =========================
+   FORM ELEMENTS
+========================= */
 button {
   width: 150px;
   height: 50px;
   font-size: 16px;
-  background-color: #0066cc;
+  background-color: #0073e6; /* hospital blue */
   color: white;
   border: none;
-  border-radius: 15px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 button:hover {
-  background-color: darkblue;
+  background-color: #005bb5;
   transform: scale(1.05);
 }
 
-/* Select dropdown */
-select {
-  width: 250px;
+input[type="number"], select {
+  width: 200px;
   height: 35px;
-  padding: 5px;
+  padding: 6px;
   font-size: 15px;
-  cursor: pointer;
+  border: 1px solid #0073e6;
+  border-radius: 5px;
+  margin: 5px 0;
 }
 select:hover {
   border: 2px solid #0066cc;
 }
 
-/* Inputs */
-input[type="number"] {
-  width: 100px;
-  height: 35px;
-  padding: 6px;
-  font-size: 16px;
-}
-
-/* Images */
+/* =========================
+   MEDIA & VISUALS
+========================= */
 img {
   width: 100%;
   max-width: 300px;
@@ -121,13 +119,21 @@ img {
   border-radius: 8px;
 }
 
-/* Divs */
-div {
+/* =========================
+   RESULT DISPLAY
+========================= */
+#cvsa-display {
+  margin-top: 20px;
+  font-size: 18px;
   font-weight: bold;
-  color: green;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
 }
 
-/* Responsive design */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
 @media (max-width: 768px) {
   body {
     max-width: 100%;
@@ -145,6 +151,10 @@ div {
     max-width: 100%;
   }
 }
-.tool{
-display: none;
+
+/* =========================
+   UTILITY CLASSES
+========================= */
+.tool {
+  display: none;
 }
