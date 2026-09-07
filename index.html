@@ -108,6 +108,7 @@ The medical tools and resources provided on this website are intended solely for
       <option value="tbsax">Total Body Surface Area</option>
             <option value="rbsx">Random Blood Sugar</option>
               <option value="casx">Cough Assessment</option>
+              <option value="imed-cvsa">CVS Assessment Tool</option>
     </select><br><br><br><br>
  
 <section class="tool" id="bmix">   
@@ -610,6 +611,7 @@ The medical tools and resources provided on this website are intended solely for
 
 <section class="tool" id="casx">
 <h2>Cough Assessment:</h2>
+<p>The Cough Assessment Tool is designed to objectively classify cough severity and type. It considers duration, character, associated symptoms, and impact on daily life to produce a score that categorizes coughs as Mild, Moderate, or Severe. This structured approach supports quick bedside evaluation, helps distinguish between simple viral irritation and serious conditions, and guides appropriate medical review or intervention.</p>
 <h3>Dration:</h3>
 <select id="cough-duration">
 <option value="">Select</option>
@@ -646,7 +648,70 @@ The medical tools and resources provided on this website are intended solely for
 <option value="2">Severe impact (unable to function normally)</option>
 </select><br><br>
 <button id="cough-button">Submit</button><br><br>
-<div id="cough-display"></div>
+<div style="font-family: nimbus mono ps; font-weight: bold; color: blue;" id="cough-display"></div>
+</section>
+
+<section class="tool" id="imed-cvsa">
+<h2>CVS Assessment tool:</h2>
+<p>The Cardiovascular System (CVS) Assessment Tool is designed to provide a structured evaluation of cardiovascular risk factors. By combining patient history, lifestyle elements, and clinical measurements such as blood pressure, heart rate, and cholesterol, the tool generates a score that categorizes risk into Normal, Mild, Moderate, or Severe. This helps clinicians and students quickly identify potential cardiovascular concerns, guide lifestyle modifications, and determine when medical therapy or specialist referral is necessary.</p>
+<h3>Patient History:</h3>
+<select id="cvs-pthx">
+<option value="">Select</option>
+<option value="0">No symptoms</option>
+<option value="1">Occasional exertional chest discomfort, mild palpitations.</option>
+<option value="2">Typical exertional angina, presyncope, exertional dyspnea.</option>
+<option value="3">Rest angina, syncope, orthopnea, paroxysmal nocturnal dyspnea, claudication.</option>
+</select>
+<h3>Past Medical History</h3>
+<select id="cvs-pmhx">
+<option value="">Select</option>
+<option value="0">No CVS disease.</option>
+<option value="1">Hypertension, dyslipidemia.</option>
+<option value="2">Diabetes mellitus, chronic kidney disease, peripheral vascular disease.</option>
+<option value="3">Prior MI, stroke/TIA, heart failure, valvular disease, congenital heart disease.</option>
+</select>
+<h3>Family History</h3>
+<select id="cvs-fhx">
+<option value="">Select</option>
+<option value="0">No family history.</option>
+<option value="1">First‑degree relative with hypertension/dyslipidemia.</option>
+<option value="2">First‑degree relative with premature CAD (<55 men, <65 women).</option>
+<option value="3">Multiple relatives with premature CAD or sudden cardiac death.</option>
+</select>
+<h3>Lifestyle & Risk Factors</h3>
+<select id="cvs-lsrf">
+<option value="">Select</option>
+<option value="0">Non‑smoker, active, healthy diet.</option>
+<option value="1">Current smoker or sedentary lifestyle.</option>
+<option value="2">Obesity (BMI >30), heavy alcohol use.</option>
+<option value="3">Multiple risk factors combined (smoking + obesity + alcohol).</option>
+</select>
+<h3>Heart Rate:</h3>
+<select id="cvs-hr">
+<option value="">Select</option>
+<option value="0">60–100 bpm</option>
+<option value="1">101–120 or 50–59 bpm</option>
+<option value="2">121–140 or 40–49 bpm</option>
+<option value="3">&gt;140 or &lt;40 bpm</option>
+</select>
+<h3>Blood Pressure:</h3>
+<select id="cvs-bp">
+<option value="">Select</option>
+<option value="0">SBP 100–140 mmHg</option>
+<option value="1">SBP 141–160 or 90–99 mmHg</option>
+<option value="2">SBP >160 or 80–89 mmHg</option>
+<option value="3">SBP &lt;80 mmHg</option>
+</select>
+<h3>Perfusion:</h3>
+<select id="cvs-p">
+<option value="">Select</option>
+<option value="0">Warm, refill &lt;2s </option>
+<option value="1">Cool, refill 2–3s </option>
+<option value="2">Cold, refill &gt;3s</option>
+<option value="3">Mottled, absent refill</option>
+</select><br><br>
+<button id="cvs-btn">Submit</button><br><br>
+<div id="cvsa-display"></div>
 </section>
 </div>
 </div>
