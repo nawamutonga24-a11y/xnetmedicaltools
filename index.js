@@ -1726,39 +1726,53 @@ coughBtn.addEventListener("click", () => {
     }
 });
 
-//CVS Assessment tool;
-document.getElementById("cvs-btn").addEventListener("click", () => {
-    // Collect all input IDs
-    const ids = [
-        "cvs-pthx",   // Past history
-        "cvs-pmhx",   // Medical history
-        "cvs-fhx",    // Family history
-        "cvs-lsrf",   // Lifestyle risk factors
-        "cvs-hr",     // Heart rate
-        "cvs-chol",   // Cholesterol (fixed missing field)
-        "cvs-bp",     // Blood pressure
-        "cvs-p"       // Pulse
-    ];
+// Wait until the DOM is fully loaded before attaching events
+document.addEventListener("DOMContentLoaded", () => {
 
-    // Sum values safely
-    let z = ids.reduce((sum, id) => {
-        let val = parseInt(document.getElementById(id).value) || 0;
-        return sum + val;
-    }, 0);
+    // Attach an event listener to the "Submit" button
+    const button = document.getElementById("cvs-btn");
 
-    // Display result with color-coded severity
-    let display = document.getElementById("cvsa-display");
-    if (z >= 0 && z <= 8) {
-        display.innerHTML = `Normal — Score: ${z} (No significant CVS risk)`;
-        display.style.color = "green";
-    } else if (z >= 9 && z <= 15) {
-        display.innerHTML = `Mild — Score: ${z} (Early cardiovascular risk, lifestyle modification)`;
-        display.style.color = "orange";
-    } else if (z >= 16 && z <= 22) {
-        display.innerHTML = `Moderate — Score: ${z} (Established CVS disease, medical therapy required)`;
-        display.style.color = "darkorange";
-    } else {
-        display.innerHTML = `Severe — Score: ${z} (Advanced CVS disease, urgent specialist referral)`;
-        display.style.color = "red";
+    // Safety check: make sure the button exists
+    if (!button) {
+        console.error("Button with id 'cvs-btn' not found!");
+        return;
     }
+
+    button.addEventListener("click", () => {
+        // List of all <select> element IDs used in the assessment
+        const ids = [
+            "cvs-pthx",   // Patient History
+            "cvs-pmhx",   // Past Medical History
+            "cvs-fhx",    // Family History
+            "cvs-lsrf",   // Lifestyle & Risk Factors
+            "cvs-hr",     // Heart Rate
+            "cvs-bp",     // Blood Pressure
+            "cvs-p"       // Perfusion
+        ];
+
+        // Calculate the total score by summing selected values
+        let z = ids.reduce((sum, id) => {
+            let el = document.getElementById(id);
+            let val = parseInt(el.value) || 0; // fallback to 0 if empty
+            return sum + val;
+        }, 0);
+
+        // Get the display area where the result will be shown
+        let display = document.getElementById("cvsa-display");
+
+        // Apply severity categories based on score ranges
+        if (z >= 0 && z <= 8) {
+            display.innerHTML = `Normal — Score: ${z} (No significant CVS risk)`;
+            display.style.color = "green"; // Green for normal
+        } else if (z >= 9 && z <= 15) {
+            display.innerHTML = `Mild — Score: ${z} (Early cardiovascular risk, lifestyle modification)`;
+            display.style.color = "orange"; // Orange for mild risk
+        } else if (z >= 16 && z <= 22) {
+            display.innerHTML = `Moderate — Score: ${z} (Established CVS disease, medical therapy required)`;
+            display.style.color = "darkorange"; // Dark orange for moderate risk
+        } else {
+            display.innerHTML = `Severe — Score: ${z} (Advanced CVS disease, urgent specialist referral)`;
+            display.style.color = "red"; // Red for severe risk
+        }
+    });
 });
