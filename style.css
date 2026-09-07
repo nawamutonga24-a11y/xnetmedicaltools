@@ -81,13 +81,13 @@ footer {
    FORM ELEMENTS
 ========================= */
 button {
-  width: 150px;
-  height: 50px;
-  font-size: 16px;
+  width: 100px;   /* reduced from 150px */
+  height: 35px;   /* reduced from 50px */
+  font-size: 14px; /* slightly smaller text */
   background-color: #0073e6; /* hospital blue */
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px; /* slightly tighter corners */
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -95,6 +95,7 @@ button:hover {
   background-color: #005bb5;
   transform: scale(1.05);
 }
+
 
 input[type="number"], select {
   width: 200px;
