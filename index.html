@@ -28,26 +28,32 @@ s0.parentNode.insertBefore(s1,s0);
   <title>xNET Medical Tools</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .section { display: none; }
+  .section { 
+    display: none; 
+  }
 
+  img {
+    max-width: 30%;   /* smaller size (about one-third of container) */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    .container {
+      width: 95%;
+    }
     img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
+      max-width: 100%; /* full width on smaller screens */
     }
+    button, select, input[type="number"] {
+      width: 100%;
+    }
+  }
+</style>
 
-    @media (max-width: 768px) {
-      body {
-        padding: 10px;
-      }
-      .container {
-        width: 95%;
-      }
-      button, select, input[type="number"] {
-        width: 100%;
-      }
-    }
-  </style>
   <style>
     .section {
       display: none; /* Hide all sections by default */
