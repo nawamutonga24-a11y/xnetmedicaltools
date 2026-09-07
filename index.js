@@ -1603,17 +1603,20 @@ let pedChoice = document.getElementById("pedChoice");
 pedChoice.addEventListener("change", pediatrics);
 
 function pediatrics() {
-    // Hide all pediatrics sections
-    document.querySelectorAll(".ped-section").forEach(sec => {
-        sec.style.display = "none";
+    // Hide ALL tools globally
+    document.querySelectorAll(".tool").forEach(tool => {
+        tool.style.display = "none";
     });
 
-    // Show chosen one
+    // Show the chosen one
     let pointed = pedChoice.value;
     if (pointed) {
         document.getElementById(pointed).style.display = "block";
     }
 }
+
+
+
 //Surgery;
 let surgPick = document.getElementById("surgPick");
 surgPick.addEventListener("change", surgery);
@@ -1635,9 +1638,9 @@ let obGy = document.getElementById("obGy");
 obGy.addEventListener("change", obgy);
 
 function obgy() {
-    // Hide all OB/GYN sections
-    document.querySelectorAll(".obgy-section").forEach(sec => {
-        sec.style.display = "none";
+    // Hide ALL tools inside OB/GYN section
+    document.querySelectorAll("#obgyt .tool").forEach(tool => {
+        tool.style.display = "none";
     });
 
     // Show chosen one
@@ -1646,14 +1649,17 @@ function obgy() {
         document.getElementById(moon).style.display = "block";
     }
 }
+
+
+
 //Nursing;
 let nursingSelect = document.getElementById("nursingSelect");
 nursingSelect.addEventListener("change", nursingDepartment);
 
 function nursingDepartment() {
-    // Hide all nursing sections
-    document.querySelectorAll(".nursing-section").forEach(sec => {
-        sec.style.display = "none";
+    // Hide all tools inside Nursing section
+    document.querySelectorAll("#nursingSection .tool").forEach(tool => {
+        tool.style.display = "none";
     });
 
     // Show chosen one
@@ -1662,6 +1668,7 @@ function nursingDepartment() {
         document.getElementById(nursingPick).style.display = "block";
     }
 }
+
 
 
 // Cough assessment
