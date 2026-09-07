@@ -1582,51 +1582,31 @@ function pecarn() {
 
     document.getElementById("pecResult").innerHTML = result;
 }
-
+//Internal medicine;
 let imedChoice = document.getElementById("imedChoice");
 imedChoice.addEventListener("change", internalMedicine);
 
 function internalMedicine() {
-    // Hide all sections
-    document.getElementById("bmix").style.display = "none";
-    document.getElementById("vitalsx").style.display = "none";
-    document.getElementById("hbx").style.display = "none";
-    document.getElementById("curbx").style.display = "none";
-    document.getElementById("ascvdx").style.display = "none";
-    document.getElementById("headachex").style.display = "none";
-    document.getElementById("lungx").style.display = "none";
-    document.getElementById("heartx").style.display = "none";
-    document.getElementById("chadx").style.display = "none";
-    document.getElementById("tbsax").style.display = "none";
-    document.getElementById("rbsx").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("casx").style.display = "none";
-    document.getElementById("imed-cvsa").style.display = "none";
+    // Hide all internal medicine sections
+    document.querySelectorAll(".imed-section").forEach(sec => {
+        sec.style.display = "none";
+    });
 
-    // Show chosen one
+    // Show the chosen one
     let picked = imedChoice.value;
     if (picked) {
         document.getElementById(picked).style.display = "block";
     }
 }
-
-
+//Pediatrics;
 let pedChoice = document.getElementById("pedChoice");
 pedChoice.addEventListener("change", pediatrics);
 
 function pediatrics() {
-    // Hide all sections
-    document.getElementById("prism").style.display = "none";
-    document.getElementById("silverman").style.display = "none";
-    document.getElementById("pneumonia").style.display = "none";
-    document.getElementById("tal").style.display = "none";
-    document.getElementById("pmdc").style.display = "none";
-    document.getElementById("yos").style.display = "none";
-    document.getElementById("mfic").style.display = "none";
-    document.getElementById("jones").style.display = "none";
-    document.getElementById("duke").style.display = "none";
-    document.getElementById("pecarn").style.display = "none";
-    document.getElementById("home").style.display = "none";
+    // Hide all pediatrics sections
+    document.querySelectorAll(".ped-section").forEach(sec => {
+        sec.style.display = "none";
+    });
 
     // Show chosen one
     let pointed = pedChoice.value;
@@ -1634,23 +1614,15 @@ function pediatrics() {
         document.getElementById(pointed).style.display = "block";
     }
 }
-
-
+//Surgery;
 let surgPick = document.getElementById("surgPick");
 surgPick.addEventListener("change", surgery);
 
 function surgery() {
-    // Hide all sections
-    document.getElementById("possum").style.display = "none";
-    document.getElementById("news").style.display = "none";
-    document.getElementById("acs").style.display = "none";
-    document.getElementById("pra").style.display = "none";
-    document.getElementById("wells").style.display = "none";
-    document.getElementById("ripasa").style.display = "none";
-    document.getElementById("alvarado").style.display = "none";
-    document.getElementById("glasgow").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("gleason").style.display = "none";
+    // Hide all surgery sections
+    document.querySelectorAll(".surg-section").forEach(sec => {
+        sec.style.display = "none";
+    });
 
     // Show chosen one
     let sun = surgPick.value;
@@ -1658,26 +1630,15 @@ function surgery() {
         document.getElementById(sun).style.display = "block";
     }
 }
-
-
+//Obgy;
 let obGy = document.getElementById("obGy");
 obGy.addEventListener("change", obgy);
 
 function obgy() {
-    // Hide all sections
-    document.getElementById("apgar").style.display = "none";
-    document.getElementById("bishop").style.display = "none";
-    document.getElementById("ferriman").style.display = "none";
-    document.getElementById("biophysical").style.display = "none";
-    document.getElementById("pera").style.display = "none";
-    document.getElementById("mgso").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("obgyExam").style.display = "none";
-    document.getElementById("stagesofLabor").style.display = "none";
-    document.getElementById("neonatalResus").style.display = "none";
-    document.getElementById("htnTypes").style.display = "none";
-    document.getElementById("mechanismofLabor").style.display = "none";
-   
+    // Hide all OB/GYN sections
+    document.querySelectorAll(".obgy-section").forEach(sec => {
+        sec.style.display = "none";
+    });
 
     // Show chosen one
     let moon = obGy.value;
@@ -1685,20 +1646,23 @@ function obgy() {
         document.getElementById(moon).style.display = "block";
     }
 }
-
+//Nursing;
 let nursingSelect = document.getElementById("nursingSelect");
 nursingSelect.addEventListener("change", nursingDepartment);
 
-function nursingDepartment(){
-document.getElementById("ncp").style.display = "none";
-document.getElementById("sixRights").style.display = "none";
-document.getElementById("nurse-apgar").style.display = "none";
+function nursingDepartment() {
+    // Hide all nursing sections
+    document.querySelectorAll(".nursing-section").forEach(sec => {
+        sec.style.display = "none";
+    });
 
-let nursingPick = nursingSelect.value;
-if(nursingPick){
-document.getElementById(nursingPick).style.display = "block";
+    // Show chosen one
+    let nursingPick = nursingSelect.value;
+    if (nursingPick) {
+        document.getElementById(nursingPick).style.display = "block";
+    }
 }
-}
+
 
 // Cough assessment
 let coughBtn = document.getElementById("cough-button");
