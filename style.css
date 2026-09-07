@@ -41,6 +41,15 @@ a {
   color: #0066cc;
   text-decoration: none;
 }
+h1 {
+  text-align: center;   /* centers the text horizontally */
+  color: blue;
+}
+
+h1 span {
+  color: red;           /* keeps the "x" red */
+}
+
 a:hover {
   text-decoration: underline;
   color: darkblue;
