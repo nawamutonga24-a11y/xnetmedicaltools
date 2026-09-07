@@ -163,14 +163,23 @@ img {
 .tool {
   display: none; /* hidden by default */
 }
+/* General tool styling */
+.tool {
+  display: none;
+}
 
+/* Active tool: centered and scrollable */
 .tool.active {
-  display: flex;              /* flexbox for centering */
-  justify-content: center;    /* horizontal center */
-  align-items: center;        /* vertical center */
-  gap: 15px;                  /* spacing between items */
-  margin: 20px auto;          /* center block itself */
-  padding: 10px;
-  background: #eef6ff;        /* light background for clarity */
+  display: flex;
+  flex-direction: column;   /* stack inputs vertically */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #eef6ff;
   border-radius: 8px;
+
+  max-height: 80vh;         /* limit height to 80% of viewport */
+  overflow-y: auto;         /* add vertical scroll if content is too tall */
 }
