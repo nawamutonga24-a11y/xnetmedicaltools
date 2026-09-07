@@ -1601,6 +1601,7 @@ function internalMedicine() {
     document.getElementById("rbsx").style.display = "none";
     document.getElementById("home").style.display = "none";
     document.getElementById("casx").style.display = "none";
+    document.getElementById("imed-cvsa").style.display = "none";
 
     // Show chosen one
     let picked = imedChoice.value;
@@ -1722,5 +1723,42 @@ coughBtn.addEventListener("click", () => {
         document.getElementById("cough-display").innerHTML =
             "Severe cough — The Score is: " + z +
             " | Concerning for pneumonia, TB, malignancy, or chronic lung disease; urgent evaluation needed.";
+    }
+});
+
+//CVS Assessment tool;
+document.getElementById("cvs-btn").addEventListener("click", () => {
+    // Collect all input IDs
+    const ids = [
+        "cvs-pthx",   // Past history
+        "cvs-pmhx",   // Medical history
+        "cvs-fhx",    // Family history
+        "cvs-lsrf",   // Lifestyle risk factors
+        "cvs-hr",     // Heart rate
+        "cvs-chol",   // Cholesterol (fixed missing field)
+        "cvs-bp",     // Blood pressure
+        "cvs-p"       // Pulse
+    ];
+
+    // Sum values safely
+    let z = ids.reduce((sum, id) => {
+        let val = parseInt(document.getElementById(id).value) || 0;
+        return sum + val;
+    }, 0);
+
+    // Display result with color-coded severity
+    let display = document.getElementById("cvsa-display");
+    if (z >= 0 && z <= 8) {
+        display.innerHTML = `Normal — Score: ${z} (No significant CVS risk)`;
+        display.style.color = "green";
+    } else if (z >= 9 && z <= 15) {
+        display.innerHTML = `Mild — Score: ${z} (Early cardiovascular risk, lifestyle modification)`;
+        display.style.color = "orange";
+    } else if (z >= 16 && z <= 22) {
+        display.innerHTML = `Moderate — Score: ${z} (Established CVS disease, medical therapy required)`;
+        display.style.color = "darkorange";
+    } else {
+        display.innerHTML = `Severe — Score: ${z} (Advanced CVS disease, urgent specialist referral)`;
+        display.style.color = "red";
     }
 });
