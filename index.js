@@ -1027,6 +1027,7 @@ function showCategory()
       document.getElementById("imedt").style.display = "none";
       document.getElementById("surgt").style.display = "none";
       document.getElementById("nursingSection").style.display = "none";
+       document.getElementById("category-art").style.display = "none";
 
       // Get selected value
       var selected = document.getElementById("categorySelect").value;
@@ -1750,3 +1751,67 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// ART Essential tool dropdown
+let artSelect = document.getElementById("category-art").querySelector("select");
+
+artSelect.addEventListener("change", showArtTool);
+
+function showArtTool() {
+    // Hide all ART tools
+    document.querySelectorAll("#category-art .tool").forEach(sec => {
+        sec.classList.remove("active");
+    });
+
+    // Show the chosen one
+    let picked = artSelect.value;
+    if (picked) {
+        let target = document.getElementById(picked);
+        if (target) {
+            target.classList.add("active");
+        }
+    }
+}
+//Art Reg
+let artBtn = document.getElementById("artBtns");
+
+artBtn.addEventListener("click", () => {
+    // Capture values from dropdowns
+    let age = document.getElementById("art-age").value;
+    let stage = document.getElementById("art-whostage").value;
+    let weight = document.getElementById("art-weight").value;
+    let special = document.getElementById("art-specials").value;
+
+    let output = "";
+
+    // Age-based regimens
+    if (age === "lessthan-1") {
+        output = "First-line: AZT + 3TC + LPV/r <br> Alternative: ABC + 3TC + LPV/r";
+    } else if (age === "one-9") {
+        output = "First-line: ABC + 3TC + DTG <br> Alternative: AZT + 3TC + DTG";
+    } else if (age === "nine-19") {
+        output = "First-line: TDF + 3TC + EFV <br> Alternative: AZT + 3TC + EFV";
+    } else if (age === "greaterthan-20") {
+        output = "First-line: TDF + 3TC + DTG <br> Alternative: ABC + 3TC + DTG";
+    } else {
+        output = "⚠️ Please select an age range.";
+    }
+
+    // Example: refine by WHO stage
+    if (stage === "stage-3" || stage === "stage-4") {
+        output += "<br><strong>Note:</strong> Immediate initiation recommended due to advanced disease.";
+    }
+
+    // Example: refine by special conditions
+    if (special === "pregnancy") {
+        output += "<br><strong>Pregnancy adjustment:</strong> Use AZT + 3TC + EFV if <14 weeks, DTG preferred after 14 weeks.";
+    } else if (special === "tb-coinfection") {
+        output += "<br><strong>TB co-infection:</strong> Adjust DTG to 50 mg BID with rifampicin.";
+    } else if (special === "renal-impairment") {
+        output += "<br><strong>Renal impairment:</strong> Avoid TDF, use ABC + 3TC + DTG.";
+    }
+
+    // Display result
+    document.getElementById("artreg-display").innerHTML = output;
+});
+
