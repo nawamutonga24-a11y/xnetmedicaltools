@@ -41,7 +41,8 @@ s0.parentNode.insertBefore(s1,s0);
     <option value="obgyt">Obstetrics & Gynecology</option>
     <option value="imedt">Internal Medicine</option>
     <option value="surgt">Surgery</option>  
-    <option value="nursingSection">Nursing</option>  
+    <option value="nursingSection">Nursing</option>
+     <option value="category-art">ART Essential Tools</option>  
   </select>
 
 <section id="home">
@@ -2271,6 +2272,62 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <section class="tool" id="nurse-apgar">
 <p>The Apgar Score is a quick assessment tool used in nursing and midwifery to evaluate a newborn’s condition immediately after birth. It is performed at 1 minute and 5 minutes post‑delivery, focusing on five vital signs:</p>
 <video controls src="apgar.mp4" width="400">
+</section>
+
+</div>
+
+<div class="section" id="category-art">
+<h2>Make a Selection</h2>
+<select>
+<option value="art-select">Select</option>
+<option value="art-regimen">ART Regimen Calculator</option>
+</select>
+
+
+<section class="tool" id="art-regimen">
+<h3>ART Regimen Calculator</h3>
+
+
+<h4>a.Select the age range in years<h4>
+<select id="art-age">
+<option value="">Select</option>
+<option value="lessthan-1">&lt;1 year</option>
+<option value="one-9">1 to 9 years</option>
+<option value="nine-19">9 to 19</option>
+<option value="greaterthan-20">&gt;20</option>
+</select>
+
+<h4>b. WHO Stage Integration</h4>
+<select id="art-whostage">
+<option value="">select</option>
+<option value="stage-1">stage I</option>
+<option value="stage-2">stage II</option>
+<option value="stage-3">stage III</option>
+<option value="stage-4">stage IV</option>
+</select>
+
+<h4>c.Select the Weight Range in Kg</h4>
+<select id="art-weight">
+<option value="">Select</option>
+<option value="">&lt;10Kg</option>
+<option value="ten-19">10Kg to 19Kg</option>
+<option value="twenty-29">20Kg to 29Kg</option>
+<option value="thirty-39">30Kg to 39Kg</option>
+<option value="greaterthan-40">&gt;40Kg</option>
+</select><br>
+<h4>d.Special Conditions:</h4>
+<select id="art-specials">
+<option>Select</option>
+<option value="pregnancy">Pregnancy &lt;14 weeks</option>
+<option value="pregnancy">Pregnancy &gt;=14 weeks</option>
+<option value="tb-coinfection">TB co-infection</option>
+<option value="renal-impairment">Renal impairment</option>
+<option value="no-specials">Non of the above</option>
+</select>
+<button id="artBtns">Submit</button>
+<div id="artreg-display"></div>
+
+
 </section>
 
 </div>
