@@ -2256,6 +2256,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="ncp">Nursing Care Plan Video</option>
 <option value="sixRights">Six Rights of Medication Administration Video</option>
 <option value="nurse-apgar">APGAR Score Video</option>
+<option value="drip-rate">Calculate the Drip Rate</option>
 </select>
 
 <section class="tool" id="ncp">
@@ -2271,6 +2272,20 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <section class="tool" id="nurse-apgar">
 <p>The Apgar Score is a quick assessment tool used in nursing and midwifery to evaluate a newborn’s condition immediately after birth. It is performed at 1 minute and 5 minutes post‑delivery, focusing on five vital signs:</p>
 <video controls src="apgar.mp4" width="400">
+</section>
+
+<section class="tool" id="drip-rate">
+<p>Drip rate calculation is a fundamental nursing skill used to determine how fast IV fluids should flow when using gravity infusion sets. It ensures patients receive the correct volume of fluid or medication within the prescribed time.</p>
+<h3>Calculating the Drip Rate:</h3>
+<h3>Enter the numbers alone without units</h3>
+<h4>Enter the volume of the drip in ml</h4>
+<input type="number" id="volume-drip" placeholder="volume in ml"> 
+<h4>Enter the drop factor in gtt/ml</h4>
+<input type="number" id="drop-factor" placeholder="volume in ml"> 
+<h4>Enter the duration, the drip is to run:</h4>
+<input type="number" id="time-fluids" placeholder="Drop factor in t/ml"> <br><br>
+<button id="dripBtn">Submit</button>
+<div id="dripDisplay"></div>
 </section>
 
 </div>
