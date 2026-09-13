@@ -1814,4 +1814,32 @@ artBtn.addEventListener("click", () => {
     // Display result
     document.getElementById("artreg-display").innerHTML = output;
 });
+//General dosage calculator
+let dosageBtn = document.getElementById("dosage-Btn");
+dosageBtn.addEventListener("click", calculateDosage);
+function calculateDosage(){
+let wt = parseFloat(document.getElementById("weight-dose").value)||0;
+let dsg = parseFloat(document.getElementById("drug-dose").value)||0;
+let reqDosage = `${wt*dsg}`;
+document.getElementById("dosage-calcDisplay").innerHTML = " The required dosage is " + reqDosage + " mg";
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
