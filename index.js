@@ -1028,6 +1028,7 @@ function showCategory()
       document.getElementById("surgt").style.display = "none";
       document.getElementById("nursingSection").style.display = "none";
        document.getElementById("category-art").style.display = "none";
+        document.getElementById("clinical-hub").style.display = "none";
 
       // Get selected value
       var selected = document.getElementById("categorySelect").value;
@@ -1834,6 +1835,27 @@ let dr = `${(v*df)/(t)}`;
 document.getElementById("dripDisplay").innerHTML = " The Drop Rate is " + dr + " gtt/min"; 
 });
 
+
+
+let clinicalhubSelect = document.getElementById("clinicalhub-select");
+
+clinicalhubSelect.addEventListener("change", showClinicalhubTool);
+
+function showClinicalhubTool() {
+  // Hide all tools
+  document.querySelectorAll("#clinical-hub .tool").forEach(sec => {
+    sec.classList.remove("active");
+  });
+
+  // Show the chosen one
+  let picked = clinicalhubSelect.value;
+  if (picked) {
+    let target = document.getElementById(picked);
+    if (target) {
+      target.classList.add("active");
+    }
+  }
+}
 
 
 
