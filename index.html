@@ -69,6 +69,7 @@ This website provides medical tools for informational purposes only. It is not a
             <option value="rbsx">Random Blood Sugar</option>
               <option value="casx">Cough Assessment</option>
               <option value="imed-cvsa">CVS Assessment Tool</option>
+              <option value="imed-drugdosecalc">General Drug Dose Calculator</option>
     </select>
  
 <section class="tool" id="bmix">   
@@ -672,6 +673,16 @@ This website provides medical tools for informational purposes only. It is not a
 </select><br><br>
 <button id="cvs-btn">Submit</button><br><br>
 <div id="cvsa-display"></div>
+</section>
+
+<section class="tool" id="imed-drugdosecalc">
+<p>A general weight‑based dose calculator is a simple tool designed to estimate medication doses according to a patient’s body weight.</p>
+<h4>Enter Weight in kg: </h4>
+<input type="number" id="weight-dose" placeholder="weight in kg">
+<h4>Enter the dose per kg of medication (only the number without units): </h4>
+<input type="number" id="drug-dose" placeholder="dosage in mg/kg">
+<button id="dosage-Btn">Submit</button>
+<div id="dosage-calcDisplay"></div>
 </section>
 </div>
 </div>
