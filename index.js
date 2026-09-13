@@ -1824,6 +1824,15 @@ let reqDosage = `${wt*dsg}`;
 document.getElementById("dosage-calcDisplay").innerHTML = " The required dosage is " + reqDosage + " mg";
 };
 
+//Drip Rate Calculation;
+let dripBtn = document.getElementById("dripBtn");
+dripBtn.addEventListener("click",()=>{
+let v = parseFloat(document.getElementById("volume-drip").value)||0;
+let df = parseFloat(document.getElementById("drop-factor").value)||0;
+let t = parseFloat(document.getElementById("time-fluids").value)||0;
+let dr = `${(v*df)/(t)}`;
+document.getElementById("dripDisplay").innerHTML = " The Drop Rate is " + dr + " gtt/min"; 
+});
 
 
 
