@@ -20,11 +20,11 @@
 
 <body>
 <img src="nawa.jpg" alt="web photo" width="100" height="100">
-<h3>By</h3>
-  <p class="nawa">Nawa Mutonga</p>
+<h5>By</h5>
+  <h5 class="nawa">Nawa Mutonga</h5>
   
 
-<h3>Choose a Category</h3>
+<h5>Choose a Category</h5>
   <select id="categorySelect" onchange="showCategory()">
     <option value="">-- Select --</option>
     <option value="pedst">Pediatrics</option>
@@ -41,16 +41,16 @@
   <h1 style="color: blue;">
   <span style="color: red;">x</span>NET Medical Tools
 </h1>
-<p><span style="color: black; font-weight: bold">Author:</span>
-6th Year MBChB Student/EHT</p>
+<h5><span style="color: red; font-weight: bold">Author:</span>
+6th Year MBChB Student/EHT</h5>
 
-     <div>
-    Contact;
+     <h5>
+    <span style="color:red">Contact</span>;
     <a href="mailto:admin@nawamutonga.org">admin@nawamutonga.org</a><br><br>
-  </div>
+  </h5>
     
-    <p><span style="color: black; font-weight: bold">Disclaimer:</span>
-This website provides medical tools for informational purposes only. It is not a substitute for professional advice, diagnosis, or treatment.</p>
+    <h5><span style="color: red; font-weight: bold">Disclaimer:</span>
+This website provides medical tools for informational purposes only. It is not a substitute for professional advice, diagnosis, or treatment.</h5>
 </section>
 
 <div id="imedt" class="section">
@@ -58,7 +58,7 @@ This website provides medical tools for informational purposes only. It is not a
 
 <div class="internalMedicine">
     <h1>A. INTERNAL MEDICINE</h1>
-    <h3>Make a Selection:</h3>
+    <h5>Make a Selection:</h5>
     <select id="imedChoice">
     <option value="">Choose</option>
     <option value="bmix">Check Your BMI</option>
@@ -78,36 +78,36 @@ This website provides medical tools for informational purposes only. It is not a
     </select>
  
 <section class="tool" id="bmix">   
-<h2>1.BMI (Adults)</h2>
-<p>"The BMI tool calculates weight‑for‑height ratio to classify underweight, normal, overweight, or obesity status. It provides a quick screening measure to guide nutritional assessment and health risk evaluation."</p>
+<h5>BMI</h5>
+<h6>"The BMI tool calculates weight‑for‑height ratio to classify underweight, normal, overweight, or obesity status. It provides a quick screening measure to guide nutritional assessment and health risk evaluation."</h6>
 
-<label for="wt">Enter weight in kg: </label>
-<input type="number" id="wt" placeholder="Enter your weight in kg"><br><br>
+<h5 for="wt">Enter weight in kg: </h5>
+<input type="number" id="wt" placeholder="Enter your weight in kg">
 
-<label for="ht">Enter height in meters: </label>
-<input type="number" id="ht" placeholder="Enter your height in meters"><br><br>
+<h5 for="ht">Enter height in meters: </h5>
+<input type="number" id="ht" placeholder="Enter your height in meters">
 <button onclick="bmi()">submit</button><br><br>
 <div id="bmi"></div>
 </section>
 
 <section class="tool" id="vitalsx">
-<h2>2.Vital Signs</h2>
-<p>"The Vital Signs tool captures core physiological parameters including temperature, pulse, respiration, and blood pressure. It provides a structured baseline for clinical assessment, monitoring, and early detection of patient deterioration."</p>
+<h5>Vital Signs</h5>
+<h6>"The Vital Signs tool captures core physiological parameters including temperature, pulse, respiration, and blood pressure. It provides a structured baseline for clinical assessment, monitoring, and early detection of patient deterioration."</h6>
 
-<label for="sbp">Enter the Systolic Pressure: </label>
-<input type="number" id="sbp" placeholder="Enter your Systolic BP"><br><br>
+<h5 for="sbp">Enter the Systolic Pressure: </h5>
+<input type="number" id="sbp" placeholder="Enter your Systolic BP">
 
-<label for="dbp">Enter the Diastolic Pressure: </label>
-<input type="number" id="dbp" placeholder="Enter your Diastolic BP"><br><br>
+<h5 for="dbp">Enter the Diastolic Pressure: </h5>
+<input type="number" id="dbp" placeholder="Enter your Diastolic BP">
 
-<label for="hrx">Enter the Heart Rate: </label>
-<input type="number" id="hrx" placeholder="Enter your Heart Rate"><br><br>
+<h5 for="hrx">Enter the Heart Rate: </h5>
+<input type="number" id="hrx" placeholder="Enter your Heart Rate">
 
-<label for="os">Enter the Oxygen Saturations: </label>
-<input type="number" id="os" placeholder="Enter your O2 Saturations"><br><br>
+<h5 for="os">Enter the Oxygen Saturations: </h5>
+<input type="number" id="os" placeholder="Enter your O2 Saturations">
 
-<label for="temp">Enter the body temperature in °C</label>
-<input type="number" id="temp" placeholder="Enter your B-temperature"><br><br>
+<h5 for="temp">Enter the body temperature in °C</h5>
+<input type="number" id="temp" placeholder="Enter your B-temperature">
 <button onclick="vitalSigns()">submit</button><br><br>
 <div id="bpResults"></div>
 <div id="hrResults"></div>
@@ -123,20 +123,20 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <section class="tool" id="hbx">
-<h2>3. Hb Check</h2>
-<p>"The Hemoglobin Check tool provides quick estimation of Hb levels for anemia screening and monitoring. It supports timely clinical decisions by guiding diagnosis, treatment, and follow‑up in pediatric and adult patients."</p>
+<h5>Hb Check</h5>
+<h6>"The Hemoglobin Check tool provides quick estimation of Hb levels for anemia screening and monitoring. It supports timely clinical decisions by guiding diagnosis, treatment, and follow‑up in pediatric and adult patients."</h6>
 
-<label for="hbResults">Enter Hb results: </label>
-<input type="number" id="hbResults" placeholder="Hemoglobin results"><br><br>
+<h6 for="hbResults">Enter Hb results: </h6>
+<input type="number" id="hbResults" placeholder="Hemoglobin results">
 
-<label for="age">Enter age in years: </label>
-<input type="number" id="age" placeholder="Enter your age in years"><br><br>
+<h6 for="age">Enter age in years: </h6>
+<input type="number" id="age" placeholder="Enter your age in years">
 
-<label for="male">Male: </label>
-<input type="radio" id="male" name="gender" value="M"><br><br>
+<h6 for="male">Male: </h6>
+<input type="radio" id="male" name="gender" value="M">
 
-<label for="female">Female</label>
-<input type="radio" id="female" name="gender" value="F"><br><br>
+<h6 for="female">Female</h6>
+<input type="radio" id="female" name="gender" value="F">
 
 <button onclick="hbClass()">Submit</button>
 
@@ -223,34 +223,34 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <section class="tool" id="curbx">
-<h2>4.Curb 65</h2>
-<p>"The CURB‑65 Score is a clinical prediction rule used to assess the severity of community‑acquired pneumonia. It guides decisions on hospitalization and management by evaluating five key risk factors."</p>
+<h5>Curb 65</h5>
+<h6>"The CURB‑65 Score is a clinical prediction rule used to assess the severity of community‑acquired pneumonia. It guides decisions on hospitalization and management by evaluating five key risk factors."</h6>
 
-<h3>4.1 Confusion</h3>
+<h5>4.1 Confusion</h5>
 <select id="cconfusion">
 <option value="">Select</option>
   <option value="0">No confusion</option>
   <option value="1">Confusion present</option>
 </select>
-<h3>4.2 Urea</h3>
+<h5>4.2 Urea</h5>
 <select id="curea">
 <option value="">Select</option>
   <option value="0">Urea normal</option>
   <option value="1">Urea > 7 mmol/L</option>
 </select>
-<h3>4.3 Respiration</h3>
+<h5>4.3 Respiration</h5>
 <select id="crr">
 <option value="">Select</option>
   <option value="0">RR < 30/min</option>
   <option value="1">RR ≥ 30/min</option>
 </select>
-<h3>4.4 Cardiac</h3>
+<h5>4.4 Cardiac</h5>
 <select id="cbp">
 <option value="">Select</option>
   <option value="0">BP normal</option>
   <option value="1">SBP < 90 or DBP ≤ 60</option>
 </select>
-<h3>4.5 Age</h3>
+<h5>4.5 Age</h5>
 <select id="cage">
 <option value="">Select</option>
   <option value="0">Age < 65</option>
@@ -265,10 +265,10 @@ This website provides medical tools for informational purposes only. It is not a
 
 
 <section class="tool" id="ascvdx">
-<h2>5. Ten year risk of Stroke Assessment Tool</h2>
-<p>The ASCVD score is a clinical tool used to estimate a person’s 10‑year risk of major cardiovascular events (like heart attack or stroke), guiding whether preventive measures such as statin therapy or lifestyle changes should be started. It helps doctors personalize treatment intensity based on risk categories rather than using a one‑size‑fits‑all approach</p>
+<h5>5. Ten year risk of Stroke Assessment Tool</h5>
+<h6>The ASCVD score is a clinical tool used to estimate a person’s 10‑year risk of major cardiovascular events (like heart attack or stroke), guiding whether preventive measures such as statin therapy or lifestyle changes should be started. It helps doctors personalize treatment intensity based on risk categories rather than using a one‑size‑fits‑all approach</h6>
 
-<h3>Age</h3>
+<h5>Age</h5>
 <select id="ascAge">
 <option value="">Select</option>
 <option value="0">40–49 yrs</option>
@@ -276,33 +276,33 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="4">60–69 yrs</option>
 <option value="6">&gt;=70 yrs</option>
 </select>
-<h3>Sex</h3>
+<h5>Sex</h5>
 <select id="ascSex">
 <option value="">Select</option>
 <option value="0">Female</option>
 <option value="2">Male</option>
 </select>
-<h3>Race</h3>
+<h5>Race</h5>
 <select id="ascRace">
 <option value="">Select</option>
 <option value="0">White</option>
 <option value="1">Black</option>
 </select>
-<h3>Total Cholesterol</h5>
+<h5>Total Cholesterol</h5>
 <select id="ascTC">
 <option value="">Select</option>
 <option value="0">&lt;200 mg/dL</option>
 <option value="1">200–239 mg/dL</option>
 <option value="2">&gt;=240 mg/dL</option>
 </select>
-<h3>HDL</h3>
+<h5>HDL</h5>
 <select id="ascHDL">
 <option value="">Select</option>
 <option value="-1">&gt;=60 mg/dL</option>
 <option value="0">40–59 mg/dL</option>
 <option value="2">&lt;40 mg/dL</option>
 </select>
-<h3>SBP(Untreated)</h3>
+<h5>SBP(Untreated)</h5>
 <select id="ascSBP">
 <option value="">Select</option>
 <option value="0">&lt;120</option>
@@ -310,19 +310,19 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">140-159</option>
 <option value="3">&gt;=160</option>
 </select>
-<h3>SBP(Treated)</h3>
+<h5>SBP(Treated)</h5>
 <select id="ascSBPt">
 <option>Select</option>
 <option value="1">Yes</option>
 <option value="0">Not necessary</option>
 </select>
-<h3>Diabetis</h3>
+<h5>Diabetis</h5>
 <select id="ascDM">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="2">Yes</option>
 </select>
-<h3>Smoking</h3>
+<h5>Smoking</h5>
 <select id="ascSmoking">
 <option value="">Select</option>
 <option value="0">No</option>
@@ -334,52 +334,52 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="headachex">
 
-<h2>6.Headache Assessment Tool</h2>
-<p>"The Headache Assessment tool structures evaluation of headache type, severity, and associated features. It supports accurate differentiation between primary and secondary headaches, guiding safe diagnostic and management decisions."</p>
+<h5>6.Headache Assessment Tool</h5>
+<h6>"The Headache Assessment tool structures evaluation of headache type, severity, and associated features. It supports accurate differentiation between primary and secondary headaches, guiding safe diagnostic and management decisions."</h6>
 
-<h3>Onset</h3>
+<h5>Onset</h5>
 <select id="hasO">
 <option value="">Select</option>
 <option value="3">Sudden thunderclap</option>
 <option value="1">Gradual recurrent</option>
 <option value="2">Chronic progressive</option>
 </select>
-<h3>Duration</h3>
+<h5>Duration</h5>
 <select id="hasD">
 <option value="">Select</option>
 <option value="2">Seconds–minutes</option>
 <option value="1">Hours–days</option>
 <option value="2">Daily persistent (&gt;15 days/month)</option>
 </select>
-<h3>Location</h3>
+<h5>Location</h5>
 <select id="hasL">
 <option value="">Select</option>
 <option value="2">Unilateral</option>
 <option value="1">Bilateral</option>
 <option value="3">Occipital/posterior</option>
 </select>
-<h3>Character</h3>
+<h5>Character</h5>
 <select id="hasC">
 <option value="">Select</option>
 <option value="2">Throbbing/pulsating</option>
 <option value="1">Pressure/tight band</option>
 <option value="2">Stabbing/burning</option>
 </select>
-<h3>Associated Symptoms</h3>
+<h5>Associated Symptoms</h5>
 <select id="hasAS">
 <option value="">Select</option>
 <option value="2">Nausea/vomiting, photophobia, phonophobia</option>
 <option value="3">Autonomic features (lacrimation, nasal congestion, ptosis)</option>
 <option value="3">Neurological deficits</option>
 </select>
-<h3>Triggers</h3>
+<h5>Triggers</h5>
 <select id="hasT">
 <option value="">Select</option>
 <option value="1">Stress, sleep deprivation, food, alcohol</option>
 <option value="2">Hormonal changes</option>
 <option value="3">Exertion/cough/posture</option>
 </select>
-<h3>Red Flags</h3>
+<h5>Red Flags</h5>
 <select id="hasRF">
 <option value="">Select</option>
 <option value="3">Age &gt;50 with new headache</option>
@@ -394,47 +394,47 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="lungx">
 
-<h2>7.Learn Lung Sounds With Ease:</h2>
-<p>Lung sounds are the audible vibrations produced by air moving through the respiratory tract, and they are a cornerstone of clinical examination. Listening to them with a stethoscope helps clinicians assess the patency of airways, detect fluid or obstruction, and identify pathological changes in the lungs and pleura.</p>
+<h5>7.Learn Lung Sounds With Ease:</h5>
+<h6>Lung sounds are the audible vibrations produced by air moving through the respiratory tract, and they are a cornerstone of clinical examination. Listening to them with a stethoscope helps clinicians assess the patency of airways, detect fluid or obstruction, and identify pathological changes in the lungs and pleura.</h6>
 
 
-<h3>Wheeze</h3>
-<p>A wheeze is caused by airflow through narrowed or obstructed airways, leading to vibration of the airway walls. Common causes include asthma, COPD, bronchitis, or localized obstruction such as a tumor or foreign body.</p>
+<h5>Wheeze</h5>
+<h6>A wheeze is caused by airflow through narrowed or obstructed airways, leading to vibration of the airway walls. Common causes include asthma, COPD, bronchitis, or localized obstruction such as a tumor or foreign body.</h6>
 <audio controls>
   <source src="wheezing.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<h3>Rhonchi</h3>
-<p>Rhonchi are caused by airflow through larger airways that are partially obstructed by secretions, mucus, or swelling. The turbulent movement of air over these obstructions produces a low-pitched, snoring-like sound that often clears after coughing.Common causes include chronic bronchitis, COPD, and acute airway infections with excess mucus.Think of rhonchi as “secretions rattling in the pipes.”</p>
+<h5>Rhonchi</h5>
+<h6>Rhonchi are caused by airflow through larger airways that are partially obstructed by secretions, mucus, or swelling. The turbulent movement of air over these obstructions produces a low-pitched, snoring-like sound that often clears after coughing.Common causes include chronic bronchitis, COPD, and acute airway infections with excess mucus.Think of rhonchi as “secretions rattling in the pipes.”</h6>
 <audio controls>
   <source src="rhonchi.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<h3>Fine Crackles</h3>
-<p>Fine crackles are caused by the sudden opening of small airways and alveoli during inspiration, producing soft, high‑pitched, brief popping sounds. They are typically associated with conditions like pulmonary fibrosis or early congestive heart failure.</p>
+<h5>Fine Crackles</h5>
+<h6>Fine crackles are caused by the sudden opening of small airways and alveoli during inspiration, producing soft, high‑pitched, brief popping sounds. They are typically associated with conditions like pulmonary fibrosis or early congestive heart failure.</h6>
 <audio controls>
   <source src="fine crackles.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <hr>
-<h3>Course Crackles</h3>
-<p>Coarse crackles are produced when air moves through larger airways filled with fluid, mucus, or collapsed alveoli reopening, creating loud, low‑pitched, longer popping sounds compared to fine crackles. They are commonly associated with pneumonia, pulmonary edema, or chronic bronchitis.</p>
+<h5>Course Crackles</h5>
+<h6>Coarse crackles are produced when air moves through larger airways filled with fluid, mucus, or collapsed alveoli reopening, creating loud, low‑pitched, longer popping sounds compared to fine crackles. They are commonly associated with pneumonia, pulmonary edema, or chronic bronchitis.</h6>
 <audio controls>
   <source src="coarse crackles.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <hr>
-<h3>Pleural Friction Rub</h3>
-<p>A pleural friction rub is caused by inflamed pleural surfaces rubbing against each other during respiration, producing a grating, creaking sound that resembles walking on fresh snow or leather rubbing. It is typically associated with pleuritis, pulmonary embolism, or other conditions that irritate the pleura.</p>
+<h5>Pleural Friction Rub</h5>
+<h6>A pleural friction rub is caused by inflamed pleural surfaces rubbing against each other during respiration, producing a grating, creaking sound that resembles walking on fresh snow or leather rubbing. It is typically associated with pleuritis, pulmonary embolism, or other conditions that irritate the pleura.</h6>
 <audio controls>
   <source src="pleural friction rub .mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 <hr>
-<h3>Stridor</h3>
-<p>Stridor is a harsh, high‑pitched sound heard mainly during inspiration, caused by obstruction or narrowing of the upper airway (larynx or trachea). It is most often associated with croup, laryngeal edema, foreign body aspiration, or tracheal stenosis, and is considered a medical emergency.</p>
+<h5>Stridor</h5>
+<h6>Stridor is a harsh, high‑pitched sound heard mainly during inspiration, caused by obstruction or narrowing of the upper airway (larynx or trachea). It is most often associated with croup, laryngeal edema, foreign body aspiration, or tracheal stenosis, and is considered a medical emergency.</h6>
 <audio controls>
   <source src="stridor.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
@@ -445,43 +445,43 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="heartx">
 
-<h2>8. Learn Heart Sounds With Ease:</h2>
-<p>Heart sounds are the audible vibrations produced by the closing of heart valves and blood flow within the chambers and vessels. They are a cornerstone of cardiovascular examination, giving clinicians real‑time clues about cardiac function and pathology.</p>
+<h5>8. Learn Heart Sounds With Ease:</h5>
+<h6>Heart sounds are the audible vibrations produced by the closing of heart valves and blood flow within the chambers and vessels. They are a cornerstone of cardiovascular examination, giving clinicians real‑time clues about cardiac function and pathology.</6>
 
 
-<h3>Third Heart Sound</h3>
-<p>The third heart sound (S3) is caused by rapid passive filling of the ventricles during early diastole, when blood strikes a compliant or dilated ventricular wall. It is often associated with volume overload states such as congestive heart failure, dilated cardiomyopathy, and significant mitral or aortic regurgitation. In younger individuals and athletes, an S3 can be physiological due to highly compliant ventricles, but in adults over 40 it usually indicates pathology.</p>
+<h5>Third Heart Sound</h5>
+<h6>The third heart sound (S3) is caused by rapid passive filling of the ventricles during early diastole, when blood strikes a compliant or dilated ventricular wall. It is often associated with volume overload states such as congestive heart failure, dilated cardiomyopathy, and significant mitral or aortic regurgitation. In younger individuals and athletes, an S3 can be physiological due to highly compliant ventricles, but in adults over 40 it usually indicates pathology.</h6>
 <audio controls>
   <source src="s3.mp3" type="audio/ogg">
 </audio>
 
-<h3>Fourth heart sound</h3>
-<p>The fourth heart sound (S4) is a low‑pitched, late diastolic sound produced when the atria contract forcefully against a stiff, non‑compliant ventricle. It occurs just before S1 and is often described as an “atrial gallop.” Pathologically, it is linked to conditions that cause ventricular hypertrophy or reduced compliance, such as long‑standing hypertension, aortic stenosis, hypertrophic cardiomyopathy, and ischemic heart disease. Unlike S3, which reflects volume overload, S4 signals pressure overload and decreased ventricular compliance, and it is almost always abnormal in adults.</p>
+<h5>Fourth heart sound</h5>
+<h6>The fourth heart sound (S4) is a low‑pitched, late diastolic sound produced when the atria contract forcefully against a stiff, non‑compliant ventricle. It occurs just before S1 and is often described as an “atrial gallop.” Pathologically, it is linked to conditions that cause ventricular hypertrophy or reduced compliance, such as long‑standing hypertension, aortic stenosis, hypertrophic cardiomyopathy, and ischemic heart disease. Unlike S3, which reflects volume overload, S4 signals pressure overload and decreased ventricular compliance, and it is almost always abnormal in adults.</h6>
 <audio controls>
   <source src="s4.mp3" type="audio/ogg">
 </audio>
 
-<h3>Tumor Plop</h3>
-<p>The tumor plop is a distinctive abnormal heart sound produced by an atrial myxoma (the most common primary cardiac tumor). It occurs in early diastole, when the mobile tumor mass moves through the atrioventricular valve and abruptly strikes the ventricular wall or valve leaflets. Clinically, it can mimic the opening snap of mitral stenosis, but the presence of constitutional symptoms (fever, weight loss), embolic phenomena, or positional changes in the murmur often point toward a myxoma.</p>
+<h5>Tumor Plop</h5>
+<h6>The tumor plop is a distinctive abnormal heart sound produced by an atrial myxoma (the most common primary cardiac tumor). It occurs in early diastole, when the mobile tumor mass moves through the atrioventricular valve and abruptly strikes the ventricular wall or valve leaflets. Clinically, it can mimic the opening snap of mitral stenosis, but the presence of constitutional symptoms (fever, weight loss), embolic phenomena, or positional changes in the murmur often point toward a myxoma.</h6>
 <audio controls>
   <source src="tumor plop.mp3" type="audio/ogg">
 </audio>
 
-<h3>Pericardial Knoch</h3>
-<p>A pericardial knock is a sharp, loud, early diastolic heart sound caused by the abrupt cessation of ventricular filling due to a rigid, thickened pericardium. It is most classically associated with constrictive pericarditis. Unlike the normal S3, which reflects rapid ventricular filling into a compliant chamber, the knock occurs when blood suddenly hits the stiff pericardial barrier, producing a distinct “thud.” Clinically, it is an important clue pointing toward constrictive physiology and can help differentiate constrictive pericarditis from restrictive cardiomyopathy.</p>
+<h5>Pericardial Knoch</h5>
+<h6>A pericardial knock is a sharp, loud, early diastolic heart sound caused by the abrupt cessation of ventricular filling due to a rigid, thickened pericardium. It is most classically associated with constrictive pericarditis. Unlike the normal S3, which reflects rapid ventricular filling into a compliant chamber, the knock occurs when blood suddenly hits the stiff pericardial barrier, producing a distinct “thud.” Clinically, it is an important clue pointing toward constrictive physiology and can help differentiate constrictive pericarditis from restrictive cardiomyopathy.</h6>
 <audio controls>
   <source src="pericardial knock.mp3" type="audio/ogg">
 </audio>
 
-<h3>Opening Snap</h3>
-<p>The opening snap is a sharp, high‑pitched, extra heart sound that occurs just after the second heart sound (S2) during early diastole. It is produced by the sudden tensing of stenotic valve leaflets — most classically the mitral valve in mitral stenosis, but it can also be heard in tricuspid stenosis. The snap follows the closure of the semilunar valves (S2) and precedes the low‑pitched diastolic rumble of stenosis. Clinically, the presence of an opening snap is a hallmark of rheumatic mitral stenosis, and the shorter the interval between S2 and the snap, the more severe the stenosis.</p>
+<h5>Opening Snap</h5>
+<h6>The opening snap is a sharp, high‑pitched, extra heart sound that occurs just after the second heart sound (S2) during early diastole. It is produced by the sudden tensing of stenotic valve leaflets — most classically the mitral valve in mitral stenosis, but it can also be heard in tricuspid stenosis. The snap follows the closure of the semilunar valves (S2) and precedes the low‑pitched diastolic rumble of stenosis. Clinically, the presence of an opening snap is a hallmark of rheumatic mitral stenosis, and the shorter the interval between S2 and the snap, the more severe the stenosis.</h6>
 <audio controls>
   <source src="opening snap.mp3" type="audio/ogg">
 </audio>
 
-<h3>Ejection Click</h3>
-<p>An ejection click is a sharp, high‑frequency sound heard shortly after the first heart sound (S1), during early systole. It is produced by the sudden opening of a stenotic or abnormal semilunar valve (aortic or pulmonary) as ventricular pressure rises. Clinically, it is most often associated with aortic stenosis (especially bicuspid aortic valve) and pulmonary stenosis. The timing of the click helps distinguish between the two:
-</p>
+<h5>Ejection Click</h5>
+<h6>An ejection click is a sharp, high‑frequency sound heard shortly after the first heart sound (S1), during early systole. It is produced by the sudden opening of a stenotic or abnormal semilunar valve (aortic or pulmonary) as ventricular pressure rises. Clinically, it is most often associated with aortic stenosis (especially bicuspid aortic valve) and pulmonary stenosis. The timing of the click helps distinguish between the two:
+</h6>
 <audio controls>
   <source src="ejection click.mp3" type="audio/ogg">
 </audio>
@@ -492,51 +492,51 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="chadx">
 
-<h2>9. Stroke Risk Assessent Tool in Heart Conditions(AF)</h2>
-<p>The CHA₂DS₂‑VASc Score is a clinical tool used in atrial fibrillation to estimate stroke risk. It assigns points for factors like heart failure, hypertension, age, diabetes, prior stroke, vascular disease, and female sex. The total score (0–9) guides whether anticoagulation therapy is recommended, with higher scores indicating greater risk.</p>
+<h5>Stroke Risk Assessent Tool in Heart Conditions(AF)</h5>
+<h6>The CHA₂DS₂‑VASc Score is a clinical tool used in atrial fibrillation to estimate stroke risk. It assigns points for factors like heart failure, hypertension, age, diabetes, prior stroke, vascular disease, and female sex. The total score (0–9) guides whether anticoagulation therapy is recommended, with higher scores indicating greater risk.</h6>
 
-<h3>a. Congestive heart failure/LV dysfunction</h3>
+<h5>a. Congestive heart failure/LV dysfunction</h5>
 <select id="chflv">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>b. Hypertension</h3>
+<h5>b. Hypertension</h5>
 <select id="chahtn">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>c. Age &gt;=75 years</h3>
+<h5>c. Age &gt;=75 years</h5>
 <select id="chaage">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>d. Diabetes mellitus </h3>
+<h5>d. Diabetes mellitus </h5>
 <select id="chadm">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option></select>
-<h3>e. Stroke/TIA/thromboembolism history</h3>
+<h5>e. Stroke/TIA/thromboembolism history</h5>
 <select id="chatia">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>f. Vascular disease (MI, PAD, aortic plaque)</h3>
+<h5>f. Vascular disease (MI, PAD, aortic plaque)</h5>
 <select id="chavd">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>g. Age 65–74 years</h3>
+<h5>g. Age 65–74 years</h5>
 <select id="chaAge">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>h. Sex category (female)</h3>
+<h5>h. Sex category (female)</h5>
 <select id="chascf">
 <option value="">Select</option>
 <option value="1">Yes</option>
@@ -549,14 +549,14 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="tbsax">
 
-<h2>10. Calculating Total Body Surface Area: </h2>
-<p>The total body surface area (TBSA) is a fundamental measurement in medicine because it provides a universal reference for scaling physiological processes across individuals of different sizes. Unlike weight alone, TBSA reflects the metabolic activity and distribution of tissues, making it essential for drug dosing in chemotherapy and other treatments where precision is critical. It also underpins calculations such as cardiac index and glomerular filtration rate normalization, ensuring that values are standardized and comparable across patients. By knowing the whole body’s surface area, clinicians can tailor therapies, monitor organ function, and predict metabolic demands more accurately, ultimately improving patient safety and treatment outcomes.</p>
+<h5>Calculating Total Body Surface Area: </h5>
+<h6>The total body surface area (TBSA) is a fundamental measurement in medicine because it provides a universal reference for scaling physiological processes across individuals of different sizes. Unlike weight alone, TBSA reflects the metabolic activity and distribution of tissues, making it essential for drug dosing in chemotherapy and other treatments where precision is critical. It also underpins calculations such as cardiac index and glomerular filtration rate normalization, ensuring that values are standardized and comparable across patients. By knowing the whole body’s surface area, clinicians can tailor therapies, monitor organ function, and predict metabolic demands more accurately, ultimately improving patient safety and treatment outcomes.</h6>
 
 <form>
-<label for="tbsaWt">Enter Weight in Kg:</label><br><br>
-<input type="number" id="tbsaWt" placeholder="Enter Weight in Kg"><br><br>
-<label for="tbsaHt">Enter Height in cm: </label><br><br>
-<input type="number" id="tbsaHt" placeholder="Enter Height in cm"><br><br>
+<h5 for="tbsaWt">Enter Weight in Kg:</h5>
+<input type="number" id="tbsaWt" placeholder="Enter Weight in Kg">
+<h5 for="tbsaHt">Enter Height in cm: </h5>
+<input type="number" id="tbsaHt" placeholder="Enter Height in cm">
 <button type="button" id="tbsaBtn">Submit</button><br><br>
 </form>
 <div id="tbsaDisplay"></div>
@@ -565,49 +565,49 @@ This website provides medical tools for informational purposes only. It is not a
 
 <section class="tool" id="rbsx">
 
-<h2>11. Random Blood Sugar Interpreter:</h2>
-<p>Random blood sugar (RBS) is a simple test that measures glucose levels at any time of day without fasting. Normal values are usually between 3.9–7.8 mmol/L, while readings from 7.8–11.0 mmol/L may indicate impaired glucose tolerance. A result of ≥11.1 mmol/L, especially if accompanied by symptoms like excessive thirst or frequent urination, strongly suggests diabetes and should be confirmed with further testing.</p>
+<h5>Random Blood Sugar Interpreter:</h5>
+<h6>Random blood sugar (RBS) is a simple test that measures glucose levels at any time of day without fasting. Normal values are usually between 3.9–7.8 mmol/L, while readings from 7.8–11.0 mmol/L may indicate impaired glucose tolerance. A result of ≥11.1 mmol/L, especially if accompanied by symptoms like excessive thirst or frequent urination, strongly suggests diabetes and should be confirmed with further testing.</h6>
 
 <form>
-<label>Enter the random Blood Sugar reading:</label><br><br>
-<input type="number" id="rbs" name="rbs" placeholder="Enter RBS in mmol/L"><br><br>
+<h5>Enter the random Blood Sugar reading:</h5>
+<input type="number" id="rbs" name="rbs" placeholder="Enter RBS in mmol/L">
 <button type="button" id="rbsBtn">Submit</button><br><br>
 </form>
 <div id="rbsDisplay"></div>
 </section>
 
 <section class="tool" id="casx">
-<h2>Cough Assessment:</h2>
-<p>The Cough Assessment Tool is designed to objectively classify cough severity and type. It considers duration, character, associated symptoms, and impact on daily life to produce a score that categorizes coughs as Mild, Moderate, or Severe. This structured approach supports quick bedside evaluation, helps distinguish between simple viral irritation and serious conditions, and guides appropriate medical review or intervention.</p>
-<h3>Dration:</h3>
+<h5>Cough Assessment:</h5>
+<h6>The Cough Assessment Tool is designed to objectively classify cough severity and type. It considers duration, character, associated symptoms, and impact on daily life to produce a score that categorizes coughs as Mild, Moderate, or Severe. This structured approach supports quick bedside evaluation, helps distinguish between simple viral irritation and serious conditions, and guides appropriate medical review or intervention.</h6>
+<h5>Dration:</h5>
 <select id="cough-duration">
 <option value="">Select</option>
 <option value="0">&lt;1 Week</option>
 <option value="1">1 to 3 Weeks</option>
 <option value="2">&gt;3 Weeks</option>
 </select>
-<h3>Character:</h3>
+<h5>Character:</h5>
 <select id="cough-character">
 <option value="">Select</option>
 <option value="0">Dry</option>
 <option value="1">Productive(Clear Sputum)</option>
 <option value="2">Productive (purulent/blood-stained)</option>
 </select>
-<h3>Severity:</h3>
+<h5>Severity:</h5>
 <select id="cough-severity">
 <option value="">Select</option>
 <option value="0">Mild, occasional</option>
 <option value="1">Frequent, disturbing sleep</option>
 <option value="2">Persistent, disabling</option>
 </select>
-<h3>Associated Symptoms:</h3>
+<h5>Associated Symptoms:</h5>
 <select id="cough-symptoms">
 <option value="">Select</option>
 <option value="0">None</option>
 <option value="1">Wheeze, fever, sore throat</option>
 <option value="2">Hemoptysis, weight loss, night sweats</option>
 </select>
-<h3>Impact:</h3>
+<h5>Impact:</h5>
 <select id="cough-impact">
 <option value="">Select</option>
 <option value="0">Minimal impact on daily life</option>
@@ -619,9 +619,9 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <section class="tool" id="imed-cvsa">
-<h2>CVS Assessment tool:</h2>
-<p>The Cardiovascular System (CVS) Assessment Tool is designed to provide a structured evaluation of cardiovascular risk factors. By combining patient history, lifestyle elements, and clinical measurements such as blood pressure, heart rate, and cholesterol, the tool generates a score that categorizes risk into Normal, Mild, Moderate, or Severe. This helps clinicians and students quickly identify potential cardiovascular concerns, guide lifestyle modifications, and determine when medical therapy or specialist referral is necessary.</p>
-<h3>Patient History:</h3>
+<h5>CVS Assessment tool:</h5>
+<h6>The Cardiovascular System (CVS) Assessment Tool is designed to provide a structured evaluation of cardiovascular risk factors. By combining patient history, lifestyle elements, and clinical measurements such as blood pressure, heart rate, and cholesterol, the tool generates a score that categorizes risk into Normal, Mild, Moderate, or Severe. This helps clinicians and students quickly identify potential cardiovascular concerns, guide lifestyle modifications, and determine when medical therapy or specialist referral is necessary.</h6>
+<h5>Patient History:</h5>
 <select id="cvs-pthx">
 <option value="">Select</option>
 <option value="0">No symptoms</option>
@@ -629,7 +629,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">Typical exertional angina, presyncope, exertional dyspnea.</option>
 <option value="3">Rest angina, syncope, orthopnea, paroxysmal nocturnal dyspnea, claudication.</option>
 </select>
-<h3>Past Medical History</h3>
+<h5>Past Medical History</h5>
 <select id="cvs-pmhx">
 <option value="">Select</option>
 <option value="0">No CVS disease.</option>
@@ -637,7 +637,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">Diabetes mellitus, chronic kidney disease, peripheral vascular disease.</option>
 <option value="3">Prior MI, stroke/TIA, heart failure, valvular disease, congenital heart disease.</option>
 </select>
-<h3>Family History</h3>
+<h5>Family History</h5>
 <select id="cvs-fhx">
 <option value="">Select</option>
 <option value="0">No family history.</option>
@@ -645,7 +645,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">First‑degree relative with premature CAD (<55 men, <65 women).</option>
 <option value="3">Multiple relatives with premature CAD or sudden cardiac death.</option>
 </select>
-<h3>Lifestyle & Risk Factors</h3>
+<h5>Lifestyle & Risk Factors</h5>
 <select id="cvs-lsrf">
 <option value="">Select</option>
 <option value="0">Non‑smoker, active, healthy diet.</option>
@@ -653,7 +653,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">Obesity (BMI >30), heavy alcohol use.</option>
 <option value="3">Multiple risk factors combined (smoking + obesity + alcohol).</option>
 </select>
-<h3>Heart Rate:</h3>
+<h5>Heart Rate:</h5>
 <select id="cvs-hr">
 <option value="">Select</option>
 <option value="0">60–100 bpm</option>
@@ -661,7 +661,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">121–140 or 40–49 bpm</option>
 <option value="3">&gt;140 or &lt;40 bpm</option>
 </select>
-<h3>Blood Pressure:</h3>
+<h5>Blood Pressure:</h5>
 <select id="cvs-bp">
 <option value="">Select</option>
 <option value="0">SBP 100–140 mmHg</option>
@@ -669,7 +669,7 @@ This website provides medical tools for informational purposes only. It is not a
 <option value="2">SBP >160 or 80–89 mmHg</option>
 <option value="3">SBP &lt;80 mmHg</option>
 </select>
-<h3>Perfusion:</h3>
+<h5>Perfusion:</h5>
 <select id="cvs-p">
 <option value="">Select</option>
 <option value="0">Warm, refill &lt;2s </option>
@@ -682,10 +682,11 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <section class="tool" id="imed-drugdosecalc">
-<p>A general weight‑based dose calculator is a simple tool designed to estimate medication doses according to a patient’s body weight.</p>
-<h4>Enter Weight in kg: </h4>
+<h5>General weight-dose calculator</h5>
+<h6>A general weight‑based dose calculator is a simple tool designed to estimate medication doses according to a patient’s body weight.</h6>
+<h5>Enter Weight in kg: </h5>
 <input type="number" id="weight-dose" placeholder="weight in kg">
-<h4>Enter the dose per kg of medication (only the number without units): </h4>
+<h5>Enter the dose per kg of medication (only the number without units): </h5>
 <input type="number" id="drug-dose" placeholder="dosage in mg/kg">
 <button id="dosage-Btn">Submit</button>
 <div id="dosage-calcDisplay"></div>
@@ -698,7 +699,7 @@ This website provides medical tools for informational purposes only. It is not a
 <!Begining of OBGY>
 <div id="obgyt" class="section">
 <h1>B.OBSTETRICS AND GYNECOLOGY</h1>
-<h3>Make a Selection:</h3>
+<h5>Make a Selection:</h5>
 <select id="obGy">
 <option value="">Choose</option>
 <option value="apgar">APGAR Score</option>
@@ -715,38 +716,38 @@ This website provides medical tools for informational purposes only. It is not a
 </select>
 
 <section class="tool" id="apgar" style="display: none;">
-<h2>1. APGAR Score</h2>
-<p>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</p>
+<h5>APGAR Score</h5>
+<h6>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</h6>
 
-<h3>1.1 Appearance</h3>
+<h5>1.1 Appearance</h5>
 <select id="appear">
 <option value="">Select</option>
 <option value="0">Blue or pale all over</option>
 <option value="1">Body pink, hands and feet blue (acrocyanosis)</option>
 <option value="2">Completely pink</option>
 </select>
-<h3>1.2 Pulse (Heart Rate)</h3>
+<h5>1.2 Pulse (Heart Rate)</h5>
 <select id="aPR">
 <option value="">Select</option>
 <option value="0">Absent</option>
 <option value="1">Less than 100 beats/min</option>
 <option value="2">100 beats/min or greater</option>
 </select>
-<h3>1.3 Grimace</h3>
+<h5>1.3 Grimace</h5>
 <select id="grim">
 <option value="">Select</option>
 <option value="0">No response to stimulation</option>
 <option value="1">Grimace or weak response to stimulation</option>
 <option value="2">Cries, coughs, sneezes, or actively withdraws</option>
 </select>
-<h3>1.4 Activity</h3>
+<h5>1.4 Activity</h5>
 <select id=aActivity>
 <option value="">Select</option>
 <option value="0">Limp, flaccid</option>
 <option value="1">Some flexion of extremities</option>
 <option value="2">Active movement, well-flexed limbs</option>
 </select>
-<h3>1.5 Respiration</h3>
+<h5>1.5 Respiration</h5>
 <select id="aResp">
 <option value="">Select</option>
 <option value="0">Absent</option>
@@ -758,11 +759,11 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <section class="tool" id="bishop" style="display: none;">
-<h2>2. Bishop Score</h2>
-<p>The Bishop Score is a system used to assess cervical readiness for labor induction.
-It evaluates dilation, effacement, consistency, position, and fetal station to predict induction success.</p>
+<h5>2. Bishop Score</h5>
+<h6>The Bishop Score is a system used to assess cervical readiness for labor induction.
+It evaluates dilation, effacement, consistency, position, and fetal station to predict induction success.</h6>
 
-<h3>Cervical Dilatation</h3>
+<h5>Cervical Dilatation</h5>
 <select id="cd">
 <option value="">Select</option>
 <option value="0">Closed</option>
@@ -770,7 +771,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">3 to 4cm</option>
 <option value="3">Greater than 5 cm</option>
 </select>
-<h3>Cervical Effacement</h3>
+<h5>Cervical Effacement</h5>
 <select id="ce">
 <option value="">Select</option>
 <option value="0">0 to 30%</option>
@@ -778,7 +779,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">60–70%</option>
 <option value="3">≥80% (very thin cervix)</option>
 </select>
-<h3>Cervical Consistency</h3>
+<h5>Cervical Consistency</h5>
 <select id="cc">
 <option value="">Select</option>
 <option value="0">Firm</option>
@@ -786,7 +787,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Soft</option>
 </select>
 
-<h3>Cervical Position</h3>
+<h5>Cervical Position</h5>
 <select id="cp">
 <option value="">Select</option>
 <option value="0">Posterior</option>
@@ -794,7 +795,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Anterior</option>
 </select>
 
-<h3>Fetal Station</h3>
+<h5>Fetal Station</h5>
 <select id="fs">
 <option value="">Select</option>
 <option value="0">–3</option>
@@ -807,10 +808,10 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="ferriman">
-<h2>3. Ferriman‑Gallwey Parameters</h2>
-<p>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</p>
+<h5>3. Ferriman‑Gallwey Parameters</h5>
+<h6>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</h6>
 
-<h3>Upper Lip Hair growth above the lip</h3>
+<h5>Upper Lip Hair growth above the lip</h5>
 <select id="ulh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -819,7 +820,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Chin Hair growth on the chin area</h3>
+<h5>Chin Hair growth on the chin area</h5>
 <select id="ch">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -828,7 +829,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Chest Hair between the breasts</h3>
+<h5>Chest Hair between the breasts</h5>
 <select id="chbb">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -837,7 +838,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Upper Abdomen Hair between the umbilicus and breasts</h3>
+<h5>Upper Abdomen Hair between the umbilicus and breasts</h5>
 <select id="uabh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -846,7 +847,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Lower Abdomen Hair between the umbilicus and pubic region</h3>
+<h5>Lower Abdomen Hair between the umbilicus and pubic region</h5>
 <select id="lah">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -855,7 +856,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Upper Arm Hair on the upper arms</h3>
+<h5>Upper Arm Hair on the upper arms</h5>
 <select id="uah">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -864,7 +865,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Thigh Hair on the thighs</h3>
+<h5>Thigh Hair on the thighs</h5>
 <select id="th">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -873,7 +874,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Upper Back Hair on the upper back</h3>
+<h5>Upper Back Hair on the upper back</h5>
 <select id="ubh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -882,7 +883,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">Extensive hair</option>
 <option value="4">Heavy hair growth</option>
 </select>
-<h3>Lower Back Hair on the lower back</h3>
+<h5>Lower Back Hair on the lower back</h5>
 <select id="lbh">
 <option value="">select</option>
 <option value="0">No hair</option>
@@ -896,34 +897,34 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="biophysical">
-<h2>4. Biophysical Profile</h2>
-<p>"The Biophysical Profile is an antenatal assessment combining ultrasound and non‑stress testing to evaluate fetal well‑being. It provides a structured score that guides timely obstetric decision‑making and perinatal care."</p>
+<h5>4. Biophysical Profile</h5>
+<h6>"The Biophysical Profile is an antenatal assessment combining ultrasound and non‑stress testing to evaluate fetal well‑being. It provides a structured score that guides timely obstetric decision‑making and perinatal care."</h6>
 
-<h3>Fetal Breathing Movements</h3>
+<h5>Fetal Breathing Movements</h5>
 <select id="fbrm">
 <option value="">select</option>
 <option value="2">&gt;1 episode of rhythmic breathing lasting greater or equals to 30 seconds within 30</option>
 <option value="0">Absent or insufficient breathing movements</option>
 </select>
-<h3>Fetal Body Movements</h3>
+<h5>Fetal Body Movements</h5>
 <select id="fbom">
 <option value="">select</option>
 <option value="2">&gt;=3 discrete body or limb movements within 30 minutes</option>
 <option value="0">&lt;3 movements</option>
 </select>
-<h3>Fetal Tone</h3>
+<h5>Fetal Tone</h5>
 <select id="ft">
 <option value="">select</option>
 <option value="2"> &gt;=1 episode of active extension with return to flexion (e.g., opening/closing hand)</option>
 <option value="0">Slow extension without return or absent movement</option>
 </select>
-<h3>Amniotic Fluid Volume</h3>
+<h5>Amniotic Fluid Volume</h5>
 <select id="afv">
 <option value="">select</option>
 <option value="2">At least one pocket of fluid &gt;=2 cm in vertical diameter</option>
 <option value="0">No adequate fluid pockets</option>
 </select>
-<h3>Non‑Stress Test (NST)</h3>
+<h5>Non‑Stress Test (NST)</h5>
 <select id="nst">
 <option value="">select</option>
 <option value="2">Reactive: &gt;=2 accelerations of fetal heart rate in 20 minutes</option>
@@ -934,70 +935,70 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="pera">
-<h2>5. Pre-Eclampsia Risk Assessment Tool:</h2>
-<p>“The Pre‑eclampsia Risk Assessment tool helps identify pregnant women at increased risk of developing pre‑eclampsia. By systematically evaluating high‑ and moderate‑risk factors, it guides clinicians on whether to initiate aspirin prophylaxis from 12 weeks, supporting safer pregnancies and improved maternal‑fetal outcomes.”</p>
+<h5>5. Pre-Eclampsia Risk Assessment Tool:</h5>
+<h6>“The Pre‑eclampsia Risk Assessment tool helps identify pregnant women at increased risk of developing pre‑eclampsia. By systematically evaluating high‑ and moderate‑risk factors, it guides clinicians on whether to initiate aspirin prophylaxis from 12 weeks, supporting safer pregnancies and improved maternal‑fetal outcomes.”</h6>
 
-<h3>a. Hypertensive disease in previous pregnancy</h3>
+<h5>a. Hypertensive disease in previous pregnancy</h5>
 <select id="hdipp">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>b. Chronic kidney disease</h3>
+<h5>b. Chronic kidney disease</h5>
 <select id="peckd">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>c. Autoimmune disease (SLE, APS)</h3>
+<h5>c. Autoimmune disease (SLE, APS)</h5>
 <select id="peaid">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>d. Type 1 or Type 2 diabetes</h3>
+<h5>d. Type 1 or Type 2 diabetes</h5>
 <select id="pedm">
 <option value="">Select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>e. Chronic hypertension</h3>
+<h5>e. Chronic hypertension</h5>
 <select id="chtn">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>f. First pregnancy</h3>
+<h5>f. First pregnancy</h5>
 <select id="pefp">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>g. Age &gt;=40 years</h3>
+<h5>g. Age &gt;=40 years</h5>
 <select id="peage">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>h. Pregnancy interval &gt;10 years</h3>
+<h5>h. Pregnancy interval &gt;10 years</h5>
 <select id="pepi">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>i. BMI &gt;=35 kg/m²</h3>
+<h5>i. BMI &gt;=35 kg/m²</h5>
 <select id="pebmi">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>j. Family history of pre‑eclampsia</h3>
+<h5>j. Family history of pre‑eclampsia</h5>
 <select id="fhope">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>k. Multiple pregnancy</h3>
+<h5>k. Multiple pregnancy</h5>
 <select id="pemp">
 <option value="">Select</option>
 <option value="1">Yes</option>
@@ -1008,15 +1009,15 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="mgso">
-<h2>6. Magnesium Sulphate Dilution: </h2>
-<p>Magnesium sulphate (MgSO₄) is the cornerstone drug for seizure prophylaxis and treatment in preeclampsia and eclampsia. Because it has a narrow therapeutic window, accurate dilution and dosing calculations are essential to balance efficacy with safety.</p>
+<h5>6. Magnesium Sulphate Dilution: </h5>
+<h6>Magnesium sulphate (MgSO₄) is the cornerstone drug for seizure prophylaxis and treatment in preeclampsia and eclampsia. Because it has a narrow therapeutic window, accurate dilution and dosing calculations are essential to balance efficacy with safety.</h6>
 
 <form>
-<label>Enter the strength in Percentage of the bottle you are using: </label><br><br>
-<input type="number" id="percent" name="percent" placeholder="% strength"><br><br>
+<h5>Enter the strength in Percentage of the bottle you are using: </h5>
+<input type="number" id="percent" name="percent" placeholder="% strength">
 
-<label>Enter the Strength in w/v (mg/mL) of the same bottle you are using: </label><br><br>
-<input type="number" id="wtv" name="wtv" placeholder="mg/mL"><br><br>
+<h5>Enter the Strength in w/v (mg/mL) of the same bottle you are using: </h5>
+<input type="number" id="wtv" name="wtv" placeholder="mg/mL">
 
 <button type="button" id="mgBtn">Submit</button><br>
 </form>
@@ -1024,32 +1025,32 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="obgyExam">
-<h3>7. Obstetric Examination Video:</h3>
-<p>An obstetric examination is a structured clinical assessment performed during pregnancy to evaluate both maternal health and fetal well‑being, focusing on vital signs, abdominal palpation, fetal heart rate, and growth monitoring. It is a cornerstone of antenatal care, ensuring early detection of complications and guiding safe delivery.</p>
+<h5>7. Obstetric Examination Video:</h5>
+<h5>An obstetric examination is a structured clinical assessment performed during pregnancy to evaluate both maternal health and fetal well‑being, focusing on vital signs, abdominal palpation, fetal heart rate, and growth monitoring. It is a cornerstone of antenatal care, ensuring early detection of complications and guiding safe delivery.</h5>
 <video controls src="obgyexam.mp4" width="400">
 </section>
 
 <section class="tool" id="htnTypes">
-<h3>8. Types of Hypertension in Pregnancy Video:</h3>
-<p>Hypertension in pregnancy is classified into five main types: chronic hypertension, gestational hypertension, preeclampsia, eclampsia, and chronic hypertension with superimposed preeclampsia. These categories help guide diagnosis, monitoring, and treatment to reduce maternal and fetal risks.</p>
+<h5>8. Types of Hypertension in Pregnancy Video:</h5>
+<h6>Hypertension in pregnancy is classified into five main types: chronic hypertension, gestational hypertension, preeclampsia, eclampsia, and chronic hypertension with superimposed preeclampsia. These categories help guide diagnosis, monitoring, and treatment to reduce maternal and fetal risks.</h6>
 <video controls src="htn.mp4" width="400">
 </section>
 
 <section class="tool" id="stagesofLabor">
-<h3>9. Stages of labor Video:</h3>
-<p>Labor progresses in three main stages: cervical dilation (early and active labor), delivery of the baby, and delivery of the placenta. Each stage has distinct clinical features and management priorities, and understanding them is crucial for safe obstetric care</p>
+<h5>Stages of labor Video:</h5>
+<h6>Labor progresses in three main stages: cervical dilation (early and active labor), delivery of the baby, and delivery of the placenta. Each stage has distinct clinical features and management priorities, and understanding them is crucial for safe obstetric care</h6>
 <video controls src="stagesoflabor.mp4" width="400">
 </section>
 
 <section class="tool" id="mechanismofLabor">
-<h3>10. Mechanism of labor Video:</h3>
-<p>The mechanism of labor refers to the sequence of movements the fetal head undergoes to navigate through the maternal pelvis during vaginal delivery. These cardinal movements ensure successful passage and birth.</p>
+<h5>Mechanism of labor Video:</h5>
+<h6>The mechanism of labor refers to the sequence of movements the fetal head undergoes to navigate through the maternal pelvis during vaginal delivery. These cardinal movements ensure successful passage and birth.</h6>
 <video controls src="mechanismoflabor.mp4" width="400">
 </section>
 
 <section class="tool" id="neonatalResus">
-<h3>11. Neonatal Resuscitation Video:</h3>
-<p>Neonatal resuscitation is the immediate set of life‑saving interventions given to newborns who fail to establish adequate breathing or circulation at birth. It follows a structured algorithm to rapidly assess, stimulate, and support the infant’s airway, breathing, and circulation.</p>
+<h5>Neonatal Resuscitation Video:</h5>
+<h6>Neonatal resuscitation is the immediate set of life‑saving interventions given to newborns who fail to establish adequate breathing or circulation at birth. It follows a structured algorithm to rapidly assess, stimulate, and support the infant’s airway, breathing, and circulation.</h6>
 <video controls src="neonatalresus.mp4" width="400">
 </section>
 
@@ -1060,7 +1061,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <div class="pediatrics">
 <div id="pedst" class="section">
 <h1>C. PEDIATRICS</h1>
-<h3>Make a Selection:</h3>
+<h5>Make a Selection:</h5>
 <select id="pedChoice">
 <option value="">Choose</option>
 <option value="prism">Is the Child getting worse?(ICU)</option>
@@ -1076,99 +1077,99 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </select>
 
 <section class="tool" id="prism" style="display: none;">
-<h2>1.PRISM (Pediatric Risk of Mortality) Score</h2>
-<p>The PRISM score — Pediatric Risk of Mortality — is a critical care scoring system used in pediatric intensive care units (PICUs) to predict the risk of death in seriously ill children. It’s one of the most validated pediatric severity scores worldwide.</p>
+<h5>1.PRISM (Pediatric Risk of Mortality) Score</h5>
+<h6>The PRISM score — Pediatric Risk of Mortality — is a critical care scoring system used in pediatric intensive care units (PICUs) to predict the risk of death in seriously ill children. It’s one of the most validated pediatric severity scores worldwide.</h6>
 
-<h2>Neurologic</h2>
-<h3>Glasgow Coma Scale</h3>
+<h5>Neurologic:</h5>
+<h5>Glasgow Coma Scale</h5>
 <select id="prGcs">
 <option value="">select</option>
 <option value="0">Normal (13–15)</option>
 <option value="2">Moderate impairment (8–12)</option>
 <option value="4">Severe impairment (&lt;=7)</option>
 </select>
-<h3>Pupillary Reflexes</h3>
+<h5>Pupillary Reflexes</h5>
 <select id="prPr">
 <option value="">select</option>
 <option value="0">Both reactive</option>
 <option value="2">One fixed</option>
 <option value="4">Both fixed</option>
 </select>
-<h2>Cardiovascular</h2>
-<h3>Systolic Blood Pressure</h3>
+<h5>Cardiovascular:</h5>
+<h5>Systolic Blood Pressure</h5>
 <select id="prsbp">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild hypotension</option>
 <option value="4">Severe hypotension</option>
 </select>
-<h3>Heart Rate</h3>
+<h5>Heart Rate</h5>
 <select id="prhr">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild tachy/bradycardia</option>
 <option value="4">Severe derangement</option>
 </select>
-<h2>Respiratory & Acid-Base</h2>
-<h3>Temperature</h3>
+<h5>Respiratory & Acid-Base:</h5>
+<h5>Temperature</h5>
 <select id="prT">
 <option value="">select</option>
 <option value="0">36–38°C</option>
 <option value="1">35–36 or 38–39°C</option>
 <option value="3">&lt;35 or &gt;39°C</option>
 </select>
-<h3>pH</h3>
+<h35>pH</h5>
 <select id="prph">
 <option value="">select</option>
 <option value="0">7.35–7.45</option>
 <option value="2">7.25–7.34 or 7.46–7.55</option>
 <option value="4">&lt;7.25 or &gt;7.55</option>
 </select>
-<h3>PCO2</h3>
+<h5>PCO2</h5>
 <select id="ppoco2">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Moderate elevation</option>
 <option value="4">Severe elevation</option>
 </select>
-<h3>PaO₂</h3>
+<h5>PaO₂</h5>
 <select id="ppoo">
 <option value="">select</option>
 <option value="0">80 mmHg</option>
 <option value="2">60–80 mmHg</option>
 <option value="4">&lt;60 mmHg</option>
 </select>
-<h2>Metabolic & Renal</h2>
-<h3>Glucose</h3>
+<h5>Metabolic & Renal:</h5>
+<h5>Glucose</h5>
 <select id="g">
 <option value="">select</option>
 <option value="0">3.9–8.3 mmol/L</option>
 <option value="2">2.8–3.8 mmol/L or 8.4–13.9 mmol/L</option>
 <option value="4">&lt;2.8 mmol/L or &gt;13.9 mmol/L</option>
 </select>
-<h3>Potassium</h3>
+<h5>Potassium</h5>
 <select id="k">
 <option value="">Select</option>
 <option value="0">3.5–5.5 mmol/L</option>
 <option value="2">3.0–3.4 or 5.6–6.0</option>
 <option value="4">&lt;3.0 or &gt;6.0</option>
 </select>
-<h3>Creatine</h3>
+<h5>Creatine</h5>
 <select id="cr">
 <option value="">select</option>
 <option value="0">Normal</option>
 <option value="2">Mild elevation</option>
 <option value="4">Severe elevation</option>
 </select>
-<h2>Hematologic & Coagulation</h2>
-<h3>White Cell Count</h3>
+<h5>Hematologic & Coagulation:</h5>
+<h5>White Cell Count</h5>
 <select id="wcc">
 <option value="">select</option>
 <option value="0">5–15 ×10⁹/L</option>
 <option value="2">3–4.9 or 15.1–25</option>
 <option value="4">&lt;3 or &gt;25 </option>
 </select>
-<h3>Platelet Count</h3>
+<h5>Platelet Count</h5>
 <select id="pc">
 <option value="">select</option>
 <option value="0">200k</option>
@@ -1176,7 +1177,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="3">50–99k</option>
 <option value="4">&lt;50k</option>
 </select>
-<h3>PT/PTT</h3>
+<h5>PT/PTT</h5>
 <select id="pt">
 <option value="">select</option>
 <option value="0">Normal</option>
@@ -1188,38 +1189,38 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="silverman" style="display: none">
-<h2>2. Silverman Score</h2>
-<p>The Silverman Score is a neonatal clinical scoring system used to assess the severity of respiratory distress in newborns. It’s simple, bedside‑based, and helps clinicians decide whether a baby needs oxygen, CPAP, or mechanical ventilation.</p>
+<h5>2. Silverman Score</h5>
+<h6>The Silverman Score is a neonatal clinical scoring system used to assess the severity of respiratory distress in newborns. It’s simple, bedside‑based, and helps clinicians decide whether a baby needs oxygen, CPAP, or mechanical ventilation.</h6>
 
-<h3>Upper chest movement</h3>
+<h5>Upper chest movement</h5>
 <select id="ucm">
 <option value="">select</option>
 <option value="0">Synchronous with abdomen</option>
 <option value="1">Lag on inspiration</option>
 <option value="2">See-saw respiration</option>
 </select>
-<h3>Lower chest retractions</h3>
+<h5>Lower chest retractions</h5>
 <select id="lcr">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Just visible</option>
 <option value="2">Marked</option>
 </select>
-<h3>Xiphoid retractions</h3>
+<h5>Xiphoid retractions</h5>
 <select id="xr">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Just visible</option>
 <option value="2">Marked</option>
 </select>
-<h3>Nasal flaring</h3>
+<h5>Nasal flaring</h5>
 <select id="nf">
 <option value="">select</option>
 <option value="0">None</option>
 <option value="1">Minimal</option>
 <option value="2">Marked</option>
 </select>
-<h3>Grunting</h3>
+<h5>Grunting</h5>
 <select id="grunt">
 <option value="">select</option>
 <option value="0">None</option>
@@ -1231,46 +1232,46 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="pneumonia">
-<h2>3. Pneumonia Score</h2>
-<p>The Pneumonia Score is a clinical tool that grades severity based on signs like fever, chest indrawing, oxygen saturation, respiratory distress, intake difficulty, and lethargy. It guides management decisions by categorizing cases into non‑severe (outpatient care), severe (hospital admission), or very severe (urgent intensive support).</p>
+<h5>3. Pneumonia Score</h5>
+<h6>The Pneumonia Score is a clinical tool that grades severity based on signs like fever, chest indrawing, oxygen saturation, respiratory distress, intake difficulty, and lethargy. It guides management decisions by categorizing cases into non‑severe (outpatient care), severe (hospital admission), or very severe (urgent intensive support).</h6>
 
-<h3>Is there fast breathing?</h3>
+<h5>Is there fast breathing?</h5>
 <select id="fb">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Is there chest indrawing?</h3>
+<h5>Is there chest indrawing?</h5>
 <select id="cid">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>How are the oxygen saturation?</h3>
+<h5>How are the oxygen saturation?</h5>
 <select id="osn">
 <option value="">select</option>
 <option value="3">Oxygen saturation &lt;90% or central cyanosis</option>
 <option value="0">Not As Above</option>
 </select>
-<h3>Respiratory distress;</h3>
+<h5>Respiratory distress;</h5>
 <select id="rd">
 <option value="">select</option>
 <option value="3">grunting or nasal flaring</option>
 <option value="">Not As Above</option>
 </select>
-<h3>Inability to drink or breastfeed?</h3>
+<h5>Inability to drink or breastfeed?</h5>
 <select id="iatd">
 <option value="">select</option>
 <option value="3">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Lethargy or unconsciousness?</h3>
+<h5>Lethargy or unconsciousness?</h5>
 <select id="leth">
 <option value="">select</option>
 <option value="3">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Convulsions?</h3>
+<h5>Convulsions?</h5>
 <select id="conv">
 <option value="">select</option>
 <option value="3">Yes</option>
@@ -1281,10 +1282,10 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="tal">
-<h2>4. Tal Score</h2>
-<p>The Tal Score is a pediatric asthma severity score used in emergency and clinical settings to assess how severe an asthma exacerbation is in children. It’s less commonly digitized than tools like APGAR or Silverman, but it’s clinically valuable for guiding treatment decisions</p>
+<h5>4. Tal Score</h5>
+<h6>The Tal Score is a pediatric asthma severity score used in emergency and clinical settings to assess how severe an asthma exacerbation is in children. It’s less commonly digitized than tools like APGAR or Silverman, but it’s clinically valuable for guiding treatment decisions</h6>
 
-<h3>Respiratory Rate</h3>
+<h5>Respiratory Rate</h5>
 <select id="trr">
 <option value="">select</option>
 <option value="0">Normal for age</option>
@@ -1292,7 +1293,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Moderate tachypnea</option>
 <option value="3">Severe tachypnea</option>
 </select>
-<h3>Wheezing</h3>
+<h5>Wheezing</h5>
 <select id="tw">
 <option value="">select</option>
 <option value="0">None</option>
@@ -1300,7 +1301,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Throughout expiration</option>
 <option value="3">Inspiratory + expiratory</option>
 </select>
-<h3>Accessory Muscle Use</h3>
+<h5>Accessory Muscle Use</h5>
 <select id="tamu">
 <option value="">select</option>
 <option value="0">None</option>
@@ -1308,7 +1309,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Moderate (sternal retractions)</option>
 <option value="3">Severe, generalized retractions</option>
 </select>
-<h3>Inspiratory/Expiratory Ratio</h3>
+<h5>Inspiratory/Expiratory Ratio</h5>
 <select id="tier">
 <option value="">select</option>
 <option value="0">Normal</option>
@@ -1316,7 +1317,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <option value="2">Moderately prolonged</option>
 <option value="3">Severely prolonged</option>
 </select>
-<h3>Oxygen Saturation</h3>
+<h5>Oxygen Saturation</h5>
 <select id="tos">
 <option value="">select</option>
 <option value="0">&gt;95%</option>
@@ -1329,64 +1330,64 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="pmdc">
-<h2>5. Pediatric Malaria Dose Calculator:</h2>
-<p>"The Pediatric Malaria Dose Calculator provides weight‑based dosing guidance for children with uncomplicated or severe malaria. It ensures accurate, evidence‑aligned treatment decisions to improve safety and clinical outcomes."</p>
+<h5>5. Pediatric Malaria Dose Calculator:</h5>
+<h6>"The Pediatric Malaria Dose Calculator provides weight‑based dosing guidance for children with uncomplicated or severe malaria. It ensures accurate, evidence‑aligned treatment decisions to improve safety and clinical outcomes."</h6>
 
-<h2>Select the appropriate options below:</h2>
+<h5>Select the appropriate options below:</h5>
 <form>
-<label for="uncomplicated">Uncomplicated Malaria</label><br><br>
-<input type="radio" name="malaria" id="uncomplicated"><br><br>
+<h5 for="uncomplicated">Uncomplicated Malaria</h5>
+<input type="radio" name="malaria" id="uncomplicated">
 
-<label for="severe">Severe Malaria</label><br><br>
+<h5 for="severe">Severe Malaria</h5>
 <input type="radio" name="malaria" id="severe"><br><br>
 
-<label for="ptMalariaWeight">Enter the Weight of Patient:</label><br><br>
-<input type="number" id="ptMalariaWeight" name="malariaWeight" placeholder="Enter Weight in Kg"><br><br>
+<h5 for="ptMalariaWeight">Enter the Weight of Patient:</h5>
+<input type="number" id="ptMalariaWeight" name="malariaWeight" placeholder="Enter Weight in Kg">
 <button type="button" id="pediatricDoseCalculator">Submit</button><br><br>
 </form>
 <div id="malariaDoseCalculatedDisplay" style="font-weight: bold"></div>
 </section>
 
 <section class="tool" id="yos">
-<h2>6. Yale Observation Scale: </h2>
-<p>The Yale Observation Scale is a clinical tool used to assess febrile children aged 3–36 months, focusing on behavior, appearance, and interaction. It helps distinguish between benign viral illness and serious bacterial infection by scoring six observable criteria.</p>
+<h5>6. Yale Observation Scale: </h5>
+<h6>The Yale Observation Scale is a clinical tool used to assess febrile children aged 3–36 months, focusing on behavior, appearance, and interaction. It helps distinguish between benign viral illness and serious bacterial infection by scoring six observable criteria.</h6>
 
-<h3 id="qoc">Quality of cry</h3>
+<h5 id="qoc">Quality of cry</h5>
 <select>
 <option value="">select</option>
 <option value="1">strong/normal</option>
 <option value="2">whimpering</option>
 <option value="3">weak/absent</option>
 </select>
-<h3 id="rtp">Reaction to parents</h3>
+<h5 id="rtp">Reaction to parents</h5>
 <select>
 <option value="">select</option>
 <option value="1">content</option>
 <option value="2">irritable</option>
 <option value="3">inconsolable</option>
 </select>
-<h3 id="sv">State variation</h3>
+<h5 id="sv">State variation</h5>
 <select>
 <option value="">select</option>
 <option value="1">normal</option>
 <option value="2">limited</option>
 <option value="3">none</option>
 </select>
-<h3 id="color">Color</h3>
+<h5 id="color">Color</h5>
 <select>
 <option value="">select</option>
 <option value="1">pink</option>
 <option value="2">pale</option>
 <option value="3">cyanotic/gray</option>
 </select>
-<h3 id="hydration">Hydration</h3>
+<h5 id="hydration">Hydration</h5>
 <select>
 <option value="">select</option>
 <option value="1">normal</option>
 <option value="2">dry mucous membranes</option>
 <option value="3">parched</option>
 </select>
-<h3>Response to social overtures</h3>
+<h5>Response to social overtures</h5>
 <select id="rtso">
 <option value="">select</option>
 <option value="1">smiles/alert</option>
@@ -1399,73 +1400,73 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 </section>
 
 <section class="tool" id="mfic">
-<h2>7. Maintenance fluids in children:</h2>
-<p>Maintenance fluids in children are the amount of fluid needed to meet normal daily physiological requirements for water and electrolytes.
+<h5>7. Maintenance fluids in children:</h>
+<h6>Maintenance fluids in children are the amount of fluid needed to meet normal daily physiological requirements for water and electrolytes.
 They replace ongoing losses from urine, respiration, skin, and stool under normal conditions.
-The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenance fluid requirements based on body weight.</p>
+The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenance fluid requirements based on body weight.</h6>
 
 <form>
-<label for="mweight">Enter the weight in Kg: </label>
-<input type="number" id="mweight" name="mweight" placeholder="Enter the weight in Kg"><br><br>
+<h5 for="mweight">Enter the weight in Kg: </h5>
+<input type="number" id="mweight" name="mweight" placeholder="Enter the weight in Kg">
 <button type="button" id="mfButton">Submit</button><br><br>
 </form>
 <div id="rmfD"></div>
 </section>
 
 <section class="tool" id="jones">
-<h2>8. Jones Criteria</h2>
-<p>The Jones Criteria is a standardized clinical tool used to diagnose acute rheumatic fever (ARF), a serious complication of untreated streptococcal throat infections. It combines major manifestations (such as carditis, arthritis, chorea, erythema marginatum, and subcutaneous nodules) with minor criteria (like fever, arthralgia, and elevated inflammatory markers), alongside evidence of a preceding streptococcal infection.</p>
-<div>🔑 Core Requirements: Evidence of preceding streptococcal infection. Positive throat culture or rapid antigen test.Elevated/rising ASO or anti-DNase B titers. Recent scarlet fever</div>
+<h5>8. Jones Criteria</h5>
+<h6>The Jones Criteria is a standardized clinical tool used to diagnose acute rheumatic fever (ARF), a serious complication of untreated streptococcal throat infections. It combines major manifestations (such as carditis, arthritis, chorea, erythema marginatum, and subcutaneous nodules) with minor criteria (like fever, arthralgia, and elevated inflammatory markers), alongside evidence of a preceding streptococcal infection.</h6>
+<h6>🔑 Core Requirements: Evidence of preceding streptococcal infection. Positive throat culture or rapid antigen test.Elevated/rising ASO or anti-DNase B titers. Recent scarlet fever</h6>
 
-<label>a. Carditis (clinical or subclinical on echocardiography)</label><br>
+<h5>a. Carditis (clinical or subclinical on echocardiography)</h5>
 <select id="ccosoe">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<label>b. Polyarthritis (migratory, large joints; monoarthritis/polyarthralgia may count in high-risk populations)</label><br>
+<h5>b. Polyarthritis (migratory, large joints; monoarthritis/polyarthralgia may count in high-risk populations)</h5>
 <select id="pamlj">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<label>c. Chorea (Sydenham’s chorea, involuntary movements)</label><br>
+<h5>c. Chorea (Sydenham’s chorea, involuntary movements)</h5>
 <select id="csim">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<label>d. Erythema marginatum (rare but specific rash) </label><br>
+<h5>d. Erythema marginatum (rare but specific rash) </h5>
 <select id="emrbs">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select><br>
-<label>e. Subcutaneous nodules (firm, painless nodules over bony prominences)</label><br>
+<h5>e. Subcutaneous nodules (firm, painless nodules over bony prominences)</h5>
 <select id="scnfpnobp">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
-<label>f. Fever (&gt;=38–38.5°C depending on risk group) </label><br>
+</select>
+<h5>f.Fever (&gt;=38–38.5°C depending on risk group) </h5>
 <select id="fdorg">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
-<label>g. Arthralgia (joint pain without swelling; polyarthralgia may be major in high-risk groups)</label><br>
+</select>
+<h5>g. Arthralgia (joint pain without swelling; polyarthralgia may be major in high-risk groups)</h5>
 <select id="ajpws">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
-<label>h. Elevated ESR/CRP (ESR ≥30–60 mm/h or CRP ≥3.0 mg/dL depending on risk group)</label><br>
+</select>
+<h5>h. Elevated ESR/CRP (ESR ≥30–60 mm/h or CRP ≥3.0 mg/dL depending on risk group)</h5>
 <select id="eeoc">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
-<label>i. Prolonged PR interval on ECG (age-adjusted; not counted if carditis is already a major criterion)</label><br>
+</select>
+<h5>i. Prolonged PR interval on ECG (age-adjusted; not counted if carditis is already a major criterion)</h5>
 <select id="ppioe">
 <option value="">Select</option>
 <option value="1">Yes</option>
@@ -1476,134 +1477,134 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 
 <section class="tool" id="duke">
-<h2>9. Duke's Criteria</h2>
-<p>The Duke’s Criteria are a standardized diagnostic framework developed at Duke University to identify infective endocarditis (IE), combining microbiological, imaging, and clinical findings into major and minor categories to classify cases as definite, possible, or rejected.</p>
+<h5>9. Duke's Criteria</h5>
+<h6>The Duke’s Criteria are a standardized diagnostic framework developed at Duke University to identify infective endocarditis (IE), combining microbiological, imaging, and clinical findings into major and minor categories to classify cases as definite, possible, or rejected.</h6>
 
-<h3>Positive blood cultures</h3>
-<label>a. Typical organisms: Viridans streptococci, Staphylococcus aureus, HACEK group:</label><br><br>
+<h5>Positive blood cultures:</h5>
+<h5>a. Typical organisms: Viridans streptococci, Staphylococcus aureus, HACEK group:</h5>
 <select id="hacek">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>b. Persistent bacteremia: &gt;=2 positive cultures &gt;12 hours apart, or majority of ≥4 cultures with first and last &gt;=1 hour apart:</label><br><br>
+</select>
+<h5>b. Persistent bacteremia: &gt;=2 positive cultures &gt;12 hours apart, or majority of ≥4 cultures with first and last &gt;=1 hour apart:</h5>
 <select id="bacteremia">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>c. Single positive culture for Coxiella burnetii or IgG phase I antibody titer ≥1:800:</label><br><br>
+</select>
+<h5>c. Single positive culture for Coxiella burnetii or IgG phase I antibody titer ≥1:800:</h5>
 <select id="coxiella">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<h3>Evidence of endocardial involvement</h3>
-<label>d. Echocardiographic findings: vegetation, abscess, pseudoaneurysm, intracardiac fistula, prosthetic valve dehiscence:</label><br><br>
+</select>
+<h5>Evidence of endocardial involvement:</h5>
+<h5>d. Echocardiographic findings: vegetation, abscess, pseudoaneurysm, intracardiac fistula, prosthetic valve dehiscence:</h5>
 <select id="eoei">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>e. Echocardiographic findings: vegetation, abscess, pseudoaneurysm, intracardiac fistula, prosthetic valve dehiscence:</label><br><br>
+</select><br>
+<h5>e. Echocardiographic findings: vegetation, abscess, pseudoaneurysm, intracardiac fistula, prosthetic valve dehiscence:</h5>
 <select id="Ecfs">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>f. New valvular regurgitation (not just worsening of a pre-existing murmur):</label><br><br>
+</select>
+<h5>f. New valvular regurgitation (not just worsening of a pre-existing murmur):</h5>
 <select id="nvr">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>g. Advanced imaging (PET/CT, cardiac CT) showing abnormal activity around prosthetic valves or paravalvular lesions:</label><br><br>
+</select>
+<h5>g. Advanced imaging (PET/CT, cardiac CT) showing abnormal activity around prosthetic valves or paravalvular lesions:</h5>
 <select id="aipet">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>h. Predisposition: predisposing heart condition or injection drug use:</label><br><br>
+</select>
+<h5>h. Predisposition: predisposing heart condition or injection drug use:</h5>
 <select id="pdhc">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>i. Fever: &gt;=38°C:</label><br><br>
+</select>
+<h5>i. Fever: &gt;=38°C:</h5>
 <select id="iecf">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>j. Vascular phenomena: arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions:</label><br><br>
+</select>
+<h5>j. Vascular phenomena: arterial emboli, septic pulmonary infarcts, mycotic aneurysm, intracranial hemorrhage, conjunctival hemorrhages, Janeway lesions:</h5>
 <select id="ievpS">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>k. Immunologic phenomena: glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor:</label><br><br>
+</select>
+<h5>k. Immunologic phenomena: glomerulonephritis, Osler nodes, Roth spots, rheumatoid factor:</h5>
 <select id="ipgorrf">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
-<label>l. Microbiological evidence: positive blood culture not meeting major criteria, or serological evidence of active infection:</label><br><br>
+</select>
+<h5>l. Microbiological evidence: positive blood culture not meeting major criteria, or serological evidence of active infection:</h5>
 <select id="ieme">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br><br>
+</select>
 <button id="dcBtn">Submit</button><br><br>
 <div id="dcDisplay"></div>
 </section>
 
 <section class="tool" id="pecarn">
-<h2>10. PECARN Head Injury Rule (less than 2 year)</h2>
-<p>The PECARN Head Injury Rule is the most validated decision aid for children with minor blunt head trauma (GCS 14–15), helping clinicians decide between CT imaging and observation while minimizing radiation exposure. It stratifies risk by age (<2 years vs ≥2 years) and has near‑perfect sensitivity for clinically important traumatic brain injury (ciTBI)</p>
+<h5>10. PECARN Head Injury Rule (less than 2 year)</h5>
+<h6>The PECARN Head Injury Rule is the most validated decision aid for children with minor blunt head trauma (GCS 14–15), helping clinicians decide between CT imaging and observation while minimizing radiation exposure. It stratifies risk by age (&lt;2 years vs &gt;=2 years) and has near‑perfect sensitivity for clinically important traumatic brain injury (ciTBI)</h6>
 
-<label>a. GCS <15</label><br><br>
+<h5>a. GCS <15</h5>
 <select id="pecGcs">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>b. Altered mental status</label><br><br>
+</select>
+<h5>b. Altered mental status</h5>
 <select id="pecAms">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>c. Palpable skull fracture</label><br><br>
+</select>
+<h5>c. Palpable skull fracture</h5>
 <select id="pecPsf">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>d. Non‑frontal scalp hematoma</label><br><br>
+</select>
+<h5>d. Non‑frontal scalp hematoma</h5>
 <select id="pecNfsh">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>e. Loss of consciousness &gt;=5 sec</label><br><br>
+</select>
+<h5>e. Loss of consciousness &gt;=5 sec</h5>
 <select id="pecLoc">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>f. Severe mechanism of injury</label><br><br>
+</select>
+<h5>f. Severe mechanism of injury</h5>
 <select id="pecSmoi">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>g. Abnormal behavior per parent</label><br><br>
+</select>
+<h5>g. Abnormal behavior per parent</h5>
 <select id="pecAbpp">
 <option value="">Select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select></label><br><br>
-<label>h. None of the above present → &lt;0.02% ciTBI risk </label><br><br>
+</select>
+<h5>h. None of the above present → &lt;0.02% ciTBI risk </h5>
 <select id="pecNota">
 <option value="">Select</option>
 <option value="1">Yes</option>
@@ -1620,7 +1621,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 
 
 <h1>D. SURGERY</h1>
-<h3>Make a Selection:</h3>
+<h5>Make a Selection:</h5>
 <select id="surgPick">
 <option value="">Choose</option>
 <option value="possum">Is the patient healthy enough to under go surgery?</option>
@@ -1635,12 +1636,12 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select>
 
 <section class="tool" id="possum">
-<h2>D.1. POSSUM Score</h2>
+<h5>D.1. POSSUM Score</h5>
 <p>The POSSUM score is a surgical risk prediction tool. It was designed to estimate postoperative morbidity and mortality by combining a patient’s physiological state with the severity of the operation</p>
 
-<h2>A. Physiological Parameters</h2>
+<h5>A. Physiological Parameters:</h5>
 
-<label for="ageRange">i. Age Range:</label><br>
+<h5 for="ageRange">i. Age Range:</h5>
 <select id="ageRange">
   <option value="">Select</option>
   <option value="1">≤60 years</option>
@@ -1649,7 +1650,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">≥81 years</option>
 </select>
 
-<label for="cardiacSigns">ii. Cardiac Signs:</label><br>
+<h5 for="cardiacSigns">ii. Cardiac Signs:</h5>
 <select id="cardiacSigns">
   <option value="">Select</option>
   <option value="1">No failure</option>
@@ -1658,7 +1659,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Raised JVP/cardiomegaly</option>
 </select>
 
-<label for="rSigns">iii. Respiratory Signs:</label><br>
+<h5 for="rSigns">iii. Respiratory Signs:</h5>
 <select id="rSigns">
   <option value="">Select</option>
   <option value="1">No dyspnea</option>
@@ -1667,7 +1668,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Dyspnea at rest</option>
 </select>
 
-<label for="sbpScore">iv. Systolic BP:</label><br>
+<h5 for="sbpScore">iv. Systolic BP:</h5>
 <select id="sbpScore">
   <option value="">Select</option>
   <option value="1">110–130 mmHg</option>
@@ -1676,7 +1677,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;=89</option>
 </select>
 
-<label for="pRate">v. Pulse Rate:</label><br>
+<h5 for="pRate">v. Pulse Rate:</h5>
 <select id="pRate">
   <option value="">Select</option>
   <option value="1">50–80 bpm</option>
@@ -1685,7 +1686,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;40 or ≥121</option>
 </select>
 
-<label for="gcs">vi. GCS:</label><br>
+<h5 for="gcs">vi. GCS:</5>
 <select id="gcs">
   <option value="">Select</option>
   <option value="1">15</option>
@@ -1694,7 +1695,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;=8</option>
 </select>
 
-<label for="hemR">vii. Hemoglobin:</label><br>
+<h5 for="hemR">vii. Hemoglobin:</h5>
 <select id="hemR">
   <option value="">Select</option>
   <option value="1">13–16 g/dL</option>
@@ -1703,7 +1704,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;=9.9 or ≥18.1</option>
 </select>
 
-<label for="wccx">viii. WCC:</label><br>
+<h5 for="wccx">viii. WCC:</h5>
 <select id="wccx">
   <option value="">Select</option>
   <option value="1">4–10 ×10⁹/L</option>
@@ -1711,7 +1712,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="4">&gt;20</option>
 </select>
 
-<label for="ur">ix. Urea:</label><br>
+<h5 for="ur">ix. Urea:</h5>
 <select id="ur">
   <option value="">Select</option>
   <option value="1">&lt;=7.5 mmol/L</option>
@@ -1720,7 +1721,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&gt;15.1</option>
 </select>
 
-<label for="na">x. Sodium:</label><br>
+<h5 for="na">x. Sodium:</h5>
 <select id="na">
   <option value="">Select</option>
   <option value="1">≥136</option>
@@ -1729,7 +1730,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;=125</option>
 </select>
 
-<label for="kxy">xi. Potassium:</label><br>
+<h5 for="kxy">xi. Potassium:</h5>
 <select id="kxy">
   <option value="">Select</option>
   <option value="1">3.5–5</option>
@@ -1738,7 +1739,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">&lt;=2.8 or ≥6</option>
 </select>
 
-<label for="ecg">xii. ECG Findings:</label><br>
+<h5 for="ecg">xii. ECG Findings:</h5>
 <select id="ecg">
   <option value="">Select</option>
   <option value="1">Normal</option>
@@ -1749,7 +1750,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 
 <h2>B. Operative Parameters</h2>
 
-<label for="opS">i. Operative Severity:</label><br>
+<h5 for="opS">i. Operative Severity:</h5>
 <select id="opS">
 <option value="">Select</option>
   <option value="1">Minor</option>
@@ -1758,7 +1759,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Major Plus/Complex</option>
 </select>
 
-<label for="nop">ii. Number of Procedures:</label><br>
+<h5 for="nop">ii. Number of Procedures:</h5>
 <select id="nop">
   <option value="">Select</option>
   <option value="1">1</option>
@@ -1767,7 +1768,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">≥4</option>
 </select>
 
-<label for="ebl">iii. Estimated Blood Loss:</label><br>
+<h5 for="ebl">iii. Estimated Blood Loss:</h5>
 <select id="ebl">
   <option value="">Select</option>
   <option value="1">&lt;100 mL</option>
@@ -1776,7 +1777,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">≥1000 mL</option>
 </select>
 
-<label for="ps">iv. Peritoneal Soiling:</label><br>
+<h5 for="ps">iv. Peritoneal Soiling:</h5>
 <select id="ps">
   <option value="">Select</option>
   <option value="1">None</option>
@@ -1785,7 +1786,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Generalized fecal contamination</option>
 </select>
 
-<label for="pom">v. Malignancy:</label><br>
+<h5 for="pom">v. Malignancy:</h5>
 <select id="pom">
   <option value="">Select</option>
   <option value="1">None</option>
@@ -1794,13 +1795,13 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <option value="8">Distant metastases</option>
 </select>
 
-<label for="too">vi. Timing of Operation:</label><br>
+<h5 for="too">vi. Timing of Operation:</h5>
 <select id="too">
   <option value="">Select</option>
   <option value="1">Elective</option>
   <option value="2">Emergency within 24h</option>
   <option value="8">Immediate life‑saving</option>
-</select><br>
+</select>
 
 <br><button onclick="possumScore()">Submit</button><br><br>
 
@@ -1811,17 +1812,17 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 
 <section class="tool" id="news">
-<h2>2. National Early Warning Score</h2>
-<p>Identifies patients at risk of sudden deterioration before critical events occur</p>
+<h5>2. National Early Warning Score</h5>
+<h6>Identifies patients at risk of sudden deterioration before critical events occur</h6>
 
-<h3>Respiratory rate</h3>
+<h5>Respiratory rate</h5>
 <select id="nrr">
 <option value="">select</option>
 <option value="0">Normal (12–20 breaths/min)</option>
 <option value="1">Mild abnormal (9–11 or 21–24)</option>
 <option value="2">Severe abnormal (≤8 or ≥25)</option>
 </select>
-<h3>Oxygen saturation</h3>
+<h5>Oxygen saturation</h5>
 <select id="nos">
 <option value="">select</option>
 <option value="0">&gt;=96%</option>
@@ -1829,14 +1830,14 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">92–93%</option>
 <option value="3">&lt;=91%</option>
 </select>
-<h3>Temperature</h3>
+<h5>Temperature</h5>
 <select id="ntemp">
 <option value="">select</option>
 <option value="0">36.1–38.0 °C</option>
 <option value="1">35.1–36.0 or 38.1–39.0 °C</option>
 <option value="2">&lt;=35.0 or &gt;=39.1 °C</option>
 </select>
-<h3>Systolic blood pressure</h3>
+<h5>Systolic blood pressure</h5>
 <select id="nsbp">
 <option value="">select</option>
 <option value="0">111–219 mmHg</option>
@@ -1844,7 +1845,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">91–100 mmHg</option>
 <option value="3">&lt;=90 or &gt;=220 mmHg</option>
 </select>
-<h3>Heart rate</h3>
+<h5>Heart rate</h5>
 <select id="nhr">
 <option value="">select</option>
 <option value="0">51–90 bpm</option>
@@ -1852,21 +1853,21 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">111–130 bpm</option>
 <option value="3">&lt;=40 or &gt;=131 bpm</option>
 </select>
-<h3>Consciousness</h3>
+<h5>Consciousness</h5>
 <select id="ncons">
 <option value="">Select</option>
 <option value="0">Alert</option>
 <option value="3">Responds to Voice, Pain, or Unresponsive (AVPU scale)</option>
-</select><br>
-<br><button onclick="news()">Submit</button><br><br>
+</select>
+<button onclick="news()">Submit</button><br><br>
 <div id="nT"></div>
 </section>
 
 <section class="tool" id="acs">
-<h2>3. ACS NSQIP</h2>
-<p class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</p>
+<h5>3. ACS NSQIP</h5>
+<h6 class="nawa">Estimates mortality risk.It tells you how likely a patient is to die within 30 days of surgery</h6>
 
-<h3>Age</h3>
+<h5>Age</h5>
 <select id="aage">
 <option value="">Select</option>
 <option value="0">&lt;50</option>
@@ -1874,28 +1875,28 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">70–79</option>
 <option value="3">&gt;=80</option>
 </select>
-<h3>ASA class</h3>
+<h5>ASA class</h5>
 <select id="aasa">
 <option value="">Select</option>
 <option value="0">I–II</option>
 <option value="2">III</option>
 <option value="4">IV–V</option>
 </select>
-<h3>Functional status</h3>
+<h5>Functional status</h5>
 <select id="afs">
 <option value="">Select</option>
 <option value="0">Independent</option>
 <option value="2">Partially dependent</option>
 <option value="4">Fully dependent</option>
 </select>
-<h3>Comorbidities</h3>
+<h5>Comorbidities</h5>
 <select id="acom">
 <option value="">Select</option>
 <option value="0">None</option>
 <option value="2">1–2</option>
 <option value="4">&gt;=3</option>
 </select>
-<h3>Procedure risk</h3>
+<h5>Procedure risk</h5>
 <select id="apr">
 <option value="">Select</option>
 <option value="0">Minor</option>
@@ -1907,10 +1908,10 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 
 <section class="tool" id="pra">
-<h2>4. Prostate Risk Assessment</h2>
-<p>"This tool helps identify individual risk factors for prostate conditions, guiding timely screening and preventive care. It empowers clinicians and clients with structured, evidence‑based insights for informed decision‑making."</p>
+<h5>4. Prostate Risk Assessment</h5>
+<h6>"This tool helps identify individual risk factors for prostate conditions, guiding timely screening and preventive care. It empowers clinicians and clients with structured, evidence‑based insights for informed decision‑making."</h6>
 
-<h3>Incomplete emptying</h3>
+<h5>Incomplete emptying</h5>
 <select id="pinco">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1920,7 +1921,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Frequency</h3>
+<h5>Frequency</h5>
 <select id="pfre">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1930,7 +1931,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Intermittency</h3>
+<h5>Intermittency</h5>
 <select id="pinter">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1940,7 +1941,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Urgency</h3>
+<h5>Urgency</h5>
 <select id="purg">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1950,7 +1951,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Weak stream</h3>
+<h5>Weak stream</h5>
 <select id="pweak">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1960,7 +1961,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Straining</h3>
+<h5>Straining</h5>
 <select id="pstrain">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1970,7 +1971,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
 </select>
-<h3>Nocturia</h3>
+<h5>Nocturia</h5>
 <select id="pnoc">
 <option value="">Select</option>
 <option value="0">Not at all</option>
@@ -1979,242 +1980,242 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="3">About half the time</option>
 <option value="4">More than half the time</option>
 <option value="5">Almost always</option>
-</select><br>
-<br><button onclick="prostate()">Submit</button><br><br>
+</select>
+<button onclick="prostate()">Submit</button><br><br>
 <div id="Pros"></div>
 </section>
 
 <section class="tool" id="wells">
-<h2>5.Wells Criteria(DVT Risk Assessment)</h2>
-<p>"The Wells Criteria tool estimates the probability of deep vein thrombosis or pulmonary embolism based on clinical features. It supports safer, evidence‑based decisions about diagnostic testing and patient management."</p>
+<h5>5.Wells Criteria(DVT Risk Assessment)</h5>
+<h6>"The Wells Criteria tool estimates the probability of deep vein thrombosis or pulmonary embolism based on clinical features. It supports safer, evidence‑based decisions about diagnostic testing and patient management."</h6>
 
-<h3>Active cancer (treatment ongoing, within 6 months, or palliative)?</h3>
+<h5>Active cancer (treatment ongoing, within 6 months, or palliative)?</h5>
 <select id="cancer">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Paralysis, paresis, or recent plaster immobilization of lower extremities?</h3>
+<h5>Paralysis, paresis, or recent plaster immobilization of lower extremities?</h5>
 <select id="paresis">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Recently bedridden &gt;=3 days or major surgery within 12 weeks?</h3>
+<h5>Recently bedridden &gt;=3 days or major surgery within 12 weeks?</h5>
 <select id="bedridden">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Localized tenderness along deep venous system?</h3>
+<h5>Localized tenderness along deep venous system?</h5>
 <select id="tender">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Entire leg swollen?</h3>
+<h5>Entire leg swollen?</h5>
 <select id="swollen">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Calf swelling &gt;3 cm compared to asymptomatic leg?</h3>
+<h5>Calf swelling &gt;3 cm compared to asymptomatic leg?</h5>
 <select id="calf">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Pitting edema confined to symptomatic leg?</h3>
+<h5>Pitting edema confined to symptomatic leg?</h5>
 <select id="edema">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Collateral superficial veins (non‑varicose)?</h3>
+<h5>Collateral superficial veins (non‑varicose)?</h5>
 <select id="veins">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Previous DVT?</h3>
+<h5>Previous DVT?</h5>
 <select id="dvt">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="1">Yes</option>
 </select>
-<h3>Alternative diagnosis at least as likely?</h3>
+<h5>Alternative diagnosis at least as likely?</h5>
 <select id="diagnosis">
 <option value="">Select</option>
 <option value="0">No</option>
 <option value="-2">Yes</option>
 </select><br>
-<br><button onclick="wells()">Submit</button><br><br>
+<button onclick="wells()">Submit</button><br><br>
 <div id=Wels></div>
 </section>
 
 <section class="tool" id="ripasa">
-<h2>6. RIPASA Score(Assessment for appendicitis)</h2>
-<p>"The RIPASA Score is a clinical scoring system designed to improve diagnostic accuracy for acute appendicitis, especially in Asian and Middle Eastern populations. It streamlines patient assessment by combining symptoms, signs, and lab findings into a structured risk evaluation."</p>
+<h5>6. RIPASA Score(Assessment for appendicitis)</h5>
+<h6>"The RIPASA Score is a clinical scoring system designed to improve diagnostic accuracy for acute appendicitis, especially in Asian and Middle Eastern populations. It streamlines patient assessment by combining symptoms, signs, and lab findings into a structured risk evaluation."</h6>
 
-<h2>Demographics</h2>
-<h3>Age</h3>
+<h5>Demographics</h5>
+<h5>Age</h5>
 <select id="ripAge">
 <option value="">select</option>
 <option value="1">&lt;40</option>
 <option value="0.5">&gt;=40</option>
 </select>
-<h3>Gender</h3>
+<h5>Gender</h5>
 <select id="ripGender">
 <option value="">select</option>
 <option value="1">Male</option>
 <option value="0.5  ">Female</option>
 </select>
-<h3>Symptoms</h3>
-<h3>Right iliac fossa pain</h3>
+<h5>Symptoms:</h5>
+<h5>Right iliac fossa pain</h5>
 <select id="ripPain">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Migration of pain</h3>
+<h5>Migration of pain</h5>
 <select id="ripMig">
 <option value="">select</option>
 <option value="0.5">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Anorexia</h3>
+<h5>Anorexia</h5>
 <select id="ripAnor">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Nausea and vomiting</h3>
+<h5>Nausea and vomiting</h5>
 <select id="ripNv">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Duration of symptoms &lt;48 hours</h3>
+<h5>Duration of symptoms &lt;48 hours</h5>
 <select id="ripDura">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Duration &gt;=48 hours </h3>
+<h5>Duration &gt;=48 hours </h5>
 <select id="rip48">
 <option value="">select</option>
 <option value="0.5">Yes</option>
 <option value="0">No</option>
 </select>
-<h2>Signs</h2>
-<h3>Right iliac fossa tenderness</h3>
+<h5>Signs:</h5>
+<h5>Right iliac fossa tenderness</h5>
 <select id="ripRif">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Guarding</h3>
+<h5>Guarding</h5>
 <select id="ripGua">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Rebound tenderness</h3>
+<h5>Rebound tenderness</h5>
 <select id="ripRT">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Rovsing’s sign</h3>
+<h5>Rovsing’s sign</h5>
 <select id="ripRS">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Fever</h3>
+<h5>Fever</h5>
 <select id="ripF">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Laboratory</h3>
-<h3>Raised WBC count</h3>
+<h5>Laboratory:</h5>
+<h5>Raised WBC count</h5>
 <select id="ripWBC">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Negative urinalysis</h3>
+<h5>Negative urinalysis</h5>
 <select id="ripUrin">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
+</select>
 <br><button onclick="ripasa()">Submit</button><br><br>
 <div id="ripaT"></div>
 </section>
 
 <section class="tool" id="alvarado">
-<h2>7. Alvarado Score</h2>
-<p>"The Alvarado Score is a clinical scoring system used to assess the likelihood of acute appendicitis. It combines symptoms, signs, and lab findings to guide diagnostic decisions and surgical referral."</p>
+<h5>7. Alvarado Score</h5>
+<h6>"The Alvarado Score is a clinical scoring system used to assess the likelihood of acute appendicitis. It combines symptoms, signs, and lab findings to guide diagnostic decisions and surgical referral."</h6>
 
-<h3>Migration of pain</h3>
+<h5>Migration of pain</h5>
 <select id="mop">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Anorexia</h3>
+<h5>Anorexia</h5>
 <select id="anorexia">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Nausea/vomiting</h3>
+<h5>Nausea/vomiting</h5>
 <select id="nausea">
 <option value="">select</option>
 <option value="">Yes</option>
 <option value="">No</option>
 </select>
-<h3>Right lower quadrant tenderness</h3>
+<h5>Right lower quadrant tenderness</h5>
 <select id="rlqp">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Rebound tenderness</h3>
+<h5>Rebound tenderness</h5>
 <select id="rto">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Fever</h3>
+<h5>Fever</h5>
 <select id="fever">
 <option value="">select</option>
 <option value="1">Temperature &gt;= 37.3 °C</option>
 <option value="0">No</option>
 </select>
-<h3>Leukocytosis</h3>
+<h5>Leukocytosis</h5>
 <select id="leukocytosis">
 <option value="">select</option>
 <option value="2">Yes</option>
 <option value="0">No</option>
 </select>
-<h3>Shift to left</h3>
+<h5>Shift to left</h5>
 <select id="stl">
 <option value="">select</option>
 <option value="1">Yes</option>
 <option value="0">No</option>
-</select><br>
+</select>
 <br><button onclick="alvaradoScore()">Submit</button><br><br>
 <div id="alvaT"></div>
 </section>
 
 <section class="tool" id="glasgow">
-<h2>8. Glasgow Coma Scale</h2>
-<p>"The Glasgow Coma Scale is a standardized system for assessing a patient’s level of consciousness after head injury. It evaluates eye, verbal, and motor responses to provide an objective score guiding clinical decisions."</p>
+<h5>8. Glasgow Coma Scale</h5>
+<h6>"The Glasgow Coma Scale is a standardized system for assessing a patient’s level of consciousness after head injury. It evaluates eye, verbal, and motor responses to provide an objective score guiding clinical decisions."</h6>
 
-<h3>Eye Opening</h3>
+<h5>Eye Opening</h5>
 <select id="eoq">
 <option>select</option>
 <option value="4">Opens eyes without stimulus</option>
@@ -2222,7 +2223,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="2">Opens eyes only to painful stimulus</option>
 <option value="1">No eye opening</option>
 </select>
-<h3>Verbal Response</h3>
+<h5>Verbal Response</h5>
 <select id="vrq">
 <option>select</option>
 <option value="5">Normal conversation, aware of surroundings</option>
@@ -2232,7 +2233,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="1">No verbal response</option>
 <option></option>
 </select>
-<h3>Motor Response</h3>
+<h5>Motor Response</h5>
 <select id="mrq">
 <option>select</option>
 <option value="6">Follows instructions</option>
@@ -2241,14 +2242,14 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="3">Flexion posture to pain</option>
 <option value="2">Extension posture to pain</option>
 <option value="1">No motor response</option>
-</select><br>
+</select>
 <br><button onclick="gcs()">Submit</button><br><br>
 <div id="gcsT"></div>
 </section>
 
 <section class="tool" id="gleason">
-<h3>9. Gleason Score Video</h3>
-<p>The Gleason score is a grading system used to evaluate prostate cancer aggressiveness, ranging from 6 (least aggressive) to 10 (most aggressive). It is determined by examining biopsy tissue under a microscope and helps guide treatment decisions.</p>
+<h5>9. Gleason Score Video</h5>
+<h6>The Gleason score is a grading system used to evaluate prostate cancer aggressiveness, ranging from 6 (least aggressive) to 10 (most aggressive). It is determined by examining biopsy tissue under a microscope and helps guide treatment decisions.</h6>
 <video controls src="gleason.mp4" width="400">
 </section>
 </div>
@@ -2256,7 +2257,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 
 <div class="nursing-section" id="nursingSection" style="display: none;">
 <h1>E. Nursing</h1>
-<h3>Make a Selection</h3>
+<h5>Make a Selection</h5>
 <select id="nursingSelect">
 <option value="">Select</option>
 <option value="ncp">Nursing Care Plan Video</option>
@@ -2266,29 +2267,32 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select>
 
 <section class="tool" id="ncp">
-<p>A nursing care plan is a systematic approach that outlines individualized strategies for patient care. It begins with a thorough assessment of the patient’s needs, followed by the formulation of nursing diagnoses. The plan establishes measurable goals and identifies evidence‑based interventions to achieve them. By providing a structured framework, the care plan ensures continuity, promotes patient safety, and allows for ongoing evaluation of outcomes. Ultimately, it serves as both a clinical guide and a communication tool among healthcare professionals, ensuring that patient‑centered care remains consistent and effective.</p>
+<h5>Nursing Care Plan:</h5>
+<h5>A nursing care plan is a systematic approach that outlines individualized strategies for patient care. It begins with a thorough assessment of the patient’s needs, followed by the formulation of nursing diagnoses. The plan establishes measurable goals and identifies evidence‑based interventions to achieve them. By providing a structured framework, the care plan ensures continuity, promotes patient safety, and allows for ongoing evaluation of outcomes. Ultimately, it serves as both a clinical guide and a communication tool among healthcare professionals, ensuring that patient‑centered care remains consistent and effective.</h5>
 <video controls src="ncp.mp4" width="400">
 </section>
 
 <section class="tool" id="sixRights">
+<h5>Six Rights of Medication:</h5>
 <p>The 6 Rights of Medication Administration are a cornerstone of safe nursing practice. They serve as a checklist to minimize errors and protect patients during drug administration. Here’s a structured breakdown:</p>
 <video controls src="sixrights.mp4" width="400">
 </section>
 
 <section class="tool" id="nurse-apgar">
-<p>The Apgar Score is a quick assessment tool used in nursing and midwifery to evaluate a newborn’s condition immediately after birth. It is performed at 1 minute and 5 minutes post‑delivery, focusing on five vital signs:</p>
+<h5>Apgar Score:</h5>
+<h6>The Apgar Score is a quick assessment tool used in nursing and midwifery to evaluate a newborn’s condition immediately after birth. It is performed at 1 minute and 5 minutes post‑delivery, focusing on five vital signs:</h6>
 <video controls src="apgar.mp4" width="400">
 </section>
 
 <section class="tool" id="drip-rate">
-<h3>Calculating the Drip Rate:</h3>
-<p>Drip rate calculation is a fundamental nursing skill used to determine how fast IV fluids should flow when using gravity infusion sets. It ensures patients receive the correct volume of fluid or medication within the prescribed time.</p>
-<h3>Enter the numbers alone without units:</h3>
-<h4>Enter the volume of the drip in ml</h4>
+<h5>Calculating the Drip Rate:</h5>
+<h6>Drip rate calculation is a fundamental nursing skill used to determine how fast IV fluids should flow when using gravity infusion sets. It ensures patients receive the correct volume of fluid or medication within the prescribed time.</6>
+<h5>Enter the numbers alone without units:</h5>
+<h5>Enter the volume of the drip in ml</h5>
 <input type="number" id="volume-drip" placeholder="volume in ml"> 
-<h4>Enter the drop factor in gtt/ml</h4>
+<h5>Enter the drop factor in gtt/ml</h5>
 <input type="number" id="drop-factor" placeholder="gtt/ml"> 
-<h4>Enter the duration, the drip is to run in minutes:</h4>
+<h5>Enter the duration, the drip is to run in minutes:</h5>
 <input type="number" id="time-fluids" placeholder="Duration in minutes"> <br><br>
 <button id="dripBtn">Submit</button>
 <div id="dripDisplay"></div>
@@ -2297,7 +2301,8 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </div>
 
 <div class="section" id="category-art">
-<h2>Make a Selection</h2>
+<h1>ART Clinical Tools</h1>
+<h5>Make a Selection</h5>
 <select>
 <option value="art-select">Select</option>
 <option value="art-regimen">ART Regimen Calculator</option>
@@ -2305,12 +2310,10 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 
 
 <section class="tool" id="art-regimen">
-<h3>ART Regimen Calculator</h3>
-<p>The ART regimen calculator is a digital tool designed to help healthcare workers quickly determine the most appropriate antiretroviral therapy (ART) regimen for patients living with HIV. By inputting key details such as age, weight, clinical status, and lab values, the calculator standardizes treatment recommendations, ensuring consistency with national and international guidelines.
+<h5>ART Regimen Calculator</h5>
+<h6>The ART regimen calculator is a digital tool designed to help healthcare workers quickly determine the most appropriate antiretroviral therapy (ART) regimen for patients living with HIV. By inputting key details such as age, weight, clinical status, and lab values, the calculator standardizes treatment recommendations, ensuring consistency with national and international guidelines.Its purpose is to simplify complex decision-making, reduce errors, and provide clear outputs like recommended regimens, dosing schedules, and monitoring plans. This makes it especially useful in busy clinical settings where fast, evidence-based guidance is essential.</h6>
 
-Its purpose is to simplify complex decision-making, reduce errors, and provide clear outputs like recommended regimens, dosing schedules, and monitoring plans. This makes it especially useful in busy clinical settings where fast, evidence-based guidance is essential.</p>
-
-<h4>a.Select the age range in years<h4>
+<h5>a.Select the age range in years</h5>
 <select id="art-age">
 <option value="">Select</option>
 <option value="lessthan-1">&lt;1 year</option>
@@ -2319,7 +2322,7 @@ Its purpose is to simplify complex decision-making, reduce errors, and provide c
 <option value="greaterthan-20">&gt;20</option>
 </select>
 
-<h4>b. WHO Stage Integration</h4>
+<h5>b. WHO Stage Integration</h5>
 <select id="art-whostage">
 <option value="">select</option>
 <option value="stage-1">stage I</option>
@@ -2328,7 +2331,7 @@ Its purpose is to simplify complex decision-making, reduce errors, and provide c
 <option value="stage-4">stage IV</option>
 </select>
 
-<h4>c.Select the Weight Range in Kg</h4>
+<h5>c.Select the Weight Range in Kg</h5>
 <select id="art-weight">
 <option value="">Select</option>
 <option value="">&lt;10Kg</option>
@@ -2336,8 +2339,8 @@ Its purpose is to simplify complex decision-making, reduce errors, and provide c
 <option value="twenty-29">20Kg to 29Kg</option>
 <option value="thirty-39">30Kg to 39Kg</option>
 <option value="greaterthan-40">&gt;40Kg</option>
-</select><br>
-<h4>d.Special Conditions:</h4>
+</select><
+<h5>d.Special Conditions:</h5>
 <select id="art-specials">
 <option>Select</option>
 <option value="pregnancy">Pregnancy &lt;14 weeks</option>
@@ -2352,7 +2355,8 @@ Its purpose is to simplify complex decision-making, reduce errors, and provide c
 </div>
 
 <div id="clinical-hub" style="display: none">
-<h3>Make a Selection<h3>
+<h1>Clinical Case Scenarios</h1>
+<h5>Make a Selection<h5>
 <select id="clinicalhub-select">
 <option value="">select</option>
 <option value="covid-19">Covid-19</option>
@@ -2361,7 +2365,7 @@ Its purpose is to simplify complex decision-making, reduce errors, and provide c
 </select>
 
 <section class="tool" id="covid-19">
-<h3>Covid-19</h3>
+<h5>Covid-19</h5>
 <h6>A 45‑year‑old male presents to the emergency department with a 5‑day history of fever, dry cough, and progressive shortness of breath. He is unvaccinated, has a BMI of 32, and a history of hypertension. On examination, he is febrile (38.7°C), tachypneic (RR 28/min), and hypoxic (SpO₂ 89% on room air). Chest auscultation reveals bilateral crackles.</h6>
 <h5>What is the most likely diagnosis?</h5>
 <h6>✅ Moderate COVID‑19 pneumonia — supported by fever, respiratory symptoms, hypoxia, and bilateral lung findings. </h6>
