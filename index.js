@@ -1837,7 +1837,7 @@ document.getElementById("dripDisplay").innerHTML = " The Drop Rate is " + dr + "
 
 
 
-let clinicalhubSelect = document.getElementById("clinicalhub-select");
+const clinicalhubSelect = document.getElementById("clinicalhub-select");
 
 clinicalhubSelect.addEventListener("change", showClinicalhubTool);
 
@@ -1848,9 +1848,9 @@ function showClinicalhubTool() {
   });
 
   // Show the chosen one
-  let picked = clinicalhubSelect.value;
+  const picked = clinicalhubSelect.value;
   if (picked) {
-    let target = document.getElementById(picked);
+    const target = document.getElementById(picked);
     if (target) {
       target.classList.add("active");
     }
