@@ -1857,6 +1857,34 @@ function showClinicalhubTool() {
   }
 }
 
+// ART Adherence Risk Score Calculator
+document.getElementById("artArsBtn").addEventListener("click", assessRisk);
+
+function assessRisk() {
+    // Retrieve input values safely
+    const vl  = parseInt(document.getElementById("viral-load").value) || 0;
+    const ma  = parseInt(document.getElementById("medication-adherence").value) || 0;
+    const aa  = parseInt(document.getElementById("appointment-attendance").value) || 0;
+    const doa = parseInt(document.getElementById("duration-onart").value) || 0;
+
+    // Calculate total risk score
+    const total = vl + ma + aa + doa;
+
+    // Determine risk category
+    let message = "";
+    if (total >= 0 && total <= 3) {
+        message = "Low Risk: Continue routine monitoring.";
+    } else if (total >= 4 && total <= 7) {
+        message = "Moderate Risk: Reinforce adherence counseling, repeat viral load in 3 months.";
+    } else if (total >= 8) {
+        message = "High Risk: Urgent clinical review, consider regimen switch.";
+    } else {
+        message = "Invalid Score: Please check your inputs.";
+    }
+
+    // Display result
+    document.getElementById("artarsDisplay").innerHTML = message;
+}
 
 
 
