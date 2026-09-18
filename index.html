@@ -54,8 +54,6 @@ This website provides medical tools for informational purposes only. It is not a
 </section>
 
 <div id="imedt" class="section">
-
-
 <div class="internalMedicine">
     <h1>A. INTERNAL MEDICINE</h1>
     <h5>Make a Selection:</h5>
@@ -2306,6 +2304,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <select>
 <option value="art-select">Select</option>
 <option value="art-regimen">ART Regimen Calculator</option>
+<option value="art-ars">ART Adherece Risk Score</option>
 </select>
 
 
@@ -2351,6 +2350,39 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </select>
 <button id="artBtns">Submit</button>
 <div id="artreg-display"></div>
+</section>
+
+<section class="tool" id="art-ars">
+<h4>ART Adherence Risk Score</h4>
+<h5>The ART adherence risk score is a structured tool used to evaluate how well a patient is following their antiretroviral therapy (ART) regimen. It combines several factors — such as viral load, medication adherence, missed appointments, and duration on ART — into a numerical score.</h5>
+<h5>Viral Load </h5>
+<select id="viral-load">
+<option value="">select</option>
+<option value="0">&lt;1000 copies per ml</option>
+<option value="3">&gt;1000 copies per ml</option>
+<option value="5">&gt;100,000 copies per ml</option>
+</select>
+<h5>Medication Adherence </h5>
+<select id="medication-adherence">
+<option value="">select</option>
+<option value="0">No missed doses in the past month</option>
+<option value="2">Missed &gt;=3 doses in amonth</option>
+</select>
+<h5>Appointment Attendance </h5>
+<select id="appointment-attendance">
+<option value="">select</option>
+<option value="0">Attended all scheduled clinic visits in the past 6 months</option>
+<option value="2">Missed &gt;=1 clinic visit in 6 months </option>
+</select>
+<h5>Duration on ART </h5>
+<select id="duration-onart">
+<option value="">select</option>
+<option value="">&lt;=12 months on ART with suppressed viral load </option>
+<option value="3">12 months with unsuppressed viral load </option>
+</select>
+<button id="artArsBtn">click me</button>
+<div id="artarsDisplay"></div>
+
 </section>
 </div>
 
