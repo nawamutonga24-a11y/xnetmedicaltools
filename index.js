@@ -1886,75 +1886,50 @@ function assessRisk() {
     document.getElementById("artarsDisplay").innerHTML = message;
 }
 
-// Liver Function Tests Interpreter
+// Liver Function Tests Interpreter (final polished version)
 let lftBtn = document.getElementById("lftBtn");
 lftBtn.addEventListener("click", lftInterpreter);
 
 function lftInterpreter() {
-    let bili = parseFloat(document.getElementById("bilirubin-inter").value) || 0;
-    let alt = parseFloat(document.getElementById("alt-inter").value) || 0;
-    let ast = parseFloat(document.getElementById("ast-inter").value) || 0;
     let alb = parseFloat(document.getElementById("albumin-inter").value) || 0;
+    let ast = parseFloat(document.getElementById("ast-inter").value) || 0;
+    let alt = parseFloat(document.getElementById("alt-inter").value) || 0;
     let inr = parseFloat(document.getElementById("inr-inter").value) || 0;
+    let bili = parseFloat(document.getElementById("bilirubin-inter").value) || 0;
 
-    let resultText = "";
+    // --- Units ---
+    // Albumin entered in g/dL → no conversion needed
+    // Bilirubin entered in mg/dL → no conversion needed
 
-    // --- Individual Domain Scores ---
-    let biliScore = 0;
-    if (bili >= 1.3 && bili <= 2.5) biliScore = 1;
-    else if (bili >= 2.6 && bili <= 5.0) biliScore = 2;
-    else if (bili > 5.0) biliScore = 3;
+    // --- Bilirubin Domain ---
+    let biliScore = (bili > 5) ? 3 : (bili >= 2.6 ? 2 : (bili >= 1.3 ? 1 : 0));
 
-    let enzymeScore = 0;
-    if (alt >= 40 && alt <= 120) enzymeScore = 1;
-    else if (alt >= 121 && alt <= 300) enzymeScore = 2;
-    else if (alt > 300) enzymeScore = 3;
-    // Acute override
-    if (alt >= 1000 || ast >= 1000) enzymeScore = 3;
+    // --- Enzyme Domain (AST/ALT combined) ---
+    let altScore = (alt >= 1000) ? 3 :
+                   (alt > 300 ? 3 : (alt >= 121 ? 2 : (alt >= 40 ? 1 : 0)));
+    let astScore = (ast >= 1000) ? 3 :
+                   (ast > 300 ? 3 : (ast >= 121 ? 2 : (ast >= 40 ? 1 : 0)));
+    let enzymeScore = Math.max(altScore, astScore); // take the higher of AST or ALT
 
-    let syntheticScore = 0;
-    if (alb >= 3.0 && alb <= 3.4) syntheticScore = 1;
-    else if (alb >= 2.5 && alb <= 2.9) syntheticScore = 2;
-    else if (alb < 2.5) syntheticScore = 3;
+    // --- Albumin Domain ---
+    let albScore = (alb < 2.5) ? 3 : (alb <= 2.9 ? 2 : (alb <= 3.4 ? 1 : 0));
 
-    if (inr >= 1.2 && inr <= 1.5) syntheticScore = Math.max(syntheticScore, 1);
-    else if (inr >= 1.6 && inr <= 2.0) syntheticScore = Math.max(syntheticScore, 2);
-    else if (inr > 2.0) syntheticScore = 3;
+    // --- INR Domain ---
+    let inrScore = (inr > 2.0) ? 3 : (inr >= 1.6 ? 2 : (inr >= 1.2 ? 1 : 0));
 
-    // --- Max-Value Rule ---
-    let finalScore = Math.max(biliScore, enzymeScore, syntheticScore);
+    // --- Total Score ---
+    let totalScore = biliScore + enzymeScore + albScore + inrScore;
 
     // --- Interpretation ---
-    if (finalScore === 0) {
-        resultText = `Normal (Score 0). ✅ Liver function within normal limits. Recommendation: Routine monitoring.`;
-    } else if (finalScore === 1) {
-        resultText = `Mild Dysfunction (Score 1). ⚠️ Early abnormalities detected. Recommendation: Monitor closely, repeat labs in 1–3 months.`;
-    } else if (finalScore === 2) {
-        resultText = `Moderate Dysfunction (Score 2). ⚠️ Significant impairment. Recommendation: Specialist evaluation, imaging, hepatitis screening.`;
-    } else if (finalScore >= 3) {
-        // Refined severe patterns
-        if (bili > 10) {
-            resultText = `Severe Dysfunction (Score 3). 🚨 Pattern: Cholestasis/Obstruction. 
-            Bilirubin ${bili} mg/dL is critically high (>10× ULN). 
-            Recommendation: Urgent imaging (ultrasound/ERCP) for obstruction or cholangitis.`;
-        } else if (inr >= 1.5 && alb < 3.0) {
-            let ratio = (alt > 0) ? (ast / alt) : 0;
-            if (ratio > 1.3) {
-                resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Decompensated Cirrhosis. 
-                Albumin ${alb} g/dL, INR ${inr}, AST/ALT ratio ${ratio.toFixed(2)} (>1.3). 
-                Recommendation: Urgent hepatology referral, screen for portal hypertension, varices, ascites.`;
-            } else {
-                resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Synthetic Failure. 
-                Albumin ${alb} g/dL, INR ${inr}. 
-                Recommendation: Immediate hepatology consult, monitor for cirrhosis complications.`;
-            }
-        } else if (alt >= 1000 || ast >= 1000) {
-            resultText = `Severe Dysfunction (Score 3). 🚨 Pattern: Acute Hyperacute Cellular Injury. 
-            ALT ${alt} U/L, AST ${ast} U/L massively elevated. 
-            Recommendation: Immediate hospital admission, urgent hepatitis/toxin/ischemia workup.`;
-        } else {
-            resultText = `Severe Dysfunction (Score 3). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission.`;
-        }
+    let resultText = "";
+    if (totalScore === 0) {
+        resultText = `Normal Liver Function (Score 0). ✅ No significant biochemical evidence of hepatic dysfunction.`;
+    } else if (totalScore <= 3) {
+        resultText = `Mild Dysfunction (Score ${totalScore}). ⚠️ Early abnormalities detected. Recommendation: Monitor and repeat labs.`;
+    } else if (totalScore <= 6) {
+        resultText = `Moderate Dysfunction (Score ${totalScore}). ⚠️ Significant impairment. Recommendation: Specialist evaluation, imaging, hepatitis screening.`;
+    } else {
+        resultText = `Severe Dysfunction (Score ${totalScore}). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission and urgent hepatology consult.`;
     }
 
     document.getElementById("lftDisplay").innerHTML = resultText;
