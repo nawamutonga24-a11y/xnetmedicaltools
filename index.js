@@ -1893,6 +1893,7 @@ lftBtn.addEventListener("click", lftInterpreter);
 function lftInterpreter() {
     let bili = parseFloat(document.getElementById("bilirubin-inter").value) || 0;
     let alt = parseFloat(document.getElementById("alt-ast").value) || 0;
+    let ast = parseFloat(document.getElementById("ast-inter").value) || 0; // NEW: separate AST input
     let alb = parseFloat(document.getElementById("albumin-inter").value) || 0;
     let inr = parseFloat(document.getElementById("inr-inter").value) || 0;
 
@@ -1910,21 +1911,36 @@ function lftInterpreter() {
     else if ((bili >= 2.1 && bili <= 5.0) || (alt >= 121 && alt <= 300) || (alb >= 2.5 && alb <= 2.9) || (inr >= 1.6 && inr <= 2.0)) {
         resultText = `Moderate Dysfunction (Score 2). ⚠️ Significant liver impairment. Recommendation: Specialist evaluation, imaging, hepatitis screening.`;
     } 
-    // Severe — refine by pattern
+    // Severe — refined by pattern
     else if (bili > 5.0 || alt > 300 || alb < 2.5 || inr > 2.0) {
-        if (bili >= 9.0 && alt < 100 && alb >= 3.5 && inr <= 1.1) {
+        // Synthetic Multiplier Rule
+        if (inr >= 1.5 && alb < 3.0) {
+            let ratio = (alt > 0) ? (ast / alt) : 0;
+            if (ratio > 1.3) {
+                // AST/ALT inversion + synthetic failure
+                resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Decompensated Cirrhosis / Synthetic Failure. 
+                Key indicators: Hypoalbuminemia (${alb} g/dL) + Coagulopathy (INR ${inr}) + AST/ALT ratio ${ratio.toFixed(2)} (>1.3). 
+                Recommendation: Urgent hepatology referral, screen for portal hypertension, varices, ascites, and adjust medications.`;
+            } else {
+                resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Synthetic Failure. 
+                Key indicators: Hypoalbuminemia (${alb} g/dL) + Coagulopathy (INR ${inr}). 
+                Recommendation: Immediate hepatology consult, monitor for complications of cirrhosis.`;
+            }
+        } 
+        else if (bili >= 9.0 && alt < 100 && alb >= 3.5 && inr <= 1.1) {
             // Case 2: Severe hyperbilirubinemia with preserved synthetic function
             resultText = `Severe Dysfunction (Score 3). 🚨 Pattern: Cholestasis/Obstruction. 
             Key driver: Bilirubin ${bili} mg/dL is critically high. 
             Recommendation: Urgent imaging (ultrasound/ERCP) for obstruction or cholangitis.`;
-        } else if (alb < 2.5 && inr > 1.5) {
-            // Case 3: Decompensated cirrhosis pattern
-            let astAltRatio = alt > 0 ? (alt / alt) : 0; // placeholder if you want AST separately
-            resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Synthetic Failure / Decompensated Cirrhosis. 
-            Key indicators: Hypoalbuminemia (${alb} g/dL) + Coagulopathy (INR ${inr}). 
-            Recommendation: Urgent hepatology referral, screen for portal hypertension, varices, ascites.`;
-        } else {
-            // General severe
+        } 
+        else if (alt > 1000) {
+            // Acute massive transaminase elevation
+            resultText = `Severe Dysfunction (Score 3). 🚨 Pattern: Acute Hepatocellular Injury. 
+            Key driver: ALT ${alt} U/L suggests severe hepatitis/toxin injury. 
+            Recommendation: Immediate hepatitis/toxin workup, hospital admission.`;
+        } 
+        else {
+            // General severe fallback
             resultText = `Severe Dysfunction (Score 3). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission, urgent hepatology consult.`;
         }
     } 
@@ -1934,8 +1950,6 @@ function lftInterpreter() {
 
     document.getElementById("lftDisplay").innerHTML = resultText;
 }
-
-
 
 
 
