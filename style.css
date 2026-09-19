@@ -24,15 +24,18 @@ body {
 /* =========================
    TYPOGRAPHY
 ========================= */
-p {
-  color: darkred;
-}
+p { color: darkred; }
 
 h1, h2, h3, h4, h5 {
   margin-bottom: 10px;
   color: #004080; /* clinical deep blue */
 }
 
+h1 {
+  text-align: center;
+  color: blue;
+}
+h1 span { color: red; }
 h3 { color: #0066cc; }
 h4 { font-size: 20px; }
 h5 { font-size: 15px; }
@@ -41,15 +44,6 @@ a {
   color: #0066cc;
   text-decoration: none;
 }
-h1 {
-  text-align: center;   /* centers the text horizontally */
-  color: blue;
-}
-
-h1 span {
-  color: red;           /* keeps the "x" red */
-}
-
 a:hover {
   text-decoration: underline;
   color: darkblue;
@@ -74,9 +68,7 @@ nav a {
   color: #fff;
   margin-right: 15px;
 }
-nav a:hover {
-  color: #ffcc00;
-}
+nav a:hover { color: #ffcc00; }
 
 footer {
   text-align: center;
@@ -90,8 +82,8 @@ footer {
    FORM ELEMENTS
 ========================= */
 button {
-  width: 100px;   /* reduced size */
-  height: 35px;
+  width: 200px;
+  height: 50px;
   font-size: 14px;
   background-color: #0073e6; /* hospital blue */
   color: white;
@@ -114,15 +106,13 @@ input[type="number"], select {
   border-radius: 5px;
   margin: 5px 0;
 }
-select:hover {
-  border: 2px solid #0066cc;
-}
+select:hover { border: 2px solid #0066cc; }
 
 /* =========================
    MEDIA & VISUALS
 ========================= */
 img {
-  max-width: 30%;   /* smaller size (about one-third of container) */
+  max-width: 30%;
   height: auto;
   border-radius: 8px;
 }
@@ -140,55 +130,57 @@ img {
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   FLEXBOX SECTIONS
 ========================= */
-@media (max-width: 768px) {
-  body {
-    max-width: 100%;
-    padding: 10px;
-  }
-  .container {
-    width: 95%;
-    padding: 10px;
-  }
-  button, select, input[type="number"] {
-    width: 30%; /* smaller width on mobile */
-  }
-  img {
-    max-width: 100%; /* full width on smaller screens */
-  }
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-/* =========================
-   UTILITY CLASSES
-========================= */
-.section {
-  display: none; /* Hide all sections by default */
+.parent .section {
+  flex: 1 1 300px;
+  max-width: 600px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#home { text-align: center; }
+
+#home img, #main img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+  border-radius: 50%;
 }
 
 /* =========================
    TOOL STYLING
 ========================= */
-.tool {
-  display: none; /* hidden by default */
-}
-/* General tool styling */
-.tool {
-  display: none;
-}
+.section, .tool { display: none; }
 
-/* Active tool: centered and scrollable */
 .tool.active {
   display: flex;
-  flex-direction: column;   /* stack inputs vertically */
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   margin: 20px auto;
   padding: 15px;
   background: #eef6ff;
   border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
 
-  max-height: 80vh;         /* limit height to 80% of viewport */
-  overflow-y: auto;         /* add vertical scroll if content is too tall */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  body { max-width: 100%; padding: 10px; }
+  .container { width: 95%; padding: 10px; }
+  button, select, input[type="number"] { width: 70px; } /* fixed missing px */
+  img { max-width: 100%; }
+  .parent .section { flex: 1 1 100%; }
 }
