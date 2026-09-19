@@ -37,7 +37,7 @@
     <option value="nursingSection">Nursing</option>
      <option value="category-art">ART Essential Tools</option>
      <option value="clinical-hub">The Clinical Scenario Cases</option>   
-     <option value="healthcare-ethics">Health Care Ethics</option>   
+     <option value="medical-ethics">Medical ethics</option>   
   </select>
 
 <section id="home">
@@ -727,12 +727,8 @@
   <h4>Interpretation:</h4>
   <div id="lftDisplay"></div>
 </section>
-
-
 </div>
 
-
-<div class="obGy">
 <!Begining of OBGY>
 <div id="obgyt" class="section">
 <h1>B.OBSTETRICS AND GYNECOLOGY</h1>
@@ -1090,12 +1086,8 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <h6>Neonatal resuscitation is the immediate set of life‑saving interventions given to newborns who fail to establish adequate breathing or circulation at birth. It follows a structured algorithm to rapidly assess, stimulate, and support the infant’s airway, breathing, and circulation.</h6>
 <video controls src="neonatalresus.mp4" width="400">
 </section>
-
-</div>
 </div>
 
-
-<div class="pediatrics">
 <div id="pedst" class="section">
 <h1>C. PEDIATRICS</h1>
 <h5>Make a Selection:</h5>
@@ -1651,12 +1643,8 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <div id="pecResult"></div>
 </section>
 </div>
-</div>
 
-<div class="surgery">
 <div id="surgt" class="section">
-
-
 <h1>D. SURGERY</h1>
 <h5>Make a Selection:</h5>
 <select id="surgPick">
@@ -2290,9 +2278,8 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <video controls src="gleason.mp4" width="400">
 </section>
 </div>
-</div>
 
-<div class="nursing-section" id="nursingSection" style="display: none;">
+<div id="nursingSection" style="display: none;">
 <h1>E. Nursing</h1>
 <h5>Make a Selection</h5>
 <select id="nursingSelect">
@@ -2402,7 +2389,7 @@ Seek clarification when unsure about scope boundaries. </h6>
 
 </div>
 
-<div class="section" id="category-art">
+<div id="category-art" style="display: none">
 <h1>ART Clinical Tools</h1>
 <h5>Make a Selection</h5>
 <select>
@@ -2486,7 +2473,6 @@ Seek clarification when unsure about scope boundaries. </h6>
 </select>
 <button id="artArsBtn">click me</button>
 <div id="artarsDisplay"></div>
-
 </section>
 </div>
 
@@ -2650,12 +2636,52 @@ Early recognition → favorable prognosis. </h6>
 <h5>✅ Summary </h5>
 <h6>This case highlights Ludwig’s Angina as a life‑threatening odontogenic infection requiring urgent airway protection, IV antibiotics, and surgical drainage. Differentials include peritonsillar abscess, retropharyngeal abscess, and angioedema, but the bilateral submandibular swelling with tongue elevation is pathognomonic. a</h6>
 </section>
-
-</div>
 </div>
 
+<div id="medical-ethics" class="section" style="display:none;">
+  <h1>Medical Ethics</h1>
+  <h5>Make a Selection</h5>
+  <select id="ethicsSelect" onchange="showEthicsTopic()">
+    <option value="">Select</option>
+    <option value="autonomy">Autonomy</option>
+    <option value="beneficence">Beneficence</option>
+    <option value="maleficence">Non-maleficence</option>
+    <option value="justice">Justice</option>
+  </select>
 
-   
+<section class="tool" id="autonomy">
+<h3>Autonomy</h3>
+<h5>What does autonomy mean in medical ethics?</h5>
+<h6>A: Autonomy is the principle that patients have the right to make decisions about their own healthcare, provided they have the capacity to do so.</h6>
+<h5>How do clinicians determine if a patient can exercise autonomy?</h5>
+<h6>A: By assessing decision-making capacity — understanding, appreciation, reasoning, and communication. If all four are intact, autonomy must be respected. </h6>
+<h5>Why is informed consent central to autonomy?</h5>
+<h6>A: Because autonomy requires that patients make decisions with full knowledge of risks, benefits, and alternatives. Without informed consent, autonomy is undermined. </h6>
+<h5>Can a patient refuse life-saving treatment?</h5>
+<h6>A: Yes, if they have capacity. Autonomy means respecting their choice, even if it conflicts with beneficence (the doctor’s desire to save life). </h6>
+<h5>How does autonomy interact with cultural or religious values?</h5>
+<h6>A: Autonomy requires respecting patient beliefs (e.g., refusal of blood transfusion by Jehovah’s Witnesses), provided the patient understands the consequences. </h6>
+<h5>Are there situations where autonomy can be overridden?</h5>
+<h6>A: Yes — when patients lack capacity, or when public health is at risk (e.g., mandatory isolation for contagious diseases). </h6>
+<h5>A competent patient with advanced cancer refuses chemotherapy. What should the physician do? </h5>
+<h6>A: Respect autonomy, provide palliative care options, and ensure the patient’s decision is informed and voluntary</h6>
+<h5>🌟 Teaching Note </h5>
+<h6>Autonomy is often the most tested principle in medical ethics because it creates tension with beneficence and non-maleficence. The golden rule: If capacity is intact → respect autonomy. </h6>
+</section>
+
+<section class="tool" id="beneficence">
+<h5>Still coming</h5>
+</section>
+<section class="tool" id="maleficence">
+<h5>Still coming</h5>
+</section>
+<section class="tool" id="justice">
+<h5>Still coming</h5>
+</section>
+</div>
+
+</div>
+ 
 <script src="index.js"></script>
 
 </body>
