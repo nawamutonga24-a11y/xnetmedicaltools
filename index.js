@@ -1886,7 +1886,36 @@ function assessRisk() {
     document.getElementById("artarsDisplay").innerHTML = message;
 }
 
+// Liver Function Tests Interpreter
+let lftBtn = document.getElementById("lftBtn");
+lftBtn.addEventListener("click", lftInterpreter);
 
+function lftInterpreter() {
+    let bili = parseFloat(document.getElementById("bilirubin-inter").value) || 0;
+    let alt = parseFloat(document.getElementById("alt-ast").value) || 0;
+    let alb = parseFloat(document.getElementById("albumin-inter").value) || 0;
+    let inr = parseFloat(document.getElementById("inr-inter").value) || 0;
+
+    let resultText = "";
+
+    if (bili < 1.2 && alt < 40 && alb >= 3.5 && inr <= 1.1) {
+        resultText = `Normal (Score 0). ✅ Liver function is within normal limits. Recommendation: Routine monitoring only.`;
+    } 
+    else if ((bili >= 1.2 && bili <= 2.0) || (alt >= 40 && alt <= 120) || (alb >= 3.0 && alb <= 3.4) || (inr >= 1.2 && inr <= 1.5)) {
+        resultText = `Mild Dysfunction (Score 1). ⚠️ Possible early liver stress. Recommendation: Monitor closely, repeat tests in 1–3 months, assess lifestyle factors (alcohol, medications).`;
+    } 
+    else if ((bili >= 2.1 && bili <= 5.0) || (alt >= 121 && alt <= 300) || (alb >= 2.5 && alb <= 2.9) || (inr >= 1.6 && inr <= 2.0)) {
+        resultText = `Moderate Dysfunction (Score 2). ⚠️ Significant liver impairment. Recommendation: Refer for specialist evaluation, consider imaging and hepatitis screening.`;
+    } 
+    else if (bili > 5.0 || alt > 300 || alb < 2.5 || inr > 2.0) {
+        resultText = `Severe Dysfunction (Score 3). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission, urgent hepatology consult, consider ICU if unstable.`;
+    } 
+    else {
+        resultText = `Enter Valid Results. ❌ Please check inputs.`;
+    }
+
+    document.getElementById("lftDisplay").innerHTML = resultText;
+}
 
 
 
