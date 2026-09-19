@@ -1898,17 +1898,35 @@ function lftInterpreter() {
 
     let resultText = "";
 
+    // Normal
     if (bili < 1.2 && alt < 40 && alb >= 3.5 && inr <= 1.1) {
         resultText = `Normal (Score 0). ✅ Liver function is within normal limits. Recommendation: Routine monitoring only.`;
     } 
+    // Mild
     else if ((bili >= 1.2 && bili <= 2.0) || (alt >= 40 && alt <= 120) || (alb >= 3.0 && alb <= 3.4) || (inr >= 1.2 && inr <= 1.5)) {
         resultText = `Mild Dysfunction (Score 1). ⚠️ Possible early liver stress. Recommendation: Monitor closely, repeat tests in 1–3 months, assess lifestyle factors (alcohol, medications).`;
     } 
+    // Moderate
     else if ((bili >= 2.1 && bili <= 5.0) || (alt >= 121 && alt <= 300) || (alb >= 2.5 && alb <= 2.9) || (inr >= 1.6 && inr <= 2.0)) {
-        resultText = `Moderate Dysfunction (Score 2). ⚠️ Significant liver impairment. Recommendation: Refer for specialist evaluation, consider imaging and hepatitis screening.`;
+        resultText = `Moderate Dysfunction (Score 2). ⚠️ Significant liver impairment. Recommendation: Specialist evaluation, imaging, hepatitis screening.`;
     } 
+    // Severe — refine by pattern
     else if (bili > 5.0 || alt > 300 || alb < 2.5 || inr > 2.0) {
-        resultText = `Severe Dysfunction (Score 3). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission, urgent hepatology consult, consider ICU if unstable.`;
+        if (bili >= 9.0 && alt < 100 && alb >= 3.5 && inr <= 1.1) {
+            // Case 2: Severe hyperbilirubinemia with preserved synthetic function
+            resultText = `Severe Dysfunction (Score 3). 🚨 Pattern: Cholestasis/Obstruction. 
+            Key driver: Bilirubin ${bili} mg/dL is critically high. 
+            Recommendation: Urgent imaging (ultrasound/ERCP) for obstruction or cholangitis.`;
+        } else if (alb < 2.5 && inr > 1.5) {
+            // Case 3: Decompensated cirrhosis pattern
+            let astAltRatio = alt > 0 ? (alt / alt) : 0; // placeholder if you want AST separately
+            resultText = `Severe Dysfunction (Score 3+). 🚨 Pattern: Synthetic Failure / Decompensated Cirrhosis. 
+            Key indicators: Hypoalbuminemia (${alb} g/dL) + Coagulopathy (INR ${inr}). 
+            Recommendation: Urgent hepatology referral, screen for portal hypertension, varices, ascites.`;
+        } else {
+            // General severe
+            resultText = `Severe Dysfunction (Score 3). 🚨 High risk of liver failure. Recommendation: Immediate hospital admission, urgent hepatology consult.`;
+        }
     } 
     else {
         resultText = `Enter Valid Results. ❌ Please check inputs.`;
@@ -1916,8 +1934,6 @@ function lftInterpreter() {
 
     document.getElementById("lftDisplay").innerHTML = resultText;
 }
-
-
 
 
 
