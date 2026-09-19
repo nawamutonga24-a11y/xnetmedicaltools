@@ -1029,6 +1029,7 @@ function showCategory()
       document.getElementById("nursingSection").style.display = "none";
        document.getElementById("category-art").style.display = "none";
         document.getElementById("clinical-hub").style.display = "none";
+        document.getElementById("medical-ethics").style.display = "none";
 
       // Get selected value
       var selected = document.getElementById("categorySelect").value;
@@ -1934,6 +1935,28 @@ function lftInterpreter() {
 
     document.getElementById("lftDisplay").innerHTML = resultText;
 }
+// showEthicsTopic
+function showEthicsTopic() {
+  // Get the selected value from the dropdown
+  const selected = document.getElementById("ethicsSelect").value;
+
+  // Find all subsections inside the medical-ethics container
+  const sections = document.querySelectorAll("#medical-ethics .tool");
+
+  // Hide all subsections
+  sections.forEach(function(section) {
+    section.style.display = "none";
+  });
+
+  // Show the chosen subsection if it exists
+  if (selected) {
+    const chosen = document.getElementById(selected);
+    if (chosen) {
+      chosen.style.display = "block";
+    }
+  }
+}
+
 
 
 
