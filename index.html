@@ -31,8 +31,7 @@
 
 
 <!--A div container for the search box and the main dropdown menu-->
-  <div id="top-controls">
-  <!-- Search box -->
+ <div id="top-controls">
   <input type="text" id="toolSearch" placeholder="Search tools..." onkeyup="searchTools()" />
 
   <!-- Dropdown menu -->
@@ -49,7 +48,8 @@
   </select>
 </div>
 
-</div>
+<!-- Add this UL somewhere below your controls -->
+<ul id="searchResults"></ul>
 
 <section id="home">
 
@@ -2709,19 +2709,72 @@ Early recognition → favorable prognosis. </h6>
 </footer>
 
 </body>
+
 <script>
 function searchTools() {
   let input = document.getElementById("toolSearch").value.toLowerCase();
-  let items = document.querySelectorAll("#recent-tools li");
+  let results = document.getElementById("searchResults");
+  results.innerHTML = "";
 
-  items.forEach(item => {
-    if (item.textContent.toLowerCase().includes(input)) {
-      item.style.display = "flex";  // show matching item
-    } else {
-      item.style.display = "none";  // hide non-matching item
+  // Map tool names to their section IDs
+  const toolMap = {
+    // 🔹 Internal Medicine
+    "Check Your BMI": "bmix",
+    "Vital Signs": "vitalsx",
+    "Read your Hb Results": "hbx",
+    "Pneumonia Discharge Safety (CURB)": "curbx",
+    "Stroke Risk (ASCVD)": "ascvdx",
+    "Headache Causes": "headachex",
+    "Identify Lung Sounds": "lungx",
+    "Know your Heart Sounds": "heartx",
+    "Stroke Risk in Heart Condition (CHAD)": "chadx",
+    "Total Body Surface Area": "tbsax",
+    "Random Blood Sugar Results": "rbsx",
+    "Cough Causes": "casx",
+    "Heart and Blood Vessels (CVSA)": "imed-cvsa",
+    "General Drug Dose Calculator": "imed-drugdosecalc",
+    "Liver Function Tests Interpreter": "liver-function",
+
+    // 🔹 Nursing
+    "Nursing Care Plan": "ncp",
+    "Six Rights of Medication Administration": "sixRights",
+    "Apgar Score": "nurse-apgar",
+    "Calculate The Drip Rate": "drip-rate",
+    "Legal and Ethical Issues in Nursing": "legal-ethical",
+
+    // 🔹 Clinical Case Scenarios
+    "Covid-19": "covid-19",
+    "Monkey Pox": "monkeyPox",
+    "Depression": "depression",
+    "Ludwig’s Angina": "ludwig",
+
+    // 🔹 Medical Ethics
+    "Autonomy": "autonomy",
+    "Beneficence": "beneficence",
+    "Non-maleficence": "maleficence",
+    "Justice": "justice"
+  };
+
+  Object.keys(toolMap).forEach(name => {
+    if (name.toLowerCase().includes(input) && input !== "") {
+      let h5 = document.createElement("h5");
+      let a = document.createElement("a");
+      a.href = "#" + toolMap[name];   // link to the tool section
+      a.textContent = name;
+      h5.appendChild(a);
+      results.appendChild(h5);
     }
   });
+
+  if (results.innerHTML === "" && input !== "") {
+    let p = document.createElement("p");
+    p.textContent = "No matching tools found";
+    results.appendChild(p);
+  }
 }
 </script>
+
+
+
 
 </html>
