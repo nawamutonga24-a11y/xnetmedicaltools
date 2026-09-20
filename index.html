@@ -15,47 +15,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>xNET Medical Tools</title>
   <link rel="stylesheet" href="style.css">
- 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
-<div clase="parent" id="main">
-<img src="nawa.jpg" alt="web photo" width="100" height="100" 
-     style="border-radius:50%; object-fit:cover;">
+ <!-- 🔹 Header goes first -->
+  <header id="site-header">
+    <div class="logo-block">
+      <img src="nawa.jpg" alt="Site Logo" />
+      <h1><span style="color:red;">x</span>NEXT Medical Tools</h1>
+    </div>
+  </header>
+ 
 
-<h5>By</h5>
-  <h5 class="nawa">Nawa Mutonga</h5>
-  
 
-<h5>Choose a Category</h5>
+<!--A div container for the search box and the main dropdown menu-->
+  <div id="top-controls">
+  <!-- Search box -->
+  <input type="text" id="toolSearch" placeholder="Search tools..." onkeyup="searchTools()" />
+
+  <!-- Dropdown menu -->
   <select id="categorySelect" onchange="showCategory()">
     <option value="">-- Select --</option>
     <option value="pedst">Pediatrics</option>
-    <option value="obgyt">Obstetrics & Gynecology</option>
+    <option value="obgty">Obstetrics & Gynecology</option>
     <option value="imedt">Internal Medicine</option>
-    <option value="surgt">Surgery</option>  
-    <option value="nursingSection">Nursing</option>
-     <option value="category-art">ART Essential Tools</option>
-     <option value="clinical-hub">The Clinical Scenario Cases</option>   
-     <option value="medical-ethics">Medical ethics</option>   
+    <option value="surgt">Surgery</option>
+    <option value="nursingsection">Nursing</option>
+    <option value="category-art">ART Essential Tools</option>
+    <option value="clinical-hub">The Clinical Scenario Cases</option>
+    <option value="medical-ethics">Medical ethics</option>
   </select>
+</div>
+
+</div>
 
 <section id="home">
 
-  <h1 style="color: blue;">
-  <span style="color: red;">x</span>NET Medical Tools
-</h1>
-<h5><span style="color: red; font-weight: bold">Author:</span>
-6th Year MBChB Student/EHT</h5>
+<section id="recent-tools">
+  <h3>Recently Added Tools:</h3>
+  <ul>
+    <li>ART Adherence Risk Score Under ART Essential Tools</li>
+    <li>Ludwig’s Angina under Case Scenarios</li>
+    <li>Legal and Ethical Issues in Nursing</li>
+    <li>Liver Function Test Interpreter under Internal Medicine</li>
+  </ul>
+</section>
 
-     <h5>
-    <span style="color:red">Contact</span>;
-    <a href="mailto:admin@nawamutonga.org">admin@nawamutonga.org</a><br><br>
-  </h5>
-    
-    <h5><span style="color: red; font-weight: bold">Disclaimer:</span>
-⚠This website provides medical tools for informational purposes only. It is not a substitute for professional advice, diagnosis, or treatment.</h5>
-<h5><span style="color: red">Recently added tools</span>: <br>👉ART Adherece Risk Score Under ART Essental Tools.<br>👉Ludwig`s Angina under Case Scenarios.<br>👉Legal and Ethical Issues in Nursing.<br>👉Liver Function Test Interpreter under Internal Medicine </h5>
+
 </section>
 
 <div id="imedt" class="section">
@@ -2684,5 +2692,36 @@ Early recognition → favorable prognosis. </h6>
  
 <script src="index.js"></script>
 
+<footer id="site-info">
+  <div class="info-block">
+    <i class="fas fa-user-md"></i>
+    <strong>Author:</strong><br>Nawa Mutonga <br>(6th Year MBChB Student/EHT)
+  </div>
+  <div class="info-block">
+    <i class="fas fa-envelope"></i>
+    <strong>Contact:</strong> 
+    <a href="mailto:admin@nawamutonga.org">admin@nawamutonga.org</a>
+  </div>
+  <div class="info-block">
+    <i class="fas fa-exclamation-triangle"></i>
+    <strong>Disclaimer:</strong><br> ⚠️ This website provides medical tools for informational purposes only. It is not a substitute for professional advice, diagnosis, or treatment.
+  </div>
+</footer>
+
 </body>
+<script>
+function searchTools() {
+  let input = document.getElementById("toolSearch").value.toLowerCase();
+  let items = document.querySelectorAll("#recent-tools li");
+
+  items.forEach(item => {
+    if (item.textContent.toLowerCase().includes(input)) {
+      item.style.display = "flex";  // show matching item
+    } else {
+      item.style.display = "none";  // hide non-matching item
+    }
+  });
+}
+</script>
+
 </html>
