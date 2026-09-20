@@ -2716,51 +2716,49 @@ function searchTools() {
   let results = document.getElementById("searchResults");
   results.innerHTML = "";
 
-  // Map tool names to their section IDs
   const toolMap = {
-    // 🔹 Internal Medicine
-    "Check Your BMI": "bmix",
-    "Vital Signs": "vitalsx",
-    "Read your Hb Results": "hbx",
-    "Pneumonia Discharge Safety (CURB)": "curbx",
-    "Stroke Risk (ASCVD)": "ascvdx",
-    "Headache Causes": "headachex",
-    "Identify Lung Sounds": "lungx",
-    "Know your Heart Sounds": "heartx",
-    "Stroke Risk in Heart Condition (CHAD)": "chadx",
-    "Total Body Surface Area": "tbsax",
-    "Random Blood Sugar Results": "rbsx",
-    "Cough Causes": "casx",
-    "Heart and Blood Vessels (CVSA)": "imed-cvsa",
-    "General Drug Dose Calculator": "imed-drugdosecalc",
-    "Liver Function Tests Interpreter": "liver-function",
+    // Internal Medicine
+    "Check Your BMI": { id: "bmix", parent: "imedt" },
+    "Vital Signs": { id: "vitalsx", parent: "imedt" },
+    "Read your Hb Results": { id: "hbx", parent: "imedt" },
+    "Liver Function Tests Interpreter": { id: "liver-function", parent: "imedt" },
 
-    // 🔹 Nursing
-    "Nursing Care Plan": "ncp",
-    "Six Rights of Medication Administration": "sixRights",
-    "Apgar Score": "nurse-apgar",
-    "Calculate The Drip Rate": "drip-rate",
-    "Legal and Ethical Issues in Nursing": "legal-ethical",
+    // Nursing
+    "Nursing Care Plan": { id: "ncp", parent: "nursingSection" },
+    "Six Rights of Medication Administration": { id: "sixRights", parent: "nursingSection" },
+    "Apgar Score": { id: "nurse-apgar", parent: "nursingSection" },
+    "Calculate The Drip Rate": { id: "drip-rate", parent: "nursingSection" },
+    "Legal and Ethical Issues in Nursing": { id: "legal-ethical", parent: "nursingSection" },
 
-    // 🔹 Clinical Case Scenarios
-    "Covid-19": "covid-19",
-    "Monkey Pox": "monkeyPox",
-    "Depression": "depression",
-    "Ludwig’s Angina": "ludwig",
+    // Clinical Case Scenarios
+    "Covid-19": { id: "covid-19", parent: "clinical-hub" },
+    "Monkey Pox": { id: "monkeyPox", parent: "clinical-hub" },
+    "Depression": { id: "depression", parent: "clinical-hub" },
+    "Ludwig’s Angina": { id: "ludwig", parent: "clinical-hub" },
 
-    // 🔹 Medical Ethics
-    "Autonomy": "autonomy",
-    "Beneficence": "beneficence",
-    "Non-maleficence": "maleficence",
-    "Justice": "justice"
+    // Medical Ethics
+    "Autonomy": { id: "autonomy", parent: "medical-ethics" },
+    "Beneficence": { id: "beneficence", parent: "medical-ethics" },
+    "Non-maleficence": { id: "maleficence", parent: "medical-ethics" },
+    "Justice": { id: "justice", parent: "medical-ethics" }
   };
 
   Object.keys(toolMap).forEach(name => {
     if (name.toLowerCase().includes(input) && input !== "") {
       let h5 = document.createElement("h5");
       let a = document.createElement("a");
-      a.href = "#" + toolMap[name];   // link to the tool section
+      a.href = "#" + toolMap[name].id;
       a.textContent = name;
+
+      a.addEventListener("click", function(e) {
+        e.preventDefault();
+        let target = document.getElementById(toolMap[name].id);
+        let parent = document.getElementById(toolMap[name].parent);
+
+        if (parent) parent.style.display = "block"; // unhide category
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      });
+
       h5.appendChild(a);
       results.appendChild(h5);
     }
@@ -2773,6 +2771,8 @@ function searchTools() {
   }
 }
 </script>
+
+
 
 
 
