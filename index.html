@@ -21,13 +21,25 @@
 
 <body>
  <!-- 🔹 Header goes first -->
-  <header id="site-header">
-    <div class="logo-block">
-      <img src="nawa.jpg" alt="Site Logo" />
-      <h1><span style="color:red;">x</span>NET Medical Tools</h1>
-    </div>
-  </header>
- 
+ <header id="site-header">
+  <div class="logo-block">
+    <img src="nawa.jpg" alt="Site Logo" class="logo" />
+    <h1><span style="color:red;">x</span>NET Medical Tools</h1>
+  </div>
+  <!-- Digital Clock -->
+  <div id="clock"></div>
+</header>
+<script>
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock(); // run once immediately
+</script>
 <select id="categorySelect" onchange="showCategory()">
   <option value="">-- Select --</option>
   <option value="pedst">Pediatrics</option>
