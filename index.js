@@ -1627,25 +1627,26 @@ let surgPick = document.getElementById("surgPick");
 surgPick.addEventListener("change", surgeryTools);
 
 function surgeryTools() {
-    // Hide all surgery tools
-    document.querySelectorAll(".surgery .tool").forEach(sec => {
-        sec.classList.remove("active");
+    // Hide all surgery tools (inside #surgerySection)
+    document.querySelectorAll("#surgerySection .tool").forEach(sec => {
+        sec.style.display = "none";   // hide them
     });
 
     // Show the chosen one
     let picked = surgPick.value;
     if (picked) {
-        document.getElementById(picked).classList.add("active");
+        document.getElementById(picked).style.display = "block"; // show only selected
     }
 }
+
 
 //Obgy;
 let obGy = document.getElementById("obGy");
 obGy.addEventListener("change", obgy);
 
 function obgy() {
-    // Hide ALL tools inside OB/GYN section
-    document.querySelectorAll("#obgyt .tool").forEach(tool => {
+    // Hide ALL tools (no #obgyt wrapper in your HTML)
+    document.querySelectorAll(".tool").forEach(tool => {
         tool.style.display = "none";
     });
 
@@ -1655,6 +1656,7 @@ function obgy() {
         document.getElementById(moon).style.display = "block";
     }
 }
+
 
 
 
@@ -1955,4 +1957,21 @@ function showEthicsTopic() {
       chosen.style.display = "block";
     }
   }
+}
+
+// Nursing dropdown
+let nursingSelect = document.getElementById("nursingSelect");
+nursingSelect.addEventListener("change", nursingDepartment);
+
+function nursingDepartment() {
+    // Hide ALL tools inside Nursing section
+    document.querySelectorAll("#nursingSection .tool").forEach(tool => {
+        tool.style.display = "none";
+    });
+
+    // Show chosen one
+    let nursingPick = nursingSelect.value;
+    if (nursingPick) {
+        document.getElementById(nursingPick).style.display = "block";
+    }
 }
