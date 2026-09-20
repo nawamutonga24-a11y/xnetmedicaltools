@@ -40,6 +40,7 @@
   setInterval(updateClock, 1000);
   updateClock(); // run once immediately
 </script>
+ <!-- Main menu -->
 <select id="categorySelect" onchange="showCategory()">
   <option value="">-- Select --</option>
   <option value="pedst">Pediatrics</option>
@@ -743,21 +744,20 @@
 <h1>B.OBSTETRICS AND GYNECOLOGY</h1>
 <h5>Make a Selection:</h5>
 <select id="obGy">
-<option value="">Choose</option>
-<option value="apgar">APGAR Score</option>
-<option value="bishop">Bishop Score</option>
-<option value="ferriman">How severe is your Body hair growth?(in women)</option>
-<option value="biophysical">Biophysical Profile</option>
-<option value="pera">Pre-Eclampsia Risk Assessment Tool</option>
-<option value="mgso">How to dilute Magnesium Sulphate</option>
-<option value="obgyExam">Obstetric Examination Video</option>
-<option value="htnTypes">Types of Hypertension in Pregnancy Video</option>
-<option value="stagesofLabor">Stages of labor Video</option>
-<option value="mechanismofLabor">Mechanism of Labor Video</option>
-<option value="neonatalResus">Neonatal Resuscitation Video</option>
+  <option value="">Choose</option>
+  <option value="apgar">APGAR Score</option>
+  <option value="bishop">Bishop Score</option>
+  <option value="ferriman">How severe is your Body hair growth?(in women)</option>
+  <option value="biophysical">Biophysical Profile</option>
+  <option value="pera">Pre-Eclampsia Risk Assessment Tool</option>
+  <option value="mgso">How to dilute Magnesium Sulphate</option>
+  <option value="obgyExam">Obstetric Examination Video</option>
+  <option value="htnTypes">Types of Hypertension in Pregnancy Video</option>
+  <option value="stagesofLabor">Stages of labor Video</option>
+  <option value="mechanismofLabor">Mechanism of Labor Video</option>
+  <option value="neonatalResus">Neonatal Resuscitation Video</option>
 </select>
-
-<section class="tool" id="apgar" style="display: none;">
+<section class="tool" id="apgar">
 <h5>APGAR Score</h5>
 <h6>"The Apgar Score is a rapid newborn assessment performed at 1 and 5 minutes after birth. It evaluates heart rate, respiration, muscle tone, reflexes, and color to guide immediate neonatal care."</h6>
 
@@ -800,7 +800,7 @@
 <div id="xTotal"></div>
 </section>
 
-<section class="tool" id="bishop" style="display: none;">
+<section class="tool" id="bishop">
 <h5>2. Bishop Score</h5>
 <h6>The Bishop Score is a system used to assess cervical readiness for labor induction.
 It evaluates dilation, effacement, consistency, position, and fetal station to predict induction success.</h6>
@@ -849,7 +849,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <div id="bTotal"></div>
 </section>
 
-<section class="tool" id="ferriman">
+<section class="tool" id="ferriman" style="display: none">
 <h5>3. Ferriman‑Gallwey Parameters</h5>
 <h6>The Ferriman–Gallwey score is a clinical tool used to quantify hirsutism (excess hair growth in women) by scoring hair distribution across specific body areas. It’s widely applied in endocrinology, especially for diagnosing PCOS and other androgen‑related disorders.</h6>
 
@@ -938,7 +938,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <div id="fxx"></div>
 </section>
 
-<section class="tool" id="biophysical">
+<section class="tool" id="biophysical" style="display: none">
 <h5>4. Biophysical Profile</h5>
 <h6>"The Biophysical Profile is an antenatal assessment combining ultrasound and non‑stress testing to evaluate fetal well‑being. It provides a structured score that guides timely obstetric decision‑making and perinatal care."</h6>
 
@@ -976,7 +976,7 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <div id="gxx"></div>
 </section>
 
-<section class="tool" id="pera">
+<section class="tool" id="pera" style="display: none">
 <h5>5. Pre-Eclampsia Risk Assessment Tool:</h5>
 <h6>“The Pre‑eclampsia Risk Assessment tool helps identify pregnant women at increased risk of developing pre‑eclampsia. By systematically evaluating high‑ and moderate‑risk factors, it guides clinicians on whether to initiate aspirin prophylaxis from 12 weeks, supporting safer pregnancies and improved maternal‑fetal outcomes.”</h6>
 
@@ -1050,27 +1050,29 @@ It evaluates dilation, effacement, consistency, position, and fetal station to p
 <div id="peratDisplay"></div>
 </section>
 
-<section class="tool" id="mgso">
-<h5>6. Magnesium Sulphate Dilution: </h5>
-<h6>Magnesium sulphate (MgSO₄) is the cornerstone drug for seizure prophylaxis and treatment in preeclampsia and eclampsia. Because it has a narrow therapeutic window, accurate dilution and dosing calculations are essential to balance efficacy with safety.</h6>
+<section class="tool" id="mgso" style="display: none">
+  <h5>6. Magnesium Sulphate Dilution: </h5>
+  <h6>Magnesium sulphate (MgSO₄) is the cornerstone drug for seizure prophylaxis and treatment in preeclampsia and eclampsia. Because it has a narrow therapeutic window, accurate dilution and dosing calculations are essential to balance efficacy with safety.</h6>
 
-<form>
-<h5>Enter the strength in Percentage of the bottle you are using: </h5>
-<input type="number" id="percent" name="percent" placeholder="% strength">
+  <form>
+    <h5>Enter the strength in Percentage of the bottle you are using: </h5>
+    <input type="number" id="percent" name="percent" placeholder="% strength">
 
-<h5>Enter the Strength in w/v (mg/mL) of the same bottle you are using: </h5>
-<input type="number" id="wtv" name="wtv" placeholder="mg/mL">
+    <h5>Enter the Strength in w/v (mg/mL) of the same bottle you are using: </h5>
+    <input type="number" id="wtv" name="wtv" placeholder="mg/mL">
 
-<button type="button" id="mgBtn">Submit</button><br>
-</form>
-<div id="mgDisplay"></div>
+    <button type="button" id="mgBtn">Submit</button><br>
+  </form>
+  <div id="mgDisplay"></div>
 </section>
 
-<section class="tool" id="obgyExam">
-<h5>7. Obstetric Examination Video:</h5>
-<h5>An obstetric examination is a structured clinical assessment performed during pregnancy to evaluate both maternal health and fetal well‑being, focusing on vital signs, abdominal palpation, fetal heart rate, and growth monitoring. It is a cornerstone of antenatal care, ensuring early detection of complications and guiding safe delivery.</h5>
-<video controls src="obgyexam.mp4" width="400">
+<section class="tool" id="obgyExam" style="display: none">
+  <h5>7. Obstetric Examination Video:</h5>
+  <h5>An obstetric examination is a structured clinical assessment performed during pregnancy to evaluate both maternal health and fetal well‑being, focusing on vital signs, abdominal palpation, fetal heart rate, and growth monitoring. It is a cornerstone of antenatal care, ensuring early detection of complications and guiding safe delivery.</h5>
+  
+  <video controls src="obgyexam.mp4" width="400"></video>
 </section>
+
 
 <section class="tool" id="htnTypes">
 <h5>8. Types of Hypertension in Pregnancy Video:</h5>
@@ -2288,115 +2290,66 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 </div>
 
-<div id="nursingSection" class="section"style="display: none;">
-<h1>E. Nursing</h1>
-<h5>Make a Selection</h5>
-<select id="nursingSelect">
-<option value="">Select</option>
-<option value="ncp">Nursing Care Plan Video</option>
-<option value="sixRights">Six Rights of Medication Administration Video</option>
-<option value="nurse-apgar">APGAR Score Video</option>
-<option value="drip-rate">Calculate the Drip Rate</option>
-<option value="legal-ethical">Legal and Ethical issues in Nursing</option>
-</select>
+<div id="nursingSection" class="section" style="display: none;">
+  <h1>E. Nursing</h1>
+  <h5>Make a Selection</h5>
+  <select id="nursingSelect">
+    <option value="">Select</option>
+    <option value="ncp">Nursing Care Plan Video</option>
+    <option value="sixRights">Six Rights of Medication Administration Video</option>
+    <option value="nurse-apgar">APGAR Score Video</option>
+    <option value="drip-rate">Calculate the Drip Rate</option>
+    <option value="legal-ethical">Legal and Ethical issues in Nursing</option>
+  </select>
 
-<section class="tool" id="ncp">
-<h5>Nursing Care Plan:</h5>
-<h5>A nursing care plan is a systematic approach that outlines individualized strategies for patient care. It begins with a thorough assessment of the patient’s needs, followed by the formulation of nursing diagnoses. The plan establishes measurable goals and identifies evidence‑based interventions to achieve them. By providing a structured framework, the care plan ensures continuity, promotes patient safety, and allows for ongoing evaluation of outcomes. Ultimately, it serves as both a clinical guide and a communication tool among healthcare professionals, ensuring that patient‑centered care remains consistent and effective.</h5>
-<video controls src="ncp.mp4" width="400">
-</section>
+  <section class="tool" id="ncp">
+    <h5>Nursing Care Plan:</h5>
+    <h5>A nursing care plan is a systematic approach...</h5>
+    <video controls src="ncp.mp4" width="400"></video>
+  </section>
 
-<section class="tool" id="sixRights">
-<h5>Six Rights of Medication:</h5>
-<p>The 6 Rights of Medication Administration are a cornerstone of safe nursing practice. They serve as a checklist to minimize errors and protect patients during drug administration. Here’s a structured breakdown:</p>
-<video controls src="sixrights.mp4" width="400">
-</section>
+  <section class="tool" id="sixRights">
+    <h5>Six Rights of Medication:</h5>
+    <p>The 6 Rights of Medication Administration are a cornerstone...</p>
+    <video controls src="sixrights.mp4" width="400"></video>
+  </section>
 
-<section class="tool" id="nurse-apgar">
-<h5>Apgar Score:</h5>
-<h6>The Apgar Score is a quick assessment tool used in nursing and midwifery to evaluate a newborn’s condition immediately after birth. It is performed at 1 minute and 5 minutes post‑delivery, focusing on five vital signs:</h6>
-<video controls src="apgar.mp4" width="400">
-</section>
+  <section class="tool" id="nurse-apgar">
+    <h5>Apgar Score:</h5>
+    <h6>The Apgar Score is a quick assessment tool...</h6>
+    <video controls src="apgar.mp4" width="400"></video>
+  </section>
 
-<section class="tool" id="drip-rate">
-<h5>Calculating the Drip Rate:</h5>
-<h6>Drip rate calculation is a fundamental nursing skill used to determine how fast IV fluids should flow when using gravity infusion sets. It ensures patients receive the correct volume of fluid or medication within the prescribed time.</6>
-<h5>Enter the numbers alone without units:</h5>
-<h5>Enter the volume of the drip in ml</h5>
-<input type="number" id="volume-drip" placeholder="volume in ml"> 
-<h5>Enter the drop factor in gtt/ml</h5>
-<input type="number" id="drop-factor" placeholder="gtt/ml"> 
-<h5>Enter the duration, the drip is to run in minutes:</h5>
-<input type="number" id="time-fluids" placeholder="Duration in minutes"> <br><br>
-<button id="dripBtn">Submit</button>
-<div id="dripDisplay"></div>
-</section>
-<section class="tool" id="legal-ethical">
-<h5>Legal and Ethical Issues in Nursing</h5>
-<h6>Legal and ethical issues in nursing revolve around protecting patient rights and ensuring professional accountability. The three pillars — informed consent, HIPAA compliance, and scope of practice — safeguard autonomy, privacy, and safety while defining the nurse’s professional boundaries. </h6>
-<h5>📝 Informed Consent </h5>
-<h6>Definition: A legal and ethical requirement ensuring patients understand and voluntarily agree to medical procedures. 
+  <section class="tool" id="drip-rate">
+    <h5>Calculating the Drip Rate:</h5>
+    <h6>Drip rate calculation is a fundamental nursing skill...</h6>
+    <h5>Enter the numbers alone without units:</h5>
+    <h5>Enter the volume of the drip in ml</h5>
+    <input type="number" id="volume-drip" placeholder="volume in ml"> 
+    <h5>Enter the drop factor in gtt/ml</h5>
+    <input type="number" id="drop-factor" placeholder="gtt/ml"> 
+    <h5>Enter the duration, the drip is to run in minutes:</h5>
+    <input type="number" id="time-fluids" placeholder="Duration in minutes"> <br><br>
+    <button id="dripBtn">Submit</button>
+    <div id="dripDisplay"></div>
+  </section>
 
-Core Elements: 
-
-Disclosure – full explanation of procedure, risks, benefits, and alternatives. 
-
-Comprehension – patient must understand the information. 
-
-Voluntariness – decision must be free of coercion. 
-
-Competence – patient must be legally and mentally capable. 
-
-Nursing Role: Nurses reinforce understanding, witness signatures, and advocate for patients who feel pressured. In Zambia, minors require parental/guardian consent, with exceptions in emergencies. </h6>
-<h5>🔒 HIPAA & Patient Privacy </h5>
-<h6>HIPAA (Health Insurance Portability and Accountability Act, 1996): U.S. law that sets national standards for protecting Protected Health Information (PHI). 
-
-Key Provisions: 
-
-Privacy Rule – governs use/disclosure of PHI. 
-
-Security Rule – mandates safeguards for electronic PHI (ePHI). 
-
-Nursing Implications: 
-
-Maintain confidentiality in documentation, verbal communication, and digital records. 
-
-Avoid discussing patient details in public areas. 
-
-Report breaches immediately. 
-
-Emerging Challenges: Telemedicine, AI, and digital health records increase risks of unauthorized access, requiring strict compliance and staff training. <h6>
-<h5>⚖️ Scope of Practice </h5>
-<h6>Definition: Legal boundaries defining what tasks nurses are authorized to perform, based on licensure, training, and jurisdiction. 
-
-Examples: 
-
-Administering medications under physician orders. 
-
-Performing patient assessments and documentation. 
-
-Providing health education and counseling. 
-
-Limitations: Nurses must not perform surgical procedures, prescribe medications (unless advanced practice nurse with authority), or act beyond their training. 
-
-Ethical Dimension: Staying within scope prevents harm, ensures accountability, and maintains trust in the profession. <h6>
-<h5>⚠️ Risks & Consequences </h5>
-<h6>Failure in informed consent → malpractice claims, violation of autonomy. 
-
-HIPAA breaches → fines, loss of license, erosion of patient trust. 
-
-Exceeding scope of practice → disciplinary action, legal liability, patient harm. </h6>
-<h5>🩺 Practical Nursing Strategies </h5>
-<h6>Use plain language when explaining procedures. 
-
-Double-check patient identifiers before sharing information. 
-
-Document thoroughly but securely. 
-
-Seek clarification when unsure about scope boundaries. </h6>
-</section>
-
+  <section class="tool" id="legal-ethical">
+    <h5>Legal and Ethical Issues in Nursing</h5>
+    <h6>Legal and ethical issues in nursing revolve around protecting patient rights...</h6>
+    <h5>📝 Informed Consent </h5>
+    <h6>Definition: A legal and ethical requirement ensuring patients understand...</h6>
+    <h5>🔒 HIPAA & Patient Privacy </h5>
+    <h6>HIPAA (Health Insurance Portability and Accountability Act, 1996)...</h6>
+    <h5>⚖️ Scope of Practice </h5>
+    <h6>Definition: Legal boundaries defining what tasks nurses are authorized...</h6>
+    <h5>⚠️ Risks & Consequences </h5>
+    <h6>Failure in informed consent → malpractice claims...</h6>
+    <h5>🩺 Practical Nursing Strategies </h5>
+    <h6>Use plain language when explaining procedures...</h6>
+  </section>
 </div>
+
 
 <div class="section" id="category-art" style="display: none">
 <h1>ART Clinical Tools</h1>
