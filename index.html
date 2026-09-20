@@ -28,28 +28,19 @@
     </div>
   </header>
  
+<select id="categorySelect" onchange="showCategory()">
+  <option value="">-- Select --</option>
+  <option value="pedst">Pediatrics</option>
+  <option value="obgty">Obstetrics & Gynecology</option>
+  <option value="imedt">Internal Medicine</option>
+  <option value="surgerySection">Surgery</option>          <!-- ✅ matches -->
+  <option value="nursingSection">Nursing</option>          <!-- ✅ matches -->
+  <option value="category-art">ART Essential Tools</option>
+  <option value="clinical-hub">The Clinical Scenario Cases</option>
+  <option value="medical-ethics">Medical Ethics</option>
+</select>
 
 
-<!--A div container for the search box and the main dropdown menu-->
- <div id="top-controls">
-  <input type="text" id="toolSearch" placeholder="Search tools..." onkeyup="searchTools()" />
-
-  <!-- Dropdown menu -->
-  <select id="categorySelect" onchange="showCategory()">
-    <option value="">-- Select --</option>
-    <option value="pedst">Pediatrics</option>
-    <option value="obgty">Obstetrics & Gynecology</option>
-    <option value="imedt">Internal Medicine</option>
-    <option value="surgt">Surgery</option>
-    <option value="nursingsection">Nursing</option>
-    <option value="category-art">ART Essential Tools</option>
-    <option value="clinical-hub">The Clinical Scenario Cases</option>
-    <option value="medical-ethics">Medical ethics</option>
-  </select>
-</div>
-
-<!-- Add this UL somewhere below your controls -->
-<ul id="searchResults"></ul>
 
 <section id="home">
 
@@ -738,7 +729,7 @@
 </div>
 
 <!Begining of OBGY>
-<div id="obgyt" class="section">
+<div id="obgty" class="section" style="display:none">
 <h1>B.OBSTETRICS AND GYNECOLOGY</h1>
 <h5>Make a Selection:</h5>
 <select id="obGy">
@@ -1652,7 +1643,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 </div>
 
-<div id="surgt" class="section">
+<div id="surgerySection" class="section" style="display: none">
 <h1>D. SURGERY</h1>
 <h5>Make a Selection:</h5>
 <select id="surgPick">
@@ -2287,7 +2278,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 </div>
 
-<div id="nursingSection" style="display: none;">
+<div id="nursingSection" class="section"style="display: none;">
 <h1>E. Nursing</h1>
 <h5>Make a Selection</h5>
 <select id="nursingSelect">
@@ -2397,7 +2388,7 @@ Seek clarification when unsure about scope boundaries. </h6>
 
 </div>
 
-<div id="category-art" style="display: none">
+<div class="section" id="category-art" style="display: none">
 <h1>ART Clinical Tools</h1>
 <h5>Make a Selection</h5>
 <select>
@@ -2484,7 +2475,7 @@ Seek clarification when unsure about scope boundaries. </h6>
 </section>
 </div>
 
-<div id="clinical-hub" style="display: none">
+<div class="section" id="clinical-hub" style="display: none">
 <h1>Clinical Case Scenarios</h1>
 <h5>Make a Selection<h5>
 <select id="clinicalhub-select">
@@ -2709,72 +2700,6 @@ Early recognition → favorable prognosis. </h6>
 </footer>
 
 </body>
-
-<script>
-function searchTools() {
-  let input = document.getElementById("toolSearch").value.toLowerCase();
-  let results = document.getElementById("searchResults");
-  results.innerHTML = "";
-
-  const toolMap = {
-    // Internal Medicine
-    "Check Your BMI": { id: "bmix", parent: "imedt" },
-    "Vital Signs": { id: "vitalsx", parent: "imedt" },
-    "Read your Hb Results": { id: "hbx", parent: "imedt" },
-    "Liver Function Tests Interpreter": { id: "liver-function", parent: "imedt" },
-
-    // Nursing
-    "Nursing Care Plan": { id: "ncp", parent: "nursingSection" },
-    "Six Rights of Medication Administration": { id: "sixRights", parent: "nursingSection" },
-    "Apgar Score": { id: "nurse-apgar", parent: "nursingSection" },
-    "Calculate The Drip Rate": { id: "drip-rate", parent: "nursingSection" },
-    "Legal and Ethical Issues in Nursing": { id: "legal-ethical", parent: "nursingSection" },
-
-    // Clinical Case Scenarios
-    "Covid-19": { id: "covid-19", parent: "clinical-hub" },
-    "Monkey Pox": { id: "monkeyPox", parent: "clinical-hub" },
-    "Depression": { id: "depression", parent: "clinical-hub" },
-    "Ludwig’s Angina": { id: "ludwig", parent: "clinical-hub" },
-
-    // Medical Ethics
-    "Autonomy": { id: "autonomy", parent: "medical-ethics" },
-    "Beneficence": { id: "beneficence", parent: "medical-ethics" },
-    "Non-maleficence": { id: "maleficence", parent: "medical-ethics" },
-    "Justice": { id: "justice", parent: "medical-ethics" }
-  };
-
-  Object.keys(toolMap).forEach(name => {
-    if (name.toLowerCase().includes(input) && input !== "") {
-      let h5 = document.createElement("h5");
-      let a = document.createElement("a");
-      a.href = "#" + toolMap[name].id;
-      a.textContent = name;
-
-      a.addEventListener("click", function(e) {
-        e.preventDefault();
-        let target = document.getElementById(toolMap[name].id);
-        let parent = document.getElementById(toolMap[name].parent);
-
-        if (parent) parent.style.display = "block"; // unhide category
-        if (target) target.scrollIntoView({ behavior: "smooth" });
-      });
-
-      h5.appendChild(a);
-      results.appendChild(h5);
-    }
-  });
-
-  if (results.innerHTML === "" && input !== "") {
-    let p = document.createElement("p");
-    p.textContent = "No matching tools found";
-    results.appendChild(p);
-  }
-}
-</script>
-
-
-
-
 
 
 </html>
