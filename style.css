@@ -8,105 +8,86 @@
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5;
-  background-color: #f0f8ff; /* soft medical blue */
-  color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 800px;
+  line-height: 1.6;
+  background-color: #fafafa; /* clean neutral background */
+  color: #202124;            /* Google dark gray text */
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* =========================
    TYPOGRAPHY
 ========================= */
-p { color: darkred; }
-
 h1, h2, h3, h4, h5 {
-  margin-bottom: 10px;
-  color: #004080; /* clinical deep blue */
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: #202124;
 }
 
 h1 {
   text-align: center;
-  color: blue;
+  font-size: 28px;
+  color: #1a73e8; /* Google blue */
 }
-h1 span { color: red; }
-h3 { color: #0066cc; }
-h4 { font-size: 20px; }
-h5 { font-size: 15px; }
+h1 span { color: #ea4335; } /* Google red accent */
+h3 { color: #34a853; }      /* Google green */
+h5 { font-size: 16px; color: #fbbc05; } /* Google yellow accent */
 
-a {
-  color: #0066cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-  color: darkblue;
-  cursor: pointer;
-}
+p { color: #5f6368; }
 
 /* =========================
    LAYOUT & CONTAINERS
 ========================= */
 .container {
-  width: 80%;
+  width: 85%;
   margin: auto;
   padding: 20px;
 }
 
-nav {
-  background: #333;
-  color: #fff;
-  padding: 10px;
-}
-nav a {
-  color: #fff;
-  margin-right: 15px;
-}
-nav a:hover { color: #ffcc00; }
-
 footer {
   text-align: center;
   padding: 15px;
-  background: #222;
-  color: #fff;
-  margin-top: 20px;
+  background: #f1f3f4;
+  color: #5f6368;
+  margin-top: 30px;
+  border-top: 1px solid #dadce0;
 }
 
 /* =========================
    FORM ELEMENTS
 ========================= */
 button {
-  width: 200px;
-  height: 50px;
-  font-size: 14px;
-  background-color: #0073e6; /* hospital blue */
+  width: 220px;
+  height: 48px;
+  font-size: 15px;
+  background-color: #1a73e8; /* Google blue */
   color: white;
   border: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  border-radius: 4px;
+  transition: all 0.2s ease;
   cursor: pointer;
 }
 button:hover {
-  background-color: #005bb5;
-  transform: scale(1.05);
+  background-color: #185abc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 input[type="number"], select {
-  width: 200px;
-  height: 35px;
+  width: 220px;
+  height: 38px;
   padding: 6px;
   font-size: 15px;
-  border: 1px solid #0073e6;
-  border-radius: 5px;
-  margin: 5px 0;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  margin: 6px 0;
+  transition: border 0.2s ease;
 }
-select:hover { border: 2px solid #0066cc; }
+select:hover, input[type="number"]:focus {
+  border: 1px solid #1a73e8;
+}
 
 /* =========================
    MEDIA & VISUALS
@@ -115,6 +96,7 @@ img {
   max-width: 30%;
   height: auto;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 /* =========================
@@ -123,10 +105,11 @@ img {
 #cvsa-display {
   margin-top: 20px;
   font-size: 18px;
-  font-weight: bold;
-  padding: 10px;
+  font-weight: 500;
+  padding: 12px;
   border-radius: 6px;
-  background-color: #f9f9f9;
+  background: #f1f3f4;
+  color: #202124;
 }
 
 /* =========================
@@ -136,24 +119,17 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .parent .section {
   flex: 1 1 300px;
   max-width: 600px;
-  padding: 15px;
-  border: 1px solid #ccc;
+  padding: 18px;
+  border: 1px solid #dadce0;
   border-radius: 8px;
-}
-
-#home { text-align: center; }
-
-#home img, #main img {
-  display: block;
-  margin: 0 auto;
-  max-width: 150px;
-  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 /* =========================
@@ -165,11 +141,12 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin: 20px auto;
-  padding: 15px;
-  background: #eef6ff;
+  padding: 18px;
+  background: #fff;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   max-height: 80vh;
   overflow-y: auto;
 }
@@ -180,168 +157,37 @@ img {
 @media (max-width: 768px) {
   body { max-width: 100%; padding: 10px; }
   .container { width: 95%; padding: 10px; }
-  button, select, input[type="number"] { width: 70px; } /* fixed missing px */
+  button, select, input[type="number"] { width: 100%; }
   img { max-width: 100%; }
   .parent .section { flex: 1 1 100%; }
 }
 
-#home {
-  display: flex;
-  flex-direction: column;   /* stack items vertically */
-  align-items: center;      /* center them horizontally */
-  text-align: center;       /* center text inside each block */
-  gap: 14px;                /* equal spacing between items */
-  max-width: 800px;         /* optional: keeps content contained */
-  margin: 0 auto;           /* centers the section on the page */
-}
-
-#home h1,
-#home h5 {
-  margin: 0;                /* remove default margins */
-  line-height: 1.5;         /* consistent vertical rhythm */
-}
-/*site info footer*/
-#site-info a {
-  color: #1abc9c;   /* teal for links */
-  text-decoration: none;
-}
-
-#site-info a:hover {
-  text-decoration: underline;
-}
-
-#site-info i {
-  color: #f39c12;   /* orange icons */
-  margin-right: 8px;
-}
-/*light footer*/
-#site-info {
-  background-color: #f9f9f9;   /* light gray */
-  color: #333333;              /* dark text */
-}
-#site-info i {
-  color: #007BFF;              /* blue icons */
-}
-/*important code that was deleted-Flex items*/
-#site-info {
-  background-color: #f9f9f9;   /* light background */
-  border-top: 2px solid #ccc;  /* subtle separation */
-  padding: 15px;
-  display: flex;
-  justify-content: space-around; /* spread blocks evenly */
-  font-size: 14px;
-}
-
-#site-info .info-block {
-  max-width: 250px;
-  text-align: left;
-}
-/*align the recently added tools*/
-#recent-tools {
-  text-align: left;       /* align text neatly */
-  margin: 20px auto;
-  max-width: 600px;       /* keeps it contained */
-}
-
-#recent-tools h3 {
-  color: #b22222;         /* red heading */
-  margin-bottom: 10px;
-}
-
-#recent-tools ul {
-  list-style: none;       /* remove default bullets */
-  padding: 0;
-}
-
-#recent-tools li {
-  display: flex;          /* align emoji + text */
-  align-items: center;
-  margin: 8px 0;
-  font-size: 16px;
-  color: #333333;         /* readable text color */
-}
-
-#recent-tools li::before {
-  content: "👉";          /* add emoji consistently */
-  margin-right: 8px;
-  color: #f1c40f;         /* yellow emoji */
-}
-/*flex my search box and main dropdown menu*/
-#top-controls {
-  display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* align vertically */
-  gap: 20px;                 /* space between search and dropdown */
-  margin: 20px auto;
-}
-
-#search-bar input {
-  width: 250px;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#category-select select {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-justify-content: space-between;
-
-
-#site-info i {
-  color: #007BFF;   /* icon color (blue) */
-  margin-right: 8px;
-}
-/*style of search box + dropdown menu*/
-#top-controls {
-  display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* align vertically */
-  gap: 20px;                 /* space between search and dropdown */
-  margin: 20px auto;
-}
-
-#toolSearch {
-  width: 250px;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#categorySelect {
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-/*flex the header*/
+/* =========================
+   HEADER
+========================= */
 #site-header {
-  background-color: #e6f0f8;   /* soft light background */
-  padding: 15px;
-  border-bottom: 2px solid #ccc;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #dadce0;
 }
 
 .logo-block {
   display: flex;
   align-items: center;
-  justify-content: center;   /* center horizontally */
-  gap: 15px;                 /* space between logo and text */
+  justify-content: center;
+  gap: 15px;
 }
 
 .logo-block img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;        /* circular logo */
+  border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #dadce0;
 }
 
 .logo-block h1 {
-  font-size: 24px;
-  color: #333333;
+  font-size: 26px;
+  color: #202124;
   margin: 0;
 }
