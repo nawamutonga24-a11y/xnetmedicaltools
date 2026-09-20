@@ -184,3 +184,164 @@ img {
   img { max-width: 100%; }
   .parent .section { flex: 1 1 100%; }
 }
+
+#home {
+  display: flex;
+  flex-direction: column;   /* stack items vertically */
+  align-items: center;      /* center them horizontally */
+  text-align: center;       /* center text inside each block */
+  gap: 14px;                /* equal spacing between items */
+  max-width: 800px;         /* optional: keeps content contained */
+  margin: 0 auto;           /* centers the section on the page */
+}
+
+#home h1,
+#home h5 {
+  margin: 0;                /* remove default margins */
+  line-height: 1.5;         /* consistent vertical rhythm */
+}
+/*site info footer*/
+#site-info a {
+  color: #1abc9c;   /* teal for links */
+  text-decoration: none;
+}
+
+#site-info a:hover {
+  text-decoration: underline;
+}
+
+#site-info i {
+  color: #f39c12;   /* orange icons */
+  margin-right: 8px;
+}
+/*light footer*/
+#site-info {
+  background-color: #f9f9f9;   /* light gray */
+  color: #333333;              /* dark text */
+}
+#site-info i {
+  color: #007BFF;              /* blue icons */
+}
+/*important code that was deleted-Flex items*/
+#site-info {
+  background-color: #f9f9f9;   /* light background */
+  border-top: 2px solid #ccc;  /* subtle separation */
+  padding: 15px;
+  display: flex;
+  justify-content: space-around; /* spread blocks evenly */
+  font-size: 14px;
+}
+
+#site-info .info-block {
+  max-width: 250px;
+  text-align: left;
+}
+/*align the recently added tools*/
+#recent-tools {
+  text-align: left;       /* align text neatly */
+  margin: 20px auto;
+  max-width: 600px;       /* keeps it contained */
+}
+
+#recent-tools h3 {
+  color: #b22222;         /* red heading */
+  margin-bottom: 10px;
+}
+
+#recent-tools ul {
+  list-style: none;       /* remove default bullets */
+  padding: 0;
+}
+
+#recent-tools li {
+  display: flex;          /* align emoji + text */
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333333;         /* readable text color */
+}
+
+#recent-tools li::before {
+  content: "👉";          /* add emoji consistently */
+  margin-right: 8px;
+  color: #f1c40f;         /* yellow emoji */
+}
+/*flex my search box and main dropdown menu*/
+#top-controls {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 20px;                 /* space between search and dropdown */
+  margin: 20px auto;
+}
+
+#search-bar input {
+  width: 250px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#category-select select {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+justify-content: space-between;
+
+
+#site-info i {
+  color: #007BFF;   /* icon color (blue) */
+  margin-right: 8px;
+}
+/*style of search box + dropdown menu*/
+#top-controls {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* align vertically */
+  gap: 20px;                 /* space between search and dropdown */
+  margin: 20px auto;
+}
+
+#toolSearch {
+  width: 250px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#categorySelect {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+/*flex the header*/
+#site-header {
+  background-color: #e6f0f8;   /* soft light background */
+  padding: 15px;
+  border-bottom: 2px solid #ccc;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* center horizontally */
+  gap: 15px;                 /* space between logo and text */
+}
+
+.logo-block img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;        /* circular logo */
+  object-fit: cover;
+}
+
+.logo-block h1 {
+  font-size: 24px;
+  color: #333333;
+  margin: 0;
+}
