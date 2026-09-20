@@ -1975,3 +1975,73 @@ function nursingDepartment() {
         document.getElementById(nursingPick).style.display = "block";
     }
 }
+//hba1c
+let a1cBtn = document.getElementById("hba1cBtn");
+a1cBtn.addEventListener("click", hba1cReader);
+
+function hba1cReader(){
+  let z = parseFloat(document.getElementById("hba1cr").value) || 0;
+  let display = document.getElementById("hba1cDisplay");
+
+  // Reset styles
+  display.style.color = "black";
+  display.style.background = "transparent";
+
+  if(z < 5.7){
+    display.style.color = "green";
+    display.textContent = `Normal glycemic control at ${z.toFixed(1)}%. Recommendation: Maintain healthy lifestyle, balanced diet, and regular exercise.`;
+  }
+  else if(z >= 5.7 && z <= 6.4){
+    display.style.color = "orange";
+    display.textContent = `Prediabetes at ${z.toFixed(1)}%. Recommendation: Adopt lifestyle changes (diet, exercise, weight management) to prevent progression.`;
+  }
+  else if(z >= 6.5 && z < 7){
+    display.style.color = "red";
+    alert("⚠️ Diabetes detected! Please consult a healthcare provider.");
+    display.textContent = `Diabetes threshold at ${z.toFixed(1)}%. Recommendation: Seek medical evaluation and start management plan.`;
+  }
+  else if(z >= 7 && z <= 8){
+    display.style.color = "blue";
+    display.textContent = `Acceptable control at ${z.toFixed(1)}%. Recommendation: Continue treatment, but consider tighter control depending on age and comorbidities.`;
+  }
+  else if(z > 8 && z <= 10){
+    display.style.color = "darkred";
+    alert("⚠️ Poor control! Risk of complications increasing.");
+    display.textContent = `Poor control at ${z.toFixed(1)}%. Recommendation: Intensify therapy, review medications, and reinforce lifestyle changes.`;
+  }
+  else if(z > 10){
+    display.style.color = "white";
+    display.style.background = "red";
+    alert("🚨 Very poor control! Urgent medical intervention required.");
+    display.textContent = `Very poor control at ${z.toFixed(1)}%. Recommendation: Immediate medical attention needed to prevent acute and chronic complications.`;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
