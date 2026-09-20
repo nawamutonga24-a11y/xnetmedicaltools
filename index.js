@@ -1658,23 +1658,23 @@ function obgy() {
 
 
 
-//Nursing;
-let nursingSelect = document.getElementById("nursingSelect");
-nursingSelect.addEventListener("change", nursingDepartment);
+//manin menu selector
+function showCategory() {
+  let picked = document.getElementById("categorySelect").value;
 
-function nursingDepartment() {
-    // Hide all tools inside Nursing section
-    document.querySelectorAll("#nursingSection .tool").forEach(tool => {
-        tool.style.display = "none";
-    });
+  // Hide all sections
+  document.querySelectorAll(".section").forEach(sec => {
+    sec.style.display = "none";
+  });
 
-    // Show chosen one
-    let nursingPick = nursingSelect.value;
-    if (nursingPick) {
-        document.getElementById(nursingPick).style.display = "block";
+  // Show the chosen one
+  if (picked) {
+    let chosen = document.getElementById(picked);
+    if (chosen) {
+      chosen.style.display = "block";
     }
+  }
 }
-
 
 
 // Cough assessment
@@ -1956,13 +1956,3 @@ function showEthicsTopic() {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
