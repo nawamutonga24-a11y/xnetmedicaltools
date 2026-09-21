@@ -373,3 +373,52 @@ img {
     color: #ff4500; /* orange-red */
     font-weight: bold;
 }
+/*progesterone reader*/
+#progDisplay {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#progDisplay h3 {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#progDisplay p {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.score {
+    color: #2a7ae2;
+    font-weight: bold;
+}
+
+.low {
+    color: #b22222; /* deep red */
+}
+
+.phase {
+    color: #006400; /* dark green */
+}
+
+.high {
+    color: #8b008b; /* dark magenta */
+}
+
+.very-high {
+    color: #ff8c00; /* warm orange */
+    font-weight: bold;
+}
+
+.error {
+    color: #ff4500; /* orange-red */
+    font-weight: bold;
+}
