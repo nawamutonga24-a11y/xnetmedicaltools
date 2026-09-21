@@ -20,15 +20,16 @@
 </head>
 
 <body>
- <!-- 🔹 Header goes first -->
- <header id="site-header">
+<!-- 🔹 Header -->
+<header id="site-header">
   <div class="logo-block">
     <img src="nawa.jpg" alt="Site Logo" class="logo" />
-    <h1><span style="color:red;">x</span>NET Medical Tools</h1>
+    <h1><span class="red-x">x</span>NET Medical Tools</h1>
   </div>
   <!-- Digital Clock -->
   <div id="clock"></div>
 </header>
+
 <script>
   function updateClock() {
     const now = new Date();
@@ -38,8 +39,9 @@
     document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
   }
   setInterval(updateClock, 1000);
-  updateClock(); // run once immediately
+  updateClock(); // initialize immediately
 </script>
+
  <!-- Main menu -->
 <select id="categorySelect" onchange="showCategory()">
   <option value="">-- Select --</option>
@@ -2830,16 +2832,20 @@ Early recognition → favorable prognosis. </h6>
 <footer id="site-info">
   <div class="info-block">
     <i class="fas fa-user-md"></i>
-    <strong>Author:</strong><br>Nawa Mutonga <br>6th Year MBChB Student<br>Enviromental Health Technologist
+    <strong>Author:</strong><br>
+    Nawa Mutonga <br>
+    6th Year MBChB Student <br>
+    Environmental Health Technologist
   </div>
   <div class="info-block">
     <i class="fas fa-envelope"></i>
-    <strong>Contact:</strong> 
+    <strong>Contact:</strong><br>
     <a href="mailto:admin@nawamutonga.org">admin@nawamutonga.org</a>
   </div>
   <div class="info-block">
     <i class="fas fa-exclamation-triangle"></i>
-    <strong>Disclaimer:</strong><br>For informational use only — not a substitute for professional medical advice.
+    <strong>Disclaimer:</strong><br>
+    For informational use only — not a substitute for professional medical advice.
   </div>
 </footer>
 
