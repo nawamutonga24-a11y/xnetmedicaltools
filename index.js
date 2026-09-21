@@ -2016,8 +2016,43 @@ function hba1cReader(){
     display.textContent = `Very poor control at ${z.toFixed(1)}%. Recommendation: Immediate medical attention needed to prevent acute and chronic complications.`;
   }
 }
+//estroReader
+const eBtn = document.getElementById("eBtn");
+eBtn.addEventListener("click", estroReader);
 
+function estroReader() {
+    const er = parseFloat(document.getElementById("restrogen").value) || 0;
+    const display = document.getElementById("estroDisplay");
+    let message = "";
 
+    if (er < 30) {
+        message = `<h3 class="low">Very low</h3>
+                   <p>Possible menopause, ovarian insufficiency</p>
+                   <p><strong>Estrogen:</strong> ${er.toFixed(1)} pg/mL</p>
+                   <p class="score">Score: 0</p>`;
+    } else if (er >= 30 && er < 100) {
+        message = `<h3 class="phase">Early follicular phase</h3>
+                   <p><strong>Estrogen:</strong> ${er.toFixed(1)} pg/mL</p>
+                   <p class="score">Score: 1</p>`;
+    } else if (er >= 100 && er < 200) {
+        message = `<h3 class="phase">Mid follicular phase</h3>
+                   <p><strong>Estrogen:</strong> ${er.toFixed(1)} pg/mL</p>
+                   <p class="score">Score: 2</p>`;
+    } else if (er >= 200 && er < 400) {
+        message = `<h3 class="phase">Pre-ovulatory surge</h3>
+                   <p><strong>Estrogen:</strong> ${er.toFixed(1)} pg/mL</p>
+                   <p class="score">Score: 3</p>`;
+    } else if (er > 400) {
+        message = `<h3 class="high">High</h3>
+                   <p>Possible ovarian hyperstimulation or pregnancy</p>
+                   <p><strong>Estrogen:</strong> ${er.toFixed(1)} pg/mL</p>
+                   <p class="score">Score: 4</p>`;
+    } else {
+        message = `<p class="error">⚠️ Enter valid information</p>`;
+    }
+
+    display.innerHTML = message;
+}
 
 
 
