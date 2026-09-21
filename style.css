@@ -329,3 +329,47 @@ img {
   background: #e3f2fd;
   color: #0d47a1;
 }
+/*js code estrogen*/
+#estroDisplay {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f9f9fb;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+#estroDisplay h3 {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#estroDisplay p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.score {
+    color: #2a7ae2;
+    font-weight: bold;
+}
+
+.low {
+    color: #b22222; /* deep red */
+}
+
+.phase {
+    color: #006400; /* dark green */
+}
+
+.high {
+    color: #8b008b; /* dark magenta */
+}
+
+.error {
+    color: #ff4500; /* orange-red */
+    font-weight: bold;
+}
