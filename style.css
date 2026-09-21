@@ -217,3 +217,41 @@ img {
   font-weight: bold;
   color: #333;
 }
+/*announcements*/
+
+.ad-item {
+  list-style: none;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 8px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+}
+
+.ad-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: #ffffff;
+}
+
+.ad-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #2a7ae2;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.subject {
+  font-weight: bold;
+  color: #00796b;
+}
+
+.contact {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #d32f2f;
+}
