@@ -387,3 +387,44 @@ img {
   font-style: italic;
   color: #d32f2f;
 }
+#home {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;              /* spacing between sections */
+  max-width: 900px;
+  margin: 0 auto;         /* center the whole block */
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.disclaimer {
+  background: #ffe9e9;     /* soft red background */
+  border-left: 4px solid #d9534f;
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.new-tools, .announcements {
+  background: #f9f9f9;     /* light gray background */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 13px;         /* small neat text */
+  color: #444;
+}
+
+.new-tools h3, .announcements h3 {
+  margin-top: 0;
+  font-size: 15px;
+  color: #0077cc;          /* calm blue headings */
+}
+
+.new-tools ul {
+  margin: 8px 0 0 16px;
+  padding: 0;
+}
+
+.announcements p {
+  margin: 8px 0 0;
+}
