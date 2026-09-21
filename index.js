@@ -2053,10 +2053,46 @@ function estroReader() {
 
     display.innerHTML = message;
 }
+//progestrone
+const progBtn = document.getElementById("progBtn");
+progBtn.addEventListener("click", progReader);
 
+function progReader() {
+    const p = parseFloat(document.getElementById("xprogesterone").value) || 0;
+    const display = document.getElementById("progDisplay");
+    let message = "";
 
+    if (p < 1) {
+        message = `<h3 class="low">🌑 Very Low</h3>
+                   <p>Follicular phase — pre‑ovulation</p>
+                   <p><strong>Progesterone:</strong> ${p.toFixed(1)} ng/mL</p>
+                   <p class="score">Score: 0</p>`;
+    } else if (p >= 1 && p < 5) {
+        message = `<h3 class="phase">🌱 Early Luteal Phase</h3>
+                   <p>Ovulation just occurred</p>
+                   <p><strong>Progesterone:</strong> ${p.toFixed(1)} ng/mL</p>
+                   <p class="score">Score: 1</p>`;
+    } else if (p >= 5 && p < 15) {
+        message = `<h3 class="phase">🌸 Mid Luteal Phase</h3>
+                   <p>Optimal for implantation</p>
+                   <p><strong>Progesterone:</strong> ${p.toFixed(1)} ng/mL</p>
+                   <p class="score">Score: 2</p>`;
+    } else if (p >= 15 && p < 25) {
+        message = `<h3 class="high">🌕 High Luteal Phase</h3>
+                   <p>Strong ovulation, pregnancy support</p>
+                   <p><strong>Progesterone:</strong> ${p.toFixed(1)} ng/mL</p>
+                   <p class="score">Score: 3</p>`;
+    } else if (p > 25) {
+        message = `<h3 class="very-high">🌟 Very High</h3>
+                   <p>Possible pregnancy or luteal cyst</p>
+                   <p><strong>Progesterone:</strong> ${p.toFixed(1)} ng/mL</p>
+                   <p class="score">Score: 4</p>`;
+    } else {
+        message = `<p class="error">⚠️ Invalid entry</p>`;
+    }
 
-
+    display.innerHTML = message;
+}
 
 
 
