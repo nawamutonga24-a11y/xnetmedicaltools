@@ -2416,11 +2416,145 @@ function cortisolReader() {
 
     document.getElementById("cortisolDisplay").innerHTML = result;
 }
+// Loop function to handle menu selections
+  document.getElementById("menu").addEventListener("change", function() {
+    const selectedValue = this.value;
+    const tools = document.querySelectorAll(".tool");
 
+    // Hide all sections first
+    tools.forEach(tool => tool.style.display = "none");
 
+    // Show only the selected section
+    if (selectedValue) {
+      document.getElementById(selectedValue).style.display = "block";
+    }
+  });
 
+  // Initialize: hide all tools at start
+  window.onload = () => {
+    document.querySelectorAll(".tool").forEach(tool => tool.style.display = "none");
+  };
 
+function calculateStats(data) {
+  if (typeof data === "string") {
+    data = data.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
+  }
 
+  const n = data.length;
+  if (n === 0) return {};
+
+  // Sample Mean
+  const mean = data.reduce((a, b) => a + b, 0) / n;
+
+  // Median
+  const sorted = [...data].sort((a, b) => a - b);
+  const median = n % 2 === 0 ? (sorted[n/2 - 1] + sorted[n/2]) / 2 : sorted[Math.floor(n/2)];
+
+  // Mode
+  const freq = {};
+  let maxFreq = 0;
+  let mode = [];
+  data.forEach(num => {
+    freq[num] = (freq[num] || 0) + 1;
+    if (freq[num] > maxFreq) maxFreq = freq[num];
+  });
+  for (let num in freq) {
+    if (freq[num] === maxFreq) mode.push(Number(num));
+  }
+
+  // Range
+  const range = Math.max(...data) - Math.min(...data);
+
+  // Sample Variance (divide by n-1)
+  const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (n - 1);
+
+  // Sample Standard Deviation
+  const stdDev = Math.sqrt(variance);
+
+  return { mean, median, mode, range, variance, stdDev, count: n };
+}
+
+// Attach event listener to button
+document.getElementById("meanBtn").addEventListener("click", function() {
+  const input = document.getElementById("numbers").value;
+  const stats = calculateStats(input);
+
+  const display = document.getElementById("sDisplay");
+  if (stats.count) {
+    display.innerHTML = `
+      <p><strong>Sample Mean:</strong> ${stats.mean.toFixed(2)}</p>
+      <p><strong>Median:</strong> ${stats.median}</p>
+      <p><strong>Mode:</strong> ${stats.mode.join(", ")}</p>
+      <p><strong>Range:</strong> ${stats.range}</p>
+      <p><strong>Sample Variance:</strong> ${stats.variance.toFixed(2)}</p>
+      <p><strong>Sample Standard Deviation:</strong> ${stats.stdDev.toFixed(2)}</p>
+      <p><strong>Count (n):</strong> ${stats.count}</p>
+    `;
+  } else {
+    display.innerHTML = `<p style="color:red;">Please enter valid numbers.</p>`;
+  }
+});
+
+// population mean, mode etc
+function calculatePopulationStats(data) {
+  if (typeof data === "string") {
+    data = data.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
+  }
+
+  const N = data.length;
+  if (N === 0) return {};
+
+  // Population Mean
+  const mean = data.reduce((a, b) => a + b, 0) / N;
+
+  // Median
+  const sorted = [...data].sort((a, b) => a - b);
+  const median = N % 2 === 0 ? (sorted[N/2 - 1] + sorted[N/2]) / 2 : sorted[Math.floor(N/2)];
+
+  // Mode
+  const freq = {};
+  let maxFreq = 0;
+  let mode = [];
+  data.forEach(num => {
+    freq[num] = (freq[num] || 0) + 1;
+    if (freq[num] > maxFreq) maxFreq = freq[num];
+  });
+  for (let num in freq) {
+    if (freq[num] === maxFreq) mode.push(Number(num));
+  }
+
+  // Range
+  const range = Math.max(...data) - Math.min(...data);
+
+  // Population Variance (divide by N)
+  const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / N;
+
+  // Population Standard Deviation
+  const stdDev = Math.sqrt(variance);
+
+  return { mean, median, mode, range, variance, stdDev, count: N };
+}
+
+// Attach event listener to population button
+document.getElementById("popBtn").addEventListener("click", function() {
+  const input = document.getElementById("popNumbers").value;
+  const stats = calculatePopulationStats(input);
+
+  const display = document.getElementById("popDisplay");
+  if (stats.count) {
+    display.innerHTML = `
+      <p><strong>Population Mean (μ):</strong> ${stats.mean.toFixed(2)}</p>
+      <p><strong>Median:</strong> ${stats.median}</p>
+      <p><strong>Mode:</strong> ${stats.mode.join(", ")}</p>
+      <p><strong>Range:</strong> ${stats.range}</p>
+      <p><strong>Population Variance (σ²):</strong> ${stats.variance.toFixed(2)}</p>
+      <p><strong>Population Standard Deviation (σ):</strong> ${stats.stdDev.toFixed(2)}</p>
+      <p><strong>Population Size (N):</strong> ${stats.count}</p>
+    `;
+  } else {
+    display.innerHTML = `<p style="color:red;">Please enter valid numbers.</p>`;
+  }
+});
 
 
 
