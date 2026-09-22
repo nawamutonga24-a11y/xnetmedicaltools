@@ -1586,22 +1586,32 @@ function pecarn() {
     document.getElementById("pecResult").innerHTML = result;
 }
 
-// Internal medicine dropdown
-let imedChoice = document.getElementById("imedChoice");
-imedChoice.addEventListener("change", internalMedicine);
-
-function internalMedicine() {
-    // Hide all internal medicine tools
-    document.querySelectorAll(".tool").forEach(sec => {
-        sec.classList.remove("active");
-    });
-
-    // Show the chosen one
-    let picked = imedChoice.value;
-    if (picked) {
-        document.getElementById(picked).classList.add("active");
-    }
+// Internal medicine dropdownlet obGy = document.getElementById("obGy");
+let imedSelect = document.getElementById("imedChoice");
+imedSelect.addEventListener("change",imedReveal);
+function imedReveal(){
+document.getElementById("bmix").style.display = "none";
+document.getElementById("vitalsx").style.display = "none";
+document.getElementById("hbx").style.display = "none";
+document.getElementById("curbx").style.display = "none";
+document.getElementById("ascvdx").style.display = "none";
+document.getElementById("headachex").style.display = "none";
+document.getElementById("lungx").style.display = "none";
+document.getElementById("heartx").style.display = "none";
+document.getElementById("chadx").style.display = "none";
+document.getElementById("tbsax").style.display = "none";
+document.getElementById("rbsx").style.display = "none";
+document.getElementById("casx").style.display = "none";
+document.getElementById("imed-cvsa").style.display = "none";
+document.getElementById("imed-drugdosecalc").style.display = "none";
+document.getElementById("liver-function").style.display = "none";
+document.getElementById("hba1c").style.display = "none";
+let imedChosen = document.getElementById("imedChoice").value;
+if(imedChosen){
+document.getElementById(imedChosen).style.display = "block";
 }
+};
+
 
 
 
