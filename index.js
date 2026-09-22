@@ -2094,8 +2094,44 @@ function progReader() {
     display.innerHTML = message;
 }
 
+// 🎯 FSH Reader
+const fshBtn = document.getElementById("fshBtn");
+fshBtn.addEventListener("click", fshReader);
 
+function fshReader() {
+    const fsh = parseFloat(document.getElementById("fsh-input").value) || 0;
+    let result = "";
 
+    if (fsh < 4) {
+        result = `
+        🧬 <b>FSH reading:</b> ${fsh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Low FSH — possible pituitary or hypothalamic dysfunction. <br>
+        💡 <b>Recommendations:</b> Evaluate pituitary hormones (LH, prolactin, TSH). Consider pituitary imaging if clinically indicated.
+        `;
+    } else if (fsh >= 4 && fsh < 10) {
+        result = `
+        🧬 <b>FSH reading:</b> ${fsh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Normal FSH — healthy ovarian reserve or gonadal function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. Correlate with menstrual cycle phase. No intervention unless symptoms present.
+        `;
+    } else if (fsh >= 10 && fsh < 20) {
+        result = `
+        🧬 <b>FSH reading:</b> ${fsh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Borderline High FSH — reduced ovarian reserve, early perimenopause. <br>
+        💡 <b>Recommendations:</b> Counsel on fertility options. Consider AMH testing. Monitor menstrual regularity.
+        `;
+    } else if (fsh >= 20) {
+        result = `
+        🧬 <b>FSH reading:</b> ${fsh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> High FSH — ovarian failure, menopause, or gonadal insufficiency. <br>
+        💡 <b>Recommendations:</b> Discuss hormone replacement therapy (HRT) if symptomatic. Evaluate for primary ovarian insufficiency. Provide supportive counseling.
+        `;
+    } else {
+        result = "⚠️ Invalid Entry — please enter a valid number.";
+    }
+
+    document.getElementById("fshDisplay").innerHTML = result;
+}
 
 
 
