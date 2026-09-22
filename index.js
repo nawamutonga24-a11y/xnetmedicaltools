@@ -2133,7 +2133,289 @@ function fshReader() {
     document.getElementById("fshDisplay").innerHTML = result;
 }
 
+//lhReader;
+// 🎯 LH Reader
+const lhBtn = document.getElementById("lhBtn");
+lhBtn.addEventListener("click", lhReader);
 
+function lhReader() {
+    const lh = parseFloat(document.getElementById("lhInput").value) || 0;
+    let result = "";
+
+    if (lh < 2) {
+        result = `
+        🧬 <b>LH reading:</b> ${lh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Low LH — possible pituitary or hypothalamic dysfunction. <br>
+        💡 <b>Recommendations:</b> Evaluate pituitary hormones (FSH, prolactin, TSH). Consider pituitary imaging if clinically indicated.
+        `;
+    } else if (lh >= 2 && lh < 12) {
+        result = `
+        🧬 <b>LH reading:</b> ${lh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Normal LH — healthy gonadal function. In women, values vary with cycle phase. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. Correlate with menstrual cycle phase in women or testosterone levels in men.
+        `;
+    } else if (lh >= 12 && lh < 20) {
+        result = `
+        🧬 <b>LH reading:</b> ${lh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> Borderline High LH — may indicate early ovarian insufficiency, perimenopause, or PCOS (if LH:FSH ratio >2). <br>
+        💡 <b>Recommendations:</b> Counsel on fertility options. Evaluate AMH and estradiol. Consider ultrasound for PCOS.
+        `;
+    } else if (lh >= 20) {
+        result = `
+        🧬 <b>LH reading:</b> ${lh.toFixed(2)} IU/L <br>
+        📊 <b>Interpretation:</b> High LH — ovarian failure, menopause, or testicular dysfunction. <br>
+        💡 <b>Recommendations:</b> Discuss hormone replacement therapy (HRT) if symptomatic. Evaluate for primary ovarian insufficiency or hypogonadism. Provide supportive counseling.
+        `;
+    } else {
+        result = "⚠️ Invalid Entry — please enter a valid number.";
+    }
+
+    document.getElementById("lhDisplay").innerHTML = result;
+}
+//prolactinReader
+// 🎯 Prolactin Reader
+const prolaBtn = document.getElementById("prolaBtn");
+prolaBtn.addEventListener("click", prolaReader);
+
+function prolaReader() {
+    const prolactin = parseFloat(document.getElementById("prolactinInput").value) || 0;
+    let result = "";
+
+    if (prolactin < 5) {
+        result = `
+        🧬 <b>Prolactin reading:</b> ${prolactin.toFixed(2)} ng/mL <br>
+        📊 <b>Interpretation:</b> Low prolactin — rare, may indicate pituitary dysfunction. <br>
+        💡 <b>Recommendations:</b> Evaluate pituitary hormones. Consider pituitary imaging if clinically indicated.
+        `;
+    } else if (prolactin >= 5 && prolactin <= 25) {
+        result = `
+        🧬 <b>Prolactin reading:</b> ${prolactin.toFixed(2)} ng/mL <br>
+        📊 <b>Interpretation:</b> Normal prolactin — supports fertility and metabolic balance. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. Correlate with menstrual cycle or reproductive status.
+        `;
+    } else if (prolactin > 25 && prolactin <= 100) {
+        result = `
+        🧬 <b>Prolactin reading:</b> ${prolactin.toFixed(2)} ng/mL <br>
+        📊 <b>Interpretation:</b> Moderately high prolactin — may cause menstrual irregularities, infertility, or galactorrhea. <br>
+        💡 <b>Recommendations:</b> Review medications (antipsychotics, antidepressants). Consider pituitary imaging. Evaluate thyroid function.
+        `;
+    } else if (prolactin > 100) {
+        result = `
+        🧬 <b>Prolactin reading:</b> ${prolactin.toFixed(2)} ng/mL <br>
+        📊 <b>Interpretation:</b> Very high prolactin — often due to prolactinoma (pituitary tumor). <br>
+        💡 <b>Recommendations:</b> Urgent endocrinology referral. MRI of pituitary. Consider dopamine agonist therapy.
+        `;
+    } else {
+        result = "⚠️ Invalid Entry — please enter a valid number.";
+    }
+
+    document.getElementById("prolaDisplay").innerHTML = result;
+}
+// 🎯 TSH Reader
+const tshBtn = document.getElementById("tshBtn");
+tshBtn.addEventListener("click", tshReader);
+
+function tshReader() {
+    const tsh = parseFloat(document.getElementById("tshInput").value) || 0;
+    let result = "";
+
+    if (tsh < 0.4) {
+        result = `
+        🧬 <b>TSH reading:</b> ${tsh.toFixed(2)} mIU/L <br>
+        📊 <b>Interpretation:</b> Low TSH — suggests hyperthyroidism (overactive thyroid). <br>
+        💡 <b>Recommendations:</b> Check free T4 and T3 levels. Consider endocrinology referral. Monitor for symptoms like palpitations, weight loss, and anxiety.
+        `;
+    } else if (tsh >= 0.4 && tsh <= 4.0) {
+        result = `
+        🧬 <b>TSH reading:</b> ${tsh.toFixed(2)} mIU/L <br>
+        📊 <b>Interpretation:</b> Normal TSH — indicates balanced thyroid function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. No intervention needed unless symptoms are present.
+        `;
+    } else if (tsh > 4.0 && tsh <= 10.0) {
+        result = `
+        🧬 <b>TSH reading:</b> ${tsh.toFixed(2)} mIU/L <br>
+        📊 <b>Interpretation:</b> Mildly elevated TSH — possible subclinical hypothyroidism. <br>
+        💡 <b>Recommendations:</b> Recheck in 6–12 weeks. Evaluate free T4. Consider treatment if symptomatic or in pregnancy.
+        `;
+    } else if (tsh > 10.0) {
+        result = `
+        🧬 <b>TSH reading:</b> ${tsh.toFixed(2)} mIU/L <br>
+        📊 <b>Interpretation:</b> High TSH — indicates overt hypothyroidism (underactive thyroid). <br>
+        💡 <b>Recommendations:</b> Initiate thyroid hormone replacement therapy. Monitor TSH and T4 regularly. Provide patient education on hypothyroidism management.
+        `;
+    } else {
+        result = "⚠️ Invalid Entry — please enter a valid number.";
+    }
+
+    document.getElementById("tshDisplay").innerHTML = result;
+}
+// 🎯 T4 Reader
+const thyroxinBtn = document.getElementById("thyroxinBtn");
+thyroxinBtn.addEventListener("click", t4Reader);
+
+function t4Reader() {
+    const totalT4 = parseFloat(document.getElementById("totalt4Input").value) || 0;
+    const freeT4 = parseFloat(document.getElementById("freet4Input").value) || 0;
+
+    let totalResult = "";
+    let freeResult = "";
+
+    // 🧪 Total T4 (µg/dL)
+    if (totalT4 < 4.5) {
+        totalResult = `
+        🧬 <b>Total T4:</b> ${totalT4.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Low — suggests hypothyroidism (underactive thyroid). <br>
+        💡 <b>Recommendations:</b> Check TSH and Free T4. Consider thyroid hormone replacement if confirmed.
+        `;
+    } else if (totalT4 >= 4.5 && totalT4 <= 11.2) {
+        totalResult = `
+        🧬 <b>Total T4:</b> ${totalT4.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Normal — balanced thyroid function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. No intervention unless symptoms are present.
+        `;
+    } else if (totalT4 > 11.2 && totalT4 <= 20) {
+        totalResult = `
+        🧬 <b>Total T4:</b> ${totalT4.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Mildly elevated — possible hyperthyroidism. <br>
+        💡 <b>Recommendations:</b> Check TSH and Free T3. Evaluate for Graves’ disease or thyroid nodules.
+        `;
+    } else if (totalT4 > 20) {
+        totalResult = `
+        🧬 <b>Total T4:</b> ${totalT4.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Very high — overt hyperthyroidism, risk of thyrotoxicosis. <br>
+        💡 <b>Recommendations:</b> Urgent endocrinology referral. Consider antithyroid medication or imaging.
+        `;
+    } else {
+        totalResult = "⚠️ Invalid Total T4 Entry.";
+    }
+
+    // 🧪 Free T4 (ng/dL)
+    if (freeT4 < 0.8) {
+        freeResult = `
+        🧬 <b>Free T4:</b> ${freeT4.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> Low — suggests hypothyroidism. <br>
+        💡 <b>Recommendations:</b> Check TSH. Consider thyroid hormone replacement if confirmed.
+        `;
+    } else if (freeT4 >= 0.8 && freeT4 <= 1.8) {
+        freeResult = `
+        🧬 <b>Free T4:</b> ${freeT4.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> Normal — balanced thyroid function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. No intervention unless symptoms are present.
+        `;
+    } else if (freeT4 > 1.8) {
+        freeResult = `
+        🧬 <b>Free T4:</b> ${freeT4.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> High — suggests hyperthyroidism. <br>
+        💡 <b>Recommendations:</b> Check TSH and Free T3. Evaluate for Graves’ disease or thyroid nodules.
+        `;
+    } else {
+        freeResult = "⚠️ Invalid Free T4 Entry.";
+    }
+
+    document.getElementById("thyroxineDisplay").innerHTML = totalResult + "<br><br>" + freeResult;
+}
+
+
+// 🎯 T3 Reader
+const t3Btn = document.getElementById("t3Btn");
+t3Btn.addEventListener("click", t3Reader);
+
+function t3Reader() {
+    const totalT3 = parseFloat(document.getElementById("totalt3Input").value) || 0;
+    const freeT3 = parseFloat(document.getElementById("freet3Input").value) || 0;
+
+    let totalResult = "";
+    let freeResult = "";
+
+    // 🧪 Total T3 (ng/dL)
+    if (totalT3 < 80) {
+        totalResult = `
+        🧬 <b>Total T3:</b> ${totalT3.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> Low — suggests hypothyroidism or reduced thyroid activity. <br>
+        💡 <b>Recommendations:</b> Check TSH and T4. Consider thyroid hormone replacement if confirmed.
+        `;
+    } else if (totalT3 >= 80 && totalT3 <= 200) {
+        totalResult = `
+        🧬 <b>Total T3:</b> ${totalT3.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> Normal — balanced thyroid function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. No intervention unless symptoms are present.
+        `;
+    } else if (totalT3 > 200) {
+        totalResult = `
+        🧬 <b>Total T3:</b> ${totalT3.toFixed(2)} ng/dL <br>
+        📊 <b>Interpretation:</b> High — suggests hyperthyroidism (overactive thyroid). <br>
+        💡 <b>Recommendations:</b> Check TSH and T4. Evaluate for Graves’ disease or thyroid nodules. Monitor for palpitations, weight loss, and anxiety.
+        `;
+    } else {
+        totalResult = "⚠️ Invalid Total T3 Entry.";
+    }
+
+    // 🧪 Free T3 (pg/mL)
+    if (freeT3 < 2.0) {
+        freeResult = `
+        🧬 <b>Free T3:</b> ${freeT3.toFixed(2)} pg/mL <br>
+        📊 <b>Interpretation:</b> Low — suggests hypothyroidism or reduced thyroid activity. <br>
+        💡 <b>Recommendations:</b> Check TSH and Free T4. Consider thyroid hormone replacement if confirmed.
+        `;
+    } else if (freeT3 >= 2.0 && freeT3 <= 4.4) {
+        freeResult = `
+        🧬 <b>Free T3:</b> ${freeT3.toFixed(2)} pg/mL <br>
+        📊 <b>Interpretation:</b> Normal — balanced thyroid function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. No intervention unless symptoms are present.
+        `;
+    } else if (freeT3 > 4.4) {
+        freeResult = `
+        🧬 <b>Free T3:</b> ${freeT3.toFixed(2)} pg/mL <br>
+        📊 <b>Interpretation:</b> High — suggests hyperthyroidism (overactive thyroid). <br>
+        💡 <b>Recommendations:</b> Check TSH and Free T4. Evaluate for Graves’ disease or thyroid nodules. Monitor for palpitations, weight loss, and anxiety.
+        `;
+    } else {
+        freeResult = "⚠️ Invalid Free T3 Entry.";
+    }
+
+    document.getElementById("totalt3Display").innerHTML = totalResult;
+    document.getElementById("freet3Display").innerHTML = freeResult;
+}
+
+
+// 🎯 Cortisol Reader
+const cortisBtn = document.getElementById("cortisBtn");
+cortisBtn.addEventListener("click", cortisolReader);
+
+function cortisolReader() {
+    const cortisol = parseFloat(document.getElementById("cortisolInput").value) || 0;
+    let result = "";
+
+    if (cortisol < 5) {
+        result = `
+        🧬 <b>Cortisol reading:</b> ${cortisol.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Low cortisol — possible adrenal insufficiency (Addison’s disease). <br>
+        💡 <b>Recommendations:</b> Check ACTH levels. Consider adrenal function testing. Monitor for fatigue, weight loss, and low blood pressure.
+        `;
+    } else if (cortisol >= 5 && cortisol <= 25) {
+        result = `
+        🧬 <b>Cortisol reading:</b> ${cortisol.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Normal cortisol — balanced adrenal function. <br>
+        💡 <b>Recommendations:</b> Routine monitoring. Correlate with time of day (highest in morning, lowest at night).
+        `;
+    } else if (cortisol > 25 && cortisol <= 50) {
+        result = `
+        🧬 <b>Cortisol reading:</b> ${cortisol.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Elevated cortisol — possible stress response or early Cushing’s syndrome. <br>
+        💡 <b>Recommendations:</b> Repeat testing at different times of day. Evaluate for chronic stress, medication effects, or pituitary/adrenal causes.
+        `;
+    } else if (cortisol > 50) {
+        result = `
+        🧬 <b>Cortisol reading:</b> ${cortisol.toFixed(2)} µg/dL <br>
+        📊 <b>Interpretation:</b> Very high cortisol — likely Cushing’s syndrome or adrenal tumor. <br>
+        💡 <b>Recommendations:</b> Urgent endocrinology referral. Perform dexamethasone suppression test or adrenal imaging.
+        `;
+    } else {
+        result = "⚠️ Invalid Entry — please enter a valid number.";
+    }
+
+    document.getElementById("cortisolDisplay").innerHTML = result;
+}
 
 
 
