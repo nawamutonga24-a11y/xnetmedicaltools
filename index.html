@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 <!-- 🔹 Header -->
 <header id="site-header">
   <div class="logo-block">
@@ -52,7 +53,7 @@
   <option value="surgerySection">Surgery</option>          <!-- ✅ matches -->
   <option value="nursingSection">Nursing</option>          <!-- ✅ matches -->
   <option value="category-art">ART Essential Tools</option>
-  <option value="clinical-hub">The Clinical Scenario Cases</option>
+  <option value="clinicalMedicine">Clinical Scenario Cases</option>
   <option value="medical-ethics">Medical Ethics</option>
   <option value="medicalStatistics">Medical Statistics and Research</option>
   <option value="communityMedicine">Community Medicine</option>
@@ -2667,166 +2668,151 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 </section>
 </div>
 
-<div class="section" id="clinical-hub" style="display: none">
+<div class="section" id="clinicalMedicine">
 <h1>Clinical Case Scenarios</h1>
-<h5>Make a Selection<h5>
-<select id="clinicalhub-select">
-<option value="">select</option>
-<option value="covid-19">Covid-19</option>
-<option value="monkeyPox">Monkey pox</option>
-<option value="depression">Depression</option>
-<option value="ludwig">Ludwig`s Angina</option>
+<h5>Make a Selection</h5>
+<select id="clinicalSelection" onchange="showClinicalhubTool()">
+  <option value="">Select</option>
+  <option value="covid-19">Covid-19</option>
+  <option value="monkeyPox">Monkey Pox</option>
+  <option value="depression">Depression</option>
+  <option value="ludwig">Ludwig's Angina</option>
 </select>
 
-<section class="tool" id="covid-19">
-<h5>Covid-19</h5>
-<h6>A 45‑year‑old male presents to the emergency department with a 5‑day history of fever, dry cough, and progressive shortness of breath. He is unvaccinated, has a BMI of 32, and a history of hypertension. On examination, he is febrile (38.7°C), tachypneic (RR 28/min), and hypoxic (SpO₂ 89% on room air). Chest auscultation reveals bilateral crackles.</h6>
-<h5>What is the most likely diagnosis?</h5>
-<h6>✅ Moderate COVID‑19 pneumonia — supported by fever, respiratory symptoms, hypoxia, and bilateral lung findings. </h6>
-<h5>What are the key risk factors for severe disease in this patient?</h5>
-<h6>✅ Age &gt;40, obesity, hypertension, and unvaccinated status.</h6>
-<h5>Which investigations should be ordered?</h5>
-<h6>✅ SARS‑CoV‑2 PCR or antigen test, CBC (lymphopenia common), CRP/D‑dimer, renal/liver function tests, chest X‑ray or CT scan (bilateral infiltrates).</h6>
-<h5>What is the immediate management priority?</h5>
-<h6>✅ Oxygen therapy to maintain SpO₂ ≥94%. </h6>
-<h5>Which pharmacological treatments are indicated?</h5>
-<h6>✅ Dexamethasone (systemic corticosteroid), anticoagulation (LMWH), antipyretics, and consider antivirals (e.g., remdesivir) if available and indicated.
-</h6>
-<h5>What supportive measures should be implemented?</h5>
-<h6>✅ Adequate hydration, nutrition, prone positioning, close monitoring for complications (ARDS, sepsis, thromboembolism).</h6>
-<h5>What preventive strategies should be emphasized post‑recovery?</h5>
-<h6>✅ Vaccination, mask use, hand hygiene, physical distancing, and avoiding crowded indoor gatherings.</h6>
-<h5>📌 Key Professional Insights </h5>
-<h6>COVID‑19 management hinges on early oxygen support and anti‑inflammatory therapy.Risk stratification is vital: comorbidities and vaccination status strongly influence outcomes.Public health measures remain the cornerstone of prevention. </h6>
-</section>
 
-<section class="tool" id="monkeyPox">
-<h3>Monkey Pox</h3>
-<h6>A 28‑year‑old man presents to the outpatient clinic in Lusaka with a fever, headache, muscle aches, and a painful rash that started on his face and has spread to his trunk and genitals. He reports swollen lymph nodes and fatigue. He recently attended a crowded social event and had close skin‑to‑skin contact with multiple partners</h6>
-<h5>What is the most likely diagnosis?</h5>
-<h6>✅ Mpox (monkeypox), a viral illness caused by the monkeypox virus (Orthopoxvirus family).Key features: fever, lymphadenopathy, and a characteristic rash that progresses from macules → papules → vesicles → pustules → scabs.</h6>
-<h5>What is the incubation period?</h5>
-<h6>✅ Typically 7–14 days (range 3–21 days).</h6>
-<h5>How is monkeypox transmitted?</h5>
-<h6>✅ Through close skin‑to‑skin contact, sexual contact, respiratory droplets during prolonged face‑to‑face exposure, contaminated materials (linen, clothing), and occasionally from infected animals.</h6>
-<h5>What are the distinguishing features compared to chickenpox?</h5>
-<h6>✅ Monkeypox has lymphadenopathy (swollen lymph nodes), which chickenpox does not.Rash often starts on the face and extremities, including palms and soles, whereas chickenpox rash is more concentrated on the trunk.</h6>
-<h5>What diagnostic test confirms monkeypox?</h5>
-<h6>✅ PCR testing of lesion samples (skin, fluid, or crusts) is the gold standard. Blood testing is not recommended.</h6>
-<h5>What is the recommended management?</h5>
-<h6>✅ Supportive care: pain control, hydration, nutrition, skin care, prevention of secondary infections. Isolation until lesions heal and scabs fall off.Antivirals (like tecovirimat) may be considered in severe cases under special authorization.</h6>
-<h5>What preventive measures should be taken?</h5>
-<h6>✅ Vaccination (JYNNEOS or ACAM2000) for high‑risk groups. Avoid close contact with infected individuals, use PPE in healthcare settings, disinfect contaminated materials, and practice safe sex.</h6>
-<h5>📌 Key Takeaways</h5>
-<h6>Mpox is still a global health concern with outbreaks in Africa and beyond.Early recognition and isolation are critical to prevent spread.Supportive care is the mainstay of treatment, with vaccines available for prevention.</h6>
-</section>
-<section class="tool" id="depression">
-<h3>Depression</h3>
-<h6>A 32‑year‑old woman presents to the outpatient clinic with persistent low mood for the past 3 months. She reports loss of interest in previously enjoyable activities, poor sleep, reduced appetite, and difficulty concentrating at work. She denies substance use. Her husband notes she has withdrawn socially and often expresses feelings of worthlessness. No history of mania or psychosis is reported.</h6>
-<h5>What is the most likely diagnosis?</h5>
-<h6>Answer: Major Depressive Disorder (MDD) – duration >2 weeks, with ≥5 symptoms including low mood, anhedonia, sleep disturbance, appetite change, poor concentration, and feelings of worthlessness.</h6>
-<h5>Which key symptom differentiates depression from normal sadness?</h5>
-<h6>Answer: Anhedonia (loss of interest/pleasure) and functional impairment (work/social dysfunction).</h6>
-<h5>What screening tool can be used in primary care to assess severity?</h5>
-<h6>Answer: PHQ‑9 questionnaire – widely used, scores classify depression as mild, moderate, or severe.</h6>
-<h5>What medical conditions should be ruled out before confirming psychiatric depression?</h5>
-<h6>Answer: Hypothyroidism, Anemia, Vitamin B12 deficiency, Chronic illnesses (e.g., diabetes, HIV) </h6>
-<h5>What is the first‑line treatment for moderate depression in this patient?</h5>
-<h6>Answer: Combination of SSRIs (e.g., sertraline, fluoxetine) and Cognitive Behavioral Therapy (CBT).</h6>
-<h5>If the patient develops suicidal ideation, what immediate step should be taken?</h5>
-<h6>Answer: Ensure safety first – urgent psychiatric referral, possible hospitalization, and suicide risk assessment.</h6>
-<h5>How would you differentiate Major Depressive Disorder from Bipolar Disorder in this case?</h5>
-<h6>Answer: MDD: No history of mania/hypomania. Bipolar Disorder: Requires at least one episode of mania/hypomania. In this case, absence of manic symptoms confirms unipolar depression.</h6>
-</section>
+ <section class="tool" id="covid-19">
+    <h5>Covid-19</h5>
+    <h6>
+      A 45‑year‑old male presents to the emergency department with a 5‑day history of fever, dry cough, and progressive shortness of breath. He is unvaccinated, has a BMI of 32, and a history of hypertension. On examination, he is febrile (38.7°C), tachypneic (RR 28/min), and hypoxic (SpO₂ 89% on room air). Chest auscultation reveals bilateral crackles.
+    </h6>
 
-<section class="tool" id="ludwig"> 
-<h5>Ludwig Angina</h5>
-<h6>A 45‑year‑old male presents to the emergency department with rapidly progressive swelling of the floor of the mouth and neck, difficulty swallowing, drooling, muffled voice, and fever. He reports a recent untreated dental infection of the lower molars. On examination, there is bilateral submandibular swelling, elevation of the tongue, trismus, and signs of impending airway obstruction. </h6>
-<h5>1. What is the most likely diagnosis? </h5>
-<h6>✅ Ludwig’s Angina — a rapidly spreading cellulitis of the submandibular space, often odontogenic in origin.<br> 
+    <h5>What is the most likely diagnosis?</h5>
+    <h6>✅ Moderate COVID‑19 pneumonia — supported by fever, respiratory symptoms, hypoxia, and bilateral lung findings.</h6>
 
-Differentials: <br>
+    <h5>What are the key risk factors for severe disease in this patient?</h5>
+    <h6>✅ Age >40, obesity, hypertension, and unvaccinated status.</h6>
 
-Peritonsillar abscess (localized, unilateral swelling, uvular deviation). 
+    <h5>Which investigations should be ordered?</h5>
+    <h6>✅ SARS‑CoV‑2 PCR or antigen test, CBC (lymphopenia common), CRP/D‑dimer, renal/liver function tests, chest X‑ray or CT scan (bilateral infiltrates).</h6>
 
-Retropharyngeal abscess (posterior pharyngeal wall bulging, neck stiffness). 
+    <h5>What is the immediate management priority?</h5>
+    <h6>✅ Oxygen therapy to maintain SpO₂ ≥94%.</h6>
 
-Angioedema (allergic history, rapid onset, no infection signs). </h6>
-<h5>2. What is the most common etiology? </h5>
-<h6>✅ Odontogenic infection — usually from infected mandibular molars. <br>
+    <h5>Which pharmacological treatments are indicated?</h5>
+    <h6>✅ Dexamethasone (systemic corticosteroid), anticoagulation (LMWH), antipyretics, and consider antivirals (e.g., remdesivir) if available and indicated.</h6>
 
-Differentials: <br>
+    <h5>What supportive measures should be implemented?</h5>
+    <h6>✅ Adequate hydration, nutrition, prone positioning, close monitoring for complications (ARDS, sepsis, thromboembolism).</h6>
 
-Trauma (penetrating injury introducing bacteria). 
+    <h5>What preventive strategies should be emphasized post‑recovery?</h5>
+    <h6>✅ Vaccination, mask use, hand hygiene, physical distancing, and avoiding crowded indoor gatherings.</h6>
 
-Sialadenitis (infection of salivary glands). 
+    <h5>📌 Key Professional Insights</h5>
+    <h6>
+      COVID‑19 management hinges on early oxygen support and anti‑inflammatory therapy. Risk stratification is vital: comorbidities and vaccination status strongly influence outcomes. Public health measures remain the cornerstone of prevention.
+    </h6>
+  </section>
 
-Tonsillar infection spreading to deep neck spaces. </h6>
-<h5>3. What are the key clinical features? </h5>
-<h6>✅ Bilateral submandibular swelling, tongue elevation, trismus, drooling, airway compromise, fever, systemic toxicity. <br>
+ <!-- Step 4: Monkeypox section -->
+  <section class="tool" id="monkeyPox">
+    <h3>Monkey Pox</h3>
+    <h6>
+      A 28‑year‑old man presents to the outpatient clinic in Lusaka with a fever, headache, muscle aches, and a painful rash that started on his face and has spread to his trunk and genitals. He reports swollen lymph nodes and fatigue. He recently attended a crowded social event and had close skin‑to‑skin contact with multiple partners.
+    </h6>
 
-Differentials: <br>
+    <h5>What is the most likely diagnosis?</h5>
+    <h6>✅ Mpox (monkeypox), a viral illness caused by the monkeypox virus (Orthopoxvirus family). Key features: fever, lymphadenopathy, and a characteristic rash that progresses from macules → papules → vesicles → pustules → scabs.</h6>
 
-Cellulitis (localized erythema, less airway involvement). 
+    <h5>What is the incubation period?</h5>
+    <h6>✅ Typically 7–14 days (range 3–21 days).</h6>
 
-Neck lymphadenitis (discrete tender nodes). 
+    <h5>How is monkeypox transmitted?</h5>
+    <h6>✅ Through close skin‑to‑skin contact, sexual contact, respiratory droplets during prolonged face‑to‑face exposure, contaminated materials (linen, clothing), and occasionally from infected animals.</h6>
 
-Epiglottitis (stridor, drooling, but supraglottic swelling). </h6>
-<h5>4. What investigations are useful? </h5>
-<h6>✅ Clinical diagnosis is paramount. <br>
+    <h5>What are the distinguishing features compared to chickenpox?</h5>
+    <h6>✅ Monkeypox has lymphadenopathy (swollen lymph nodes), which chickenpox does not. Rash often starts on the face and extremities, including palms and soles, whereas chickenpox rash is more concentrated on the trunk.</h6>
 
-CT neck → extent of infection, abscess formation. 
+    <h5>What diagnostic test confirms monkeypox?</h5>
+    <h6>✅ PCR testing of lesion samples (skin, fluid, or crusts) is the gold standard. Blood testing is not recommended.</h6>
 
-Blood cultures → identify pathogens. 
+    <h5>What is the recommended management?</h5>
+    <h6>✅ Supportive care: pain control, hydration, nutrition, skin care, prevention of secondary infections. Isolation until lesions heal and scabs fall off. Antivirals (like tecovirimat) may be considered in severe cases under special authorization.</h6>
 
-Airway assessment → urgent priority. <br>
+    <h5>What preventive measures should be taken?</h5>
+    <h6>✅ Vaccination (JYNNEOS or ACAM2000) for high‑risk groups. Avoid close contact with infected individuals, use PPE in healthcare settings, disinfect contaminated materials, and practice safe sex.</h6>
 
-Differentials: 
+    <h5>📌 Key Takeaways</h5>
+    <h6>
+      Mpox is still a global health concern with outbreaks in Africa and beyond. Early recognition and isolation are critical to prevent spread. Supportive care is the mainstay of treatment, with vaccines available for prevention.
+    </h6>
+  </section>
+  
+ <section class="tool" id="depression">
+    <h3>Depression</h3>
+    <h6>
+      A 32‑year‑old woman presents to the outpatient clinic with persistent low mood for the past 3 months. She reports loss of interest in previously enjoyable activities, poor sleep, reduced appetite, and difficulty concentrating at work. She denies substance use. Her husband notes she has withdrawn socially and often expresses feelings of worthlessness. No history of mania or psychosis is reported.
+    </h6>
 
-Ultrasound for superficial abscess. 
+    <h5>What is the most likely diagnosis?</h5>
+    <h6>Answer: Major Depressive Disorder (MDD) – duration >2 weeks, with ≥5 symptoms including low mood, anhedonia, sleep disturbance, appetite change, poor concentration, and feelings of worthlessness.</h6>
 
-MRI for soft tissue detail. 
+    <h5>Which key symptom differentiates depression from normal sadness?</h5>
+    <h6>Answer: Anhedonia (loss of interest/pleasure) and functional impairment (work/social dysfunction).</h6>
 
-Laryngoscopy if airway compromise suspected. </h6>
-<h5>5. What is the immediate management priority? </h5>
-<h6>✅ Airway protection — intubation or tracheostomy if needed. <br>>
+    <h5>What screening tool can be used in primary care to assess severity?</h5>
+    <h6>Answer: PHQ‑9 questionnaire – widely used, scores classify depression as mild, moderate, or severe.</h6>
 
-Differentials: 
+    <h5>What medical conditions should be ruled out before confirming psychiatric depression?</h5>
+    <h6>Answer: Hypothyroidism, Anemia, Vitamin B12 deficiency, Chronic illnesses (e.g., diabetes, HIV).</h6>
 
-IV antibiotics (broad spectrum, anaerobic coverage). 
+    <h5>What is the first‑line treatment for moderate depression in this patient?</h5>
+    <h6>Answer: Combination of SSRIs (e.g., sertraline, fluoxetine) and Cognitive Behavioral Therapy (CBT).</h6>
 
-Surgical drainage if abscess present. 
+    <h5>If the patient develops suicidal ideation, what immediate step should be taken?</h5>
+    <h6>Answer: Ensure safety first – urgent psychiatric referral, possible hospitalization, and suicide risk assessment.</h6>
 
-Supportive care (fluids, analgesia). </h6>
-<h5>6. What are the potential complications? </h5>
-<h6>✅ Airway obstruction (most fatal risk). 
+    <h5>How would you differentiate Major Depressive Disorder from Bipolar Disorder in this case?</h5>
+    <h6>Answer: MDD: No history of mania/hypomania. Bipolar Disorder: Requires at least one episode of mania/hypomania. In this case, absence of manic symptoms confirms unipolar depression.</h6>
+  </section>
 
-Sepsis. 
+ <section class="tool" id="ludwig">
+    <h5>Ludwig Angina</h5>
+    <h6>
+      A 45‑year‑old male presents to the emergency department with rapidly progressive swelling of the floor of the mouth and neck, difficulty swallowing, drooling, muffled voice, and fever. He reports a recent untreated dental infection of the lower molars. On examination, there is bilateral submandibular swelling, elevation of the tongue, trismus, and signs of impending airway obstruction.
+    </h6>
 
-Mediastinitis (spread to chest). 
+    <h5>1. What is the most likely diagnosis?</h5>
+    <h6>✅ Ludwig’s Angina — a rapidly spreading cellulitis of the submandibular space, often odontogenic in origin.<br>
+    Differentials: Peritonsillar abscess, Retropharyngeal abscess, Angioedema.</h6>
 
-Osteomyelitis of mandible. <br>
+    <h5>2. What is the most common etiology?</h5>
+    <h6>✅ Odontogenic infection — usually from infected mandibular molars.<br>
+    Differentials: Trauma, Sialadenitis, Tonsillar infection.</h6>
 
-Differentials: 
+    <h5>3. What are the key clinical features?</h5>
+    <h6>✅ Bilateral submandibular swelling, tongue elevation, trismus, drooling, airway compromise, fever, systemic toxicity.<br>
+    Differentials: Cellulitis, Neck lymphadenitis, Epiglottitis.</h6>
 
-Aspiration pneumonia. 
+    <h5>4. What investigations are useful?</h5>
+    <h6>✅ Clinical diagnosis is paramount.<br>
+    CT neck, Blood cultures, Airway assessment.<br>
+    Differentials: Ultrasound, MRI, Laryngoscopy.</h6>
 
-Necrotizing fasciitis. 
+    <h5>5. What is the immediate management priority?</h5>
+    <h6>✅ Airway protection — intubation or tracheostomy if needed.<br>
+    Differentials: IV antibiotics, Surgical drainage, Supportive care.</h6>
 
-Cranial nerve palsy due to spread. </h6>
-<h5>7. What is the prognosis? </h5>
-<h6>✅ With prompt airway management and antibiotics, mortality has dropped to 10–20%. <br>
+    <h5>6. What are the potential complications?</h5>
+    <h6>✅ Airway obstruction, Sepsis, Mediastinitis, Osteomyelitis.<br>
+    Differentials: Aspiration pneumonia, Necrotizing fasciitis, Cranial nerve palsy.</h6>
 
-Differentials: 
+    <h5>7. What is the prognosis?</h5>
+    <h6>✅ With prompt airway management and antibiotics, mortality has dropped to 10–20%.<br>
+    Differentials: Delayed treatment → high mortality, Immunocompromised patients → worse outcomes, Early recognition → favorable prognosis.</h6>
 
-Delayed treatment → high mortality due to airway obstruction. 
-
-Immunocompromised patients → worse outcomes. 
-
-Early recognition → favorable prognosis. </h6>
-<h5>✅ Summary </h5>
-<h6>This case highlights Ludwig’s Angina as a life‑threatening odontogenic infection requiring urgent airway protection, IV antibiotics, and surgical drainage. Differentials include peritonsillar abscess, retropharyngeal abscess, and angioedema, but the bilateral submandibular swelling with tongue elevation is pathognomonic. a</h6>
-</section>
+    <h5>✅ Summary</h5>
+    <h6>This case highlights Ludwig’s Angina as a life‑threatening odontogenic infection requiring urgent airway protection, IV antibiotics, and surgical drainage. Differentials include peritonsillar abscess, retropharyngeal abscess, and angioedema, but the bilateral submandibular swelling with tongue elevation is pathognomonic.</h6>
+  </section>
 </div>
 
 <div id="medical-ethics" class="section" style="display:none;">
