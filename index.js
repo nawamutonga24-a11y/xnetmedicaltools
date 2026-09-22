@@ -1839,26 +1839,21 @@ document.getElementById("dripDisplay").innerHTML = " The Drop Rate is " + dr + "
 });
 
 
-
-const clinicalhubSelect = document.getElementById("clinicalhub-select");
-
-clinicalhubSelect.addEventListener("change", showClinicalhubTool);
-
+// clinicalhub.js
 function showClinicalhubTool() {
-  // Hide all tools
-  document.querySelectorAll("#clinical-hub .tool").forEach(sec => {
-    sec.classList.remove("active");
-  });
+  const selected = document.getElementById("clinicalSelection").value;
+  const sections = document.querySelectorAll("#clinicalMedicine .tool");
 
-  // Show the chosen one
-  const picked = clinicalhubSelect.value;
-  if (picked) {
-    const target = document.getElementById(picked);
-    if (target) {
-      target.classList.add("active");
-    }
+  sections.forEach(sec => sec.style.display = "none");
+
+  if (selected) {
+    const chosen = document.getElementById(selected);
+    if (chosen) chosen.style.display = "block";
   }
 }
+
+
+
 
 // ART Adherence Risk Score Calculator
 document.getElementById("artArsBtn").addEventListener("click", assessRisk);
