@@ -2810,8 +2810,86 @@ document.getElementById("popBtn").addEventListener("click", function () {
 
     `;
 });
+//chiSquare
+function calculateChiSquare() {
 
+    let observed = document.getElementById("observed").value
+        .split(',')
+        .map(Number);
 
+    let expected = document.getElementById("expected").value
+        .split(',')
+        .map(Number);
+
+    let output = document.getElementById("result");
+
+    // Validation
+    if (observed.length !== expected.length) {
+        output.innerHTML =
+            "<span style='color:red'>Observed and Expected arrays must have the same length.</span>";
+        return;
+    }
+
+    let chiSquare = 0;
+
+    let table = `
+        <table border="1" cellpadding="5">
+        <tr>
+            <th>Category</th>
+            <th>Observed (O)</th>
+            <th>Expected (E)</th>
+            <th>(O-E)²/E</th>
+        </tr>
+    `;
+
+    for (let i = 0; i < observed.length; i++) {
+
+        if (expected[i] <= 0) {
+            output.innerHTML =
+                "<span style='color:red'>Expected frequencies must be greater than zero.</span>";
+            return;
+        }
+
+        let contribution =
+            Math.pow(observed[i] - expected[i], 2) / expected[i];
+
+        chiSquare += contribution;
+
+        table += `
+            <tr>
+                <td>${i + 1}</td>
+                <td>${observed[i]}</td>
+                <td>${expected[i]}</td>
+                <td>${contribution.toFixed(4)}</td>
+            </tr>
+        `;
+    }
+
+    table += "</table>";
+
+    let df = observed.length - 1;
+
+    let interpretation = "";
+
+    if (chiSquare < 3.84 && df === 1)
+        interpretation = "No significant difference between observed and expected frequencies (p > 0.05).";
+    else if (chiSquare >= 3.84 && df === 1)
+        interpretation = "Significant difference between observed and expected frequencies (p < 0.05).";
+    else
+        interpretation = `
+            Compare χ² = ${chiSquare.toFixed(4)}
+            with the critical χ² value for df = ${df}
+            using a Chi-Square table.
+        `;
+
+    output.innerHTML = `
+        <h3>Results</h3>
+        ${table}
+        <p><strong>Chi-Square Statistic (χ²):</strong> ${chiSquare.toFixed(4)}</p>
+        <p><strong>Degrees of Freedom:</strong> ${df}</p>
+        <p><strong>Interpretation:</strong> ${interpretation}</p>
+    `;
+}
 
 
 
