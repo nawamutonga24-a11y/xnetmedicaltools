@@ -2916,7 +2916,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <option value="">select</option>
 <option value="calMean">Measures of central tendency-Sample</option>
 <option value="popMean">Measures of central tendency-Population</option>
-<option value="calRange">Still Developing</option>
+<option value="qisquar">Chi-Squar Test Calculator</option>
 </select>
 <section class="tool" id="calMean">
   <h2>Enter Your Sample Data</h2>
@@ -2933,6 +2933,21 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <div id="popDisplay"></div>
 </section>
 
+<section class="section" id="qisquar">
+<div class="calculator">
+    <h2>Chi-Square Test Calculator</h2>
+
+    <label>Observed Frequencies (comma separated):</label>
+    <input type="text" id="observed" placeholder="25,30,45">
+
+    <label>Expected Frequencies (comma separated):</label>
+    <input type="text" id="expected" placeholder="33.3,33.3,33.3">
+
+    <button onclick="calculateChiSquare()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+</section>
 </div>
 
 <div class="section" id="philosophy">
