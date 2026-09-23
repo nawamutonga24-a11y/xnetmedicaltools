@@ -421,3 +421,37 @@ img {
 .announcements p {
   margin: 8px 0 0;
 }
+
+.calculator{
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+    border:1px solid #ccc;
+    border-radius:10px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+}
+
+th{
+    background:#0d6efd;
+    color:white;
+}
+
+
+
+
