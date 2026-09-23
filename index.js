@@ -2440,126 +2440,377 @@ function cortisolReader() {
     document.querySelectorAll(".tool").forEach(tool => tool.style.display = "none");
   };
 
+
+//:Sample central tendancy
 function calculateStats(data) {
-  if (typeof data === "string") {
-    data = data.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
-  }
 
-  const n = data.length;
-  if (n === 0) return {};
+    if (typeof data === "string") {
+        data = data
+            .split(",")
+            .map(num => parseFloat(num.trim()))
+            .filter(num => !isNaN(num));
+    }
 
-  // Sample Mean
-  const mean = data.reduce((a, b) => a + b, 0) / n;
+    const n = data.length;
 
-  // Median
-  const sorted = [...data].sort((a, b) => a - b);
-  const median = n % 2 === 0 ? (sorted[n/2 - 1] + sorted[n/2]) / 2 : sorted[Math.floor(n/2)];
+    if (n === 0) {
+        return null;
+    }
 
-  // Mode
-  const freq = {};
-  let maxFreq = 0;
-  let mode = [];
-  data.forEach(num => {
-    freq[num] = (freq[num] || 0) + 1;
-    if (freq[num] > maxFreq) maxFreq = freq[num];
-  });
-  for (let num in freq) {
-    if (freq[num] === maxFreq) mode.push(Number(num));
-  }
+    // Mean
+    const mean = data.reduce((sum, num) => sum + num, 0) / n;
 
-  // Range
-  const range = Math.max(...data) - Math.min(...data);
+    // Median
+    const sorted = [...data].sort((a, b) => a - b);
 
-  // Sample Variance (divide by n-1)
-  const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / (n - 1);
+    const median =
+        n % 2 === 0
+            ? (sorted[n / 2 - 1] + sorted[n / 2]) / 2
+            : sorted[Math.floor(n / 2)];
 
-  // Sample Standard Deviation
-  const stdDev = Math.sqrt(variance);
+    // Mode
+    const frequency = {};
 
-  return { mean, median, mode, range, variance, stdDev, count: n };
+    data.forEach(num => {
+        frequency[num] = (frequency[num] || 0) + 1;
+    });
+
+    const maxFrequency = Math.max(...Object.values(frequency));
+
+    const mode = Object.keys(frequency)
+        .filter(key => frequency[key] === maxFrequency)
+        .map(Number);
+
+    // Range
+    const range = Math.max(...data) - Math.min(...data);
+
+    // Sample Variance
+    const variance =
+        n > 1
+            ? data.reduce((sum, value) =>
+                sum + Math.pow(value - mean, 2), 0) / (n - 1)
+            : 0;
+
+    // Sample Standard Deviation
+    const stdDev = Math.sqrt(variance);
+
+    return {
+        mean,
+        median,
+        mode,
+        range,
+        variance,
+        stdDev,
+        count: n
+    };
 }
 
-// Attach event listener to button
-document.getElementById("meanBtn").addEventListener("click", function() {
-  const input = document.getElementById("numbers").value;
-  const stats = calculateStats(input);
+document.getElementById("meanBtn").addEventListener("click", function () {
 
-  const display = document.getElementById("sDisplay");
-  if (stats.count) {
+    const input = document.getElementById("numbers").value;
+
+    const stats = calculateStats(input);
+
+    const display = document.getElementById("sDisplay");
+
+    if (!stats) {
+
+        display.innerHTML =
+            '<p style="color:red;">Please enter valid numbers.</p>';
+
+        return;
+    }
+
+    /* Interpretations */
+
+    let skewness = "";
+
+    if (stats.mean > stats.median) {
+        skewness =
+            "The data may be positively skewed (right-skewed), meaning a few larger values may be pulling the average upward.";
+    } else if (stats.mean < stats.median) {
+        skewness =
+            "The data may be negatively skewed (left-skewed), meaning a few smaller values may be pulling the average downward.";
+    } else {
+        skewness =
+            "The distribution appears approximately symmetrical.";
+    }
+
+    let variability = "";
+
+    if (stats.stdDev < 5) {
+        variability =
+            "Low variability. Most values are close to the mean.";
+    } else if (stats.stdDev < 15) {
+        variability =
+            "Moderate variability. Values show a reasonable amount of spread.";
+    } else {
+        variability =
+            "High variability. Values are widely spread throughout the dataset.";
+    }
+
+    let modeInterpretation = "";
+
+    if (stats.mode.length === stats.count) {
+        modeInterpretation =
+            "No mode exists because all values occur only once.";
+    } else if (stats.mode.length === 1) {
+        modeInterpretation =
+            `The most common value in the dataset is ${stats.mode[0]}.`;
+    } else {
+        modeInterpretation =
+            `This dataset is multimodal with modes: ${stats.mode.join(", ")}.`;
+    }
+
     display.innerHTML = `
-      <p><strong>Sample Mean:</strong> ${stats.mean.toFixed(2)}</p>
-      <p><strong>Median:</strong> ${stats.median}</p>
-      <p><strong>Mode:</strong> ${stats.mode.join(", ")}</p>
-      <p><strong>Range:</strong> ${stats.range}</p>
-      <p><strong>Sample Variance:</strong> ${stats.variance.toFixed(2)}</p>
-      <p><strong>Sample Standard Deviation:</strong> ${stats.stdDev.toFixed(2)}</p>
-      <p><strong>Count (n):</strong> ${stats.count}</p>
+
+        <h3>Statistical Results</h3>
+
+        <p>
+            <strong>Sample Mean:</strong> ${stats.mean.toFixed(2)}
+            <br>
+            <small>The average value of all observations.</small>
+        </p>
+
+        <p>
+            <strong>Median:</strong> ${stats.median}
+            <br>
+            <small>The middle value after sorting the data.</small>
+        </p>
+
+        <p>
+            <strong>Mode:</strong> ${stats.mode.join(", ")}
+            <br>
+            <small>${modeInterpretation}</small>
+        </p>
+
+        <p>
+            <strong>Range:</strong> ${stats.range}
+            <br>
+            <small>The difference between the largest and smallest values.</small>
+        </p>
+
+        <p>
+            <strong>Sample Variance:</strong> ${stats.variance.toFixed(2)}
+            <br>
+            <small>Measures how spread out the values are around the mean.</small>
+        </p>
+
+        <p>
+            <strong>Sample Standard Deviation:</strong> ${stats.stdDev.toFixed(2)}
+            <br>
+            <small>${variability}</small>
+        </p>
+
+        <p>
+            <strong>Count (n):</strong> ${stats.count}
+            <br>
+            <small>Number of observations in the dataset.</small>
+        </p>
+
+        <hr>
+
+        <h3>Interpretation</h3>
+
+        <p><strong>Distribution Shape:</strong> ${skewness}</p>
+
+        <p>
+            This sample contains <strong>${stats.count}</strong> observations.
+            The average value is <strong>${stats.mean.toFixed(2)}</strong>,
+            with values spread across a range of <strong>${stats.range}</strong>.
+            The standard deviation of <strong>${stats.stdDev.toFixed(2)}</strong>
+            suggests that ${variability.toLowerCase()}
+        </p>
     `;
-  } else {
-    display.innerHTML = `<p style="color:red;">Please enter valid numbers.</p>`;
-  }
 });
+
 
 // population mean, mode etc
 function calculatePopulationStats(data) {
-  if (typeof data === "string") {
-    data = data.split(",").map(num => parseFloat(num.trim())).filter(n => !isNaN(n));
-  }
 
-  const N = data.length;
-  if (N === 0) return {};
+    if (typeof data === "string") {
+        data = data
+            .split(",")
+            .map(num => parseFloat(num.trim()))
+            .filter(num => !isNaN(num));
+    }
 
-  // Population Mean
-  const mean = data.reduce((a, b) => a + b, 0) / N;
+    const n = data.length;
 
-  // Median
-  const sorted = [...data].sort((a, b) => a - b);
-  const median = N % 2 === 0 ? (sorted[N/2 - 1] + sorted[N/2]) / 2 : sorted[Math.floor(N/2)];
+    if (n === 0) {
+        return null;
+    }
 
-  // Mode
-  const freq = {};
-  let maxFreq = 0;
-  let mode = [];
-  data.forEach(num => {
-    freq[num] = (freq[num] || 0) + 1;
-    if (freq[num] > maxFreq) maxFreq = freq[num];
-  });
-  for (let num in freq) {
-    if (freq[num] === maxFreq) mode.push(Number(num));
-  }
+    // Population Mean
+    const mean = data.reduce((sum, num) => sum + num, 0) / n;
 
-  // Range
-  const range = Math.max(...data) - Math.min(...data);
+    // Median
+    const sorted = [...data].sort((a, b) => a - b);
 
-  // Population Variance (divide by N)
-  const variance = data.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / N;
+    const median =
+        n % 2 === 0
+            ? (sorted[n / 2 - 1] + sorted[n / 2]) / 2
+            : sorted[Math.floor(n / 2)];
 
-  // Population Standard Deviation
-  const stdDev = Math.sqrt(variance);
+    // Mode
+    const frequency = {};
 
-  return { mean, median, mode, range, variance, stdDev, count: N };
+    data.forEach(num => {
+        frequency[num] = (frequency[num] || 0) + 1;
+    });
+
+    const maxFrequency = Math.max(...Object.values(frequency));
+
+    const mode = Object.keys(frequency)
+        .filter(key => frequency[key] === maxFrequency)
+        .map(Number);
+
+    // Range
+    const range = Math.max(...data) - Math.min(...data);
+
+    // Population Variance (divide by N)
+    const variance =
+        data.reduce((sum, value) =>
+            sum + Math.pow(value - mean, 2), 0) / n;
+
+    // Population Standard Deviation
+    const stdDev = Math.sqrt(variance);
+
+    return {
+        mean,
+        median,
+        mode,
+        range,
+        variance,
+        stdDev,
+        count: n
+    };
 }
 
-// Attach event listener to population button
-document.getElementById("popBtn").addEventListener("click", function() {
-  const input = document.getElementById("popNumbers").value;
-  const stats = calculatePopulationStats(input);
+document.getElementById("popBtn").addEventListener("click", function () {
 
-  const display = document.getElementById("popDisplay");
-  if (stats.count) {
+    const input = document.getElementById("popNumbers").value;
+
+    const stats = calculatePopulationStats(input);
+
+    const display = document.getElementById("popDisplay");
+
+    if (!stats) {
+
+        display.innerHTML =
+            '<p style="color:red;">Please enter valid numbers.</p>';
+
+        return;
+    }
+
+    /* Interpretations */
+
+    let skewness = "";
+
+    if (stats.mean > stats.median) {
+        skewness =
+            "The population may be positively skewed (right-skewed), indicating relatively larger values in the upper tail.";
+    } else if (stats.mean < stats.median) {
+        skewness =
+            "The population may be negatively skewed (left-skewed), indicating relatively smaller values in the lower tail.";
+    } else {
+        skewness =
+            "The population distribution appears approximately symmetrical.";
+    }
+
+    let variability = "";
+
+    if (stats.stdDev < 5) {
+        variability =
+            "Low variability. Values are concentrated near the population mean.";
+    } else if (stats.stdDev < 15) {
+        variability =
+            "Moderate variability. Values show a moderate amount of dispersion.";
+    } else {
+        variability =
+            "High variability. Values are widely dispersed throughout the population.";
+    }
+
+    let modeInterpretation = "";
+
+    if (stats.mode.length === stats.count) {
+        modeInterpretation =
+            "No mode exists because all observations occur only once.";
+    } else if (stats.mode.length === 1) {
+        modeInterpretation =
+            `The most frequently occurring value is ${stats.mode[0]}.`;
+    } else {
+        modeInterpretation =
+            `The population is multimodal with modes: ${stats.mode.join(", ")}.`;
+    }
+
     display.innerHTML = `
-      <p><strong>Population Mean (μ):</strong> ${stats.mean.toFixed(2)}</p>
-      <p><strong>Median:</strong> ${stats.median}</p>
-      <p><strong>Mode:</strong> ${stats.mode.join(", ")}</p>
-      <p><strong>Range:</strong> ${stats.range}</p>
-      <p><strong>Population Variance (σ²):</strong> ${stats.variance.toFixed(2)}</p>
-      <p><strong>Population Standard Deviation (σ):</strong> ${stats.stdDev.toFixed(2)}</p>
-      <p><strong>Population Size (N):</strong> ${stats.count}</p>
+
+        <h3>Population Statistics Results</h3>
+
+        <p>
+            <strong>Population Mean (μ):</strong> ${stats.mean.toFixed(2)}
+            <br>
+            <small>The arithmetic average of all values in the population.</small>
+        </p>
+
+        <p>
+            <strong>Median:</strong> ${stats.median}
+            <br>
+            <small>The middle value when the population is ordered.</small>
+        </p>
+
+        <p>
+            <strong>Mode:</strong> ${stats.mode.join(", ")}
+            <br>
+            <small>${modeInterpretation}</small>
+        </p>
+
+        <p>
+            <strong>Range:</strong> ${stats.range}
+            <br>
+            <small>The spread between the largest and smallest population values.</small>
+        </p>
+
+        <p>
+            <strong>Population Variance (σ²):</strong> ${stats.variance.toFixed(2)}
+            <br>
+            <small>Measures the average squared deviation from the population mean.</small>
+        </p>
+
+        <p>
+            <strong>Population Standard Deviation (σ):</strong> ${stats.stdDev.toFixed(2)}
+            <br>
+            <small>${variability}</small>
+        </p>
+
+        <p>
+            <strong>Population Size (N):</strong> ${stats.count}
+            <br>
+            <small>Total number of observations in the population.</small>
+        </p>
+
+        <hr>
+
+        <h3>Interpretation</h3>
+
+        <p><strong>Distribution Shape:</strong> ${skewness}</p>
+
+        <p>
+            This population contains <strong>${stats.count}</strong> values with
+            an average of <strong>${stats.mean.toFixed(2)}</strong>. The data span
+            a range of <strong>${stats.range}</strong> units and have a population
+            standard deviation of <strong>${stats.stdDev.toFixed(2)}</strong>.
+        </p>
+
+        <p>
+            The variance of <strong>${stats.variance.toFixed(2)}</strong> indicates
+            the degree to which values differ from the population mean.
+        </p>
+
     `;
-  } else {
-    display.innerHTML = `<p style="color:red;">Please enter valid numbers.</p>`;
-  }
 });
+
 
 
 
