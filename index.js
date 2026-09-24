@@ -2891,9 +2891,59 @@ function calculateChiSquare() {
         <p><strong>Interpretation:</strong> ${interpretation}</p>
     `;
 }
+//Depression
+let depreBtn = document.getElementById("depreBtn");
+depreBtn.addEventListener("click", assessDepression);
 
+function assessDepression() {
 
+    let a = parseInt(document.getElementById("pleasureX").value) || 0;
+    let b = parseInt(document.getElementById("hopeless").value) || 0;
+    let c = parseInt(document.getElementById("sleeping").value) || 0;
+    let d = parseInt(document.getElementById("tired").value) || 0;
+    let e = parseInt(document.getElementById("overeating").value) || 0;
+    let f = parseInt(document.getElementById("failure").value) || 0;
+    let g = parseInt(document.getElementById("trouble").value) || 0;
+    let h = parseInt(document.getElementById("speaking").value) || 0;
+    let i = parseInt(document.getElementById("thoughts").value) || 0;
 
+    let z = a + b + c + d + e + f + g + h + i;
+
+    let interpretation = "";
+    let recommendation = "";
+
+    if (z <= 4) {
+        interpretation = "Minimal Depression";
+        recommendation = "No specific treatment required. Continue routine follow-up and encourage healthy lifestyle habits.";
+    }
+    else if (z <= 9) {
+        interpretation = "Mild Depression";
+        recommendation = "Monitor symptoms, provide emotional support, encourage physical activity, and reassess at follow-up visits.";
+    }
+    else if (z <= 14) {
+        interpretation = "Moderate Depression";
+        recommendation = "Consider counseling, psychological support, and further mental health assessment.";
+    }
+    else if (z <= 19) {
+        interpretation = "Moderately Severe Depression";
+        recommendation = "Active treatment is recommended, including mental health referral, counseling, and possible medication evaluation.";
+    }
+    else {
+        interpretation = "Severe Depression";
+        recommendation = "Urgent mental health evaluation is required. Consider immediate referral to a psychiatrist or mental health specialist.";
+    }
+
+    /* Suicide Risk Alert */
+    if (i > 0) {
+        recommendation += " WARNING: Positive response to Question 9 (self-harm or suicidal thoughts). Immediate clinical assessment is required regardless of total score.";
+    }
+
+    document.getElementById("depreDisplay").innerHTML =
+        "<h3>PHQ-9 Depression Score Results</h3>" +
+        "<b>Total Score:</b> " + z + " / 27<br><br>" +
+        "<b>Interpretation:</b> " + interpretation + "<br><br>" +
+        "<b>Recommendation:</b> " + recommendation;
+}
 
 
 
