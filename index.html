@@ -122,6 +122,7 @@
               <option value="imed-drugdosecalc">General Drug Dose Calculator</option>
                 <option value="liver-function">Liver Function Tests Interpreter</option>
                 <option value="hba1c">HbA1c Reader</option>
+                <option value="assessmentDepression">Assess for Depression</option>
     </select>
  
 <section class="tool" id="bmix">   
@@ -570,11 +571,86 @@
 
 </section>
 
- 
+<section class="tool" id="assessmentDepression">
+<h5>PHQ-9 Depression Score </h5>
+<h4>1. Little interest or pleasure in doing things </h4>
+<select id="pleasureX">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>2. Feeling down, depressed, or hopeless </h4>
+<select id="hopeless">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>3. Trouble falling asleep, staying asleep, or sleeping too much </h4>
+<select id="sleeping">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>4. Feeling tired or having little energy </h4>
+<select id="tired">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>5. Poor appetite or overeating </h4>
+<select id="overeating">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>6. Feeling bad about yourself or that you are a failure </h4>
+<select id="failure">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>7. Trouble concentrating on things such as reading or watching TV </h4>
+<select id="trouble">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>8. Moving or speaking slowly, or being unusually restless </h4>
+<select id="speaking">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+<h4>9. Thoughts that you would be better off dead or hurting yourself </h4>
+<select id="thoughts">
+<option>select</option>
+<option value="0">Not at All</option>
+<option value="1">Several Days</option>
+<option value="2">More Than Half the Days</option>
+<option value="3">Nearly Every Day</option>
+</select>
+
+<button id="depreBtn">click me</button>
+
+<div id="depreDisplay"></div>
 
 </section>
-
-
 
 
 <section class="tool" id="chadx">
@@ -810,6 +886,8 @@
   <h4>Interpretation:</h4>
   <div id="lftDisplay"></div>
 </section>
+
+
 
 <section class="tool" id="hba1c">
 <h5>HbA1c (Hemoglobin A1c) is a blood test that reflects your average blood sugar levels over the past 2–3 months. It is widely used to diagnose diabetes, monitor treatment, and assess long-term risk of complications.</h5>
