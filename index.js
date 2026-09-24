@@ -1767,25 +1767,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ART Essential tool dropdown
-let artSelect = document.getElementById("category-art").querySelector("select");
-
-artSelect.addEventListener("change", showArtTool);
-
-function showArtTool() {
-    // Hide all ART tools
-    document.querySelectorAll("#category-art .tool").forEach(sec => {
-        sec.classList.remove("active");
-    });
-
-    // Show the chosen one
-    let picked = artSelect.value;
-    if (picked) {
-        let target = document.getElementById(picked);
-        if (target) {
-            target.classList.add("active");
-        }
-    }
+let artSelect = document.getElementById("artSelect");
+artSelect.addEventListener("change",showSectionart);
+function showSectionart(){
+document.getElementById("art-regimen").style.display = "none";
+document.getElementById("art-ars").style.display = "none";
+let artSelected = document.getElementById("artSelect").value;
+if(artSelected){
+document.getElementById(artSelected).style.display = "block";
 }
+};
+
+
+
+
+
+
+
+
+
+
 //Art Reg
 let artBtn = document.getElementById("artBtns");
 
