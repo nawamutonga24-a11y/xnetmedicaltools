@@ -1606,6 +1606,7 @@ document.getElementById("imed-cvsa").style.display = "none";
 document.getElementById("imed-drugdosecalc").style.display = "none";
 document.getElementById("liver-function").style.display = "none";
 document.getElementById("hba1c").style.display = "none";
+document.getElementById("assessmentDepression").style.display = "none";
 let imedChosen = document.getElementById("imedChoice").value;
 if(imedChosen){
 document.getElementById(imedChosen).style.display = "block";
