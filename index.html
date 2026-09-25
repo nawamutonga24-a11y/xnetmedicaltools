@@ -3069,23 +3069,23 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
 <h4>Community Medicine- still coming</h4>
 </div>
 
-<div class="section" id="medicalStatistics">
+<div class="section" id="medicalStatistics" >
 <h4>Medical Statistics and Research</h4>
 <h5>Make a Selection</h5>
-<select id="menu">
+<select id="menuStatistics">
 <option value="">select</option>
 <option value="calMean">Measures of central tendency-Sample</option>
 <option value="popMean">Measures of central tendency-Population</option>
 <option value="qisquar">Chi-Squar Test Calculator</option>
 </select>
-<section class="tool" id="calMean">
+<section class="tool" id="calMean" style="display: none">
   <h2>Enter Your Sample Data</h2>
   <label for="numbers">Numbers (comma-separated):</label><br>
   <input type="text" id="numbers" size="50" placeholder="e.g. 12, 15, 18, 20"><br><br>
   <button id="meanBtn">Click to Calculate</button>
   <div id="sDisplay"></div>
 </section>
-<section class="tool" id="popMean">
+<section class="tool" id="popMean"style="display:none">
   <h2>Enter Your Population Data</h2>
   <label for="popNumbers">Numbers (comma-separated):</label><br>
   <input type="text" id="popNumbers" size="50" placeholder="e.g. 12, 15, 18, 20"><br><br>
@@ -3093,7 +3093,7 @@ The Holliday–Segar (100-50-20) formula is commonly used to estimate maintenanc
   <div id="popDisplay"></div>
 </section>
 
-<section class="section" id="qisquar">
+<section class="section" id="qisquar" style="display: none">
 <div class="calculator">
     <h2>Chi-Square Test Calculator</h2>
 
