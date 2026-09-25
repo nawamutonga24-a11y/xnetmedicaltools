@@ -2422,24 +2422,19 @@ function cortisolReader() {
 
     document.getElementById("cortisolDisplay").innerHTML = result;
 }
-// Loop function to handle menu selections
-  document.getElementById("menu").addEventListener("change", function() {
-    const selectedValue = this.value;
-    const tools = document.querySelectorAll(".tool");
+// Menu for Medical Statistics
+let menuStatistics = document.getElementById("menuStatistics");
+menuStatistics.addEventListener("change", showStatisticsmenu);
+function showStatisticsmenu(){
+document.getElementById("calMean").style.display = "none";
+document.getElementById("popMean").style.display = "none";
+document.getElementById("qisquar").style.display = "none";
+let msSelected = document.getElementById("menuStatistics").value;
+if(msSelected){
+document.getElementById(msSelected).style.display = "block";
+};
+};
 
-    // Hide all sections first
-    tools.forEach(tool => tool.style.display = "none");
-
-    // Show only the selected section
-    if (selectedValue) {
-      document.getElementById(selectedValue).style.display = "block";
-    }
-  });
-
-  // Initialize: hide all tools at start
-  window.onload = () => {
-    document.querySelectorAll(".tool").forEach(tool => tool.style.display = "none");
-  };
 
 
 //:Sample central tendancy
