@@ -2941,9 +2941,178 @@ function assessDepression() {
         "<b>Recommendation:</b> " + recommendation;
 }
 
+//schizophrenia
 
+document.getElementById("schizoBtn").addEventListener("click", () => {
 
+    const items = [
+        { id: "delusions", name: "Delusions" },
+        { id: "hallucinations", name: "Hallucinations" },
+        { id: "ds", name: "Disorganized Speech" },
+        { id: "grossly-disorganized", name: "Grossly Disorganized/Catatonic Behavior" },
+        { id: "negative-symptoms", name: "Negative Symptoms" },
+        { id: "social-withdraw", name: "Social Withdrawal" },
+        { id: "impaired-occupation", name: "Occupational/Academic Impairment" },
+        { id: "insight-poor", name: "Poor Insight" },
+        { id: "impairement", name: "Cognitive Impairment" },
+        { id: "duration", name: "Duration ≥ 6 Months" }
+    ];
 
+    let score = 0;
+    let elevatedSymptoms = [];
+
+    for (let item of items) {
+
+        let value = document.getElementById(item.id).value;
+
+        if (value === "") {
+            schizoDisplay.innerHTML =
+                "<span style='color:red'><b>Please complete all fields.</b></span>";
+            return;
+        }
+
+        value = parseInt(value);
+        score += value;
+
+        if (value === 1) {
+            elevatedSymptoms.push(`${item.name} (Mild)`);
+        }
+
+        if (value === 2) {
+            elevatedSymptoms.push(`${item.name} (Severe)`);
+        }
+    }
+
+    let interpretation = "";
+    let advice = "";
+    let recommendation = "";
+    let color = "";
+
+    if (score <= 4) {
+
+        color = "green";
+
+        interpretation =
+            "Very few schizophrenia-related features were reported. Current findings do not strongly suggest schizophrenia-spectrum illness.";
+
+        advice =
+            "Maintain healthy sleep habits, regular physical activity, stress reduction, and strong social connections.";
+
+        recommendation =
+            "Routine monitoring only. Seek clinical assessment if symptoms emerge or worsen.";
+
+    } else if (score <= 9) {
+
+        color = "#d4a300";
+
+        interpretation =
+            "Mild psychotic and functional symptoms may be present. Clinical significance depends on duration, severity, and impact on daily functioning.";
+
+        advice =
+            "Monitor symptoms carefully and pay attention to any deterioration in reality testing, work, school, or relationships.";
+
+        recommendation =
+            "Consider evaluation by a mental health professional for further assessment.";
+
+    } else if (score <= 14) {
+
+        color = "orange";
+
+        interpretation =
+            "Moderate symptom burden. Several symptoms associated with schizophrenia-spectrum conditions are present and may significantly affect functioning.";
+
+        advice =
+            "Professional psychiatric evaluation is recommended. Early identification and treatment are associated with improved outcomes.";
+
+        recommendation =
+            "Arrange assessment with a psychiatrist or qualified mental health clinician.";
+
+    } else {
+
+        color = "red";
+
+        interpretation =
+            "High symptom burden with multiple psychotic and functional features reported. Significant impairment may be present.";
+
+        advice =
+            "Prompt psychiatric assessment is strongly advised, especially if symptoms are worsening or disrupting daily life.";
+
+        recommendation =
+            "Seek urgent mental health evaluation. If there is risk of self-harm, inability to care for oneself, severe distress, or danger to others, seek emergency assistance immediately.";
+    }
+
+    let symptomInterpretation = "";
+
+    if (elevatedSymptoms.length > 0) {
+
+        symptomInterpretation = `
+        <h4>Elevated Symptom Domains</h4>
+        <ul>
+            ${elevatedSymptoms.map(symptom => `<li>${symptom}</li>`).join("")}
+        </ul>
+        `;
+
+    } else {
+
+        symptomInterpretation =
+            "<h4>No Significant Symptoms Reported</h4>";
+    }
+
+    document.getElementById("schizoDisplay").innerHTML = `
+
+    <div style="
+        background:#fff;
+        border-left:6px solid ${color};
+        padding:15px;
+        border-radius:8px;
+        margin-top:15px;
+    ">
+
+        <h2 style="color:${color};">
+            Schizophrenia Screening Score: ${score}/20
+        </h2>
+
+        <h3>Severity Category</h3>
+        <p>
+            ${
+                score <= 4 ? "Minimal Symptoms" :
+                score <= 9 ? "Mild Symptoms" :
+                score <= 14 ? "Moderate Symptoms" :
+                "High Symptom Burden"
+            }
+        </p>
+
+        <h3>Interpretation</h3>
+        <p>${interpretation}</p>
+
+        ${symptomInterpretation}
+
+        <h3>Advice</h3>
+        <p>${advice}</p>
+
+        <h3>Recommendation</h3>
+        <p>${recommendation}</p>
+
+        <h3>Score Guide</h3>
+        <ul>
+            <li><b>0-4:</b> Minimal Symptoms</li>
+            <li><b>5-9:</b> Mild Symptoms</li>
+            <li><b>10-14:</b> Moderate Symptoms</li>
+            <li><b>15-20:</b> High Symptom Burden</li>
+        </ul>
+
+        <h3>Important Disclaimer</h3>
+        <p>
+            This tool is intended for educational and screening purposes only.
+            It cannot diagnose schizophrenia or any mental disorder.
+            Diagnosis requires comprehensive assessment by a qualified mental
+            health professional using established diagnostic criteria such as
+            DSM-5-TR or ICD-11.
+        </p>
+
+    </div>
+    `;
+});
 
 
 
